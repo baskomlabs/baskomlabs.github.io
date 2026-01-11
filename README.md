@@ -1,17 +1,51 @@
-# BaskomLabs Website & QRSTU Landing Page
+# BaskomLabs
 
-This is the official website for **BaskomLabs** and the landing page for the **QRSTU** app.
+**"Bengkel Aplikasi Kompeni"**
 
-## Structure
-- `index.html`: The main Single Page Application (SPA).
-- `style.css`: Contains both the "Retro" (Baskom) and "Modern" (QRSTU) styles.
-- `script.js`: Handles the SPA navigation, animations, and the portal transition.
+> *>> Inisialisasi Protokol...*
+> *>> Status: ONLINE*
 
-## Features
-- **Retro Identity:** CRT scanlines, glitch effects, and 8-bit typography for BaskomLabs.
-- **Modern Portal:** A "Hyper-Jump" transition to the sleek, dark-mode QRSTU landing page.
-- **SPA:** Seamless navigation without page reloads.
-- **Privacy Policy:** Integrated directly into the app interface.
+**BaskomLabs** is a digital workshop dedicated to crafting essential technology solutions with a unique blend of retro aesthetics and modern functionality. We mix raw code into functional applications—serious engineering, delivered with a pixelated smile.
 
-## How to Run
-Simply open `index.html` in any modern web browser. No build step required.
+---
+
+## 📱 Flagship Product: QRSTU
+
+**Decode the Code. Rank Up the Mode.**
+
+**QRSTU** stands for **QRIS Reader, Scoring, & Tracking Utility**.
+It is not just a scanner; it is a tool designed to demystify the transactions you make every day while adding a layer of gamification to your digital spending.
+
+### Core Features
+
+*   **🕵️ Decode (Advanced Parser):**
+    Don't just pay blindly. QRSTU parses raw QRIS data, revealing the Merchant ID, Criteria, and other hidden details behind those pixelated squares.
+
+*   **🏆 Rank Up (Gamification):**
+    Turn every transaction into an achievement. Earn XP for every unique scan and climb the ladder from a **Newbie** to a **QRIS God**.
+
+*   **📈 Track (Local History):**
+    Your data belongs to you. We provide a smart tracking history that stores your scan logs locally on your device.
+
+---
+
+## 🛠️ Technical Overview
+
+This repository hosts the official landing page for BaskomLabs and QRSTU.
+
+*   **Architecture:** Single Page Application (SPA) with Vanilla JS.
+*   **Design System:** Dual-Theme.
+    *   *Theme A:* Retro-Futurist CRT (Baskom Identity).
+    *   *Theme B:* Modern Glassmorphism (QRSTU Identity).
+*   **Performance:** Lightweight, no build steps required, deployed via GitHub Pages.
+
+---
+
+## 🔗 Connect
+
+*   **Website:** [baskomlabs.github.io](https://baskomlabs.github.io)
+*   **Contact:** [baskomdevs@gmail.com](mailto:baskomdevs@gmail.com)
+
+---
+
+*© 2026 Bengkel Aplikasi Kompeni. Powered by Nasi Padang and StackOverflow.*
