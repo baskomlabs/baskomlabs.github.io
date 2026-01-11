@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaskomLabs | Bengkel Aplikasi Kompeni</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=VT323&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-retro">
+
+    <!-- CRT Overlay Effects -->
+    <div class="scanlines"></div>
+    <div class="crt-flicker"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- MAIN APP CONTAINER -->
+    <div id="app" class="container">
+        
+        <!-- HEADER / NAVIGATION -->
+        <nav>
+            <div class="logo-area">
+                <div class="logo-text glitch-hover" data-target="home">
+                    &lt;BASKOM<span>LABS</span> /&gt;
+                </div>
+                <div class="logo-sub">BENGKEL APLIKASI KOMPENI</div>
+            </div>
+            
+            <!-- Simplified Menu -->
+            <div class="nav-links">
+                <!-- QRSTU is now part of Home, so we just link Home and Contact -->
+                <a href="#home" class="nav-item active" data-target="home">_home</a>
+                <a href="#contact" class="nav-item" data-target="contact">_kontak</a>
+            </div>
+        </nav>
+
+        <!-- VIEWPORT -->
+        <main id="viewport">
+            
+            <!-- HOME VIEW (Hero + QRSTU Showcase) -->
+            <section id="home" class="active-view">
+                
+                <div class="hero-split">
+                    <!-- Left: Intro Text -->
+                    <div class="hero-text">
+                        <h1 class="glitch-title" data-text="BENGKEL APLIKASI">BENGKEL APLIKASI</h1>
+                        <h1 class="glitch-title sub" data-text="KOMPENI">KOMPENI</h1>
+                        
+                        <div class="terminal-box">
+                            <p>>> Inisialisasi Protokol...</p>
+                            <p>>> Memuat Modul Utama: <span class="highlight-cyan">QRSTU</span></p>
+                            <p>>> Status: <span class="blink">SIAP TEMPUR</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Right: QRSTU Showcase (Blended Theme) -->
+                    <div class="qrstu-showcase-card tilt-effect">
+                        <div class="card-glass">
+                            <div class="card-content">
+                                <!-- App Logo -->
+                                <div class="app-logo-wrapper">
+                                    <svg viewBox="0 0 512 512" fill="none" class="qrstu-svg">
+                                        <circle cx="256" cy="256" r="130" stroke="#22D3EE" stroke-width="40"/>
+                                        <rect x="216" y="216" width="80" height="80" rx="16" fill="#22D3EE"/>
+                                        <path d="M330 330 L420 420" stroke="#FACC15" stroke-width="40" stroke-linecap="round"/>
+                                        <path d="M420 420 V330 M420 420 H330" stroke="#FACC15" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                
+                                <h2>QRSTU</h2>
+                                <p class="app-tagline">QRIS Reader, Scoring, & Tracking Utility</p>
+                                
+                                <div class="stats-row">
+                                    <div class="stat">
+                                        <span>RANK</span>
+                                        <strong>NEWBIE</strong>
+                                    </div>
+                                    <div class="stat">
+                                        <span>XP</span>
+                                        <strong>0/100</strong>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="btn-download-glitch">
+                                    <span class="icon-play">►</span>
+                                    <span>INSTALL_NOW</span>
+                                </a>
+                            </div>
+                            
+                            <!-- Decorative Scanline on Card -->
+                            <div class="card-scanline"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Grid (Below Hero) -->
+                <div class="features-grid reveal-on-scroll">
+                    <div class="feature-item">
+                        <span class="f-icon">🕵️</span>
+                        <h3>DECODE</h3>
+                        <p>Bedah isi QRIS. Jangan mau asal bayar.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="f-icon">🏆</span>
+                        <h3>RANK UP</h3>
+                        <p>Dari Nubie jadi Dewa. Pamerkan levelmu.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="f-icon">📈</span>
+                        <h3>TRACK</h3>
+                        <p>Riwayat scan tersimpan aman & lokal.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- CONTACT VIEW -->
+            <section id="contact" class="hidden-view">
+                <div class="centered-content">
+                    <h2>02_KOMUNIKASI</h2>
+                    <div class="retro-card reveal-on-scroll">
+                        <div class="retro-card-header">
+                            <span>MAIL_CLIENT.EXE</span>
+                            <span class="status-badge">LISTENING</span>
+                        </div>
+                        <p>Menemukan bug? Atau ingin request fitur?</p>
+                        <br>
+                        <div class="contact-link">
+                            <span>>> Email:</span>
+                            <a href="mailto:baskomdevs@gmail.com" class="glitch-link">baskomdevs@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRIVACY POLICY VIEW (Hidden from Menu, accessible via URL) -->
+            <section id="privacy-policy" class="hidden-view">
+                <h2>04_PRIVACY_POLICY.MD</h2>
+                <div class="retro-card terminal-view">
+                    <div class="retro-card-header">
+                        <span>CONFIDENTIAL_FILE</span>
+                        <button class="close-btn" data-target="home">[KEMBALI KE HOME]</button>
+                    </div>
+                    <div class="markdown-content">
+                        <h3>Privacy Policy for QRSTU</h3>
+                        <p class="meta">Effective Date: January 11, 2026</p>
+                        
+                        <p><strong>QRSTU</strong> ("we", "our", or "us") is committed to protecting your privacy.</p>
+
+                        <h4>1. Information We Collect</h4>
+                        <h5>Permission-Based Data</h5>
+                        <ul>
+                            <li><strong>Camera</strong>: Used strictly for scanning QR codes locally. No video data is sent to servers.</li>
+                        </ul>
+
+                        <h5>Third-Party Services</h5>
+                        <ul>
+                            <li><strong>Firebase Authentication</strong>: For secure sign-ins.</li>
+                            <li><strong>Firebase Crashlytics</strong>: For anonymous crash reporting.</li>
+                            <li><strong>Firebase Firestore</strong>: For data syncing.</li>
+                        </ul>
+
+                        <h4>2. Data Retention & Deletion</h4>
+                        <p class="highlight-text">
+                            <strong>How to Delete Your Data:</strong><br>
+                            > Open App > <strong>Settings</strong> > <strong>Account</strong> > <strong>Delete Account</strong>.<br>
+                            > This permanently removes your data.
+                        </p>
+
+                        <h4>3. Contact Us</h4>
+                        <p>> Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="footer-line">
+                © 2026 Bengkel Aplikasi Kompeni.
+            </div>
+            <!-- Privacy link hidden from visual flow but clickable -->
+            <a href="#privacy-policy" class="footer-tiny" data-target="privacy-policy">Privacy Policy</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
