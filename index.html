@@ -142,18 +142,18 @@
                 </div>
             </section>
 
-            <!-- PRIVACY POLICY VIEW (Hidden from Menu, accessible via URL) -->
+            <!-- PRIVACY POLICY VIEW — QRSTU (Hidden from Menu, accessible via URL) -->
             <section id="privacy-policy" class="hidden-view">
                 <h2>04_PRIVACY_POLICY.MD</h2>
                 <div class="retro-card terminal-view">
                     <div class="retro-card-header">
-                        <span>CONFIDENTIAL_FILE</span>
+                        <span>CONFIDENTIAL_FILE :: QRSTU</span>
                         <button class="close-btn" data-target="home">[KEMBALI KE HOME]</button>
                     </div>
                     <div class="markdown-content">
                         <h3>Privacy Policy for QRSTU</h3>
                         <p class="meta">Effective Date: January 11, 2026</p>
-                        
+
                         <p><strong>QRSTU</strong> ("we", "our", or "us") is committed to protecting your privacy.</p>
 
                         <h4>1. Information We Collect</h4>
@@ -182,14 +182,92 @@
                 </div>
             </section>
 
+            <!-- PRIVACY POLICY VIEW — BENSY (Hidden from Menu, accessible via URL) -->
+            <section id="privacy-policy-bensy" class="hidden-view">
+                <h2>05_PRIVACY_POLICY.MD</h2>
+                <div class="retro-card terminal-view">
+                    <div class="retro-card-header">
+                        <span>CONFIDENTIAL_FILE :: BENSY</span>
+                        <button class="close-btn" data-target="home">[KEMBALI KE HOME]</button>
+                    </div>
+                    <div class="markdown-content">
+                        <h3>Privacy Policy for Bensy</h3>
+                        <p class="meta">Effective Date: June 19, 2026</p>
+
+                        <p><strong>Bensy</strong> ("we", "our", or "us") is a fuel and vehicle cost tracking application operated by BaskomLabs. We are committed to protecting your privacy and being transparent about the data the app handles.</p>
+
+                        <h4>1. Information We Collect</h4>
+
+                        <h5>Account Data (Signed-in users)</h5>
+                        <ul>
+                            <li><strong>Google Account profile</strong>: name, email address, and profile picture, obtained via Google Sign-In when you authenticate.</li>
+                            <li><strong>User ID</strong>: a unique identifier issued by Firebase Authentication to associate your data with your account.</li>
+                        </ul>
+
+                        <h5>Vehicle &amp; Usage Data</h5>
+                        <ul>
+                            <li><strong>Vehicle records</strong>: make, model, year, fuel type, and odometer readings you enter.</li>
+                            <li><strong>Fuel logs</strong>: date, volume, price, odometer, fuel type, and station name you record.</li>
+                            <li><strong>Other costs</strong>: optional records for service, parking, tolls, or related expenses.</li>
+                        </ul>
+
+                        <h5>Permission-Based Data</h5>
+                        <ul>
+                            <li><strong>Camera</strong>: used only when you tap the camera icon to scan an odometer or receipt. Captured images are processed <strong>entirely on your device</strong> using Google ML Kit (offline OCR) to extract numbers, then discarded from temporary cache. No image content is uploaded to our servers.</li>
+                            <li><strong>Photo library</strong>: if you attach a receipt photo to a fuel log, only the photo you explicitly select is read by the app.</li>
+                        </ul>
+
+                        <h5>Guest Mode</h5>
+                        <p>If you continue as a Guest, <strong>all data stays on your device only</strong>. We do not collect, transmit, or have visibility into Guest data. Uninstalling the app or clearing app data will permanently delete it.</p>
+
+                        <h4>2. Third-Party Services</h4>
+                        <ul>
+                            <li><strong>Firebase Authentication</strong> (Google LLC) — secure Google Sign-In.</li>
+                            <li><strong>Supabase</strong> — cloud database used to sync your vehicle and fuel records across your devices when signed in.</li>
+                            <li><strong>Google ML Kit Text Recognition</strong> — runs <em>locally on your device</em>. No image or text is transmitted to Google or to us.</li>
+                        </ul>
+                        <p>These providers process data on our behalf and are bound by their own privacy terms.</p>
+
+                        <h4>3. How We Use Your Data</h4>
+                        <ul>
+                            <li>To provide the core functionality: storing, syncing, and analyzing your fuel and vehicle records.</li>
+                            <li>To authenticate you and keep your account secure.</li>
+                            <li>To display aggregate statistics (e.g. average consumption, total spend) on your own device.</li>
+                        </ul>
+                        <p>We do <strong>not</strong> sell your data, use it for advertising, or share it with third parties for marketing.</p>
+
+                        <h4>4. Data Retention &amp; Deletion</h4>
+                        <p class="highlight-text">
+                            <strong>How to Delete Your Account &amp; Data:</strong><br>
+                            > Open App &gt; <strong>Profile</strong> &gt; <strong>Account</strong> &gt; <strong>Delete Account</strong>.<br>
+                            > This permanently removes your account and all associated vehicle and fuel records from our servers.
+                        </p>
+                        <p>You may also request deletion by emailing us at the address below. We will process verified requests within 30 days.</p>
+
+                        <h4>5. Children's Privacy</h4>
+                        <p>Bensy is not directed to children under 13 and we do not knowingly collect data from them.</p>
+
+                        <h4>6. Changes to This Policy</h4>
+                        <p>We may update this policy from time to time. The "Effective Date" above will reflect the most recent revision.</p>
+
+                        <h4>7. Contact Us</h4>
+                        <p>> Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+                    </div>
+                </div>
+            </section>
+
         </main>
 
         <footer>
             <div class="footer-line">
                 © 2026 Bengkel Aplikasi Kompeni.
             </div>
-            <!-- Privacy link hidden from visual flow but clickable -->
-            <a href="#privacy-policy" class="footer-tiny" data-target="privacy-policy">Privacy Policy</a>
+            <!-- Per-app privacy policies (required by Play Store listing) -->
+            <div class="footer-policies">
+                <a href="#privacy-policy" class="footer-tiny" data-target="privacy-policy">QRSTU Privacy</a>
+                <span class="footer-sep">·</span>
+                <a href="#privacy-policy-bensy" class="footer-tiny" data-target="privacy-policy-bensy">Bensy Privacy</a>
+            </div>
         </footer>
     </div>
 

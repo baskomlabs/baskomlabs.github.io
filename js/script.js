@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkHash() {
         const hash = window.location.hash.substring(1); // Remove '#'
-        if (hash === 'privacy-policy') {
-            switchView('privacy-policy');
+        if (hash === 'privacy-policy' || hash === 'privacy-policy-bensy') {
+            switchView(hash);
         } else if (hash === 'contact') {
             switchView('contact');
         } else {

@@ -222,8 +222,20 @@ section.active-view { display: block; }
 
 /* --- FOOTER --- */
 footer { margin-top: auto; padding: 2rem 0; text-align: center; color: #555; font-size: 0.8rem; }
+.footer-policies { margin-top: 0.5rem; display: inline-flex; gap: 0.5rem; align-items: center; }
+.footer-sep { opacity: 0.3; }
 .footer-tiny { opacity: 0.3; transition: 0.3s; }
 .footer-tiny:hover { opacity: 1; color: var(--neon-cyan); }
+
+/* Markdown content inside policy cards */
+.markdown-content h3 { font-family: var(--font-head); color: var(--neon-cyan); font-size: 1.8rem; margin-bottom: 0.5rem; }
+.markdown-content h4 { font-family: var(--font-head); color: var(--neon-green); font-size: 1.3rem; margin: 1.5rem 0 0.5rem; }
+.markdown-content h5 { color: var(--qrstu-gold); font-size: 1rem; margin: 1rem 0 0.3rem; }
+.markdown-content p, .markdown-content li { font-size: 0.95rem; color: #ccc; }
+.markdown-content ul { padding-left: 1.5rem; margin: 0.5rem 0; }
+.markdown-content li { margin-bottom: 0.3rem; }
+.markdown-content .meta { color: #888; font-size: 0.85rem; margin-bottom: 1rem; }
+.markdown-content a { color: var(--neon-cyan); text-decoration: underline; }
 
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
