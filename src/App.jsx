@@ -14,6 +14,9 @@ import ComponentsPage from './pages/learning/ComponentsPage';
 import RadioWaves from './pages/learning/RadioWaves';
 import HistoryTrivia from './pages/learning/HistoryTrivia';
 import Terminology from './pages/learning/Terminology';
+import QRISBasics from './pages/learning/QRISBasics';
+import QRISDataParsing from './pages/learning/QRISDataParsing';
+import QRISComponents from './pages/learning/QRISComponents';
 
 // Intersection Observer for scroll animations
 function useScrollReveal(pathname) {
@@ -79,6 +82,11 @@ function App() {
               <Route path="/learning/radio-waves" element={<RadioWaves />} />
               <Route path="/learning/history-trivia" element={<HistoryTrivia />} />
               <Route path="/learning/terminology" element={<Terminology />} />
+              
+              {/* QRIS Learning Routes */}
+              <Route path="/learning/qris-basics" element={<QRISBasics />} />
+              <Route path="/learning/qris-data-parsing" element={<QRISDataParsing />} />
+              <Route path="/learning/qris-components" element={<QRISComponents />} />
 
               <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>

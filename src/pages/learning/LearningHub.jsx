@@ -64,8 +64,45 @@ function LearningHub() {
             </div>
           </div>
         </Link>
+      <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
+        <div className="divider-text">QRISPARSER: {t('learning.hub_qris_title')}</div>
       </div>
 
+      <div className="products-grid reveal-on-scroll">
+        <Link to="/learning/qris-basics" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="product-card glass-card" style={{ height: '100%' }}>
+            <div className="product-icon-wrapper qrstu-theme" style={{ fontSize: '2.5rem' }}>🔲</div>
+            <div className="product-info">
+              <h3>{t('learning.hub_qris_card1_title')}</h3>
+              <p>{t('learning.hub_qris_card1_desc')}</p>
+            </div>
+          </div>
+        </Link>
+        
+        <Link to="/learning/qris-data-parsing" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="product-card glass-card" style={{ height: '100%' }}>
+            <div className="product-icon-wrapper pembacakue-theme" style={{ fontSize: '2.5rem' }}>🧩</div>
+            <div className="product-info">
+              <h3>{t('learning.hub_qris_card2_title')}</h3>
+              <p>{t('learning.hub_qris_card2_desc')}</p>
+            </div>
+          </div>
+        </Link>
+
+        <Link to="/learning/qris-components" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="product-card glass-card" style={{ height: '100%' }}>
+            <div className="product-icon-wrapper qrstu-theme" style={{ fontSize: '2.5rem', background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)' }}>⚙️</div>
+            <div className="product-info">
+              <h3>{t('learning.hub_qris_card3_title')}</h3>
+              <p>{t('learning.hub_qris_card3_desc')}</p>
+            </div>
+          </div>
+        </Link>
+      </div>
+
+      <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
+        <div className="divider-text">{t('learning.hub_extra_trivia')}</div>
+      </div>
       <div className="products-grid reveal-on-scroll" style={{ marginTop: '2rem' }}>
         <Link to="/learning/radio-waves" style={{ textDecoration: 'none', color: 'inherit' }}>
             <div className="product-card glass-card" style={{ height: '100%' }}>
