@@ -1,5 +1,6 @@
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import SEO from './components/SEO';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -15,7 +16,7 @@ import HistoryTrivia from './pages/learning/HistoryTrivia';
 import Terminology from './pages/learning/Terminology';
 
 // Intersection Observer for scroll animations
-function useScrollReveal() {
+function useScrollReveal(pathname) {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -44,17 +45,19 @@ function useScrollReveal() {
       clearTimeout(timeoutId);
       observer.disconnect();
     };
-  });
+  }, [pathname]);
 }
 
 function ScrollWrapper({ children }) {
-  useScrollReveal();
+  const location = useLocation();
+  useScrollReveal(location.pathname);
   return children;
 }
 
 function App() {
   return (
     <Router>
+      <SEO />
       <div className="container">
         <Navbar />
         <main id="viewport">

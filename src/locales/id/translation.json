@@ -1,0 +1,30 @@
+{
+  "navbar": {
+    "home": "Beranda",
+    "learning": "Pembelajaran",
+    "contact": "Kontak",
+    "switch_lang": "EN"
+  },
+  "home": {
+    "seo_title": "BaskomLabs | Bengkel Aplikasi Kompeni",
+    "seo_desc": "Kami merekayasa solusi digital berperforma tinggi, aman, dan intuitif.",
+    "hero_badge": "Berdiri sejak 2026",
+    "hero_title_1": "Bengkel Aplikasi",
+    "hero_title_2": "Kompeni",
+    "hero_subtitle": "Kami merekayasa solusi digital berperforma tinggi, aman, dan intuitif. Membangun masa depan aplikasi mobile dan web dengan teknologi mutakhir.",
+    "featured_projects": "PROYEK UNGGULAN",
+    "qrstu_desc": "Utilitas Pembaca, Penilaian, & Pelacakan QRIS",
+    "pembacakue_desc": "Pembaca & Pemverifikasi Kartu Identitas Canggih",
+    "core_technologies": "TEKNOLOGI INTI",
+    "nfc_title": "Teknologi NFC",
+    "nfc_desc": "Kami memanfaatkan protokol Near Field Communication (NFC) tingkat lanjut untuk interaksi perangkat keras-perangkat lunak yang aman. Mengintegrasikan sistem nirsentuh modern dengan enkripsi kelas atas untuk memastikan transmisi data yang andal dan keamanan yang ditingkatkan dalam aplikasi seperti PembacaKUE.",
+    "contact_title": "Hubungi Kami",
+    "contact_desc": "Tertarik untuk berkolaborasi atau ingin melaporkan masalah? Kami sangat ingin mendengar dari Anda.",
+    "email_us": "Email Kami"
+  },
+  "footer": {
+    "copyright": "© 2026 BaskomLabs | Bengkel Aplikasi Kompeni. Aman & Optimal.",
+    "privacy": "Privasi",
+    "tos": "S&K"
+  }
+}

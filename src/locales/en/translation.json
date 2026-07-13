@@ -1,0 +1,30 @@
+{
+  "navbar": {
+    "home": "Home",
+    "learning": "Learning",
+    "contact": "Contact",
+    "switch_lang": "ID"
+  },
+  "home": {
+    "seo_title": "BaskomLabs | Bengkel Aplikasi Kompeni",
+    "seo_desc": "We engineer high-performance, secure, and intuitive digital solutions.",
+    "hero_badge": "Est. 2026",
+    "hero_title_1": "Bengkel Aplikasi",
+    "hero_title_2": "Kompeni",
+    "hero_subtitle": "We engineer high-performance, secure, and intuitive digital solutions. Building the future of mobile and web applications with cutting-edge technology.",
+    "featured_projects": "FEATURED PROJECTS",
+    "qrstu_desc": "QRIS Reader, Scoring, & Tracking Utility",
+    "pembacakue_desc": "Advanced Identity Card Reader & Verifier",
+    "core_technologies": "CORE TECHNOLOGIES",
+    "nfc_title": "NFC Technology",
+    "nfc_desc": "We leverage advanced Near Field Communication (NFC) protocols for secure hardware-software interactions. Integrating modern contactless systems with high-end encryption to ensure reliable data transmission and enhanced security in applications like PembacaKUE.",
+    "contact_title": "Get in Touch",
+    "contact_desc": "Interested in collaborating or want to report an issue? We'd love to hear from you.",
+    "email_us": "Email Us"
+  },
+  "footer": {
+    "copyright": "© 2026 BaskomLabs | Bengkel Aplikasi Kompeni. Secure & Optimized.",
+    "privacy": "Privacy",
+    "tos": "ToS"
+  }
+}

@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Home({ scrollToContact }) {
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (scrollToContact) {
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -14,18 +17,18 @@ function Home({ scrollToContact }) {
       <section id="home" className="active-view">
         <div className="hero">
           <div className="hero-content">
-            <div className="hero-badge reveal-on-scroll">Est. 2026</div>
+            <div className="hero-badge reveal-on-scroll">{t('home.hero_badge')}</div>
             <h1 className="hero-title reveal-on-scroll">
-              Bengkel Aplikasi <span className="gradient-text">Kompeni</span>
+              {t('home.hero_title_1')} <span className="gradient-text">{t('home.hero_title_2')}</span>
             </h1>
             <p className="hero-subtitle reveal-on-scroll">
-              We engineer high-performance, secure, and intuitive digital solutions. Building the future of mobile and web applications with cutting-edge technology.
+              {t('home.hero_subtitle')}
             </p>
           </div>
         </div>
 
         <div className="section-divider reveal-on-scroll">
-          <div className="divider-text">FEATURED PROJECTS</div>
+          <div className="divider-text">{t('home.featured_projects')}</div>
         </div>
 
         <div className="products-grid reveal-on-scroll">
@@ -41,7 +44,7 @@ function Home({ scrollToContact }) {
             </div>
             <div className="product-info">
               <h3>QRSTU</h3>
-              <p>QRIS Reader, Scoring, & Tracking Utility</p>
+              <p>{t('home.qrstu_desc')}</p>
               <div className="product-tags">
                 <span className="tag tag-qrstu">QRIS</span>
                 <span className="tag tag-qrstu">FinTech</span>
@@ -61,7 +64,7 @@ function Home({ scrollToContact }) {
             </div>
             <div className="product-info">
               <h3>PembacaKUE</h3>
-              <p>Advanced Identity Card Reader & Verifier</p>
+              <p>{t('home.pembacakue_desc')}</p>
               <div className="product-tags">
                 <span className="tag tag-pembacakue">Identity</span>
                 <span className="tag tag-pembacakue">e-KTP</span>
@@ -72,7 +75,7 @@ function Home({ scrollToContact }) {
         </div>
 
         <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
-          <div className="divider-text">CORE TECHNOLOGIES</div>
+          <div className="divider-text">{t('home.core_technologies')}</div>
         </div>
 
         <div className="tech-grid reveal-on-scroll">
@@ -85,10 +88,10 @@ function Home({ scrollToContact }) {
                   <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0z"/>
                 </svg>
               </div>
-              <h3>NFC Technology</h3>
+              <h3>{t('home.nfc_title')}</h3>
             </div>
             <p className="tech-desc">
-              We leverage advanced Near Field Communication (NFC) protocols for secure hardware-software interactions. Integrating modern contactless systems with high-end encryption to ensure reliable data transmission and enhanced security in applications like PembacaKUE.
+              {t('home.nfc_desc')}
             </p>
           </div>
         </div>
@@ -97,10 +100,10 @@ function Home({ scrollToContact }) {
       <section id="contact" className="active-view">
         <div className="centered-content">
           <div className="glass-card contact-card reveal-on-scroll">
-            <h2>Get in Touch</h2>
-            <p>Interested in collaborating or want to report an issue? We'd love to hear from you.</p>
+            <h2>{t('home.contact_title')}</h2>
+            <p>{t('home.contact_desc')}</p>
             <a href="mailto:baskomdevs@gmail.com" className="btn-primary mt-2">
-              Email Us
+              {t('home.email_us')}
             </a>
           </div>
         </div>
