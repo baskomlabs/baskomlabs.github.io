@@ -90,7 +90,6 @@ function Home({ scrollToContact }) {
             <p className="tech-desc">
               We leverage advanced Near Field Communication (NFC) protocols for secure hardware-software interactions. Integrating modern contactless systems with high-end encryption to ensure reliable data transmission and enhanced security in applications like PembacaKUE.
             </p>
-            <div className="tech-ref">Ref ID: 139abb2b-b563-4fd9-bf7a-95c0b3dd0cea</div>
           </div>
         </div>
       </section>
