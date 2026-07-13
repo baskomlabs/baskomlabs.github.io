@@ -24,6 +24,12 @@ function Navbar() {
           Home
         </Link>
         <Link 
+          to="/learning" 
+          className={`nav-item ${location.pathname.startsWith('/learning') ? 'active' : ''}`}
+        >
+          Learning
+        </Link>
+        <Link 
           to="/contact" 
           className={`nav-item ${location.pathname === '/contact' ? 'active' : ''}`}
         >

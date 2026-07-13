@@ -278,3 +278,52 @@ footer { padding: 3rem 0; text-align: center; border-top: 1px solid var(--border
     .glass-nav { flex-direction: column; gap: 1rem; border-radius: 20px; padding: 1.5rem; }
     .card-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
 }
+
+/* --- ANIMATIONS FOR LEARNING HUB --- */
+.pulse-icon {
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+@keyframes pulseGlow {
+    0% { transform: scale(1); filter: drop-shadow(0 0 5px var(--accent-blue)); }
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 20px var(--accent-purple)); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 5px var(--accent-blue)); }
+}
+
+.wave-expand-icon {
+    animation: waveExpand 3s infinite ease-in-out;
+}
+@keyframes waveExpand {
+    0% { transform: translateY(0); filter: drop-shadow(0 0 0px transparent); }
+    50% { transform: translateY(-10px); filter: drop-shadow(0 15px 15px rgba(245, 158, 11, 0.4)); }
+    100% { transform: translateY(0); filter: drop-shadow(0 0 0px transparent); }
+}
+
+.wave-animation span {
+    animation: bobble 2s infinite ease-in-out alternate;
+}
+.wave-animation span:nth-child(2) {
+    animation-delay: 1s;
+    animation-duration: 1.5s;
+}
+@keyframes bobble {
+    0% { transform: translateY(5px) rotate(-5deg); }
+    100% { transform: translateY(-5px) rotate(5deg); }
+}
+
+.morph-icon span {
+    animation: slideMorph 4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes slideMorph {
+    0%, 100% { transform: translateX(0) scale(1); opacity: 1; }
+    50% { transform: translateX(5px) scale(1.1); opacity: 0.8; }
+}
+
+.floating-card {
+    animation: float 6s infinite ease-in-out;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+

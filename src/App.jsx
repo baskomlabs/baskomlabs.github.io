@@ -6,6 +6,14 @@ import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 
+import LearningHub from './pages/learning/LearningHub';
+import NFCBasics from './pages/learning/NFCBasics';
+import DataExchange from './pages/learning/DataExchange';
+import ComponentsPage from './pages/learning/ComponentsPage';
+import RadioWaves from './pages/learning/RadioWaves';
+import HistoryTrivia from './pages/learning/HistoryTrivia';
+import Terminology from './pages/learning/Terminology';
+
 // Intersection Observer for scroll animations
 function useScrollReveal() {
   useEffect(() => {
@@ -59,6 +67,16 @@ function App() {
               <Route path="/tos-bensy" element={<TermsOfService app="Bensy" />} />
               <Route path="/privacy-policy-pembacakue" element={<PrivacyPolicy app="PembacaKUE" />} />
               <Route path="/tos-pembacakue" element={<TermsOfService app="PembacaKUE" />} />
+              
+              {/* Learning Routes */}
+              <Route path="/learning" element={<LearningHub />} />
+              <Route path="/learning/nfc-basics" element={<NFCBasics />} />
+              <Route path="/learning/data-exchange" element={<DataExchange />} />
+              <Route path="/learning/components" element={<ComponentsPage />} />
+              <Route path="/learning/radio-waves" element={<RadioWaves />} />
+              <Route path="/learning/history-trivia" element={<HistoryTrivia />} />
+              <Route path="/learning/terminology" element={<Terminology />} />
+
               <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>
           </ScrollWrapper>
