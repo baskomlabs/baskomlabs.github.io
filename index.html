@@ -3,215 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline';">
     <title>BaskomLabs | Bengkel Aplikasi Kompeni</title>
     <link rel="icon" type="image/jpeg" href="favicon.jpeg">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=VT323&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- External CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="theme-retro">
-
-    <!-- CRT Overlay Effects -->
-    <div class="scanlines"></div>
-    <div class="crt-flicker"></div>
-    <div class="noise-overlay"></div>
-
+<body class="theme-modern-dark">
+    <!-- Ambient Background Effects -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    
     <!-- MAIN APP CONTAINER -->
     <div id="app" class="container">
         
         <!-- HEADER / NAVIGATION -->
-        <nav>
+        <nav class="glass-nav">
             <div class="logo-area">
-                <div class="logo-text glitch-hover" data-target="home">
-                    &lt;BASKOM<span>LABS</span> /&gt;
+                <div class="logo-text" data-target="home">
+                    Baskom<span>Labs</span>
                 </div>
-                <div class="logo-sub">BENGKEL APLIKASI KOMPENI</div>
             </div>
             
-            <!-- Simplified Menu -->
             <div class="nav-links">
-                <!-- QRSTU is now part of Home, so we just link Home and Contact -->
-                <a href="#home" class="nav-item active" data-target="home">_home</a>
-                <a href="#contact" class="nav-item" data-target="contact">_kontak</a>
+                <a href="#home" class="nav-item active" data-target="home">Home</a>
+                <a href="#contact" class="nav-item" data-target="contact">Contact</a>
             </div>
         </nav>
 
         <!-- VIEWPORT -->
         <main id="viewport">
             
-            <!-- HOME VIEW (Hero + QRSTU Showcase) -->
+            <!-- HOME VIEW -->
             <section id="home" class="active-view">
                 
-                <div class="hero-split">
-                    <!-- Left: Intro Text -->
-                    <div class="hero-text">
-                        <h1 class="glitch-title" data-text="BENGKEL APLIKASI">BENGKEL APLIKASI</h1>
-                        <h1 class="glitch-title sub" data-text="KOMPENI">KOMPENI</h1>
-                        
-                        <div class="terminal-box">
-                            <p>>> Inisialisasi Protokol...</p>
-                            <p>>> Memuat Modul: <span class="highlight-cyan">QRSTU</span> | <span class="highlight-gold">BENSY</span></p>
-                            <p>>> Status: <span class="blink">SIAP TEMPUR</span></p>
-                        </div>
-                    </div>
-
-                    <!-- Right: QRSTU Showcase (Blended Theme) -->
-                    <div class="qrstu-showcase-card tilt-effect">
-                        <div class="card-glass">
-                            <div class="card-content">
-                                <!-- App Logo -->
-                                <div class="app-logo-wrapper">
-                                    <svg viewBox="0 0 512 512" fill="none" class="qrstu-svg">
-                                        <circle cx="256" cy="256" r="130" stroke="#22D3EE" stroke-width="40"/>
-                                        <rect x="216" y="216" width="80" height="80" rx="16" fill="#22D3EE"/>
-                                        <path d="M330 330 L420 420" stroke="#FACC15" stroke-width="40" stroke-linecap="round"/>
-                                        <path d="M420 420 V330 M420 420 H330" stroke="#FACC15" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                
-                                <h2>QRSTU</h2>
-                                <p class="app-tagline">QRIS Reader, Scoring, & Tracking Utility</p>
-                                
-                                <div class="stats-row">
-                                    <div class="stat">
-                                        <span>RANK</span>
-                                        <strong>NEWBIE</strong>
-                                    </div>
-                                    <div class="stat">
-                                        <span>XP</span>
-                                        <strong>0/100</strong>
-                                    </div>
-                                </div>
-
-                                <a href="#" class="btn-download-glitch">
-                                    <svg viewBox="0 0 512 512" width="20" height="20" fill="currentColor">
-                                        <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3L325.3 277.7 104.6 499z"/>
-                                    </svg>
-                                    <span>INSTALL ON PLAY STORE</span>
-                                </a>
-                            </div>
-                            
-                            <!-- Decorative Scanline on Card -->
-                            <div class="card-scanline"></div>
-                        </div>
+                <!-- Hero Section -->
+                <div class="hero">
+                    <div class="hero-content">
+                        <div class="hero-badge reveal-on-scroll">Est. 2026</div>
+                        <h1 class="hero-title reveal-on-scroll">
+                            Bengkel Aplikasi <span class="gradient-text">Kompeni</span>
+                        </h1>
+                        <p class="hero-subtitle reveal-on-scroll">
+                            We engineer high-performance, secure, and intuitive digital solutions. Building the future of mobile and web applications with cutting-edge technology.
+                        </p>
                     </div>
                 </div>
 
-                <!-- App Showcase Section Divider -->
+                <!-- Showcase Section Divider -->
                 <div class="section-divider reveal-on-scroll">
-                    <span class="divider-line"></span>
-                    <span class="divider-label">PRODUK KAMI</span>
-                    <span class="divider-line"></span>
+                    <div class="divider-text">FEATURED PROJECTS</div>
                 </div>
 
                 <!-- Products Grid -->
                 <div class="products-grid reveal-on-scroll">
+                    
                     <!-- QRSTU Card -->
-                    <div class="product-card product-qrstu">
-                        <div class="product-card-inner">
-                            <div class="product-icon">
-                                <svg viewBox="0 0 512 512" fill="none" class="product-svg qrstu-glow">
-                                    <circle cx="256" cy="256" r="130" stroke="#22D3EE" stroke-width="40"/>
-                                    <rect x="216" y="216" width="80" height="80" rx="16" fill="#22D3EE"/>
-                                    <path d="M330 330 L420 420" stroke="#FACC15" stroke-width="40" stroke-linecap="round"/>
-                                    <path d="M420 420 V330 M420 420 H330" stroke="#FACC15" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
+                    <div class="product-card glass-card">
+                        <div class="product-icon-wrapper qrstu-theme">
+                            <svg viewBox="0 0 512 512" fill="none" class="product-svg">
+                                <rect x="128" y="128" width="80" height="80" rx="16" fill="currentColor"/>
+                                <rect x="304" y="128" width="80" height="80" rx="16" fill="currentColor"/>
+                                <rect x="128" y="304" width="80" height="80" rx="16" fill="currentColor"/>
+                                <path d="M304 384h80M384 304v80" stroke="currentColor" stroke-width="40" stroke-linecap="round"/>
+                                <rect x="80" y="80" width="352" height="352" rx="48" stroke="currentColor" stroke-width="32" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="product-info">
                             <h3>QRSTU</h3>
-                            <p class="product-desc">QRIS Reader, Scoring, & Tracking Utility</p>
+                            <p>QRIS Reader, Scoring, & Tracking Utility</p>
                             <div class="product-tags">
-                                <span class="tag tag-cyan">QRIS</span>
-                                <span class="tag tag-cyan">Scanner</span>
-                                <span class="tag tag-cyan">Gamifikasi</span>
+                                <span class="tag tag-qrstu">QRIS</span>
+                                <span class="tag tag-qrstu">FinTech</span>
+                                <span class="tag tag-qrstu">Gamification</span>
                             </div>
-                            <a href="#" class="btn-product btn-qrstu">
-                                <svg viewBox="0 0 512 512" width="16" height="16" fill="currentColor">
-                                    <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3L325.3 277.7 104.6 499z"/>
-                                </svg>
-                                PLAY STORE
-                            </a>
                         </div>
                     </div>
 
-                    <!-- Bensy Card -->
-                    <div class="product-card product-bensy">
-                        <div class="product-card-inner">
-                            <div class="product-icon">
-                                <svg viewBox="0 0 512 512" fill="none" class="product-svg bensy-glow">
-                                    <circle cx="256" cy="256" r="200" stroke="#34D399" stroke-width="8" stroke-dasharray="20 10" opacity="0.3"/>
-                                    <path d="M256 120 L256 280" stroke="#34D399" stroke-width="32" stroke-linecap="round"/>
-                                    <circle cx="256" cy="300" r="40" fill="#34D399" opacity="0.3"/>
-                                    <path d="M200 340 Q256 400 312 340" stroke="#FBBF24" stroke-width="16" stroke-linecap="round" fill="none"/>
-                                    <circle cx="180" cy="200" r="12" fill="#FBBF24"/>
-                                    <circle cx="332" cy="200" r="12" fill="#FBBF24"/>
-                                    <path d="M160 160 L200 200" stroke="#34D399" stroke-width="8" stroke-linecap="round"/>
-                                    <path d="M352 160 L312 200" stroke="#34D399" stroke-width="8" stroke-linecap="round"/>
-                                    <rect x="230" y="100" width="52" height="24" rx="12" fill="#FBBF24" opacity="0.8"/>
-                                </svg>
-                            </div>
-                            <h3>BENSY</h3>
-                            <p class="product-desc">Fuel & Vehicle Cost Tracker — Bensin Asyik!</p>
+                    <!-- PembacaKUE Card -->
+                    <div class="product-card glass-card">
+                        <div class="product-icon-wrapper pembacakue-theme">
+                            <svg viewBox="0 0 512 512" fill="none" class="product-svg">
+                                <rect x="64" y="144" width="384" height="224" rx="32" stroke="currentColor" stroke-width="32" fill="none"/>
+                                <circle cx="160" cy="256" r="48" fill="currentColor"/>
+                                <rect x="256" y="216" width="128" height="24" rx="12" fill="currentColor"/>
+                                <rect x="256" y="272" width="80" height="24" rx="12" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="product-info">
+                            <h3>PembacaKUE</h3>
+                            <p>Advanced Identity Card Reader & Verifier</p>
                             <div class="product-tags">
-                                <span class="tag tag-emerald">BBM</span>
-                                <span class="tag tag-emerald">Kendaraan</span>
-                                <span class="tag tag-emerald">OCR</span>
+                                <span class="tag tag-pembacakue">Identity</span>
+                                <span class="tag tag-pembacakue">e-KTP</span>
+                                <span class="tag tag-pembacakue">Utility</span>
                             </div>
-                            <a href="#" class="btn-product btn-bensy">
-                                <svg viewBox="0 0 512 512" width="16" height="16" fill="currentColor">
-                                    <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3L325.3 277.7 104.6 499z"/>
-                                </svg>
-                                COMING SOON
-                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- QRSTU Features -->
-                <div class="features-section reveal-on-scroll">
-                    <h3 class="features-section-title"><span class="highlight-cyan">QRSTU</span> // FITUR</h3>
-                    <div class="features-grid">
-                        <div class="feature-item">
-                            <span class="f-icon">🕵️</span>
-                            <h3>DECODE</h3>
-                            <p>Bedah isi QRIS. Jangan mau asal bayar.</p>
-                        </div>
-                        <div class="feature-item">
-                            <span class="f-icon">🏆</span>
-                            <h3>RANK UP</h3>
-                            <p>Dari Nubie jadi Dewa. Pamerkan levelmu.</p>
-                        </div>
-                        <div class="feature-item">
-                            <span class="f-icon">📈</span>
-                            <h3>TRACK</h3>
-                            <p>Riwayat scan tersimpan aman & lokal.</p>
-                        </div>
-                    </div>
+                <!-- Technology Section -->
+                <div class="section-divider reveal-on-scroll" style="margin-top: 4rem;">
+                    <div class="divider-text">CORE TECHNOLOGIES</div>
                 </div>
 
-                <!-- Bensy Features -->
-                <div class="features-section reveal-on-scroll">
-                    <h3 class="features-section-title"><span class="highlight-emerald">BENSY</span> // FITUR</h3>
-                    <div class="features-grid">
-                        <div class="feature-item feature-bensy">
-                            <span class="f-icon">⛽</span>
-                            <h3>CATAT BBM</h3>
-                            <p>Log pengisian BBM lengkap: harga, volume, odometer, SPBU.</p>
+                <div class="tech-grid reveal-on-scroll">
+                    <!-- NFC Technology Card -->
+                    <div class="tech-card glass-card">
+                        <div class="tech-header">
+                            <div class="tech-icon tech-nfc">
+                                <svg viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="32">
+                                    <path d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96z"/>
+                                    <path d="M256 80c-97.1 0-176 78.9-176 176s78.9 176 176 176 176-78.9 176-176S353.1 80 256 80z"/>
+                                    <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0z"/>
+                                </svg>
+                            </div>
+                            <h3>NFC Technology</h3>
                         </div>
-                        <div class="feature-item feature-bensy">
-                            <span class="f-icon">📸</span>
-                            <h3>SCAN OCR</h3>
-                            <p>Scan odometer & struk otomatis pakai kamera. Offline ML Kit.</p>
-                        </div>
-                        <div class="feature-item feature-bensy">
-                            <span class="f-icon">📊</span>
-                            <h3>ANALISIS</h3>
-                            <p>Statistik konsumsi BBM, total pengeluaran, & biaya kendaraan.</p>
-                        </div>
+                        <p class="tech-desc">
+                            We leverage advanced Near Field Communication (NFC) protocols for secure hardware-software interactions. Integrating modern contactless systems with high-end encryption to ensure reliable data transmission and enhanced security in applications like PembacaKUE.
+                        </p>
+                        <div class="tech-ref">Ref ID: 139abb2b-b563-4fd9-bf7a-95c0b3dd0cea</div>
                     </div>
                 </div>
 
@@ -220,198 +138,100 @@
             <!-- CONTACT VIEW -->
             <section id="contact" class="hidden-view">
                 <div class="centered-content">
-                    <h2>02_KOMUNIKASI</h2>
-                    <div class="retro-card reveal-on-scroll">
-                        <div class="retro-card-header">
-                            <span>MAIL_CLIENT.EXE</span>
-                            <span class="status-badge">LISTENING</span>
-                        </div>
-                        <p>Menemukan bug? Atau ingin request fitur?</p>
-                        <br>
-                        <div class="contact-link">
-                            <span>>> Email:</span>
-                            <a href="mailto:baskomdevs@gmail.com" class="glitch-link">baskomdevs@gmail.com</a>
-                        </div>
+                    <div class="glass-card contact-card reveal-on-scroll">
+                        <h2>Get in Touch</h2>
+                        <p>Interested in collaborating or want to report an issue? We'd love to hear from you.</p>
+                        <a href="mailto:baskomdevs@gmail.com" class="btn-primary mt-2">
+                            Email Us
+                        </a>
                     </div>
                 </div>
             </section>
 
-            <!-- PRIVACY POLICY VIEW — QRSTU (Hidden from Menu, accessible via URL) -->
+            <!-- PRIVACY POLICY VIEW — QRSTU -->
             <section id="privacy-policy" class="hidden-view">
-                <h2>04_PRIVACY_POLICY.MD</h2>
-                <div class="retro-card terminal-view">
-                    <div class="retro-card-header">
-                        <span>CONFIDENTIAL_FILE :: QRSTU</span>
-                        <button class="close-btn" data-target="home">[KEMBALI KE HOME]</button>
+                <div class="glass-card document-card">
+                    <div class="card-header">
+                        <h2>Privacy Policy - QRSTU</h2>
+                        <button class="close-btn btn-secondary" data-target="home">Back to Home</button>
                     </div>
-                    <div class="markdown-content">
-                        <h3>Privacy Policy for QRSTU</h3>
+                    <div class="document-content">
                         <p class="meta">Effective Date: January 11, 2026</p>
-
                         <p><strong>QRSTU</strong> ("we", "our", or "us") is committed to protecting your privacy.</p>
-
-                        <h4>1. Information We Collect</h4>
-                        <h5>Permission-Based Data</h5>
+                        
+                        <h3>1. Information We Collect</h3>
+                        <h4>Permission-Based Data</h4>
                         <ul>
                             <li><strong>Camera</strong>: Used strictly for scanning QR codes locally. No video data is sent to servers.</li>
                         </ul>
-
-                        <h5>Third-Party Services</h5>
+                        
+                        <h4>Third-Party Services</h4>
                         <ul>
                             <li><strong>Firebase Authentication</strong>: For secure sign-ins.</li>
                             <li><strong>Firebase Crashlytics</strong>: For anonymous crash reporting.</li>
                             <li><strong>Firebase Firestore</strong>: For data syncing.</li>
                         </ul>
 
-                        <h4>2. Data Retention & Deletion</h4>
-                        <p class="highlight-text">
+                        <h3>2. Data Retention & Deletion</h3>
+                        <div class="alert-box">
                             <strong>How to Delete Your Data:</strong><br>
-                            > Open App > <strong>Settings</strong> > <strong>Account</strong> > <strong>Delete Account</strong>.<br>
-                            > This permanently removes your data.
-                        </p>
+                            Open App &gt; <strong>Settings</strong> &gt; <strong>Account</strong> &gt; <strong>Delete Account</strong>.<br>
+                            This permanently removes your data.
+                        </div>
 
-                        <h4>3. Contact Us</h4>
-                        <p>> Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+                        <h3>3. Contact Us</h3>
+                        <p>Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
                     </div>
                 </div>
             </section>
 
-            <!-- PRIVACY POLICY VIEW — BENSY (Hidden from Menu, accessible via URL) -->
+            <!-- PRIVACY POLICY VIEW — BENSY -->
             <section id="privacy-policy-bensy" class="hidden-view">
-                <h2>05_PRIVACY_POLICY.MD</h2>
-                <div class="retro-card terminal-view">
-                    <div class="retro-card-header">
-                        <span>CONFIDENTIAL_FILE :: BENSY</span>
-                        <button class="close-btn" data-target="home">[KEMBALI KE HOME]</button>
+                <div class="glass-card document-card">
+                    <div class="card-header">
+                        <h2>Privacy Policy - Bensy</h2>
+                        <button class="close-btn btn-secondary" data-target="home">Back to Home</button>
                     </div>
-                    <div class="markdown-content">
-                        <h3>Privacy Policy for Bensy</h3>
+                    <div class="document-content">
                         <p class="meta">Effective Date: June 19, 2026</p>
-
-                        <p><strong>Bensy</strong> ("we", "our", or "us") is a fuel and vehicle cost tracking application operated by BaskomLabs. We are committed to protecting your privacy and being transparent about the data the app handles.</p>
-
-                        <h4>1. Information We Collect</h4>
-
-                        <h5>Account Data (Signed-in users)</h5>
+                        <p><strong>Bensy</strong> ("we", "our", or "us") is a fuel and vehicle cost tracking application operated by BaskomLabs.</p>
+                        
+                        <h3>1. Information We Collect</h3>
+                        <h4>Account Data (Signed-in users)</h4>
                         <ul>
-                            <li><strong>Google Account profile</strong>: name, email address, and profile picture, obtained via Google Sign-In when you authenticate.</li>
-                            <li><strong>User ID</strong>: a unique identifier issued by Firebase Authentication to associate your data with your account.</li>
+                            <li><strong>Google Account profile</strong>: name, email address, and profile picture.</li>
+                            <li><strong>User ID</strong>: unique identifier issued by Firebase Authentication.</li>
                         </ul>
-
-                        <h5>Vehicle &amp; Usage Data</h5>
+                        <h4>Permission-Based Data</h4>
                         <ul>
-                            <li><strong>Vehicle records</strong>: make, model, year, fuel type, and odometer readings you enter.</li>
-                            <li><strong>Fuel logs</strong>: date, volume, price, odometer, fuel type, and station name you record.</li>
-                            <li><strong>Other costs</strong>: optional records for service, parking, tolls, or related expenses.</li>
+                            <li><strong>Camera</strong>: processed entirely on your device using Google ML Kit.</li>
                         </ul>
-
-                        <h5>Permission-Based Data</h5>
-                        <ul>
-                            <li><strong>Camera</strong>: used only when you tap the camera icon to scan an odometer or receipt. Captured images are processed <strong>entirely on your device</strong> using Google ML Kit (offline OCR) to extract numbers, then discarded from temporary cache. No image content is uploaded to our servers.</li>
-                            <li><strong>Photo library</strong>: if you attach a receipt photo to a fuel log, only the photo you explicitly select is read by the app.</li>
-                        </ul>
-
-                        <h5>Guest Mode</h5>
-                        <p>If you continue as a Guest, <strong>all data stays on your device only</strong>. We do not collect, transmit, or have visibility into Guest data. Uninstalling the app or clearing app data will permanently delete it.</p>
-
-                        <h4>2. Third-Party Services</h4>
-                        <ul>
-                            <li><strong>Firebase Authentication</strong> (Google LLC) — secure Google Sign-In.</li>
-                            <li><strong>Supabase</strong> — cloud database used to sync your vehicle and fuel records across your devices when signed in.</li>
-                            <li><strong>Google ML Kit Text Recognition</strong> — runs <em>locally on your device</em>. No image or text is transmitted to Google or to us.</li>
-                        </ul>
-                        <p>These providers process data on our behalf and are bound by their own privacy terms.</p>
-
-                        <h4>3. How We Use Your Data</h4>
-                        <ul>
-                            <li>To provide the core functionality: storing, syncing, and analyzing your fuel and vehicle records.</li>
-                            <li>To authenticate you and keep your account secure.</li>
-                            <li>To display aggregate statistics (e.g. average consumption, total spend) on your own device.</li>
-                        </ul>
-                        <p>We do <strong>not</strong> sell your data, use it for advertising, or share it with third parties for marketing.</p>
-
-                        <h4>4. Data Retention &amp; Deletion</h4>
-                        <p class="highlight-text">
+                        
+                        <h3>2. Data Retention & Deletion</h3>
+                        <div class="alert-box">
                             <strong>How to Delete Your Account &amp; Data:</strong><br>
-                            > Open App &gt; <strong>Profile</strong> &gt; <strong>Account</strong> &gt; <strong>Delete Account</strong>.<br>
-                            > This permanently removes your account and all associated vehicle and fuel records from our servers.
-                        </p>
-                        <p>You may also request deletion by emailing us at the address below. We will process verified requests within 30 days.</p>
-
-                        <h4>5. Children's Privacy</h4>
-                        <p>Bensy is not directed to children under 13 and we do not knowingly collect data from them.</p>
-
-                        <h4>6. Changes to This Policy</h4>
-                        <p>We may update this policy from time to time. The "Effective Date" above will reflect the most recent revision.</p>
-
-                        <h4>7. Contact Us</h4>
-                        <p>> Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+                            Open App &gt; <strong>Profile</strong> &gt; <strong>Account</strong> &gt; <strong>Delete Account</strong>.
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- TERMS OF SERVICE VIEW — BENSY (Hidden from Menu, accessible via URL) -->
+            <!-- TERMS OF SERVICE VIEW — BENSY -->
             <section id="tos-bensy" class="hidden-view">
-                <h2>06_TERMS_OF_SERVICE.MD</h2>
-                <div class="retro-card terminal-view">
-                    <div class="retro-card-header">
-                        <span>LEGAL_FILE :: BENSY</span>
-                        <button class="close-btn" data-target="home">[KEMBALI KE HOME]</button>
+                <div class="glass-card document-card">
+                    <div class="card-header">
+                        <h2>Terms of Service - Bensy</h2>
+                        <button class="close-btn btn-secondary" data-target="home">Back to Home</button>
                     </div>
-                    <div class="markdown-content">
-                        <h3>Terms of Service for Bensy</h3>
+                    <div class="document-content">
                         <p class="meta">Effective Date: June 19, 2026</p>
-
-                        <p>These Terms of Service ("Terms") govern your access to and use of the <strong>Bensy</strong> mobile application ("App"), operated by <strong>BaskomLabs</strong> ("we", "our", or "us"). By downloading, installing, or using Bensy, you agree to be bound by these Terms.</p>
-
-                        <h4>1. Acceptance of Terms</h4>
-                        <p>By accessing or using the App, you confirm that you are at least 13 years old and agree to comply with these Terms. If you do not agree, you must not use the App.</p>
-
-                        <h4>2. Description of Service</h4>
-                        <p>Bensy is a personal fuel and vehicle cost tracking application. It allows you to:</p>
-                        <ul>
-                            <li>Record and manage vehicle information (make, model, year, fuel type, odometer readings).</li>
-                            <li>Log fuel purchases (date, volume, price, odometer, fuel type, station name).</li>
-                            <li>Track other vehicle-related expenses (service, parking, tolls).</li>
-                            <li>Use on-device camera OCR to scan odometer readings and receipts.</li>
-                            <li>View aggregate statistics about fuel consumption and spending.</li>
-                        </ul>
-
-                        <h4>3. User Accounts</h4>
-                        <p>You may use Bensy in <strong>Guest Mode</strong> (data stored locally only) or sign in with a <strong>Google Account</strong> (data synced via Supabase). You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account.</p>
-
-                        <h4>4. User Data & Content</h4>
-                        <p>All vehicle records, fuel logs, and cost entries you create ("User Content") remain your property. We do not claim ownership of your data. By using the sync feature, you grant us a limited license to store and transmit your User Content solely to provide the service.</p>
-
-                        <h4>5. Acceptable Use</h4>
-                        <p>You agree not to:</p>
-                        <ul>
-                            <li>Use the App for any unlawful or fraudulent purpose.</li>
-                            <li>Attempt to reverse-engineer, decompile, or disassemble the App.</li>
-                            <li>Interfere with or disrupt the App's servers or infrastructure.</li>
-                            <li>Transmit malicious code or exploit vulnerabilities in the App.</li>
-                        </ul>
-
-                        <h4>6. Third-Party Services</h4>
-                        <p>The App uses third-party services including Firebase Authentication, Supabase, and Google ML Kit. Your use of these services is subject to their respective terms of service and privacy policies.</p>
-
-                        <h4>7. Disclaimer of Warranties</h4>
-                        <p>The App is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, express or implied. We do not guarantee that the App will be error-free, uninterrupted, or free of harmful components.</p>
-
-                        <h4>8. Limitation of Liability</h4>
-                        <p>To the maximum extent permitted by law, BaskomLabs shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the App, including but not limited to loss of data, revenue, or profits.</p>
-
-                        <h4>9. Account Termination</h4>
-                        <p>You may delete your account at any time via the App (Profile > Account > Delete Account). We reserve the right to suspend or terminate accounts that violate these Terms.</p>
-
-                        <h4>10. Changes to Terms</h4>
-                        <p>We may update these Terms from time to time. Continued use of the App after changes constitutes acceptance of the revised Terms. The "Effective Date" above reflects the most recent revision.</p>
-
-                        <h4>11. Governing Law</h4>
-                        <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of Indonesia.</p>
-
-                        <h4>12. Contact Us</h4>
-                        <p>> Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+                        <p>These Terms of Service ("Terms") govern your access to and use of Bensy, operated by BaskomLabs.</p>
+                        
+                        <h3>1. Acceptance of Terms</h3>
+                        <p>By accessing or using the App, you confirm that you are at least 13 years old and agree to comply with these Terms.</p>
+                        
+                        <h3>2. Limitation of Liability</h3>
+                        <p>To the maximum extent permitted by law, BaskomLabs shall not be liable for any indirect, incidental, special, consequential, or punitive damages.</p>
                     </div>
                 </div>
             </section>
@@ -420,15 +240,14 @@
 
         <footer>
             <div class="footer-line">
-                © 2026 Bengkel Aplikasi Kompeni.
+                © 2026 BaskomLabs | Bengkel Aplikasi Kompeni. Secure & Optimized.
             </div>
-            <!-- Per-app privacy policies (required by Play Store listing) -->
             <div class="footer-policies">
-                <a href="#privacy-policy" class="footer-tiny" data-target="privacy-policy">QRSTU Privacy</a>
+                <a href="#privacy-policy" class="footer-link" data-target="privacy-policy">QRSTU Privacy</a>
                 <span class="footer-sep">·</span>
-                <a href="#privacy-policy-bensy" class="footer-tiny" data-target="privacy-policy-bensy">Bensy Privacy</a>
+                <a href="#privacy-policy-bensy" class="footer-link" data-target="privacy-policy-bensy">Bensy Privacy</a>
                 <span class="footer-sep">·</span>
-                <a href="#tos-bensy" class="footer-tiny" data-target="tos-bensy">Bensy ToS</a>
+                <a href="#tos-bensy" class="footer-link" data-target="tos-bensy">Bensy ToS</a>
             </div>
         </footer>
     </div>

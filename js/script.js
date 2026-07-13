@@ -89,20 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-        // Initial state set in CSS usually, but JS enforces the 'visible' class
         observer.observe(el);
     });
 
-    // Add visible class style dynamically if not in CSS
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .reveal-on-scroll { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
-        .reveal-on-scroll.visible { opacity: 1; transform: translateY(0); }
-    `;
-    document.head.appendChild(style);
-
-
-    // --- CONSOLE EASTER EGG ---
-    console.log("%c BENGKEL APLIKASI KOMPENI ", "background: #0000BB; color: #00FF41; font-size: 20px; padding: 10px;");
-    console.log("System Status: OPERATIONAL");
 });
