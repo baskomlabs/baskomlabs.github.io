@@ -17,6 +17,9 @@ import Terminology from './pages/learning/Terminology';
 import QRISBasics from './pages/learning/QRISBasics';
 import QRISDataParsing from './pages/learning/QRISDataParsing';
 import QRISComponents from './pages/learning/QRISComponents';
+import QRISCameraVision from './pages/learning/QRISCameraVision';
+import QRISHistoryTrivia from './pages/learning/QRISHistoryTrivia';
+import QRISTerminology from './pages/learning/QRISTerminology';
 
 // Intersection Observer for scroll animations
 function useScrollReveal(pathname) {
@@ -87,6 +90,9 @@ function App() {
               <Route path="/learning/qris-basics" element={<QRISBasics />} />
               <Route path="/learning/qris-data-parsing" element={<QRISDataParsing />} />
               <Route path="/learning/qris-components" element={<QRISComponents />} />
+              <Route path="/learning/qris-camera-vision" element={<QRISCameraVision />} />
+              <Route path="/learning/qris-history-trivia" element={<QRISHistoryTrivia />} />
+              <Route path="/learning/qris-terminology" element={<QRISTerminology />} />
 
               <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>

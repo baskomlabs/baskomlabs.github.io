@@ -64,6 +64,8 @@ function LearningHub() {
             </div>
           </div>
         </Link>
+      </div>
+
       <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
         <div className="divider-text">QRISPARSER: {t('learning.hub_qris_title')}</div>
       </div>
@@ -97,6 +99,35 @@ function LearningHub() {
               <p>{t('learning.hub_qris_card3_desc')}</p>
             </div>
           </div>
+        </Link>
+      </div>
+
+      <div className="products-grid reveal-on-scroll" style={{ marginTop: '2rem' }}>
+        <Link to="/learning/qris-camera-vision" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="product-card glass-card" style={{ height: '100%' }}>
+                <div className="product-info">
+                <h3>{t('learning.hub_qris_card4_title')}</h3>
+                <p>{t('learning.hub_qris_card4_desc')}</p>
+                </div>
+            </div>
+        </Link>
+
+        <Link to="/learning/qris-history-trivia" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="product-card glass-card" style={{ height: '100%' }}>
+                <div className="product-info">
+                <h3>{t('learning.hub_qris_card5_title')}</h3>
+                <p>{t('learning.hub_qris_card5_desc')}</p>
+                </div>
+            </div>
+        </Link>
+
+        <Link to="/learning/qris-terminology" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="product-card glass-card" style={{ height: '100%' }}>
+                <div className="product-info">
+                <h3>{t('learning.hub_qris_card6_title')}</h3>
+                <p>{t('learning.hub_qris_card6_desc')}</p>
+                </div>
+            </div>
         </Link>
       </div>
 
