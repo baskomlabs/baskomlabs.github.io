@@ -7,23 +7,23 @@
   },
   "home": {
     "seo_title": "BaskomLabs | Bengkel Aplikasi Kompeni",
-    "seo_desc": "Kami merekayasa solusi digital berperforma tinggi, aman, dan intuitif.",
-    "hero_badge": "Berdiri sejak 2026",
+    "seo_desc": "Membangun aplikasi mobile dan web yang cepat, aman, dan gampang dipakai.",
+    "hero_badge": "Berdiri sejak 2017",
     "hero_title_1": "Bengkel Aplikasi",
     "hero_title_2": "Kompeni",
-    "hero_subtitle": "Kami merekayasa solusi digital berperforma tinggi, aman, dan intuitif. Membangun masa depan aplikasi mobile dan web dengan teknologi mutakhir.",
+    "hero_subtitle": "Kami fokus meracik aplikasi mobile dan web yang nggak cuma cepat dan aman, tapi juga nyaman dipakai. Bantu wujudin ide kamu jadi produk digital yang solid.",
     "featured_projects": "PROYEK UNGGULAN",
     "qrstu_desc": "Utilitas Pembaca, Penilaian, & Pelacakan QRIS",
     "pembacakue_desc": "Pembaca & Pemverifikasi Kartu Identitas Canggih",
     "core_technologies": "TEKNOLOGI INTI",
     "nfc_title": "Teknologi NFC",
-    "nfc_desc": "Kami memanfaatkan protokol Near Field Communication (NFC) tingkat lanjut untuk interaksi perangkat keras-perangkat lunak yang aman. Mengintegrasikan sistem nirsentuh modern dengan enkripsi kelas atas untuk memastikan transmisi data yang andal dan keamanan yang ditingkatkan dalam aplikasi seperti PembacaKUE.",
+    "nfc_desc": "Kami biasa ngoprek teknologi NFC buat nyambungin hardware dan software dengan aman. Bikin sistem kartu atau tap-tap-an jadi lebih pintar dan terenkripsi, seperti yang kami bikin di PembacaKUE.",
     "contact_title": "Hubungi Kami",
-    "contact_desc": "Tertarik untuk berkolaborasi atau ingin melaporkan masalah? Kami sangat ingin mendengar dari Anda.",
+    "contact_desc": "Punya ide proyek seru, mau kolaborasi, atau nemu bug di aplikasi kami? Jangan sungkan, sapa kami aja!",
     "email_us": "Email Kami"
   },
   "footer": {
-    "copyright": "© 2026 BaskomLabs | Bengkel Aplikasi Kompeni. Aman & Optimal.",
+    "copyright": "© 2026 BaskomLabs | Bengkel Aplikasi Kompeni. Aman, Cepat, Mantap.",
     "privacy": "Privasi",
     "tos": "S&K"
   }
