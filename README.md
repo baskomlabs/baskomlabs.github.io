@@ -1,51 +1,16 @@
-# BaskomLabs
+# React + Vite
 
-**"Bengkel Aplikasi Kompeni"**
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-> *>> Inisialisasi Protokol...*
-> *>> Status: ONLINE*
+Currently, two official plugins are available:
 
-**BaskomLabs** is a digital workshop dedicated to crafting essential technology solutions with a unique blend of retro aesthetics and modern functionality. We mix raw code into functional applications—serious engineering, delivered with a pixelated smile.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
----
+## React Compiler
 
-## 📱 Flagship Product: QRSTU
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-**Decode the Code. Rank Up the Mode.**
+## Expanding the Oxlint configuration
 
-**QRSTU** stands for **QRIS Reader, Scoring, & Tracking Utility**.
-It is not just a scanner; it is a tool designed to demystify the transactions you make every day while adding a layer of gamification to your digital spending.
-
-### Core Features
-
-*   **🕵️ Decode (Advanced Parser):**
-    Don't just pay blindly. QRSTU parses raw QRIS data, revealing the Merchant ID, Criteria, and other hidden details behind those pixelated squares.
-
-*   **🏆 Rank Up (Gamification):**
-    Turn every transaction into an achievement. Earn XP for every unique scan and climb the ladder from a **Newbie** to a **QRIS God**.
-
-*   **📈 Track (Local History):**
-    Your data belongs to you. We provide a smart tracking history that stores your scan logs locally on your device.
-
----
-
-## 🛠️ Technical Overview
-
-This repository hosts the official landing page for BaskomLabs and QRSTU.
-
-*   **Architecture:** Single Page Application (SPA) with Vanilla JS.
-*   **Design System:** Dual-Theme.
-    *   *Theme A:* Retro-Futurist CRT (Baskom Identity).
-    *   *Theme B:* Modern Glassmorphism (QRSTU Identity).
-*   **Performance:** Lightweight, no build steps required, deployed via GitHub Pages.
-
----
-
-## 🔗 Connect
-
-*   **Website:** [baskomlabs.github.io](https://baskomlabs.github.io)
-*   **Contact:** [baskomdevs@gmail.com](mailto:baskomdevs@gmail.com)
-
----
-
-*© 2026 Bengkel Aplikasi Kompeni. Powered by Nasi Padang and StackOverflow.*
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
