@@ -21,6 +21,11 @@ import QRISCameraVision from './pages/learning/QRISCameraVision';
 import QRISHistoryTrivia from './pages/learning/QRISHistoryTrivia';
 import QRISTerminology from './pages/learning/QRISTerminology';
 
+import YasinHikmah from './pages/learning/YasinHikmah';
+import TahlilHikmah from './pages/learning/TahlilHikmah';
+import MaulidHikmah from './pages/learning/MaulidHikmah';
+import TradisiNUHikmah from './pages/learning/TradisiNUHikmah';
+
 // Intersection Observer for scroll animations
 function useScrollReveal(pathname) {
   useEffect(() => {
@@ -76,6 +81,8 @@ function App() {
               <Route path="/tos-bensy" element={<TermsOfService app="Bensy" />} />
               <Route path="/privacy-policy-pembacakue" element={<PrivacyPolicy app="PembacaKUE" />} />
               <Route path="/tos-pembacakue" element={<TermsOfService app="PembacaKUE" />} />
+              <Route path="/privacy-policy-yasintahlil" element={<PrivacyPolicy app="Yasin Tahlil NU" />} />
+              <Route path="/tos-yasintahlil" element={<TermsOfService app="Yasin Tahlil NU" />} />
               
               {/* Learning Routes */}
               <Route path="/learning" element={<LearningHub />} />
@@ -93,6 +100,12 @@ function App() {
               <Route path="/learning/qris-camera-vision" element={<QRISCameraVision />} />
               <Route path="/learning/qris-history-trivia" element={<QRISHistoryTrivia />} />
               <Route path="/learning/qris-terminology" element={<QRISTerminology />} />
+
+              {/* Yasin Tahlil Learning Routes */}
+              <Route path="/learning/yasin-hikmah" element={<YasinHikmah />} />
+              <Route path="/learning/tahlil-hikmah" element={<TahlilHikmah />} />
+              <Route path="/learning/maulid-hikmah" element={<MaulidHikmah />} />
+              <Route path="/learning/tradisi-nu-hikmah" element={<TradisiNUHikmah />} />
 
               <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>

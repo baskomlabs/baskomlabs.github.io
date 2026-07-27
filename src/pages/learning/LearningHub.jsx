@@ -132,6 +132,53 @@ function LearningHub() {
       </div>
 
       <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
+        <div className="divider-text">YASIN TAHLIL NU: {t('learning.hub_yasintahlil_title')}</div>
+      </div>
+
+      <div className="products-grid reveal-on-scroll">
+        <Link to="/learning/yasin-hikmah" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="product-card glass-card" style={{ height: '100%' }}>
+            <div className="product-icon-wrapper yasintahlil-theme" style={{ fontSize: '2.5rem' }}>📖</div>
+            <div className="product-info">
+              <h3>{t('learning.hub_yt_card1_title')}</h3>
+              <p>{t('learning.hub_yt_card1_desc')}</p>
+            </div>
+          </div>
+        </Link>
+        
+        <Link to="/learning/tahlil-hikmah" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="product-card glass-card" style={{ height: '100%' }}>
+            <div className="product-icon-wrapper yasintahlil-theme" style={{ fontSize: '2.5rem', background: 'linear-gradient(135deg, #059669, #064e3b)' }}>🤲</div>
+            <div className="product-info">
+              <h3>{t('learning.hub_yt_card2_title')}</h3>
+              <p>{t('learning.hub_yt_card2_desc')}</p>
+            </div>
+          </div>
+        </Link>
+
+        <Link to="/learning/maulid-hikmah" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="product-card glass-card" style={{ height: '100%' }}>
+            <div className="product-icon-wrapper yasintahlil-theme" style={{ fontSize: '2.5rem', background: 'linear-gradient(135deg, #047857, #134e4a)' }}>✨</div>
+            <div className="product-info">
+              <h3>{t('learning.hub_yt_card3_title')}</h3>
+              <p>{t('learning.hub_yt_card3_desc')}</p>
+            </div>
+          </div>
+        </Link>
+      </div>
+
+      <div className="products-grid reveal-on-scroll" style={{ marginTop: '2rem' }}>
+        <Link to="/learning/tradisi-nu-hikmah" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="product-card glass-card" style={{ height: '100%' }}>
+                <div className="product-info">
+                <h3>{t('learning.hub_yt_card4_title')}</h3>
+                <p>{t('learning.hub_yt_card4_desc')}</p>
+                </div>
+            </div>
+        </Link>
+      </div>
+
+      <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
         <div className="divider-text">{t('learning.hub_extra_trivia')}</div>
       </div>
       <div className="products-grid reveal-on-scroll" style={{ marginTop: '2rem' }}>

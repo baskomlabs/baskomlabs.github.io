@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 function Home({ scrollToContact }) {
   const { t } = useTranslation();
+  const containerRef = useRef(null);
 
   useEffect(() => {
     if (scrollToContact) {
@@ -12,8 +13,42 @@ function Home({ scrollToContact }) {
     }
   }, [scrollToContact]);
 
+  // Parallax Effect
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+    
+    // Calculate rotation (-10deg to +10deg max)
+    const xPos = (clientX / innerWidth - 0.5) * 20;
+    const yPos = (clientY / innerHeight - 0.5) * -20;
+    
+    // Calculate glow movement
+    const moveX = (clientX / innerWidth - 0.5) * 50;
+    const moveY = (clientY / innerHeight - 0.5) * 50;
+
+    containerRef.current.style.setProperty('--rx', `${yPos}deg`);
+    containerRef.current.style.setProperty('--ry', `${xPos}deg`);
+    
+    document.documentElement.style.setProperty('--px', `${moveX}px`);
+    document.documentElement.style.setProperty('--py', `${moveY}px`);
+  };
+
   return (
-    <>
+    <div ref={containerRef} onMouseMove={handleMouseMove} style={{ perspective: '1000px' }}>
+      {/* Adding dynamic styles for parallax on global glows through inline styles */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .glow-1 { transform: translate(calc(var(--px, 0px) * -1), calc(var(--py, 0px) * -1)); }
+        .glow-2 { transform: translate(calc(var(--px, 0px) * 1.5), calc(var(--py, 0px) * 1.5)); }
+        .product-card {
+           transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+           transition: transform 0.1s ease-out;
+        }
+        .product-card:hover {
+           transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale3d(1.05, 1.05, 1.05);
+        }
+      `}} />
+
       <section id="home" className="active-view">
         <div className="hero">
           <div className="hero-content">
@@ -72,6 +107,23 @@ function Home({ scrollToContact }) {
               </div>
             </div>
           </div>
+
+          <div className="product-card glass-card">
+            <div className="product-icon-wrapper yasintahlil-theme">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="product-svg" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+              </svg>
+            </div>
+            <div className="product-info">
+              <h3>Yasin Tahlil NU</h3>
+              <p>{t('home.yasintahlil_desc')}</p>
+              <div className="product-tags">
+                <span className="tag tag-yasintahlil">Spiritual</span>
+                <span className="tag tag-yasintahlil">Android</span>
+                <span className="tag tag-yasintahlil">Utility</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
@@ -108,8 +160,9 @@ function Home({ scrollToContact }) {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
 export default Home;
+

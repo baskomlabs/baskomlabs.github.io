@@ -158,11 +158,11 @@ a { text-decoration: none; color: inherit; }
     border-radius: 24px;
     padding: 2.5rem;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
 }
 .glass-card:hover {
-    transform: translateY(-5px);
     border-color: rgba(255,255,255,0.15);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
 }
 
 /* --- PRODUCTS GRID --- */
@@ -188,6 +188,11 @@ a { text-decoration: none; color: inherit; }
     background: linear-gradient(135deg, #d97706, var(--pembacakue-color));
     box-shadow: 0 8px 25px rgba(245, 158, 11, 0.25);
 }
+.yasintahlil-theme {
+    background: linear-gradient(135deg, #065f46, #047857); /* Emerald dark green */
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(250, 204, 21, 0.4); /* Gold subtle accent */
+}
 .product-svg { width: 50%; height: 50%; }
 .product-info h3 {
     font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;
@@ -203,6 +208,7 @@ a { text-decoration: none; color: inherit; }
 }
 .tag-qrstu { background: rgba(34, 211, 238, 0.1); color: var(--qrstu-color); }
 .tag-pembacakue { background: rgba(245, 158, 11, 0.1); color: var(--pembacakue-color); }
+.tag-yasintahlil { background: rgba(16, 185, 129, 0.1); color: #34d399; }
 
 /* --- TECH GRID --- */
 .tech-grid {
@@ -274,9 +280,29 @@ footer { padding: 3rem 0; text-align: center; border-top: 1px solid var(--border
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .hero-title { font-size: 2.8rem; }
-    .glass-nav { flex-direction: column; gap: 1rem; border-radius: 20px; padding: 1.5rem; }
-    .card-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .container { width: 95%; }
+    .hero { padding: 2rem 0; min-height: 40vh; }
+    .hero-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 1rem; }
+    
+    .glass-nav { flex-direction: column; gap: 1rem; border-radius: 20px; padding: 1.2rem; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    
+    .glass-card { padding: 1.5rem; border-radius: 16px; }
+    .products-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+    .product-icon-wrapper { width: 64px; height: 64px; }
+    
+    .tech-card { padding: 1.5rem; }
+    .tech-header { flex-direction: column; text-align: center; gap: 1rem; }
+    
+    .card-header { flex-direction: column; gap: 1rem; align-items: stretch; text-align: center; }
+    .card-header .btn-secondary { width: 100%; }
+    
+    .document-card .btn-primary, .document-card .btn-secondary { width: 100%; text-align: center; margin-bottom: 0.5rem; }
+    .document-card > div[style*="justify-content: space-between"] { flex-direction: column; gap: 0.5rem; }
+    
+    /* Disable 3D transforms on mobile to avoid scroll jank / touch issues */
+    .glass-card { transform: none !important; }
 }
 
 /* --- ANIMATIONS FOR LEARNING HUB --- */
