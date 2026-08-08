@@ -1,8 +1,16 @@
+.playstore-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 .playstore-button {
-  display: inline-block;
-  margin: 0.5rem;
-  transition: transform 0.2s ease;
+  display: block;
+  height: 48px;
+  width: auto;
+  transition: transform 0.2s ease, filter 0.2s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  border-radius: 8px;
 }
 
 .playstore-button:hover {
@@ -11,5 +19,6 @@
 }
 
 .playstore-button img {
-  height: 60px;
+  height: 100%;
+  width: auto;
 }

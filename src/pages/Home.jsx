@@ -87,7 +87,7 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-qrstu">Gamification</span>
               </div>
               <div className="product-actions">
-                <PlayStoreButton link="https://play.google.com/store/apps/dev?id=4678418670975116062" appName="QRSTU" />
+                <PlayStoreButton link="https://play.google.com/store/apps/details?id=com.baskom.qrisparser" appName="QRSTU" />
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-pembacakue">Utility</span>
               </div>
               <div className="product-actions">
-                <PlayStoreButton link="https://play.google.com/store/apps/dev?id=4678418670975116062" appName="PembacaKUE" />
+                <PlayStoreButton link="https://play.google.com/store/apps/details?id=com.baskom.pembacakue" appName="PembacaKUE" />
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-yasintahlil">Utility</span>
               </div>
               <div className="product-actions">
-                <PlayStoreButton link="https://play.google.com/store/apps/dev?id=4678418670975116062" appName="Yasin Tahlil NU" />
+                <PlayStoreButton link="https://play.google.com/store/apps/details?id=com.baskom.yasintahlilmaulid" appName="Yasin Tahlil NU" />
               </div>
             </div>
           </div>

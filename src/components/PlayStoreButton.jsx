@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/PlayStoreButton.css';
 
 const PlayStoreButton = ({ link, appName }) => {
   return (
@@ -12,7 +13,7 @@ const PlayStoreButton = ({ link, appName }) => {
       <img
         src="/google-play-badge.svg"
         alt={`Dapatkan ${appName} di Google Play`}
-        style={{ height: '60px' }}
+        style={{ height: '48px' }}
       />
     </a>
   );
