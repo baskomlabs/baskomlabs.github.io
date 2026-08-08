@@ -275,7 +275,7 @@ a { text-decoration: none; color: inherit; }
 /* --- FOOTER --- */
 footer { padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-subtle); margin-top: auto; }
 .footer-line { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; }
-.footer-policies { display: flex; justify-content: center; gap: 1rem; align-items: center; }
+.footer-policies { display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap; }
 .footer-sep { color: var(--border-subtle); }
 .footer-link { color: var(--text-secondary); font-size: 0.85rem; transition: color 0.3s; }
 .footer-link:hover { color: var(--text-primary); }
