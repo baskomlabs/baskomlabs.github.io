@@ -12,7 +12,7 @@ const PlayStoreButton = ({ link, appName }) => {
         aria-label={`Download ${appName} di Google Play`}
       >
         <img
-          src="/google-play-badge.svg"
+          src="/google-play-badge.png"
           alt={`Dapatkan ${appName} di Google Play`}
         />
       </a>
