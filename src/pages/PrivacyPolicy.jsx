@@ -110,6 +110,35 @@ function PrivacyPolicy({ app }) {
     );
   }
 
+  if (app === 'Yasin Tahlil NU') {
+    return (
+      <section className="active-view">
+        <div className="glass-card document-card">
+          <div className="card-header">
+            <h2>Privacy Policy - Yasin Tahlil Maulid NU</h2>
+            <Link to="/home" className="close-btn btn-secondary">Back to Home</Link>
+          </div>
+          <div className="document-content">
+            <p className="meta">Terakhir diperbarui: Juli 2026</p>
+            <p>Kami sangat menghargai privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana aplikasi <strong>Yasin Tahlil Maulid NU</strong> mengumpulkan, menggunakan, dan melindungi informasi saat Anda menggunakan layanan kami.</p>
+            
+            <h3>1. Pengumpulan Data Pribadi</h3>
+            <p>Aplikasi Yasin Tahlil Maulid NU <strong>TIDAK</strong> mengumpulkan, menyimpan, atau membagikan data pribadi Anda (seperti nama, alamat, nomor telepon, atau email) secara sepihak. Aplikasi dapat digunakan sepenuhnya secara offline untuk fitur-fitur bacaan.</p>
+
+            <h3>2. Penggunaan Akses Internet</h3>
+            <p>Beberapa fitur tertentu (seperti halaman pembelajaran eksternal atau update konten) mungkin memerlukan akses internet. Data yang dikirim hanya digunakan untuk mengambil konten statis dari server dan tidak melibatkan pengumpulan data perangkat Anda.</p>
+
+            <h3>3. Layanan Pihak Ketiga</h3>
+            <p>Aplikasi ini mungkin menggunakan layanan analitik anonim (seperti Firebase Analytics) untuk memahami statistik penggunaan secara umum dan mendeteksi crash aplikasi guna perbaikan di masa mendatang. Data yang dikumpulkan sepenuhnya anonim dan tidak dapat dikaitkan dengan identitas individu Anda.</p>
+
+            <h3>4. Hubungi Kami</h3>
+            <p>Jika Anda memiliki pertanyaan atau saran tentang Kebijakan Privasi kami, jangan ragu untuk menghubungi kami di <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a>.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return null;
 }
 
