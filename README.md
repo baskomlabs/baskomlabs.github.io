@@ -1,16 +1,28 @@
-# React + Vite
+# Baskom Labs Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Baskom Labs Hub** adalah platform pembelajaran terbuka yang menghubungkan **teknologi modern** dan **tradisi Islam** melalui konten interaktif dan aplikasi praktis.
 
-Currently, two official plugins are available:
+## 📚 Apa yang Dipelajari?
+- **Teknologi**: QRIS, NFC, Gelombang Radio, Blockchain.
+- **Tradisi Islam**: Hikmah Surat Yasin, Tahlil, Maulid Nabi, Tradisi NU.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Cara Menjalankan
+```bash
+npm install
+npm run dev
+```
+Server akan berjalan di `http://localhost:5173`.
 
-## React Compiler
+## 📁 Struktur Folder
+```
+/src
+  /pages
+    /learning       # Halaman pembelajaran
+    Home.jsx        # Halaman utama
+    Footer.jsx      # Footer dengan link legal
+  /components      # Komponen reusable
+  /styles          # CSS global dan tema
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 📜 Lisensi
+MIT License. Lihat [LICENSE](LICENSE) untuk detail.
