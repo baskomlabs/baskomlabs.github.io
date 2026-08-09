@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import PlayStoreButton from '../components/PlayStoreButton';
 
 function Home({ scrollToContact }) {
   const { t } = useTranslation();
@@ -16,8 +15,7 @@ function Home({ scrollToContact }) {
 
   // Parallax Effect
   const handleMouseMove = (e) => {
-    // Disable parallax for devices without hover (mobile/touch)
-    if (!containerRef.current || window.matchMedia("(hover: none)").matches) return;
+    if (!containerRef.current) return;
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
     
@@ -40,16 +38,14 @@ function Home({ scrollToContact }) {
     <div ref={containerRef} onMouseMove={handleMouseMove} style={{ perspective: '1000px' }}>
       {/* Adding dynamic styles for parallax on global glows through inline styles */}
       <style dangerouslySetInnerHTML={{__html: `
-        @media (hover: hover) {
-          .glow-1 { transform: translate(calc(var(--px, 0px) * -1), calc(var(--py, 0px) * -1)); }
-          .glow-2 { transform: translate(calc(var(--px, 0px) * 1.5), calc(var(--py, 0px) * 1.5)); }
-          .product-card {
-             transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-             transition: transform 0.1s ease-out;
-          }
-          .product-card:hover {
-             transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale3d(1.05, 1.05, 1.05);
-          }
+        .glow-1 { transform: translate(calc(var(--px, 0px) * -1), calc(var(--py, 0px) * -1)); }
+        .glow-2 { transform: translate(calc(var(--px, 0px) * 1.5), calc(var(--py, 0px) * 1.5)); }
+        .product-card {
+           transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+           transition: transform 0.1s ease-out;
+        }
+        .product-card:hover {
+           transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale3d(1.05, 1.05, 1.05);
         }
       `}} />
 
@@ -89,9 +85,6 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-qrstu">FinTech</span>
                 <span className="tag tag-qrstu">Gamification</span>
               </div>
-              <div className="product-actions">
-                <PlayStoreButton link="https://play.google.com/store/apps/details?id=com.baskom.qrisparser" appName="QRSTU" />
-              </div>
             </div>
           </div>
 
@@ -112,9 +105,6 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-pembacakue">e-KTP</span>
                 <span className="tag tag-pembacakue">Utility</span>
               </div>
-              <div className="product-actions">
-                <PlayStoreButton link="https://play.google.com/store/apps/details?id=com.baskom.pembacakue" appName="PembacaKUE" />
-              </div>
             </div>
           </div>
 
@@ -131,9 +121,6 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-yasintahlil">Spiritual</span>
                 <span className="tag tag-yasintahlil">Android</span>
                 <span className="tag tag-yasintahlil">Utility</span>
-              </div>
-              <div className="product-actions">
-                <PlayStoreButton link="https://play.google.com/store/apps/details?id=com.baskom.yasintahlilmaulid" appName="Yasin Tahlil NU" />
               </div>
             </div>
           </div>

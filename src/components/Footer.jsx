@@ -19,10 +19,6 @@ function Footer() {
         <Link to="/privacy-policy-pembacakue" className="footer-link">PembacaKUE {t('footer.privacy')}</Link>
         <span className="footer-sep">·</span>
         <Link to="/tos-pembacakue" className="footer-link">PembacaKUE {t('footer.tos')}</Link>
-        <span className="footer-sep">·</span>
-        <Link to="/privacy-policy-yasintahlil" className="footer-link">Yasin Tahlil {t('footer.privacy')}</Link>
-        <span className="footer-sep">·</span>
-        <Link to="/tos-yasintahlil" className="footer-link">Yasin Tahlil {t('footer.tos')}</Link>
       </div>
     </footer>
   );
