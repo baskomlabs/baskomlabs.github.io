@@ -167,8 +167,8 @@ a { text-decoration: none; color: inherit; }
 
 /* --- PRODUCTS GRID --- */
 .products-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem; margin-bottom: 3rem;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem; margin-bottom: 3rem;
 }
 .product-card {
     display: flex; flex-direction: column; align-items: center; text-align: center;
@@ -194,6 +194,12 @@ a { text-decoration: none; color: inherit; }
     border: 1px solid rgba(250, 204, 21, 0.4); /* Gold subtle accent */
 }
 .product-svg { width: 50%; height: 50%; }
+.product-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+}
 .product-info h3 {
     font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;
 }
@@ -269,7 +275,7 @@ a { text-decoration: none; color: inherit; }
 /* --- FOOTER --- */
 footer { padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-subtle); margin-top: auto; }
 .footer-line { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; }
-.footer-policies { display: flex; justify-content: center; gap: 1rem; align-items: center; }
+.footer-policies { display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap; }
 .footer-sep { color: var(--border-subtle); }
 .footer-link { color: var(--text-secondary); font-size: 0.85rem; transition: color 0.3s; }
 .footer-link:hover { color: var(--text-primary); }
@@ -303,6 +309,20 @@ footer { padding: 3rem 0; text-align: center; border-top: 1px solid var(--border
     
     /* Disable 3D transforms on mobile to avoid scroll jank / touch issues */
     .glass-card { transform: none !important; }
+
+    /* Performance optimizations for mobile */
+    .ambient-glow {
+        animation: none !important;
+        opacity: 0.1;
+    }
+    
+    /* Improve touch targets */
+    .btn-primary, .playstore-button, .tag {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /* --- ANIMATIONS FOR LEARNING HUB --- */
