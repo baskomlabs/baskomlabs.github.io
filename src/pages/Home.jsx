@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import PlayStoreButton from '../components/PlayStoreButton';
 
 function Home({ scrollToContact }) {
   const { t } = useTranslation();
@@ -88,6 +89,7 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-qrstu">FinTech</span>
                 <span className="tag tag-qrstu">Gamification</span>
               </div>
+              <PlayStoreButton url="https://play.google.com/store/apps/details?id=com.baskom.qrisparser" />
             </div>
           </div>
 
@@ -108,6 +110,7 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-pembacakue">e-KTP</span>
                 <span className="tag tag-pembacakue">Utility</span>
               </div>
+              <PlayStoreButton url="https://play.google.com/store/apps/details?id=com.baskom.pembacakue" />
             </div>
           </div>
 
@@ -125,6 +128,7 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-yasintahlil">Android</span>
                 <span className="tag tag-yasintahlil">Utility</span>
               </div>
+              <PlayStoreButton url="https://play.google.com/store/apps/details?id=com.baskom.yasintahlilmaulid" />
             </div>
           </div>
         </div>
