@@ -1,11 +1,11 @@
 import React from 'react';
 import '../styles/PlayStoreButton.css';
 
-const PlayStoreButton = ({ link, appName }) => {
+const PlayStoreButton = ({ url, appName }) => {
   return (
     <div className="playstore-button-container">
       <a
-        href={link}
+        href={url}
         className="playstore-button"
         target="_blank"
         rel="noopener noreferrer"
