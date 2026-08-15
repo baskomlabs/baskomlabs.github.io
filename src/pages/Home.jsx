@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import BaskomMark from '../components/BaskomMark';
+import PlayStoreButton from '../components/PlayStoreButton';
 
 function Home({ scrollToContact }) {
   const { t } = useTranslation();
@@ -16,7 +17,8 @@ function Home({ scrollToContact }) {
 
   // Parallax Effect
   const handleMouseMove = (e) => {
-    if (!containerRef.current) return;
+    // Disable parallax for devices without hover (mobile/touch)
+    if (!containerRef.current || window.matchMedia("(hover: none)").matches) return;
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
     
@@ -39,14 +41,16 @@ function Home({ scrollToContact }) {
     <div ref={containerRef} onMouseMove={handleMouseMove} style={{ perspective: '1000px' }}>
       {/* Adding dynamic styles for parallax on global glows through inline styles */}
       <style dangerouslySetInnerHTML={{__html: `
-        .glow-1 { transform: translate(calc(var(--px, 0px) * -1), calc(var(--py, 0px) * -1)); }
-        .glow-2 { transform: translate(calc(var(--px, 0px) * 1.5), calc(var(--py, 0px) * 1.5)); }
-        .product-card {
-           transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-           transition: transform 0.1s ease-out;
-        }
-        .product-card:hover {
-           transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale3d(1.05, 1.05, 1.05);
+        @media (hover: hover) {
+          .glow-1 { transform: translate(calc(var(--px, 0px) * -1), calc(var(--py, 0px) * -1)); }
+          .glow-2 { transform: translate(calc(var(--px, 0px) * 1.5), calc(var(--py, 0px) * 1.5)); }
+          .product-card {
+             transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+             transition: transform 0.1s ease-out;
+          }
+          .product-card:hover {
+             transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale3d(1.05, 1.05, 1.05);
+          }
         }
       `}} />
 
@@ -103,6 +107,7 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-qrstu">Scanner</span>
                 <span className="tag tag-qrstu">Edukasi</span>
               </div>
+              <PlayStoreButton url="https://play.google.com/store/apps/details?id=com.baskom.qrisparser" />
             </div>
           </div>
 
@@ -123,6 +128,7 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-pembacakue">Flazz</span>
                 <span className="tag tag-pembacakue">NFC</span>
               </div>
+              <PlayStoreButton url="https://play.google.com/store/apps/details?id=com.baskom.pembacakue" />
             </div>
           </div>
 
@@ -140,6 +146,7 @@ function Home({ scrollToContact }) {
                 <span className="tag tag-yasintahlil">Tahlil</span>
                 <span className="tag tag-yasintahlil">Offline</span>
               </div>
+              <PlayStoreButton url="https://play.google.com/store/apps/details?id=com.baskom.yasintahlilmaulid" />
             </div>
           </div>
         </div>
