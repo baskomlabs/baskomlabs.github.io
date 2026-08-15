@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
+import BaskomMark from '../components/BaskomMark';
 
 function Home({ scrollToContact }) {
   const { t } = useTranslation();
@@ -56,9 +57,26 @@ function Home({ scrollToContact }) {
             <h1 className="hero-title reveal-on-scroll">
               {t('home.hero_title_1')} <span className="gradient-text">{t('home.hero_title_2')}</span>
             </h1>
+            <div className="hero-tagline reveal-on-scroll">{t('home.hero_tagline')}</div>
             <p className="hero-subtitle reveal-on-scroll">
               {t('home.hero_subtitle')}
             </p>
+            <div className="hero-signature reveal-on-scroll">{t('home.hero_signature')}</div>
+          </div>
+        </div>
+
+        <div className="section-divider reveal-on-scroll">
+          <div className="divider-text">{t('home.origin_label')}</div>
+        </div>
+
+        <div className="origin-card glass-card reveal-on-scroll">
+          <div className="origin-mark">
+            <BaskomMark size={96} />
+          </div>
+          <div className="origin-body">
+            <h3>{t('home.origin_title')}</h3>
+            <p>{t('home.origin_p1')}</p>
+            <p><Trans i18nKey="home.origin_p2" components={{ strong: <strong /> }} /></p>
           </div>
         </div>
 
@@ -82,8 +100,8 @@ function Home({ scrollToContact }) {
               <p>{t('home.qrstu_desc')}</p>
               <div className="product-tags">
                 <span className="tag tag-qrstu">QRIS</span>
-                <span className="tag tag-qrstu">FinTech</span>
-                <span className="tag tag-qrstu">Gamification</span>
+                <span className="tag tag-qrstu">Scanner</span>
+                <span className="tag tag-qrstu">Edukasi</span>
               </div>
             </div>
           </div>
@@ -101,9 +119,9 @@ function Home({ scrollToContact }) {
               <h3>PembacaKUE</h3>
               <p>{t('home.pembacakue_desc')}</p>
               <div className="product-tags">
-                <span className="tag tag-pembacakue">Identity</span>
-                <span className="tag tag-pembacakue">e-KTP</span>
-                <span className="tag tag-pembacakue">Utility</span>
+                <span className="tag tag-pembacakue">eMoney</span>
+                <span className="tag tag-pembacakue">Flazz</span>
+                <span className="tag tag-pembacakue">NFC</span>
               </div>
             </div>
           </div>
@@ -118,9 +136,9 @@ function Home({ scrollToContact }) {
               <h3>Yasin Tahlil NU</h3>
               <p>{t('home.yasintahlil_desc')}</p>
               <div className="product-tags">
-                <span className="tag tag-yasintahlil">Spiritual</span>
-                <span className="tag tag-yasintahlil">Android</span>
-                <span className="tag tag-yasintahlil">Utility</span>
+                <span className="tag tag-yasintahlil">Yasin</span>
+                <span className="tag tag-yasintahlil">Tahlil</span>
+                <span className="tag tag-yasintahlil">Offline</span>
               </div>
             </div>
           </div>

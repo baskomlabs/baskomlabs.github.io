@@ -1,7 +1,7 @@
 {
   "hub_title_1": "Selamat datang di Dunia",
   "hub_title_2": "Teknologi & Rekayasa Perangkat Lunak",
-  "hub_subtitle": "Eksplorasi konsep, algoritma, dan teknologi yang menggerakkan dunia modern. Selami cara kerja aplikasi yang dikembangkan di Baskomlabs, mulai dari Internet of Things hingga Teknologi Finansial.",
+  "hub_subtitle": "Bongkar isi aplikasi yang kami bikin — dari gelombang NFC sampai format data QRIS. Dijelaskan pelan-pelan, buat siapa pun yang penasaran cara kerjanya.",
   "hub_what_is_iot": "Bagaimana Teknologi Menghubungkan Dunia",
   "hub_iot_desc_1": "Dunia modern dibangun di atas lapisan sistem dan protokol yang saling terhubung. Dari aplikasi web sederhana hingga perangkat embedded yang kompleks, perangkat lunak menggerakkan fungsionalitas yang kita andalkan setiap hari.",
   "hub_iot_desc_2": "Di learning hub ini, kami memecah konsep teknologi kompleks menjadi pengetahuan yang mudah dipahami. Anda akan belajar bagaimana berbagai komponen berkomunikasi, bagaimana data diparsing dan diamankan, serta bagaimana arsitektur perangkat lunak dirancang untuk memecahkan masalah dunia nyata.",
@@ -21,6 +21,7 @@
   "hub_card5_desc": "Fakta menarik seputar perkembangan teknologi NFC.",
   "hub_card6_title": "Kamus Istilah",
   "hub_card6_desc": "Daftar istilah penting dalam dunia IoT dan Smart Card.",
+  "hub_extra_trivia": "PENDALAMAN & TRIVIA NFC",
 
   "nfc_title": "1. Dasar NFC: Misteri Komunikasi Tanpa Kabel",
   "btn_back_hub": "Back to Hub",

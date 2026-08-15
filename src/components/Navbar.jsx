@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import BaskomMark from './BaskomMark';
 
 function Navbar() {
   const location = useLocation();
@@ -18,15 +19,16 @@ function Navbar() {
   return (
     <nav className="glass-nav">
       <div className="logo-area">
-        <Link to="/home" className="logo-text">
+        <Link to="/" className="logo-text">
+          <BaskomMark size={34} className="logo-mark" />
           Baskom<span>Labs</span>
         </Link>
       </div>
       
       <div className="nav-links">
         <Link 
-          to="/home" 
-          className={`nav-item ${location.pathname === '/home' ? 'active' : ''}`}
+          to="/" 
+          className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}
         >
           {t('navbar.home')}
         </Link>

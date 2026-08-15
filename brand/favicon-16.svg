@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <title>BaskomLabs</title>
+  <title>BaskomLabs (16px)</title>
   <!-- Simplified build of the baskom mark: no noise filters, fatter strokes,
        so it survives 16px. Keep in sync with brand/baskom-icon.svg. -->
   <defs>
@@ -40,11 +40,6 @@
   </g>
 
   <!-- rolled rim -->
-  <ellipse cx="32" cy="25" rx="21.2" ry="8" fill="none" stroke="url(#frim)" stroke-width="3.6"/>
+  <ellipse cx="32" cy="25" rx="21.2" ry="8" fill="none" stroke="url(#frim)" stroke-width="4.6"/>
 
-  <!-- prompt -->
-  <g stroke="#0e2a5e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M 24,20.6 L 29,25 L 24,29.4"/>
-    <path d="M 35.4,29.4 H 41"/>
-  </g>
 </svg>

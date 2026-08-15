@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 500" width="1024" height="500">
+  <title>BaskomLabs — Google Play feature graphic</title>
+  <defs>
+    <radialGradient id="bg" cx="34%" cy="42%" r="86%">
+      <stop offset="0" stop-color="#16283f"/>
+      <stop offset="50%" stop-color="#0a1322"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </radialGradient>
+
+    <linearGradient id="enamelOut" x1="0.1" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#7ccb52"/>
+      <stop offset="38%" stop-color="#55a83f"/>
+      <stop offset="78%" stop-color="#3c8130"/>
+      <stop offset="100%" stop-color="#2a5d24"/>
+    </linearGradient>
+    <linearGradient id="enamelIn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f8f0"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="rimGrad" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#4478ea"/>
+      <stop offset="36%" stop-color="#1a3c88"/>
+      <stop offset="100%" stop-color="#0b1c46"/>
+    </linearGradient>
+    <linearGradient id="cavityShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#123044" stop-opacity="0.40"/>
+      <stop offset="42%" stop-color="#123044" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#123044" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- wordmark ink -->
+    <linearGradient id="wordGrad" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#e7eef7"/>
+      <stop offset="100%" stop-color="#b9c9de"/>
+    </linearGradient>
+
+    <filter id="marbleOut" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.026 0.005" numOctaves="5" seed="11" result="t"/>
+      <feColorMatrix in="t" type="matrix"
+        values="0 0 0 0 1
+                0 0 0 0 1
+                0 0 0 0 1
+                1 0 0 0 -0.03"/>
+      <feComponentTransfer><feFuncA type="linear" slope="14" intercept="-6.92"/></feComponentTransfer>
+    </filter>
+    <filter id="speckleOut" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06 0.02" numOctaves="3" seed="41" result="t"/>
+      <feColorMatrix in="t" type="matrix"
+        values="0 0 0 0 1
+                0 0 0 0 1
+                0 0 0 0 1
+                1 0 0 0 -0.10"/>
+      <feComponentTransfer><feFuncA type="linear" slope="25" intercept="-17.0"/></feComponentTransfer>
+    </filter>
+    <filter id="marbleIn" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.030 0.016" numOctaves="4" seed="7" result="t"/>
+      <feColorMatrix in="t" type="matrix"
+        values="0 0 0 0 0.306
+                0 0 0 0 0.620
+                0 0 0 0 0.247
+                1 0 0 0 -0.02"/>
+      <feComponentTransfer><feFuncA type="linear" slope="14" intercept="-6.5"/></feComponentTransfer>
+    </filter>
+
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="dropShadow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <radialGradient id="ringMaskGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#000000"/>
+      <stop offset="45%" stop-color="#000000"/>
+      <stop offset="68%" stop-color="#bbbbbb"/>
+      <stop offset="88%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </radialGradient>
+    <mask id="ringMask">
+      <ellipse cx="256" cy="196" rx="167" ry="60" fill="url(#ringMaskGrad)"/>
+    </mask>
+    <radialGradient id="promptHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.97"/>
+      <stop offset="58%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <path id="bodyPath" d="M 70,196 A 186,74 0 0 1 442,196 C 436,302 392,394 322,414 Q 256,430 190,414 C 120,394 76,302 70,196 Z"/>
+    <ellipse id="cavity" cx="256" cy="196" rx="167" ry="60"/>
+    <clipPath id="clipBody"><use href="#bodyPath"/></clipPath>
+    <clipPath id="clipCavity"><use href="#cavity"/></clipPath>
+
+    <!-- the whole baskom, drawn once in 512-space so it can be placed anywhere -->
+    <g id="baskom">
+      <g clip-path="url(#clipBody)">
+        <use href="#bodyPath" fill="url(#enamelOut)"/>
+        <g opacity="0.88"><rect x="60" y="120" width="392" height="320" fill="#ffffff" filter="url(#marbleOut)"/></g>
+        <g opacity="0.5"><rect x="60" y="120" width="392" height="320" fill="#ffffff" filter="url(#speckleOut)"/></g>
+        <use href="#bodyPath" fill="url(#enamelOut)" opacity="0.22"/>
+        <ellipse cx="256" cy="478" rx="210" ry="72" fill="#163a14" opacity="0.34"/>
+        <ellipse cx="150" cy="290" rx="40" ry="100" fill="url(#sheen)" opacity="0.26" transform="rotate(-14 150 290)"/>
+      </g>
+      <g clip-path="url(#clipCavity)">
+        <use href="#cavity" fill="url(#enamelIn)"/>
+        <g mask="url(#ringMask)" opacity="0.95">
+          <rect x="80" y="130" width="352" height="132" fill="#4e9e3f" filter="url(#marbleIn)"/>
+        </g>
+        <ellipse cx="256" cy="198" rx="132" ry="50" fill="url(#promptHalo)"/>
+        <use href="#cavity" fill="url(#cavityShade)"/>
+      </g>
+      <ellipse cx="256" cy="196" rx="177" ry="70" fill="none" stroke="url(#rimGrad)" stroke-width="20"/>
+      <path d="M 88,168 A 177,70 0 0 1 256,126 A 177,70 0 0 1 400,158"
+            fill="none" stroke="#84acff" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round"/>
+      <g stroke="#0e2a5e" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M 198,164 L 242,196 L 198,228"/>
+        <path d="M 266,226 H 316"/>
+      </g>
+    </g>
+  </defs>
+
+  <style>
+    .word  { font-family: 'Outfit', 'Avenir Next', 'Helvetica Neue', sans-serif; font-weight: 800; }
+    .head  { font-family: 'Outfit', 'Avenir Next', 'Helvetica Neue', sans-serif; font-weight: 700; }
+    .body  { font-family: 'Inter', 'Helvetica Neue', sans-serif; font-weight: 400; }
+    .mono  { font-family: 'Menlo', 'SFMono-Regular', monospace; font-weight: 600; }
+  </style>
+
+  <!-- ================= background ================= -->
+  <rect width="1024" height="500" fill="url(#bg)"/>
+
+  <g stroke="#22d3ee" stroke-opacity="0.09" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M -10,72 H 118 L 156,34 H 250"/>
+    <path d="M 1034,96 H 900 L 866,60 H 780"/>
+    <path d="M -10,446 H 96 L 138,404"/>
+    <path d="M 1034,430 H 906 L 870,466 H 764"/>
+    <path d="M 38,140 V 268 L 12,296"/>
+    <path d="M 990,180 V 320"/>
+    <path d="M 620,470 H 700 L 730,440"/>
+  </g>
+  <g fill="#22d3ee" fill-opacity="0.15">
+    <circle cx="250" cy="34" r="4"/><circle cx="780" cy="60" r="4"/>
+    <circle cx="138" cy="404" r="4"/><circle cx="764" cy="466" r="4"/>
+    <circle cx="12" cy="296" r="4"/><circle cx="990" cy="320" r="4"/>
+  </g>
+
+  <ellipse cx="250" cy="270" rx="230" ry="190" fill="#4fa53c" opacity="0.20" filter="url(#softGlow)"/>
+  <ellipse cx="700" cy="200" rx="260" ry="150" fill="#6366f1" opacity="0.16" filter="url(#softGlow)"/>
+  <ellipse cx="880" cy="400" rx="200" ry="140" fill="#8b5cf6" opacity="0.12" filter="url(#softGlow)"/>
+
+  <!-- steam: what rises out of the baskom is code -->
+  <g class="mono" fill="#7fd45f" text-anchor="middle">
+    <text x="196" y="104" font-size="26" opacity="0.30">{ }</text>
+    <text x="262" y="66"  font-size="21" opacity="0.20">;</text>
+    <text x="316" y="112" font-size="24" opacity="0.26">&lt;/&gt;</text>
+    <text x="228" y="146" font-size="19" opacity="0.16">( )</text>
+  </g>
+
+  <!-- ================= the mark ================= -->
+  <g filter="url(#dropShadow)" transform="translate(250,262) scale(0.78) translate(-256,-258)">
+    <use href="#baskom"/>
+  </g>
+
+  <!-- ================= the words ================= -->
+  <g>
+    <text class="head" x="446" y="164" font-size="16" letter-spacing="4.5"
+          fill="#7f8ea3">BENGKEL APLIKASI KOMPENI</text>
+
+    <text class="word" x="443" y="256" font-size="104" letter-spacing="-1"
+          fill="url(#wordGrad)">BASKOM</text>
+
+    <text class="head" x="446" y="306" font-size="33" letter-spacing="1.5"
+          fill="#7fd45f">Wadahnya ngoprek.</text>
+
+    <text class="body" x="447" y="348" font-size="20" letter-spacing="0.2"
+          fill="#8593a8">do code for fun, no.. serious things.</text>
+  </g>
+</svg>

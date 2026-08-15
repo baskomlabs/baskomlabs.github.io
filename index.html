@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline';">
-    <title>BaskomLabs | Bengkel Aplikasi Kompeni</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
+    <title>BaskomLabs — Bengkel Aplikasi Kompeni</title>
+    <meta name="description" content="Studio indie yang ngoprek aplikasi Android buat keperluan sehari-hari: baca kartu NFC, scan QRIS, sampai Yasin &amp; Tahlil. Wadahnya ngoprek.">
+    <link rel="canonical" href="https://baskomlabs.github.io/">
+
+    <!-- The site used HashRouter until the move to clean URLs. Links already out
+         in the world (Play Console privacy-policy URLs especially) still point at
+         /#/path, so translate them before the app boots. Runs first on purpose. -->
+    <script>
+      (function () {
+        var h = window.location.hash;
+        if (h.indexOf('#/') === 0) {
+          var path = h.slice(1);
+          if (path === '/home') path = '/';
+          window.location.replace(path + window.location.search);
+        }
+      })();
+    </script>
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#0a0a0c">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

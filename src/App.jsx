@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import SEO from './components/SEO';
 import Navbar from './components/Navbar';
@@ -74,7 +74,9 @@ function App() {
         <main id="viewport">
           <ScrollWrapper>
             <Routes>
-              <Route path="/home" element={<Home />} />
+              {/* Root is the canonical home; /home stays as a redirect for old links */}
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Navigate to="/" replace />} />
               <Route path="/contact" element={<Home scrollToContact />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy app="QRSTU" />} />
               <Route path="/privacy-policy-bensy" element={<PrivacyPolicy app="Bensy" />} />
@@ -107,7 +109,7 @@ function App() {
               <Route path="/learning/maulid-hikmah" element={<MaulidHikmah />} />
               <Route path="/learning/tradisi-nu-hikmah" element={<TradisiNUHikmah />} />
 
-              <Route path="*" element={<Navigate to="/home" replace />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </ScrollWrapper>
         </main>

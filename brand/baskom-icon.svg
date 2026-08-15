@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>BaskomLabs — baskom enamel mark</title>
+  <defs>
+    <!-- ===== background ===== -->
+    <radialGradient id="bg" cx="50%" cy="36%" r="80%">
+      <stop offset="0" stop-color="#14263f"/>
+      <stop offset="52%" stop-color="#0a1322"/>
+      <stop offset="100%" stop-color="#05070c"/>
+    </radialGradient>
+
+    <!-- ===== enamel grounds ===== -->
+    <linearGradient id="enamelOut" x1="0.1" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#7ccb52"/>
+      <stop offset="38%" stop-color="#55a83f"/>
+      <stop offset="78%" stop-color="#3c8130"/>
+      <stop offset="100%" stop-color="#2a5d24"/>
+    </linearGradient>
+
+    <linearGradient id="enamelIn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f8f0"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+
+    <linearGradient id="rimGrad" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#4478ea"/>
+      <stop offset="36%" stop-color="#1a3c88"/>
+      <stop offset="100%" stop-color="#0b1c46"/>
+    </linearGradient>
+
+    <linearGradient id="cavityShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#123044" stop-opacity="0.40"/>
+      <stop offset="42%" stop-color="#123044" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#123044" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- ===== enamel marbling: thresholded fractal noise, stretched vertically ===== -->
+    <filter id="marbleOut" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.026 0.005" numOctaves="5" seed="11" result="t"/>
+      <feColorMatrix in="t" type="matrix"
+        values="0 0 0 0 1
+                0 0 0 0 1
+                0 0 0 0 1
+                1 0 0 0 -0.03"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="14" intercept="-6.92"/>
+      </feComponentTransfer>
+    </filter>
+
+    <!-- finer secondary speckle over the body -->
+    <filter id="speckleOut" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06 0.02" numOctaves="3" seed="41" result="t"/>
+      <feColorMatrix in="t" type="matrix"
+        values="0 0 0 0 1
+                0 0 0 0 1
+                0 0 0 0 1
+                1 0 0 0 -0.10"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="25" intercept="-17.0"/>
+      </feComponentTransfer>
+    </filter>
+
+    <!-- interior splash, blotchier and shorter -->
+    <filter id="marbleIn" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.030 0.016" numOctaves="4" seed="7" result="t"/>
+      <!-- turbulence replaces the source, so the enamel green is dialled in here -->
+      <feColorMatrix in="t" type="matrix"
+        values="0 0 0 0 0.306
+                0 0 0 0 0.620
+                0 0 0 0 0.247
+                1 0 0 0 -0.02"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="14" intercept="-6.5"/>
+      </feComponentTransfer>
+    </filter>
+
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+
+    <filter id="dropShadow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+
+    <!-- keep the centre of the bowl clear so the prompt stays legible -->
+    <radialGradient id="ringMaskGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#000000"/>
+      <stop offset="45%" stop-color="#000000"/>
+      <stop offset="68%" stop-color="#bbbbbb"/>
+      <stop offset="88%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </radialGradient>
+
+    <!-- guarantees the prompt stays readable at launcher sizes -->
+    <radialGradient id="promptHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.97"/>
+      <stop offset="58%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="ringMask">
+      <ellipse cx="256" cy="196" rx="167" ry="60" fill="url(#ringMaskGrad)"/>
+    </mask>
+
+    <!-- ===== geometry ===== -->
+    <path id="bodyPath" d="M 70,196 A 186,74 0 0 1 442,196 C 436,302 392,394 322,414 Q 256,430 190,414 C 120,394 76,302 70,196 Z"/>
+    <ellipse id="cavity" cx="256" cy="196" rx="167" ry="60"/>
+
+    <clipPath id="clipBody"><use href="#bodyPath"/></clipPath>
+    <clipPath id="clipCavity"><use href="#cavity"/></clipPath>
+  </defs>
+
+  <!-- ================= background ================= -->
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <g stroke="#22d3ee" stroke-opacity="0.10" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M -10,86 H 96 L 132,50 H 214"/>
+    <path d="M 522,120 H 430 L 396,86 H 330"/>
+    <path d="M -10,452 H 78 L 118,412"/>
+    <path d="M 522,432 H 438 L 402,468 H 336"/>
+    <path d="M 44,150 V 258 L 20,286"/>
+    <path d="M 470,206 V 300"/>
+  </g>
+  <g fill="#22d3ee" fill-opacity="0.16">
+    <circle cx="214" cy="50" r="5"/><circle cx="330" cy="86" r="5"/>
+    <circle cx="118" cy="412" r="5"/><circle cx="336" cy="468" r="5"/>
+    <circle cx="20" cy="286" r="5"/><circle cx="470" cy="300" r="5"/>
+  </g>
+
+  <ellipse cx="256" cy="300" rx="180" ry="150" fill="#4fa53c" opacity="0.22" filter="url(#softGlow)"/>
+  <ellipse cx="256" cy="180" rx="150" ry="90" fill="#3b82f6" opacity="0.14" filter="url(#softGlow)"/>
+
+  <!-- ================= the baskom ================= -->
+  <g filter="url(#dropShadow)" transform="translate(0,-20)">
+
+    <!-- ---- outer wall: green ground, white marbling ---- -->
+    <g clip-path="url(#clipBody)">
+      <use href="#bodyPath" fill="url(#enamelOut)"/>
+      <g opacity="0.88">
+        <rect x="60" y="120" width="392" height="320" fill="#ffffff" filter="url(#marbleOut)"/>
+      </g>
+      <g opacity="0.5">
+        <rect x="60" y="120" width="392" height="320" fill="#ffffff" filter="url(#speckleOut)"/>
+      </g>
+      <!-- shading returns depth after the texture pass -->
+      <use href="#bodyPath" fill="url(#enamelOut)" opacity="0.22"/>
+      <ellipse cx="256" cy="478" rx="210" ry="72" fill="#163a14" opacity="0.34"/>
+      <ellipse cx="150" cy="290" rx="40" ry="100" fill="url(#sheen)" opacity="0.26" transform="rotate(-14 150 290)"/>
+    </g>
+
+    <!-- ---- interior: white ground, green splash held to the walls ---- -->
+    <g clip-path="url(#clipCavity)">
+      <use href="#cavity" fill="url(#enamelIn)"/>
+      <g mask="url(#ringMask)" opacity="0.95">
+        <rect x="80" y="130" width="352" height="132" fill="#4e9e3f" filter="url(#marbleIn)"/>
+      </g>
+      <ellipse cx="256" cy="198" rx="132" ry="50" fill="url(#promptHalo)"/>
+      <use href="#cavity" fill="url(#cavityShade)"/>
+    </g>
+
+    <!-- ---- rolled navy rim ---- -->
+    <ellipse cx="256" cy="196" rx="177" ry="70" fill="none" stroke="url(#rimGrad)" stroke-width="20"/>
+    <path d="M 88,168 A 177,70 0 0 1 256,126 A 177,70 0 0 1 400,158"
+          fill="none" stroke="#84acff" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- ---- the prompt ---- -->
+    <g stroke="#0e2a5e" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M 198,164 L 242,196 L 198,228"/>
+      <path d="M 266,226 H 316"/>
+    </g>
+  </g>
+</svg>

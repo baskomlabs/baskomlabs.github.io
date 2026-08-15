@@ -1,7 +1,7 @@
 {
   "hub_title_1": "Welcome to the World of",
   "hub_title_2": "Technology & Software Engineering",
-  "hub_subtitle": "Explore the concepts, algorithms, and technologies that power the modern world. Dive deep into the inner workings of applications developed at Baskomlabs, from Internet of Things to Financial Technologies.",
+  "hub_subtitle": "Take apart the apps we build — from NFC radio waves to the QRIS data format. Explained slowly, for anyone curious about how it actually works.",
   "hub_what_is_iot": "How Technology Connects the World",
   "hub_iot_desc_1": "The modern world is built upon layers of interconnected systems and protocols. From simple web applications to complex embedded devices, software drives the functionality we rely on daily.",
   "hub_iot_desc_2": "In this learning hub, we break down complex technological concepts into digestible knowledge. You'll learn how different components communicate, how data is parsed and secured, and how software architectures are designed to solve real-world problems.",
@@ -21,6 +21,7 @@
   "hub_card5_desc": "Interesting facts about the development of NFC technology.",
   "hub_card6_title": "Terminology",
   "hub_card6_desc": "A list of important terms in the world of IoT and Smart Cards.",
+  "hub_extra_trivia": "NFC EXTRAS & TRIVIA",
 
   "nfc_title": "1. NFC Basics: The Mystery of Wireless Communication",
   "btn_back_hub": "Back to Hub",

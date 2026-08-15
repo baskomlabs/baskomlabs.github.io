@@ -9,18 +9,37 @@
     --accent-blue: #3b82f6;
     --accent-indigo: #6366f1;
     --accent-purple: #8b5cf6;
-    
+
+    /* Enamel palette, taken from the baskom betawi the mark is built on.
+       See brand/BRAND.md for the full kit. */
+    --enamel-light: #7ccb52;
+    --enamel-green: #4e9e3f;
+    --enamel-deep: #2c6224;
+    --enamel-white: #f4f8f0;
+    --rim-blue: #4478ea;
+    --rim-navy: #1a3c88;
+    --prompt-ink: #0e2a5e;
+    --steam-green: #7fd45f;
+
     --qrstu-color: #22d3ee;
     --pembacakue-color: #f59e0b;
     --nfc-color: #10b981;
 
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
+    --font-mono: 'Menlo', 'SFMono-Regular', ui-monospace, monospace;
 }
 
 /* --- RESET & BASE --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    /* The fixed .ambient-glow circles stick out past the right edge and widen the
+       document (~38px at 375px wide), which knocks centred content off-centre on
+       phones. `clip` trims it without making <html> a scroll container, so the
+       sticky navbar keeps working; browsers without it just behave as before. */
+    overflow-x: clip;
+}
 body {
     background-color: var(--bg-dark);
     color: var(--text-primary);
@@ -42,7 +61,7 @@ a { text-decoration: none; color: inherit; }
 }
 .glow-1 {
     width: 600px; height: 600px;
-    background: var(--accent-indigo);
+    background: var(--enamel-green);
     top: -10%; left: -10%;
     animation: drift 15s ease-in-out infinite alternate;
 }
@@ -78,15 +97,22 @@ a { text-decoration: none; color: inherit; }
     z-index: 100;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
+.logo-area { display: flex; align-items: center; }
 .logo-text {
     font-family: var(--font-heading);
     font-weight: 800; font-size: 1.5rem;
     cursor: pointer;
     letter-spacing: -0.5px;
+    display: flex; align-items: center; gap: 0.6rem;
 }
 .logo-text span {
-    color: var(--accent-blue);
+    color: var(--enamel-light);
 }
+.logo-mark {
+    filter: drop-shadow(0 2px 8px rgba(78, 158, 63, 0.35));
+    transition: transform 0.3s ease;
+}
+.logo-text:hover .logo-mark { transform: translateY(-2px) rotate(-4deg); }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-item {
     font-weight: 500;
@@ -97,7 +123,7 @@ a { text-decoration: none; color: inherit; }
 .nav-item:hover, .nav-item.active { color: var(--text-primary); }
 .nav-item.active::after {
     content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px;
-    background: var(--accent-indigo); border-radius: 2px;
+    background: var(--enamel-light); border-radius: 2px;
 }
 
 /* --- HERO SECTION --- */
@@ -123,14 +149,41 @@ a { text-decoration: none; color: inherit; }
     line-height: 1.1; margin-bottom: 1.5rem;
     letter-spacing: -1px;
 }
+/* enamel green resolving into the rim blue, the baskom's own two colours */
 .gradient-text {
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    background: linear-gradient(120deg, #9ede63 0%, var(--enamel-green) 45%, var(--rim-blue) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 .hero-subtitle {
     font-size: 1.2rem; color: var(--text-secondary);
     line-height: 1.7; max-width: 600px; margin: 0 auto;
+}
+
+/* "Wadahnya ngoprek." — the baskom line, sits between title and blurb */
+.hero-tagline {
+    font-family: var(--font-heading);
+    font-size: 1.5rem; font-weight: 700;
+    color: var(--steam-green);
+    letter-spacing: 0.5px;
+    margin-bottom: 1.25rem;
+}
+
+/* the original tagline, kept as a terminal line and always the quietest text */
+.hero-signature {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.75;
+}
+.hero-signature::before {
+    content: '>_';
+    color: var(--enamel-light);
+    font-weight: 700;
 }
 
 /* --- SECTION DIVIDERS --- */
@@ -164,6 +217,34 @@ a { text-decoration: none; color: inherit; }
     border-color: rgba(255,255,255,0.15);
     box-shadow: 0 15px 50px rgba(0,0,0,0.3);
 }
+
+/* --- ORIGIN STORY (why "Baskom") --- */
+.origin-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.origin-mark {
+    width: 132px; height: 132px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 28px;
+    background: radial-gradient(circle at 50% 35%, rgba(124, 203, 82, 0.16), rgba(10, 18, 32, 0.6));
+    border: 1px solid rgba(124, 203, 82, 0.22);
+    box-shadow: 0 10px 40px rgba(78, 158, 63, 0.18);
+}
+.origin-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem; margin-bottom: 0.9rem;
+}
+.origin-body p {
+    color: var(--text-secondary);
+    font-size: 1.02rem; line-height: 1.8;
+    margin-bottom: 0.9rem;
+}
+.origin-body p:last-child { margin-bottom: 0; }
+.origin-body strong { color: var(--enamel-light); font-weight: 600; }
 
 /* --- PRODUCTS GRID --- */
 .products-grid {
@@ -268,8 +349,22 @@ a { text-decoration: none; color: inherit; }
 
 /* --- FOOTER --- */
 footer { padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-subtle); margin-top: auto; }
+.footer-mark {
+    display: flex; justify-content: center; align-items: center; gap: 0.55rem;
+    font-family: var(--font-heading); font-weight: 800; font-size: 1.05rem;
+    margin-bottom: 0.6rem; opacity: 0.9;
+}
+.footer-mark span { color: var(--enamel-light); }
+.footer-signature {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    margin-bottom: 1.2rem;
+}
 .footer-line { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; }
-.footer-policies { display: flex; justify-content: center; gap: 1rem; align-items: center; }
+/* five policy links overflow a phone width without wrapping */
+.footer-policies { display: flex; justify-content: center; gap: 0.5rem 1rem; align-items: center; flex-wrap: wrap; }
 .footer-sep { color: var(--border-subtle); }
 .footer-link { color: var(--text-secondary); font-size: 0.85rem; transition: color 0.3s; }
 .footer-link:hover { color: var(--text-primary); }
@@ -288,9 +383,23 @@ footer { padding: 3rem 0; text-align: center; border-top: 1px solid var(--border
     .glass-nav { flex-direction: column; gap: 1rem; border-radius: 20px; padding: 1.2rem; }
     .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
     
+    /* long letter-spaced labels push these dividers past a phone width */
+    .divider-text { font-size: 0.75rem; letter-spacing: 2px; flex-wrap: wrap; justify-content: center; }
+    .divider-text::before, .divider-text::after { width: 20px; }
+
+    .hero-tagline { font-size: 1.15rem; }
+    .hero-signature { font-size: 0.75rem; margin-top: 1.5rem; }
+
     .glass-card { padding: 1.5rem; border-radius: 16px; }
     .products-grid { grid-template-columns: 1fr; gap: 1.2rem; }
     .product-icon-wrapper { width: 64px; height: 64px; }
+
+    .origin-card { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; justify-items: center; }
+    .origin-mark { width: 96px; height: 96px; border-radius: 22px; }
+    .origin-body h3 { font-size: 1.35rem; }
+    .origin-body p { font-size: 0.95rem; }
+
+    .logo-text { font-size: 1.25rem; }
     
     .tech-card { padding: 1.5rem; }
     .tech-header { flex-direction: column; text-align: center; gap: 1rem; }

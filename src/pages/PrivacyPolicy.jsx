@@ -7,7 +7,7 @@ function PrivacyPolicy({ app }) {
         <div className="glass-card document-card">
           <div className="card-header">
             <h2>Privacy Policy - QRSTU</h2>
-            <Link to="/home" className="close-btn btn-secondary">Back to Home</Link>
+            <Link to="/" className="close-btn btn-secondary">Back to Home</Link>
           </div>
           <div className="document-content">
             <p className="meta">Effective Date: January 11, 2026</p>
@@ -47,7 +47,7 @@ function PrivacyPolicy({ app }) {
         <div className="glass-card document-card">
           <div className="card-header">
             <h2>Privacy Policy - Bensy</h2>
-            <Link to="/home" className="close-btn btn-secondary">Back to Home</Link>
+            <Link to="/" className="close-btn btn-secondary">Back to Home</Link>
           </div>
           <div className="document-content">
             <p className="meta">Effective Date: June 19, 2026</p>
@@ -81,7 +81,7 @@ function PrivacyPolicy({ app }) {
         <div className="glass-card document-card">
           <div className="card-header">
             <h2>Privacy Policy - PembacaKUE</h2>
-            <Link to="/home" className="close-btn btn-secondary">Back to Home</Link>
+            <Link to="/" className="close-btn btn-secondary">Back to Home</Link>
           </div>
           <div className="document-content">
             <p className="meta">Effective Date: July 13, 2026</p>
