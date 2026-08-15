@@ -151,6 +151,30 @@ function Home({ scrollToContact }) {
           </div>
         </div>
 
+        {/* Developer Profile CTA */}
+        <div className="dev-profile-cta reveal-on-scroll">
+          <span className="dev-profile-badge">{t('home.dev_profile_label')}</span>
+          <a
+            id="dev-profile-link"
+            href="https://play.google.com/store/apps/dev?id=4678418670975116062"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="dev-profile-btn"
+            aria-label="Lihat semua aplikasi BaskomLabs di Google Play Store"
+          >
+            {/* Google Play logo icon */}
+            <svg className="dev-profile-icon" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+              <path d="M48 432L272 256 48 80v352z" fill="currentColor" opacity="0.9"/>
+              <path d="M48 80l224 176-64 56L48 80z" fill="#4CAF50"/>
+              <path d="M48 432l160-120-64-56L48 432z" fill="#F44336"/>
+              <path d="M272 256l160-96-160-80v176z" fill="#FFB300"/>
+              <path d="M272 256l160 96-160-80v-16z" fill="#00ACC1"/>
+            </svg>
+            {t('home.dev_profile_cta')}
+          </a>
+          <p className="dev-profile-desc">{t('home.dev_profile_desc')}</p>
+        </div>
+
         <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
           <div className="divider-text">{t('home.core_technologies')}</div>
         </div>
