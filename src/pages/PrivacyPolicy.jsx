@@ -154,7 +154,7 @@ function PrivacyPolicy({ app }) {
 
             <h3>1. Microphone and audio</h3>
             <ul>
-              <li>The microphone is used only after you start it: <strong>Find a verse</strong>, <strong>Listen nearby</strong>, or the <strong>Check audio input</strong>.</li>
+              <li>The microphone is used only after you start it: <strong>Find a verse</strong>, <strong>Listen nearby</strong>, or <strong>Check audio input</strong> in Settings.</li>
               <li>Audio is held in memory and analysed <strong>on your device</strong> by an offline speech model. It is not saved to storage, not written to logs, and never sent to us or anyone else. It is erased when the analysis ends.</li>
               <li><strong>Listen nearby</strong> keeps listening in the background as a foreground service and always shows a notification while it is active. You can stop it from the app or the notification.</li>
               <li>If you choose an audio or video file, the app reads at most its first 30 seconds in memory for recognition. The file is not copied or uploaded.</li>
