@@ -265,6 +265,14 @@ export const ROUTES = [
     desc_en: 'Terms of service for the Yasin, Tahlil & Maulid app.',
   },
   {
+    path: '/privacy-policy-qurandiscovery',
+    priority: 0.4,
+    title_id: `Kebijakan Privasi Quran Discovery${L}`,
+    title_en: `Quran Discovery Privacy Policy${L}`,
+    desc_id: 'Kebijakan privasi Quran Discovery: audio mikrofon diproses di perangkat dan tidak diunggah, tanpa akun, iklan, atau analitik.',
+    desc_en: 'Privacy policy for Quran Discovery: microphone audio is processed on the device and never uploaded; no account, ads or analytics.',
+  },
+  {
     path: '/privacy-policy-bensy',
     priority: 0.4,
     title_id: `Kebijakan Privasi Bensy${L}`,
