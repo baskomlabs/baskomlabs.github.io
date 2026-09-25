@@ -7,7 +7,8 @@ const POLICIES = [
   { app: 'QRSTU', privacy: '/privacy-policy' },
   { app: 'PembacaKUE', privacy: '/privacy-policy-pembacakue', tos: '/tos-pembacakue' },
   { app: 'Yasin Tahlil NU', privacy: '/privacy-policy-yasintahlil', tos: '/tos-yasintahlil' },
-  { app: 'Bensy', privacy: '/privacy-policy-bensy', tos: '/tos-bensy' },
+  // Bensy is hidden for now; its pages stay reachable by direct URL.
+  // { app: 'Bensy', privacy: '/privacy-policy-bensy', tos: '/tos-bensy' },
   { app: 'Quran Discovery', privacy: '/privacy-policy-qurandiscovery' },
 ];
 

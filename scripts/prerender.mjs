@@ -86,7 +86,7 @@ for (const route of ROUTES) {
 copyFileSync(join(dist, 'index.html'), join(dist, '404.html'));
 
 const today = new Date().toISOString().slice(0, 10);
-const urls = ROUTES.filter((r) => !r.canonical) // skip routes that canonicalise elsewhere
+const urls = ROUTES.filter((r) => !r.canonical && !r.hidden) // skip canonicalised and hidden routes
   .map(
     (r) => `  <url>
     <loc>${canonicalUrl(r.path)}</loc>
@@ -106,4 +106,4 @@ ${urls}
   'utf8'
 );
 
-console.log(`prerender: ${written} routes, sitemap with ${ROUTES.filter((r) => !r.canonical).length} urls, 404.html`);
+console.log(`prerender: ${written} routes, sitemap with ${ROUTES.filter((r) => !r.canonical && !r.hidden).length} urls, 404.html`);

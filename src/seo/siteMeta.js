@@ -274,6 +274,7 @@ export const ROUTES = [
   },
   {
     path: '/privacy-policy-bensy',
+    hidden: true, // Bensy hidden for now: out of the sitemap, page still served
     priority: 0.4,
     title_id: `Kebijakan Privasi Bensy${L}`,
     title_en: `Bensy Privacy Policy${L}`,
@@ -282,6 +283,7 @@ export const ROUTES = [
   },
   {
     path: '/tos-bensy',
+    hidden: true, // Bensy hidden for now: out of the sitemap, page still served
     priority: 0.3,
     title_id: `Syarat & Ketentuan Bensy${L}`,
     title_en: `Bensy Terms of Service${L}`,
