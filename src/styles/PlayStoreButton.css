@@ -35,3 +35,29 @@
   width: 100%;
   margin-top: auto; /* Push to the bottom of the card */
 }
+
+/* Listing still in Google Play review: greyed out and not clickable */
+.playstore-button.is-pending {
+  filter: grayscale(1);
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.playstore-button.is-pending:hover {
+  transform: none;
+  filter: grayscale(1);
+}
+.playstore-pending-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+.playstore-pending-note::before {
+  content: '';
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}

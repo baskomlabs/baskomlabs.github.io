@@ -33,6 +33,15 @@ const APPS = [
     url: 'https://play.google.com/store/apps/details?id=com.baskom.yasintahlilmaulid',
     icon: '/apps/yasintahlil.png',
   },
+  {
+    name: 'Quran Discovery',
+    theme: 'qurandiscovery',
+    descKey: 'home.qurandiscovery_desc',
+    tags: ['Al-Quran', 'Cari Ayat', 'Tafsir'],
+    url: 'https://play.google.com/store/apps/details?id=com.baskomlabs.qurandiscovery',
+    icon: '/apps/qurandiscovery.png',
+    pending: true, // in Google Play review; flip off once the listing is public
+  },
 ];
 
 const SUITE_FEATURES = ['suite_f1', 'suite_f2', 'suite_f3', 'suite_f4'];
@@ -135,7 +144,7 @@ function Home({ scrollToContact }) {
                   <span key={tag} className={`tag tag-${app.theme}`}>{tag}</span>
                 ))}
               </div>
-              <PlayStoreButton url={app.url} appName={app.name} />
+              <PlayStoreButton url={app.url} appName={app.name} pending={app.pending} />
             </article>
           ))}
         </div>

@@ -42,6 +42,7 @@
     --qrstu-ink: #0e7490;
     --pembacakue-ink: #6d28d9;
     --yasintahlil-ink: #047857;
+    --qurandiscovery-ink: #8a6d2f;
 
     /* legacy names still referenced by learning / policy pages */
     --bg-dark: var(--bg);
@@ -105,6 +106,7 @@
         --qrstu-ink: #22d3ee;
         --pembacakue-ink: #a78bfa;
         --yasintahlil-ink: #34d399;
+        --qurandiscovery-ink: #d4b77a;
 
         --accent-blue: #3b82f6;
         --accent-indigo: #6366f1;
@@ -144,6 +146,7 @@
     --qrstu-ink: #22d3ee;
     --pembacakue-ink: #a78bfa;
     --yasintahlil-ink: #34d399;
+    --qurandiscovery-ink: #d4b77a;
 
     --accent-blue: #3b82f6;
     --accent-indigo: #6366f1;
@@ -485,7 +488,7 @@ main { flex: 1; }
 }
 
 /* App cards */
-.lp-apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.lp-apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 .lp-app {
     --app-ink: var(--accent);
     position: relative;
@@ -508,12 +511,13 @@ main { flex: 1; }
 .lp-app--qrstu { --app-ink: var(--qrstu-ink); }
 .lp-app--pembacakue { --app-ink: var(--pembacakue-ink); }
 .lp-app--yasintahlil { --app-ink: var(--yasintahlil-ink); }
+.lp-app--qurandiscovery { --app-ink: var(--qurandiscovery-ink); }
 .lp-app-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
 .lp-app-top .product-icon-wrapper { width: 56px; height: 56px; border-radius: 16px; margin: 0; flex-shrink: 0; }
 .lp-app h3 { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; }
 .lp-app p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.1rem; }
 .lp-app .product-tags { justify-content: flex-start; }
-.lp-app .playstore-button-container { justify-content: flex-start; margin-top: auto; padding: 1.25rem 0 0; }
+.lp-app .playstore-button-container { justify-content: flex-start; gap: 0.9rem; flex-wrap: wrap; margin-top: auto; padding: 1.25rem 0 0; }
 .lp-app .playstore-button { height: 46px; }
 
 .lp-apps-more {
@@ -814,6 +818,7 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
 .tag-qrstu { background: color-mix(in srgb, var(--qrstu-ink) 12%, transparent); color: var(--qrstu-ink); }
 .tag-pembacakue { background: color-mix(in srgb, var(--pembacakue-ink) 12%, transparent); color: var(--pembacakue-ink); }
 .tag-yasintahlil { background: color-mix(in srgb, var(--yasintahlil-ink) 12%, transparent); color: var(--yasintahlil-ink); }
+.tag-qurandiscovery { background: color-mix(in srgb, var(--qurandiscovery-ink) 14%, transparent); color: var(--qurandiscovery-ink); }
 
 .feature-card { border-radius: var(--radius-sm); padding: 1.5rem; }
 

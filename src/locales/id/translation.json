@@ -11,7 +11,7 @@
     "hero_badge": "Berdiri sejak 2017",
     "hero_title_1": "Bengkel Aplikasi",
     "hero_title_2": "Kompeni",
-    "hero_subtitle": "Kami bikin aplikasi Android kecil buat keperluan sehari-hari — cek saldo kartu, baca kode QRIS, sampai tahlilan. Dibikin di rumah, dipakai sendiri, dibagi ke yang butuh.",
+    "hero_subtitle": "Kami bikin aplikasi Android dan web buat keperluan sehari-hari — cek saldo kartu, baca kode QRIS, cari ayat Al-Quran dari suara bacaan, sampai tahlilan. Dibikin di rumah, dipakai sendiri, dibagi ke yang butuh.",
     "hero_tagline": "Wadahnya ngoprek.",
     "hero_signature": "do code for fun, no.. serious things.",
     "origin_label": "SOAL NAMA",
@@ -32,7 +32,7 @@
     "contact_desc": "Mau ngobrol soal proyek, nemu bug di aplikasi kami, atau sekadar nanya-nanya? Sapa aja, nggak usah sungkan.",
     "email_us": "Email Kami",
     "hero_cta_apps": "Lihat aplikasi",
-    "apps_title": "Aplikasi kecil buat urusan sehari-hari.",
+    "apps_title": "Aplikasi dan web kecil buat urusan sehari-hari.",
     "tech_title": "Yang biasa kami oprek.",
     "qris_title": "QRIS",
     "qris_desc": "Satu kode QR menyimpan banyak data: nama merchant, kota, sampai nominal. QRSTU membongkar strukturnya supaya gampang dibaca dan dipelajari.",
@@ -52,7 +52,9 @@
     "ruang_title": "Ruang Ilmu",
     "ruang_desc": "Bacaan seputar keutamaan Yasin, Tahlil, kitab-kitab Maulid, tradisi NU, dan Al-Hikam — sama persis dengan menu Ruang Ilmu di dalam aplikasi. Bisa dibaca langsung di sini.",
     "ruang_tab_home": "Beranda",
-    "ruang_open": "Buka di tab baru"
+    "ruang_open": "Buka di tab baru",
+    "qurandiscovery_desc": "Cari ayat Al-Quran dari suara bacaan. Lengkap dengan terjemahan, tafsir & audio.",
+    "play_pending": "Sedang ditinjau Google Play"
   },
   "footer": {
     "signature": "do code for fun, no.. serious things.",

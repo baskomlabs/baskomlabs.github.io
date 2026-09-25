@@ -11,7 +11,7 @@
     "hero_badge": "Est. 2017",
     "hero_title_1": "Bengkel Aplikasi",
     "hero_title_2": "Kompeni",
-    "hero_subtitle": "We build small Android apps for everyday things — checking card balances, reading QRIS codes, following along at a tahlil. Built at home, used at home, passed on to whoever needs them.",
+    "hero_subtitle": "We build Android apps and websites for everyday things — checking card balances, reading QRIS codes, finding a Quran verse from its recitation, following along at a tahlil. Built at home, used at home, passed on to whoever needs them.",
     "hero_tagline": "Where the tinkering happens.",
     "hero_signature": "do code for fun, no.. serious things.",
     "origin_label": "ABOUT THE NAME",
@@ -32,7 +32,7 @@
     "contact_desc": "Want to talk about a project, found a bug in one of our apps, or just curious about something? Say hello.",
     "email_us": "Email Us",
     "hero_cta_apps": "See the apps",
-    "apps_title": "Small apps for everyday things.",
+    "apps_title": "Small apps and websites for everyday things.",
     "tech_title": "What we usually tinker with.",
     "qris_title": "QRIS",
     "qris_desc": "One QR code carries a lot of data: merchant name, city, even the amount. QRSTU unpacks that structure so it is easy to read and learn from.",
@@ -52,7 +52,9 @@
     "ruang_title": "Ruang Ilmu",
     "ruang_desc": "Readings on the virtues of Yasin and Tahlil, the Maulid books, NU tradition and Al-Hikam — the same Ruang Ilmu you find inside the app, readable right here. Content is in Indonesian.",
     "ruang_tab_home": "Home",
-    "ruang_open": "Open in new tab"
+    "ruang_open": "Open in new tab",
+    "qurandiscovery_desc": "Find a Quran verse by listening to recitation. Read with translation and tafsir.",
+    "play_pending": "In review on Google Play"
   },
   "footer": {
     "signature": "do code for fun, no.. serious things.",

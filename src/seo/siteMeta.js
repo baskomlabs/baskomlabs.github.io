@@ -29,11 +29,11 @@ export const ROUTES = [
     path: '/',
     priority: 1.0,
     title_id: 'BaskomLabs — Bengkel Aplikasi Kompeni',
-    title_en: 'BaskomLabs — Indie Android Studio from Indonesia',
+    title_en: 'BaskomLabs — Indie App & Web Studio from Indonesia',
     desc_id:
-      'Studio indie yang ngoprek aplikasi Android buat keperluan sehari-hari: baca kartu NFC, scan QRIS, sampai Yasin & Tahlil. Semua aplikasi tersedia di Google Play. Wadahnya ngoprek.',
+      'Studio indie yang ngoprek aplikasi Android dan web buat keperluan sehari-hari: baca kartu NFC, scan QRIS, cari ayat Al-Quran dari suara, sampai Yasin & Tahlil. Wadahnya ngoprek.',
     desc_en:
-      'A small Indonesian studio building everyday Android apps: NFC card reading, QRIS scanning, and Yasin & Tahlil. All apps available on Google Play. Where the tinkering happens.',
+      'A small Indonesian studio building everyday Android apps and websites: NFC card reading, QRIS scanning, finding Quran verses by voice, and Yasin & Tahlil. Where the tinkering happens.',
   },
   {
     path: '/contact',
