@@ -19,7 +19,7 @@ function QRISComponents() {
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_comp_p1_1') }} />
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_comp_p1_2') }} />
             
-            <div style={{ background: '#0f172a', padding: '1.5rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', margin: '1.5rem 0', fontFamily: 'monospace' }}>
+            <div style={{ background: 'var(--code-bg)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--border-subtle)', margin: '1.5rem 0', fontFamily: 'monospace' }}>
                 <span style={{ color: 'var(--text-secondary)' }}>{t('learning.qris_comp_code_1')}</span><br/>
                 <span style={{ color: 'var(--accent-purple)' }}>val</span> rawData = barcode.rawValue
             </div>
@@ -32,7 +32,7 @@ function QRISComponents() {
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_comp_p3_1') }} />
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_comp_p3_2') }} />
 
-            <div style={{ padding: '1.5rem', background: 'rgba(0,0,0,0.3)', borderRadius: '12px', margin: '2rem 0', textAlign: 'center', fontSize: '1.2rem', fontWeight: 'bold' }}>
+            <div style={{ padding: '1.5rem', background: 'var(--surface-sunken)', borderRadius: '12px', margin: '2rem 0', textAlign: 'center', fontSize: '1.2rem', fontWeight: 'bold' }}>
                 <span style={{ color: '#3b82f6' }}>Data Parsed</span> ➔ <span style={{ color: '#10b981' }}>Beautiful UI</span>
             </div>
             

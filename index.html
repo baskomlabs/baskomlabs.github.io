@@ -24,14 +24,27 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta name="theme-color" content="#0a0a0c">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f6f7f2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)">
+
+    <!-- Apply a saved light/dark choice before first paint. No saved choice means
+         "follow the system", which the CSS handles on its own via the media query. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('baskom-theme');
+          if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="theme-modern-dark">
+<body>
     <!-- Ambient Background Effects -->
     <div class="ambient-glow glow-1"></div>
     <div class="ambient-glow glow-2"></div>

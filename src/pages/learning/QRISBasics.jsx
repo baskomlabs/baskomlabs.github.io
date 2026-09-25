@@ -19,7 +19,7 @@ function QRISBasics() {
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_basics_p1_1') }} />
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_basics_p1_2') }} />
             
-            <div style={{ padding: '1.5rem', background: 'rgba(0,0,0,0.2)', borderRadius: '12px', margin: '2rem 0', textAlign: 'center' }}>
+            <div style={{ padding: '1.5rem', background: 'var(--surface-sunken)', borderRadius: '12px', margin: '2rem 0', textAlign: 'center' }}>
                 <h3 style={{ fontSize: '2.5rem', color: 'var(--text-secondary)', opacity: 0.5, margin: 0 }}>EMVCo</h3>
             </div>
             

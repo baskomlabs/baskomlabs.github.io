@@ -16,16 +16,16 @@ function QRISTerminology() {
             <p className="meta">{t('learning.qris_term_meta')}</p>
             
             <div className="terminology-list">
-                <div style={{ marginBottom: '1.5rem', background: 'rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '12px' }}>
+                <div style={{ marginBottom: '1.5rem', background: 'var(--surface-muted)', padding: '1.5rem', borderRadius: '12px' }}>
                     <p style={{ margin: 0 }} dangerouslySetInnerHTML={{ __html: t('learning.qris_term_emvco') }} />
                 </div>
-                <div style={{ marginBottom: '1.5rem', background: 'rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '12px' }}>
+                <div style={{ marginBottom: '1.5rem', background: 'var(--surface-muted)', padding: '1.5rem', borderRadius: '12px' }}>
                     <p style={{ margin: 0 }} dangerouslySetInnerHTML={{ __html: t('learning.qris_term_tlv') }} />
                 </div>
-                <div style={{ marginBottom: '1.5rem', background: 'rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '12px' }}>
+                <div style={{ marginBottom: '1.5rem', background: 'var(--surface-muted)', padding: '1.5rem', borderRadius: '12px' }}>
                     <p style={{ margin: 0 }} dangerouslySetInnerHTML={{ __html: t('learning.qris_term_mcc') }} />
                 </div>
-                <div style={{ marginBottom: '1.5rem', background: 'rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '12px' }}>
+                <div style={{ marginBottom: '1.5rem', background: 'var(--surface-muted)', padding: '1.5rem', borderRadius: '12px' }}>
                     <p style={{ margin: 0 }} dangerouslySetInnerHTML={{ __html: t('learning.qris_term_crc') }} />
                 </div>
             </div>

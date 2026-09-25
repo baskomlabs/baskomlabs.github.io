@@ -1,11 +1,77 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import BaskomMark from '../components/BaskomMark';
 import PlayStoreButton from '../components/PlayStoreButton';
 
+const PLAY_DEV_URL = 'https://play.google.com/store/apps/dev?id=4678418670975116062';
+
+const APPS = [
+  {
+    name: 'QRSTU',
+    theme: 'qrstu',
+    descKey: 'home.qrstu_desc',
+    tags: ['QRIS', 'Scanner', 'Edukasi'],
+    url: 'https://play.google.com/store/apps/details?id=com.baskom.qrisparser',
+    icon: (
+      <svg viewBox="0 0 512 512" fill="none" className="product-svg">
+        <rect x="128" y="128" width="80" height="80" rx="16" fill="currentColor"/>
+        <rect x="304" y="128" width="80" height="80" rx="16" fill="currentColor"/>
+        <rect x="128" y="304" width="80" height="80" rx="16" fill="currentColor"/>
+        <path d="M304 384h80M384 304v80" stroke="currentColor" strokeWidth="40" strokeLinecap="round"/>
+        <rect x="80" y="80" width="352" height="352" rx="48" stroke="currentColor" strokeWidth="32" fill="none"/>
+      </svg>
+    ),
+  },
+  {
+    name: 'PembacaKUE',
+    theme: 'pembacakue',
+    descKey: 'home.pembacakue_desc',
+    tags: ['eMoney', 'Flazz', 'NFC'],
+    url: 'https://play.google.com/store/apps/details?id=com.baskom.pembacakue',
+    icon: (
+      <svg viewBox="0 0 512 512" fill="none" className="product-svg">
+        <rect x="64" y="144" width="384" height="224" rx="32" stroke="currentColor" strokeWidth="32" fill="none"/>
+        <circle cx="160" cy="256" r="48" fill="currentColor"/>
+        <rect x="256" y="216" width="128" height="24" rx="12" fill="currentColor"/>
+        <rect x="256" y="272" width="80" height="24" rx="12" fill="currentColor"/>
+      </svg>
+    ),
+  },
+  {
+    name: 'Yasin Tahlil NU',
+    theme: 'yasintahlil',
+    descKey: 'home.yasintahlil_desc',
+    tags: ['Yasin', 'Tahlil', 'Offline'],
+    url: 'https://play.google.com/store/apps/details?id=com.baskom.yasintahlilmaulid',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="product-svg" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+      </svg>
+    ),
+  },
+];
+
+const TECH = [
+  { key: 'nfc', to: '/learning/nfc-basics', glyph: '((·))' },
+  { key: 'qris', to: '/learning/qris-basics', glyph: '[▦]' },
+  { key: 'offline', to: '/learning/yasin-hikmah', glyph: '</>' },
+];
+
+// Code glyphs rising off the bowl like steam, same idea as the Play header banner.
+const STEAM = ['{ }', ';', '</>', '( )', '>_'];
+
+function SectionHead({ index, label, title }) {
+  return (
+    <div className="lp-section-head reveal-on-scroll">
+      <div className="lp-eyebrow"><span>{index}</span>{label}</div>
+      {title && <h2 className="lp-section-title">{title}</h2>}
+    </div>
+  );
+}
+
 function Home({ scrollToContact }) {
   const { t } = useTranslation();
-  const containerRef = useRef(null);
 
   useEffect(() => {
     if (scrollToContact) {
@@ -15,198 +81,144 @@ function Home({ scrollToContact }) {
     }
   }, [scrollToContact]);
 
-  // Parallax Effect
-  const handleMouseMove = (e) => {
-    // Disable parallax for devices without hover (mobile/touch)
-    if (!containerRef.current || window.matchMedia("(hover: none)").matches) return;
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-    
-    // Calculate rotation (-10deg to +10deg max)
-    const xPos = (clientX / innerWidth - 0.5) * 20;
-    const yPos = (clientY / innerHeight - 0.5) * -20;
-    
-    // Calculate glow movement
-    const moveX = (clientX / innerWidth - 0.5) * 50;
-    const moveY = (clientY / innerHeight - 0.5) * 50;
-
-    containerRef.current.style.setProperty('--rx', `${yPos}deg`);
-    containerRef.current.style.setProperty('--ry', `${xPos}deg`);
-    
-    document.documentElement.style.setProperty('--px', `${moveX}px`);
-    document.documentElement.style.setProperty('--py', `${moveY}px`);
-  };
-
   return (
-    <div ref={containerRef} onMouseMove={handleMouseMove} style={{ perspective: '1000px' }}>
-      {/* Adding dynamic styles for parallax on global glows through inline styles */}
-      <style dangerouslySetInnerHTML={{__html: `
-        @media (hover: hover) {
-          .glow-1 { transform: translate(calc(var(--px, 0px) * -1), calc(var(--py, 0px) * -1)); }
-          .glow-2 { transform: translate(calc(var(--px, 0px) * 1.5), calc(var(--py, 0px) * 1.5)); }
-          .product-card {
-             transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-             transition: transform 0.1s ease-out;
-          }
-          .product-card:hover {
-             transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale3d(1.05, 1.05, 1.05);
-          }
-        }
-      `}} />
-
-      <section id="home" className="active-view">
-        <div className="hero">
-          <div className="hero-content">
-            <div className="hero-badge reveal-on-scroll">{t('home.hero_badge')}</div>
-            <h1 className="hero-title reveal-on-scroll">
-              {t('home.hero_title_1')} <span className="gradient-text">{t('home.hero_title_2')}</span>
-            </h1>
-            <div className="hero-tagline reveal-on-scroll">{t('home.hero_tagline')}</div>
-            <p className="hero-subtitle reveal-on-scroll">
-              {t('home.hero_subtitle')}
-            </p>
-            <div className="hero-signature reveal-on-scroll">{t('home.hero_signature')}</div>
+    <div className="lp">
+      {/* ---------- HERO ---------- */}
+      <section id="home" className="lp-hero">
+        <div className="lp-hero-copy">
+          <div className="lp-chip">
+            <span className="lp-chip-dot" aria-hidden="true" />
+            {t('home.hero_badge')}
           </div>
+          <h1 className="lp-hero-title">
+            {t('home.hero_title_1')} <span className="gradient-text">{t('home.hero_title_2')}</span>
+          </h1>
+          <p className="lp-hero-tagline">{t('home.hero_tagline')}</p>
+          <p className="lp-hero-sub">{t('home.hero_subtitle')}</p>
+
+          <div className="lp-hero-actions">
+            <a href="#apps" className="btn-solid">
+              {t('home.hero_cta_apps')}
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" /></svg>
+            </a>
+            <a href={PLAY_DEV_URL} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              {t('home.dev_profile_cta')}
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+            </a>
+          </div>
+
+          <div className="hero-signature">{t('home.hero_signature')}</div>
         </div>
 
-        <div className="section-divider reveal-on-scroll">
-          <div className="divider-text">{t('home.origin_label')}</div>
+        <div className="lp-hero-visual" aria-hidden="true">
+          <div className="lp-plate">
+            <div className="lp-steam">
+              {STEAM.map((g, i) => (
+                <span key={g} style={{ '--i': i }}>{g}</span>
+              ))}
+            </div>
+            <BaskomMark size={220} className="lp-plate-mark" />
+            <div className="lp-plate-shadow" />
+          </div>
+
+          <div className="lp-terminal">
+            <div className="lp-terminal-bar"><i /><i /><i /></div>
+            <div className="lp-terminal-body">
+              <div><span className="t-prompt">~/baskom $</span> stir ./ide</div>
+              {APPS.map((a) => (
+                <div key={a.name}><span className="t-ok">✓</span> {a.name}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- APPS ---------- */}
+      <section id="apps" className="lp-section">
+        <SectionHead index="01" label={t('home.featured_projects')} title={t('home.apps_title')} />
+
+        <div className="lp-apps reveal-on-scroll">
+          {APPS.map((app) => (
+            <article key={app.name} className={`lp-app lp-app--${app.theme}`}>
+              <div className="lp-app-top">
+                <div className={`product-icon-wrapper ${app.theme}-theme`}>{app.icon}</div>
+                <h3>{app.name}</h3>
+              </div>
+              <p>{t(app.descKey)}</p>
+              <div className="product-tags">
+                {app.tags.map((tag) => (
+                  <span key={tag} className={`tag tag-${app.theme}`}>{tag}</span>
+                ))}
+              </div>
+              <PlayStoreButton url={app.url} appName={app.name} />
+            </article>
+          ))}
         </div>
 
-        <div className="origin-card glass-card reveal-on-scroll">
-          <div className="origin-mark">
-            <BaskomMark size={96} />
+        <div className="lp-apps-more reveal-on-scroll">
+          <span>{t('home.dev_profile_desc')}</span>
+          <a href={PLAY_DEV_URL} target="_blank" rel="noopener noreferrer" className="lp-link">
+            {t('home.dev_profile_label')}
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+        </div>
+      </section>
+
+      {/* ---------- WHY BASKOM ---------- */}
+      <section className="lp-section">
+        <SectionHead index="02" label={t('home.origin_label')} />
+
+        <div className="lp-origin reveal-on-scroll">
+          <div className="lp-origin-mark">
+            <BaskomMark size={120} />
           </div>
-          <div className="origin-body">
+          <div className="lp-origin-body">
             <h3>{t('home.origin_title')}</h3>
             <p>{t('home.origin_p1')}</p>
             <p><Trans i18nKey="home.origin_p2" components={{ strong: <strong /> }} /></p>
           </div>
         </div>
+      </section>
 
-        <div className="section-divider reveal-on-scroll">
-          <div className="divider-text">{t('home.featured_projects')}</div>
-        </div>
+      {/* ---------- WHAT WE TINKER WITH ---------- */}
+      <section className="lp-section">
+        <SectionHead index="03" label={t('home.core_technologies')} title={t('home.tech_title')} />
 
-        <div className="products-grid reveal-on-scroll">
-          <div className="product-card glass-card">
-            <div className="product-icon-wrapper qrstu-theme">
-              <svg viewBox="0 0 512 512" fill="none" className="product-svg">
-                <rect x="128" y="128" width="80" height="80" rx="16" fill="currentColor"/>
-                <rect x="304" y="128" width="80" height="80" rx="16" fill="currentColor"/>
-                <rect x="128" y="304" width="80" height="80" rx="16" fill="currentColor"/>
-                <path d="M304 384h80M384 304v80" stroke="currentColor" strokeWidth="40" strokeLinecap="round"/>
-                <rect x="80" y="80" width="352" height="352" rx="48" stroke="currentColor" strokeWidth="32" fill="none"/>
-              </svg>
-            </div>
-            <div className="product-info">
-              <h3>QRSTU</h3>
-              <p>{t('home.qrstu_desc')}</p>
-              <div className="product-tags">
-                <span className="tag tag-qrstu">QRIS</span>
-                <span className="tag tag-qrstu">Scanner</span>
-                <span className="tag tag-qrstu">Edukasi</span>
-              </div>
-              <PlayStoreButton url="https://play.google.com/store/apps/details?id=com.baskom.qrisparser" />
-            </div>
-          </div>
-
-          <div className="product-card glass-card">
-            <div className="product-icon-wrapper pembacakue-theme">
-              <svg viewBox="0 0 512 512" fill="none" className="product-svg">
-                <rect x="64" y="144" width="384" height="224" rx="32" stroke="currentColor" strokeWidth="32" fill="none"/>
-                <circle cx="160" cy="256" r="48" fill="currentColor"/>
-                <rect x="256" y="216" width="128" height="24" rx="12" fill="currentColor"/>
-                <rect x="256" y="272" width="80" height="24" rx="12" fill="currentColor"/>
-              </svg>
-            </div>
-            <div className="product-info">
-              <h3>PembacaKUE</h3>
-              <p>{t('home.pembacakue_desc')}</p>
-              <div className="product-tags">
-                <span className="tag tag-pembacakue">eMoney</span>
-                <span className="tag tag-pembacakue">Flazz</span>
-                <span className="tag tag-pembacakue">NFC</span>
-              </div>
-              <PlayStoreButton url="https://play.google.com/store/apps/details?id=com.baskom.pembacakue" />
-            </div>
-          </div>
-
-          <div className="product-card glass-card">
-            <div className="product-icon-wrapper yasintahlil-theme">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="product-svg" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
-              </svg>
-            </div>
-            <div className="product-info">
-              <h3>Yasin Tahlil NU</h3>
-              <p>{t('home.yasintahlil_desc')}</p>
-              <div className="product-tags">
-                <span className="tag tag-yasintahlil">Yasin</span>
-                <span className="tag tag-yasintahlil">Tahlil</span>
-                <span className="tag tag-yasintahlil">Offline</span>
-              </div>
-              <PlayStoreButton url="https://play.google.com/store/apps/details?id=com.baskom.yasintahlilmaulid" />
-            </div>
-          </div>
-        </div>
-
-        {/* Developer Profile CTA */}
-        <div className="dev-profile-cta reveal-on-scroll">
-          <span className="dev-profile-badge">{t('home.dev_profile_label')}</span>
-          <a
-            id="dev-profile-link"
-            href="https://play.google.com/store/apps/dev?id=4678418670975116062"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="dev-profile-btn"
-            aria-label="Lihat semua aplikasi BaskomLabs di Google Play Store"
-          >
-            {/* Google Play logo icon */}
-            <svg className="dev-profile-icon" viewBox="0 0 512 512" fill="none" aria-hidden="true">
-              <path d="M48 432L272 256 48 80v352z" fill="currentColor" opacity="0.9"/>
-              <path d="M48 80l224 176-64 56L48 80z" fill="#4CAF50"/>
-              <path d="M48 432l160-120-64-56L48 432z" fill="#F44336"/>
-              <path d="M272 256l160-96-160-80v176z" fill="#FFB300"/>
-              <path d="M272 256l160 96-160-80v-16z" fill="#00ACC1"/>
-            </svg>
-            {t('home.dev_profile_cta')}
-          </a>
-          <p className="dev-profile-desc">{t('home.dev_profile_desc')}</p>
-        </div>
-
-        <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
-          <div className="divider-text">{t('home.core_technologies')}</div>
-        </div>
-
-        <div className="tech-grid reveal-on-scroll">
-          <div className="tech-card glass-card">
-            <div className="tech-header">
-              <div className="tech-icon tech-nfc">
-                <svg viewBox="0 0 512 512" fill="none" stroke="currentColor" strokeWidth="32">
-                  <path d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96z"/>
-                  <path d="M256 80c-97.1 0-176 78.9-176 176s78.9 176 176 176 176-78.9 176-176S353.1 80 256 80z"/>
-                  <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0z"/>
-                </svg>
-              </div>
-              <h3>{t('home.nfc_title')}</h3>
-            </div>
-            <p className="tech-desc">
-              {t('home.nfc_desc')}
-            </p>
-          </div>
+        <div className="lp-tech reveal-on-scroll">
+          {TECH.map((item) => (
+            <Link key={item.key} to={item.to} className="lp-tech-card">
+              <span className="lp-tech-glyph" aria-hidden="true">{item.glyph}</span>
+              <h3>{t(`home.${item.key}_title`)}</h3>
+              <p>{t(`home.${item.key}_desc`)}</p>
+              <span className="lp-link">
+                {t('home.learn_more')}
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </span>
+            </Link>
+          ))}
         </div>
       </section>
 
-      <section id="contact" className="active-view">
-        <div className="centered-content">
-          <div className="glass-card contact-card reveal-on-scroll">
+      {/* ---------- CONTACT ---------- */}
+      <section id="contact" className="lp-section">
+        <div className="lp-contact reveal-on-scroll">
+          <svg className="lp-contact-marble" aria-hidden="true" preserveAspectRatio="none">
+            <filter id="lp-marble" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+              <feTurbulence type="fractalNoise" baseFrequency="0.012 0.003" numOctaves="4" seed="11" />
+              <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1 0 0 0 -0.03" />
+              <feComponentTransfer><feFuncA type="linear" slope="14" intercept="-7.2" /></feComponentTransfer>
+            </filter>
+            <rect width="100%" height="100%" filter="url(#lp-marble)" />
+          </svg>
+          <div className="lp-contact-copy">
+            <div className="lp-contact-prompt" aria-hidden="true">&gt;_</div>
             <h2>{t('home.contact_title')}</h2>
             <p>{t('home.contact_desc')}</p>
-            <a href="mailto:baskomdevs@gmail.com" className="btn-primary mt-2">
-              {t('home.email_us')}
-            </a>
           </div>
+          <a href="mailto:baskomdevs@gmail.com" className="btn-enamel">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>
+            {t('home.email_us')}
+          </a>
         </div>
       </section>
     </div>
@@ -214,4 +226,3 @@ function Home({ scrollToContact }) {
 }
 
 export default Home;
-

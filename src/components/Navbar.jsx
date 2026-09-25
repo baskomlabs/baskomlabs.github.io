@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BaskomMark from './BaskomMark';
+import ThemeToggle from './ThemeToggle';
 
 function Navbar() {
   const location = useLocation();
@@ -17,38 +18,42 @@ function Navbar() {
   }, [location]);
 
   return (
-    <nav className="glass-nav">
-      <div className="logo-area">
-        <Link to="/" className="logo-text">
+    <header className="site-header">
+      <nav className="site-nav">
+        <Link to="/" className="logo-text" aria-label="BaskomLabs">
           <BaskomMark size={34} className="logo-mark" />
-          Baskom<span>Labs</span>
+          <span className="logo-word">Baskom<span>Labs</span></span>
         </Link>
-      </div>
-      
-      <div className="nav-links">
-        <Link 
-          to="/" 
-          className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}
-        >
-          {t('navbar.home')}
-        </Link>
-        <Link 
-          to="/learning" 
-          className={`nav-item ${location.pathname.startsWith('/learning') ? 'active' : ''}`}
-        >
-          {t('navbar.learning')}
-        </Link>
-        <Link 
-          to="/contact" 
-          className={`nav-item ${location.pathname === '/contact' ? 'active' : ''}`}
-        >
-          {t('navbar.contact')}
-        </Link>
-        <button className="lang-switcher nav-item" onClick={toggleLanguage} style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontWeight: '500' }}>
-          {t('navbar.switch_lang')}
-        </button>
-      </div>
-    </nav>
+
+        <div className="nav-links">
+          <Link
+            to="/"
+            className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}
+          >
+            {t('navbar.home')}
+          </Link>
+          <Link
+            to="/learning"
+            className={`nav-item ${location.pathname.startsWith('/learning') ? 'active' : ''}`}
+          >
+            {t('navbar.learning')}
+          </Link>
+          <Link
+            to="/contact"
+            className={`nav-item ${location.pathname === '/contact' ? 'active' : ''}`}
+          >
+            {t('navbar.contact')}
+          </Link>
+        </div>
+
+        <div className="nav-controls">
+          <button type="button" className="lang-switcher" onClick={toggleLanguage}>
+            {t('navbar.switch_lang')}
+          </button>
+          <ThemeToggle />
+        </div>
+      </nav>
+    </header>
   );
 }
 

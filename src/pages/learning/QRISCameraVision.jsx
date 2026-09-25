@@ -19,9 +19,9 @@ function QRISCameraVision() {
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_cv_p1_1') }} />
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_cv_p1_2') }} />
             
-            <div style={{ padding: '2rem', background: 'rgba(0,0,0,0.3)', borderRadius: '12px', margin: '2rem 0', textAlign: 'center' }}>
-                <div style={{ display: 'inline-block', width: '50px', height: '50px', border: '5px solid white', padding: '5px' }}>
-                    <div style={{ width: '100%', height: '100%', background: 'white' }}></div>
+            <div style={{ padding: '2rem', background: 'var(--surface-sunken)', borderRadius: '12px', margin: '2rem 0', textAlign: 'center' }}>
+                <div style={{ display: 'inline-block', width: '50px', height: '50px', border: '5px solid var(--text-primary)', padding: '5px' }}>
+                    <div style={{ width: '100%', height: '100%', background: 'var(--text-primary)' }}></div>
                 </div>
             </div>
 

@@ -26,16 +26,31 @@
     "pembacakue_desc": "Check eMoney, Flazz, and other NFC card balances straight from your phone.",
     "yasintahlil_desc": "Yasin, Tahlil, Maulid & Sholawat in full — works without an internet connection.",
     "core_technologies": "CORE TECHNOLOGIES",
-    "nfc_title": "NFC Technology",
+    "nfc_title": "NFC",
     "nfc_desc": "We tinker with NFC to connect cards and phones safely — from reading an eMoney balance to understanding the conversation between a card and a reader. That is what PembacaKUE is made of.",
     "contact_title": "Get in Touch",
     "contact_desc": "Want to talk about a project, found a bug in one of our apps, or just curious about something? Say hello.",
-    "email_us": "Email Us"
+    "email_us": "Email Us",
+    "hero_cta_apps": "See the apps",
+    "apps_title": "Small apps for everyday things.",
+    "tech_title": "What we usually tinker with.",
+    "qris_title": "QRIS",
+    "qris_desc": "One QR code carries a lot of data: merchant name, city, even the amount. QRSTU unpacks that structure so it is easy to read and learn from.",
+    "offline_title": "Offline content",
+    "offline_desc": "Yasin, Tahlil and Maulid readings are stored on the phone, so they still open at a gathering where the signal is bad.",
+    "learn_more": "Learn more"
   },
   "footer": {
     "signature": "do code for fun, no.. serious things.",
     "copyright": "© 2026 BaskomLabs — Bengkel Aplikasi Kompeni.",
     "privacy": "Privacy",
-    "tos": "ToS"
+    "tos": "ToS",
+    "legal": "App policies"
+  },
+  "theme": {
+    "label": "Theme",
+    "system": "Follow system",
+    "light": "Light mode",
+    "dark": "Dark mode"
   }
 }

@@ -27,7 +27,7 @@ function ComponentsPage() {
           <div className="glass-card" style={{ padding: '2rem', textAlign: 'center', margin: '2rem 0' }}>
             <div className="pulse-icon" style={{ fontSize: '3rem', marginBottom: '1rem' }}>🤖</div>
             <h4 style={{ color: 'var(--text-primary)', margin: 0 }}>{t('learning.comp_code_title')}</h4>
-            <div style={{ background: 'rgba(0,0,0,0.4)', padding: '15px', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85rem', marginTop: '15px', textAlign: 'left' }}>
+            <div style={{ background: 'var(--surface-sunken)', padding: '15px', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85rem', marginTop: '15px', textAlign: 'left' }}>
                 <span style={{ color: 'var(--accent-purple)' }}>{t('learning.comp_code_val')}</span> nfcAdapter = NfcAdapter.getDefaultAdapter(context)<br/>
                 <span style={{ color: 'var(--accent-purple)' }}>{t('learning.comp_code_val')}</span> isoDep = IsoDep.get(tag)<br/>
                 isoDep.connect()<br/>

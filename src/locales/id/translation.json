@@ -26,16 +26,31 @@
     "pembacakue_desc": "Cek saldo eMoney, Flazz, dan kartu NFC lain langsung dari HP.",
     "yasintahlil_desc": "Yasin, Tahlil, Maulid & Sholawat lengkap — bisa dibuka tanpa internet.",
     "core_technologies": "TEKNOLOGI INTI",
-    "nfc_title": "Teknologi NFC",
+    "nfc_title": "NFC",
     "nfc_desc": "Kami biasa ngoprek NFC buat nyambungin kartu dan HP dengan aman — mulai dari baca saldo eMoney sampai ngerti isi obrolan antara kartu dan pembaca. Semua itu yang jadi isi PembacaKUE.",
     "contact_title": "Hubungi Kami",
     "contact_desc": "Mau ngobrol soal proyek, nemu bug di aplikasi kami, atau sekadar nanya-nanya? Sapa aja, nggak usah sungkan.",
-    "email_us": "Email Kami"
+    "email_us": "Email Kami",
+    "hero_cta_apps": "Lihat aplikasi",
+    "apps_title": "Aplikasi kecil buat urusan sehari-hari.",
+    "tech_title": "Yang biasa kami oprek.",
+    "qris_title": "QRIS",
+    "qris_desc": "Satu kode QR menyimpan banyak data: nama merchant, kota, sampai nominal. QRSTU membongkar strukturnya supaya gampang dibaca dan dipelajari.",
+    "offline_title": "Konten offline",
+    "offline_desc": "Bacaan Yasin, Tahlil, dan Maulid disimpan di HP, jadi tetap bisa dibuka di majelis yang sinyalnya susah.",
+    "learn_more": "Pelajari"
   },
   "footer": {
     "signature": "do code for fun, no.. serious things.",
     "copyright": "© 2026 BaskomLabs — Bengkel Aplikasi Kompeni.",
     "privacy": "Privasi",
-    "tos": "S&K"
+    "tos": "S&K",
+    "legal": "Kebijakan aplikasi"
+  },
+  "theme": {
+    "label": "Tema tampilan",
+    "system": "Ikuti sistem",
+    "light": "Mode terang",
+    "dark": "Mode gelap"
   }
 }

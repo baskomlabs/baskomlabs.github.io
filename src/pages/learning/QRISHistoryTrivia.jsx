@@ -21,7 +21,7 @@ function QRISHistoryTrivia() {
             
             <h3 style={{ marginTop: '2rem' }}>{t('learning.qris_ht_h3_2')}</h3>
             <div className="features-grid" style={{ gridTemplateColumns: '1fr', marginTop: '1rem' }}>
-                <div className="feature-card" style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                <div className="feature-card" style={{ background: 'var(--surface-muted)', border: '1px solid var(--border-subtle)' }}>
                     <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>♟️</div>
                     <p style={{ fontSize: '1rem' }} dangerouslySetInnerHTML={{ __html: t('learning.qris_ht_p2_1') }} />
                 </div>
