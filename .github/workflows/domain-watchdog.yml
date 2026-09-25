@@ -1,0 +1,109 @@
+# Keeps the GitHub Pages custom domain in sync with the health of baskom.fun.
+#
+# - baskom.fun healthy (registration not expired AND apex resolves to GitHub Pages)
+#     -> custom domain = baskom.fun (baskomlabs.github.io redirects there)
+# - otherwise (domain expired / DNS no longer points to GitHub)
+#     -> custom domain removed, site is served from baskomlabs.github.io again
+#
+# Needs repo secret PAGES_ADMIN_TOKEN: fine-grained PAT for this repo with
+# "Administration: Read and write" + "Pages: Read and write".
+
+name: Custom domain watchdog
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force state (auto = follow health check)'
+        type: choice
+        options: [auto, enable, disable]
+        default: auto
+
+permissions:
+  contents: read
+
+concurrency:
+  group: domain-watchdog
+  cancel-in-progress: false
+
+env:
+  DOMAIN: baskom.fun
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check domain health
+        id: health
+        run: |
+          set -u
+          healthy=true
+
+          # 1) Registration expiry via RDAP
+          exp=""
+          for i in 1 2 3; do
+            exp=$(curl -fsSL "https://rdap.org/domain/$DOMAIN" \
+              | jq -r '.events[]? | select(.eventAction=="expiration") | .eventDate' | head -n1) && [ -n "$exp" ] && break
+            sleep 10
+          done
+          if [ -z "$exp" ]; then
+            echo "::warning::RDAP lookup failed or domain not found"
+            # Not found in the registry at all = released/expired
+            if curl -s -o /dev/null -w '%{http_code}' "https://rdap.org/domain/$DOMAIN" | grep -q '^404$'; then
+              healthy=false
+            fi
+          else
+            echo "Expiry: $exp"
+            if [ "$(date -u -d "$exp" +%s)" -le "$(date -u +%s)" ]; then
+              echo "::warning::$DOMAIN expired on $exp"
+              healthy=false
+            fi
+          fi
+
+          # 2) Apex must resolve to GitHub Pages IPs
+          ok_dns=false
+          for i in 1 2 3; do
+            ips=$(curl -fsS -H 'accept: application/dns-json' \
+              "https://cloudflare-dns.com/dns-query?name=$DOMAIN&type=A" | jq -r '.Answer[]? | select(.type==1) | .data')
+            echo "A records: $(echo $ips)"
+            if echo "$ips" | grep -Eq '^185\.199\.(108|109|110|111)\.153$'; then ok_dns=true; break; fi
+            sleep 20
+          done
+          [ "$ok_dns" = true ] || { echo "::warning::$DOMAIN does not point to GitHub Pages"; healthy=false; }
+
+          case "${{ inputs.force || 'auto' }}" in
+            enable)  healthy=true ;;
+            disable) healthy=false ;;
+          esac
+          echo "healthy=$healthy" >> "$GITHUB_OUTPUT"
+
+      - name: Apply Pages custom domain
+        env:
+          GH_TOKEN: ${{ secrets.PAGES_ADMIN_TOKEN }}
+          REPO: ${{ github.repository }}
+          HEALTHY: ${{ steps.health.outputs.healthy }}
+        run: |
+          set -eu
+          current=$(gh api "repos/$REPO/pages" --jq '.cname // ""')
+          echo "Current custom domain: '${current}'"
+
+          if [ "$HEALTHY" = true ]; then
+            if [ "$current" != "$DOMAIN" ]; then
+              echo "Enabling custom domain $DOMAIN"
+              gh api -X PUT "repos/$REPO/pages" -f cname="$DOMAIN"
+            fi
+            # HTTPS can only be enforced once GitHub has issued the certificate
+            state=$(gh api "repos/$REPO/pages" --jq '.https_enforced')
+            if [ "$state" != true ]; then
+              gh api -X PUT "repos/$REPO/pages" -F https_enforced=true \
+                || echo "::notice::Certificate not ready yet, will retry next run"
+            fi
+          else
+            if [ -n "$current" ]; then
+              echo "Falling back to ${REPO#*/}: removing custom domain"
+              echo '{"cname":null}' | gh api -X PUT "repos/$REPO/pages" --input -
+            fi
+          fi
+          gh api "repos/$REPO/pages" --jq '{cname, https_enforced, html_url}'
