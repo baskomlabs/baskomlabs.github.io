@@ -38,7 +38,21 @@
     "qris_desc": "One QR code carries a lot of data: merchant name, city, even the amount. QRSTU unpacks that structure so it is easy to read and learn from.",
     "offline_title": "Offline content",
     "offline_desc": "Yasin, Tahlil and Maulid readings are stored on the phone, so they still open at a gathering where the signal is bad.",
-    "learn_more": "Learn more"
+    "learn_more": "Learn more",
+    "suite_label": "INTERNAL TOOLS",
+    "suite_title": "What we use ourselves at work.",
+    "suite_badge": "Internal · for work",
+    "suite_desc": "Product Suite is an internal toolkit for testing payment flows from one place — from simulating transactions to checking integrations before a release. It was built for the team’s day-to-day work, not as a public app.",
+    "suite_note": "Access is limited to team members. It is not available to download or sign up for.",
+    "suite_f1": "Payment transaction simulator",
+    "suite_f2": "QRIS generator & parser",
+    "suite_f3": "Webhook listener",
+    "suite_f4": "UAT checklists & notes",
+    "ruang_label": "FROM THE YASIN TAHLIL NU APP",
+    "ruang_title": "Ruang Ilmu",
+    "ruang_desc": "Readings on the virtues of Yasin and Tahlil, the Maulid books, NU tradition and Al-Hikam — the same Ruang Ilmu you find inside the app, readable right here. Content is in Indonesian.",
+    "ruang_tab_home": "Home",
+    "ruang_open": "Open in new tab"
   },
   "footer": {
     "signature": "do code for fun, no.. serious things.",

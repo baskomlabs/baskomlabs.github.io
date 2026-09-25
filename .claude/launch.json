@@ -4,14 +4,35 @@
     {
       "name": "baskomlabs-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
       "port": 5173
     },
     {
       "name": "baskomlabs-dist",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4173", "--directory", "dist"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4173",
+        "--directory",
+        "dist"
+      ],
       "port": 4173
+    },
+    {
+      "name": "ruang-ilmu-local",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "5055",
+        "--directory",
+        "/Users/muhakmal/Code/yasin-tahlil-maulid-nu/ota_content"
+      ],
+      "port": 5055
     }
   ]
 }

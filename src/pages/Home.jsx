@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import BaskomMark from '../components/BaskomMark';
 import PlayStoreButton from '../components/PlayStoreButton';
+import RuangIlmu from '../components/RuangIlmu';
 
 const PLAY_DEV_URL = 'https://play.google.com/store/apps/dev?id=4678418670975116062';
 
+// Icons are the Play Store launcher icons, copied from each app's repo into public/apps.
 const APPS = [
   {
     name: 'QRSTU',
@@ -13,15 +15,7 @@ const APPS = [
     descKey: 'home.qrstu_desc',
     tags: ['QRIS', 'Scanner', 'Edukasi'],
     url: 'https://play.google.com/store/apps/details?id=com.baskom.qrisparser',
-    icon: (
-      <svg viewBox="0 0 512 512" fill="none" className="product-svg">
-        <rect x="128" y="128" width="80" height="80" rx="16" fill="currentColor"/>
-        <rect x="304" y="128" width="80" height="80" rx="16" fill="currentColor"/>
-        <rect x="128" y="304" width="80" height="80" rx="16" fill="currentColor"/>
-        <path d="M304 384h80M384 304v80" stroke="currentColor" strokeWidth="40" strokeLinecap="round"/>
-        <rect x="80" y="80" width="352" height="352" rx="48" stroke="currentColor" strokeWidth="32" fill="none"/>
-      </svg>
-    ),
+    icon: '/apps/qrstu.png',
   },
   {
     name: 'PembacaKUE',
@@ -29,14 +23,7 @@ const APPS = [
     descKey: 'home.pembacakue_desc',
     tags: ['eMoney', 'Flazz', 'NFC'],
     url: 'https://play.google.com/store/apps/details?id=com.baskom.pembacakue',
-    icon: (
-      <svg viewBox="0 0 512 512" fill="none" className="product-svg">
-        <rect x="64" y="144" width="384" height="224" rx="32" stroke="currentColor" strokeWidth="32" fill="none"/>
-        <circle cx="160" cy="256" r="48" fill="currentColor"/>
-        <rect x="256" y="216" width="128" height="24" rx="12" fill="currentColor"/>
-        <rect x="256" y="272" width="80" height="24" rx="12" fill="currentColor"/>
-      </svg>
-    ),
+    icon: '/apps/pembacakue.png',
   },
   {
     name: 'Yasin Tahlil NU',
@@ -44,13 +31,11 @@ const APPS = [
     descKey: 'home.yasintahlil_desc',
     tags: ['Yasin', 'Tahlil', 'Offline'],
     url: 'https://play.google.com/store/apps/details?id=com.baskom.yasintahlilmaulid',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="product-svg" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
-      </svg>
-    ),
+    icon: '/apps/yasintahlil.png',
   },
 ];
+
+const SUITE_FEATURES = ['suite_f1', 'suite_f2', 'suite_f3', 'suite_f4'];
 
 const TECH = [
   { key: 'nfc', to: '/learning/nfc-basics', glyph: '((·))' },
@@ -141,7 +126,7 @@ function Home({ scrollToContact }) {
           {APPS.map((app) => (
             <article key={app.name} className={`lp-app lp-app--${app.theme}`}>
               <div className="lp-app-top">
-                <div className={`product-icon-wrapper ${app.theme}-theme`}>{app.icon}</div>
+                <img className="lp-app-icon" src={app.icon} alt="" width="56" height="56" loading="lazy" />
                 <h3>{app.name}</h3>
               </div>
               <p>{t(app.descKey)}</p>
@@ -164,9 +149,48 @@ function Home({ scrollToContact }) {
         </div>
       </section>
 
+      {/* ---------- INTERNAL TOOLS ---------- */}
+      <section id="product-suite" className="lp-section">
+        <SectionHead index="02" label={t('home.suite_label')} title={t('home.suite_title')} />
+
+        <div className="lp-suite reveal-on-scroll">
+          <div className="lp-suite-main">
+            <div className="lp-app-top">
+              <img className="lp-app-icon" src="/apps/productsuite.svg" alt="" width="56" height="56" loading="lazy" />
+              <div>
+                <h3>Product Suite</h3>
+                <span className="lp-badge">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>
+                  {t('home.suite_badge')}
+                </span>
+              </div>
+            </div>
+            <p>{t('home.suite_desc')}</p>
+            <p className="lp-suite-note">{t('home.suite_note')}</p>
+          </div>
+          <ul className="lp-suite-features">
+            {SUITE_FEATURES.map((key) => (
+              <li key={key}>
+                <span aria-hidden="true">&gt;_</span>
+                {t(`home.${key}`)}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ---------- RUANG ILMU ---------- */}
+      <section id="ruang-ilmu" className="lp-section">
+        <SectionHead index="03" label={t('home.ruang_label')} title={t('home.ruang_title')} />
+        <p className="lp-section-lead reveal-on-scroll">{t('home.ruang_desc')}</p>
+        <div className="reveal-on-scroll">
+          <RuangIlmu />
+        </div>
+      </section>
+
       {/* ---------- WHY BASKOM ---------- */}
       <section className="lp-section">
-        <SectionHead index="02" label={t('home.origin_label')} />
+        <SectionHead index="04" label={t('home.origin_label')} />
 
         <div className="lp-origin reveal-on-scroll">
           <div className="lp-origin-mark">
@@ -182,7 +206,7 @@ function Home({ scrollToContact }) {
 
       {/* ---------- WHAT WE TINKER WITH ---------- */}
       <section className="lp-section">
-        <SectionHead index="03" label={t('home.core_technologies')} title={t('home.tech_title')} />
+        <SectionHead index="05" label={t('home.core_technologies')} title={t('home.tech_title')} />
 
         <div className="lp-tech reveal-on-scroll">
           {TECH.map((item) => (

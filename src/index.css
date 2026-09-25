@@ -40,7 +40,7 @@
     --enamel-panel: linear-gradient(160deg, #5fae44 0%, #4e9e3f 45%, #2c6224 100%);
 
     --qrstu-ink: #0e7490;
-    --pembacakue-ink: #b45309;
+    --pembacakue-ink: #6d28d9;
     --yasintahlil-ink: #047857;
 
     /* legacy names still referenced by learning / policy pages */
@@ -103,7 +103,7 @@
     --enamel-panel: linear-gradient(160deg, #4e9e3f 0%, #3c8130 45%, #1f4a1b 100%);
 
         --qrstu-ink: #22d3ee;
-        --pembacakue-ink: #f59e0b;
+        --pembacakue-ink: #a78bfa;
         --yasintahlil-ink: #34d399;
 
         --accent-blue: #3b82f6;
@@ -142,7 +142,7 @@
     --enamel-panel: linear-gradient(160deg, #4e9e3f 0%, #3c8130 45%, #1f4a1b 100%);
 
     --qrstu-ink: #22d3ee;
-    --pembacakue-ink: #f59e0b;
+    --pembacakue-ink: #a78bfa;
     --yasintahlil-ink: #34d399;
 
     --accent-blue: #3b82f6;
@@ -531,6 +531,100 @@ main { flex: 1; }
 .lp-link svg { transition: transform 0.2s ease; }
 a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(3px); }
 
+/* Real Play Store icons; Play masks them to a rounded square, so do we */
+.lp-app-icon {
+    width: 56px; height: 56px; flex-shrink: 0;
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm), 0 0 0 1px var(--border-subtle);
+}
+
+.lp-section-lead {
+    margin: -1.25rem 0 1.75rem;
+    max-width: 640px;
+    color: var(--text-secondary); line-height: 1.7;
+}
+
+/* Internal tools (Product Suite) */
+.lp-suite {
+    display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 2rem;
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius);
+}
+.lp-suite h3 { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.3rem; }
+.lp-suite-main p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+.lp-suite-main .lp-app-top { margin-bottom: 1.1rem; }
+.lp-suite-note { margin-top: 0.9rem; font-size: 0.85rem !important; color: var(--text-muted) !important; }
+.lp-badge {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--rim);
+    background: var(--rim-soft);
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+}
+.lp-badge svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+.lp-suite-features {
+    list-style: none; align-self: center;
+    display: grid; gap: 0.6rem;
+}
+.lp-suite-features li {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.92rem;
+    background: var(--surface-muted);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+}
+.lp-suite-features span { font-family: var(--font-mono); font-weight: 700; font-size: 0.8rem; color: var(--accent); }
+
+/* Ruang Ilmu embed, framed like a browser window */
+.ri {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+.ri-bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--surface-muted);
+}
+.ri-tabs { display: flex; gap: 0.25rem; overflow-x: auto; scrollbar-width: none; }
+.ri-tabs::-webkit-scrollbar { display: none; }
+.ri-tabs button {
+    flex-shrink: 0;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem; font-weight: 500;
+    color: var(--text-secondary);
+    background: transparent; border: 0; border-radius: 999px;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+}
+.ri-tabs button:hover { color: var(--text-primary); }
+.ri-tabs button.is-active { color: #fff; background: var(--yasintahlil-ink); }
+:root[data-theme="dark"] .ri-tabs button.is-active { color: #062a1c; }
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .ri-tabs button.is-active { color: #062a1c; }
+}
+.ri-open {
+    flex-shrink: 0;
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    font-size: 0.82rem; font-weight: 600; color: var(--text-secondary);
+}
+.ri-open:hover { color: var(--text-primary); }
+.ri-open svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ri-frame { height: 640px; background: #faf8f0; } /* Ruang Ilmu's own grounds, so tab switches don't flash */
+:root[data-theme="dark"] .ri-frame { background: #050d08; }
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .ri-frame { background: #050d08; }
+}
+.ri-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+
 /* Why Baskom */
 .lp-origin {
     display: grid; grid-template-columns: auto 1fr; gap: 3rem; align-items: center;
@@ -800,6 +894,7 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
     .lp-hero { grid-template-columns: 1fr; gap: 3.5rem; padding: 3.5rem 0 4.5rem; }
     .lp-hero-visual { max-width: 420px; width: 100%; margin: 0 auto; }
     .lp-apps, .lp-tech { grid-template-columns: 1fr; }
+    .lp-suite { grid-template-columns: 1fr; }
     .lp-app .playstore-button-container { padding-top: 1rem; }
     .footer-grid { grid-template-columns: 1fr; }
 }
@@ -822,6 +917,10 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
     .hero-signature { font-size: 0.74rem; margin-top: 1.5rem; }
 
     .lp-section { padding: 3.25rem 0; }
+    .lp-suite { padding: 1.4rem; gap: 1.25rem; }
+    .ri-bar { flex-direction: column; align-items: stretch; gap: 0.4rem; }
+    .ri-open { align-self: flex-end; padding: 0 0.25rem; }
+    .ri-frame { height: 520px; }
     .lp-app, .lp-tech-card { padding: 1.4rem; }
     .lp-origin { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; justify-items: center; text-align: center; }
     .lp-origin-mark { width: 132px; height: 132px; }

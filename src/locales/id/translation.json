@@ -38,7 +38,21 @@
     "qris_desc": "Satu kode QR menyimpan banyak data: nama merchant, kota, sampai nominal. QRSTU membongkar strukturnya supaya gampang dibaca dan dipelajari.",
     "offline_title": "Konten offline",
     "offline_desc": "Bacaan Yasin, Tahlil, dan Maulid disimpan di HP, jadi tetap bisa dibuka di majelis yang sinyalnya susah.",
-    "learn_more": "Pelajari"
+    "learn_more": "Pelajari",
+    "suite_label": "TOOLS INTERNAL",
+    "suite_title": "Yang kami pakai sendiri di kantor.",
+    "suite_badge": "Internal · untuk pekerjaan",
+    "suite_desc": "Product Suite adalah perkakas internal untuk menguji alur pembayaran dari satu tempat — dari simulasi transaksi sampai cek integrasi sebelum rilis. Dibikin untuk kebutuhan kerja sehari-hari tim, bukan aplikasi untuk umum.",
+    "suite_note": "Akses terbatas untuk anggota tim. Tidak tersedia untuk diunduh atau didaftarkan.",
+    "suite_f1": "Simulator transaksi pembayaran",
+    "suite_f2": "Generator & parser QRIS",
+    "suite_f3": "Listener webhook",
+    "suite_f4": "Checklist & catatan UAT",
+    "ruang_label": "DARI APLIKASI YASIN TAHLIL NU",
+    "ruang_title": "Ruang Ilmu",
+    "ruang_desc": "Bacaan seputar keutamaan Yasin, Tahlil, kitab-kitab Maulid, tradisi NU, dan Al-Hikam — sama persis dengan menu Ruang Ilmu di dalam aplikasi. Bisa dibaca langsung di sini.",
+    "ruang_tab_home": "Beranda",
+    "ruang_open": "Buka di tab baru"
   },
   "footer": {
     "signature": "do code for fun, no.. serious things.",
