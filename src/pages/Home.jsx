@@ -42,6 +42,15 @@ const APPS = [
     icon: '/apps/qurandiscovery.png',
     pending: true, // in Google Play review; flip off once the listing is public
   },
+  {
+    name: 'Hadith Discovery',
+    theme: 'hadithdiscovery',
+    descKey: 'home.hadithdiscovery_desc',
+    tags: ['Hadis', 'Cek Sumber', 'Offline'],
+    url: 'https://play.google.com/store/apps/details?id=com.baskomlabs.hadithdiscovery',
+    icon: '/apps/hadithdiscovery.png',
+    pending: true, // in Google Play review; flip off once the listing is public
+  },
 ];
 
 const SUITE_FEATURES = ['suite_f1', 'suite_f2', 'suite_f3', 'suite_f4'];

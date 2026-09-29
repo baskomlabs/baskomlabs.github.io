@@ -11,7 +11,7 @@
     "hero_badge": "Berdiri sejak 2017",
     "hero_title_1": "Bengkel Aplikasi",
     "hero_title_2": "Kompeni",
-    "hero_subtitle": "Kami bikin aplikasi Android dan web buat keperluan sehari-hari — cek saldo kartu, baca kode QRIS, cari ayat Al-Quran dari suara bacaan, sampai tahlilan. Dibikin di rumah, dipakai sendiri, dibagi ke yang butuh.",
+    "hero_subtitle": "Kami bikin aplikasi Android dan web buat keperluan sehari-hari — cek saldo kartu, baca kode QRIS, cari ayat Al-Quran dari suara bacaan, cek sumber hadis yang beredar, sampai tahlilan. Dibikin di rumah, dipakai sendiri, dibagi ke yang butuh.",
     "hero_tagline": "Wadahnya ngoprek.",
     "hero_signature": "do code for fun, no.. serious things.",
     "origin_label": "SOAL NAMA",
@@ -54,6 +54,7 @@
     "ruang_tab_home": "Beranda",
     "ruang_open": "Buka di tab baru",
     "qurandiscovery_desc": "Cari ayat Al-Quran dari suara bacaan. Lengkap dengan terjemahan, tafsir & audio.",
+    "hadithdiscovery_desc": "Dapat kiriman hadis? Tempel teksnya, lihat kitab dan nomornya, lengkap dengan derajat yang dikutip dari ulama. Offline, tanpa akun.",
     "play_pending": "Sedang ditinjau Google Play"
   },
   "footer": {

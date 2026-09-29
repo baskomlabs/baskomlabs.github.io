@@ -31,9 +31,9 @@ export const ROUTES = [
     title_id: 'BaskomLabs — Bengkel Aplikasi Kompeni',
     title_en: 'BaskomLabs — Indie App & Web Studio from Indonesia',
     desc_id:
-      'Studio indie yang ngoprek aplikasi Android dan web buat keperluan sehari-hari: baca kartu NFC, scan QRIS, cari ayat Al-Quran dari suara, sampai Yasin & Tahlil. Wadahnya ngoprek.',
+      'Studio indie yang ngoprek aplikasi Android dan web buat keperluan sehari-hari: baca kartu NFC, scan QRIS, cari ayat Al-Quran dari suara, cek sumber hadis, sampai Yasin & Tahlil. Wadahnya ngoprek.',
     desc_en:
-      'A small Indonesian studio building everyday Android apps and websites: NFC card reading, QRIS scanning, finding Quran verses by voice, and Yasin & Tahlil. Where the tinkering happens.',
+      'A small Indonesian studio building everyday Android apps and websites: NFC card reading, QRIS scanning, finding Quran verses by voice, checking where a hadith comes from, and Yasin & Tahlil. Where the tinkering happens.',
   },
   {
     path: '/contact',
@@ -271,6 +271,14 @@ export const ROUTES = [
     title_en: `Quran Discovery Privacy Policy${L}`,
     desc_id: 'Kebijakan privasi Quran Discovery: audio mikrofon diproses di perangkat dan tidak diunggah, tanpa akun, iklan, atau analitik.',
     desc_en: 'Privacy policy for Quran Discovery: microphone audio is processed on the device and never uploaded; no account, ads or analytics.',
+  },
+  {
+    path: '/privacy-policy-hadithdiscovery',
+    priority: 0.4,
+    title_id: `Kebijakan Privasi Hadith Discovery${L}`,
+    title_en: `Hadith Discovery Privacy Policy${L}`,
+    desc_id: 'Kebijakan privasi Hadith Discovery: tanpa izin internet, teks dan suara diproses di perangkat, tanpa akun, iklan, atau analitik.',
+    desc_en: 'Privacy policy for Hadith Discovery: no internet permission, text and speech processed on the device; no account, ads or analytics.',
   },
   {
     path: '/privacy-policy-bensy',

@@ -10,6 +10,7 @@ const POLICIES = [
   // Bensy is hidden for now; its pages stay reachable by direct URL.
   // { app: 'Bensy', privacy: '/privacy-policy-bensy', tos: '/tos-bensy' },
   { app: 'Quran Discovery', privacy: '/privacy-policy-qurandiscovery' },
+  { app: 'Hadith Discovery', privacy: '/privacy-policy-hadithdiscovery' },
 ];
 
 function Footer() {

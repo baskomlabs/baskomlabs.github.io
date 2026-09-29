@@ -11,7 +11,7 @@
     "hero_badge": "Est. 2017",
     "hero_title_1": "Bengkel Aplikasi",
     "hero_title_2": "Kompeni",
-    "hero_subtitle": "We build Android apps and websites for everyday things — checking card balances, reading QRIS codes, finding a Quran verse from its recitation, following along at a tahlil. Built at home, used at home, passed on to whoever needs them.",
+    "hero_subtitle": "We build Android apps and websites for everyday things — checking card balances, reading QRIS codes, finding a Quran verse from its recitation, tracing where a forwarded hadith comes from, following along at a tahlil. Built at home, used at home, passed on to whoever needs them.",
     "hero_tagline": "Where the tinkering happens.",
     "hero_signature": "do code for fun, no.. serious things.",
     "origin_label": "ABOUT THE NAME",
@@ -54,6 +54,7 @@
     "ruang_tab_home": "Home",
     "ruang_open": "Open in new tab",
     "qurandiscovery_desc": "Find a Quran verse by listening to recitation. Read with translation and tafsir.",
+    "hadithdiscovery_desc": "Got a hadith forwarded to you? Paste it to see which book and number it comes from, with its grading quoted from named scholars. Offline, no account.",
     "play_pending": "In review on Google Play"
   },
   "footer": {

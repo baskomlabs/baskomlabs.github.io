@@ -86,6 +86,7 @@ function App() {
               <Route path="/privacy-policy-yasintahlil" element={<PrivacyPolicy app="Yasin Tahlil NU" />} />
               <Route path="/tos-yasintahlil" element={<TermsOfService app="Yasin Tahlil NU" />} />
               <Route path="/privacy-policy-qurandiscovery" element={<PrivacyPolicy app="Quran Discovery" />} />
+              <Route path="/privacy-policy-hadithdiscovery" element={<PrivacyPolicy app="Hadith Discovery" />} />
               
               {/* Learning Routes */}
               <Route path="/learning" element={<LearningHub />} />

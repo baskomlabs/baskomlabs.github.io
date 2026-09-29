@@ -288,6 +288,125 @@ function PrivacyPolicy({ app }) {
     );
   }
 
+  if (app === 'Hadith Discovery') {
+    return (
+      <section className="active-view">
+        <div className="glass-card document-card">
+          <div className="card-header">
+            <h2>Privacy Policy - Hadith Discovery</h2>
+            <Link to="/" className="close-btn btn-secondary">Back to Home</Link>
+          </div>
+          <div className="document-content">
+            <p className="meta">Effective Date: September 29, 2026 · <a href="#id">Bahasa Indonesia ↓</a></p>
+            <p><strong>Hadith Discovery</strong> ("the app", "we", "our") is an Android app for checking where a hadith comes from, searching hadith and reading hadith books, operated by BaskomLabs. This policy explains what the app does with your information.</p>
+            <p><strong>In short:</strong> the app has no internet permission, no account, no ads and no analytics or tracking. The text you check or search and any speech you let it hear are processed only on your phone and are never stored or sent anywhere.</p>
+
+            <h3>1. Text you check or search</h3>
+            <ul>
+              <li>Text you type, paste, share into the app (for example from a chat app) or send through the <strong>Check hadith</strong> text-selection menu is compared against the hadith collection bundled inside the app, <strong>on your device</strong>.</li>
+              <li>This text and your search queries are held in memory only. They are not saved, not logged, and never sent to us or anyone else.</li>
+            </ul>
+
+            <h3>2. Microphone and speech</h3>
+            <ul>
+              <li>The microphone is used only after you tap <strong>Start listening</strong> in <strong>Listen and check</strong> (in the app or from its widget).</li>
+              <li>Speech is turned into text by your phone's <strong>on-device</strong> speech recognition service (Android 12 or newer). The app receives only the recognised text, which is handled as described in section 1. The app does not record, save or upload audio.</li>
+              <li>If on-device recognition is not available on your phone, listening is not offered and you can type or paste the text instead.</li>
+            </ul>
+
+            <h3>3. Information stored on your device</h3>
+            <p>Only your settings are stored, in the app's private storage: language, theme and Arabic text size. The hadith collection, translations and explanations are read-only content shipped inside the app. Android backup is turned off for the app, so nothing is copied to cloud backup.</p>
+
+            <h3>4. Internet and links</h3>
+            <p>The app does not request the internet permission and makes no network connections. Links you choose to open, such as a hadith's page on HadeethEnc.com or a data source, open in your browser under that site's own privacy policy.</p>
+
+            <h3>5. What we do not do</h3>
+            <ul>
+              <li>No sign-in or account, and no advertising.</li>
+              <li>No analytics, crash-reporting, advertising or tracking SDKs.</li>
+              <li>No access to your location, contacts, photos or files.</li>
+              <li>We do not sell, rent or share personal data, and we do not collect it in the first place.</li>
+            </ul>
+
+            <h3>6. Permissions</h3>
+            <ul>
+              <li><strong>Microphone</strong>: for Listen and check, on your request only. You can deny it and still use every other feature.</li>
+            </ul>
+
+            <h3>7. Your choices and deleting data</h3>
+            <div className="alert-box">
+              <strong>How to delete your data:</strong><br/>
+              The app keeps no history of what you checked or searched. Clearing the app's storage in Android settings, or uninstalling the app, removes your settings. You can revoke the microphone permission at any time in Android settings.
+            </div>
+
+            <h3>8. Children</h3>
+            <p>The app is intended for a general audience and does not collect personal information from anyone, including children.</p>
+
+            <h3>9. Changes to this policy</h3>
+            <p>If the app's handling of data changes, we will update this page and its effective date before the change takes effect.</p>
+
+            <h3>10. Contact</h3>
+            <p>Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+
+            <hr id="id" style={{ margin: '3rem 0', opacity: 0.2 }} />
+
+            <h2>Kebijakan Privasi - Hadith Discovery</h2>
+            <p className="meta">Berlaku sejak: 29 September 2026</p>
+            <p><strong>Hadith Discovery</strong> ("aplikasi", "kami") adalah aplikasi Android untuk memeriksa sumber hadis, mencari hadis, dan membaca kitab hadis yang dikelola oleh BaskomLabs. Kebijakan ini menjelaskan apa yang dilakukan aplikasi terhadap informasi Anda.</p>
+            <p><strong>Singkatnya:</strong> aplikasi tidak punya izin internet, tanpa akun, tanpa iklan, tanpa analitik atau pelacakan. Teks yang Anda cek atau cari dan suara yang Anda izinkan untuk didengar hanya diproses di HP Anda dan tidak pernah disimpan atau dikirim ke mana pun.</p>
+
+            <h3>1. Teks yang Anda cek atau cari</h3>
+            <ul>
+              <li>Teks yang Anda ketik, tempel, bagikan ke aplikasi (misalnya dari aplikasi chat), atau kirim lewat menu seleksi teks <strong>Cek hadis</strong> dicocokkan dengan koleksi hadis yang sudah ada di dalam aplikasi, <strong>di perangkat Anda</strong>.</li>
+              <li>Teks dan kata pencarian tersebut hanya disimpan sementara di memori. Tidak disimpan, tidak dicatat di log, dan tidak pernah dikirim ke kami atau pihak lain.</li>
+            </ul>
+
+            <h3>2. Mikrofon dan suara</h3>
+            <ul>
+              <li>Mikrofon hanya digunakan setelah Anda menekan <strong>Mulai dengarkan</strong> di <strong>Dengar dan cek</strong> (di aplikasi atau dari widget-nya).</li>
+              <li>Suara diubah menjadi teks oleh layanan pengenal suara <strong>di perangkat</strong> milik HP Anda (Android 12 ke atas). Aplikasi hanya menerima teks hasil pengenalan, yang diperlakukan seperti pada bagian 1. Aplikasi tidak merekam, menyimpan, atau mengunggah audio.</li>
+              <li>Jika pengenalan suara di perangkat tidak tersedia di HP Anda, fitur mendengar tidak ditawarkan dan Anda bisa mengetik atau menempel teks.</li>
+            </ul>
+
+            <h3>3. Informasi yang disimpan di perangkat Anda</h3>
+            <p>Yang disimpan hanya pengaturan Anda, di penyimpanan pribadi aplikasi: bahasa, tema, dan ukuran huruf Arab. Koleksi hadis, terjemahan, dan penjelasan adalah konten baca-saja yang ikut di dalam aplikasi. Cadangan Android dimatikan untuk aplikasi ini, sehingga tidak ada yang tersalin ke cadangan cloud.</p>
+
+            <h3>4. Internet dan tautan</h3>
+            <p>Aplikasi tidak meminta izin internet dan tidak membuat koneksi jaringan. Tautan yang Anda pilih untuk dibuka, seperti halaman hadis di HadeethEnc.com atau sumber data, dibuka di browser Anda sesuai kebijakan privasi situs tersebut.</p>
+
+            <h3>5. Yang tidak kami lakukan</h3>
+            <ul>
+              <li>Tidak ada login atau akun, dan tidak ada iklan.</li>
+              <li>Tidak ada SDK analitik, pelaporan crash, iklan, atau pelacakan.</li>
+              <li>Tidak mengakses lokasi, kontak, foto, atau file Anda.</li>
+              <li>Kami tidak menjual, menyewakan, atau membagikan data pribadi, dan memang tidak mengumpulkannya.</li>
+            </ul>
+
+            <h3>6. Izin</h3>
+            <ul>
+              <li><strong>Mikrofon</strong>: untuk Dengar dan cek, hanya atas permintaan Anda. Anda bisa menolaknya dan tetap memakai semua fitur lain.</li>
+            </ul>
+
+            <h3>7. Pilihan Anda dan penghapusan data</h3>
+            <div className="alert-box">
+              <strong>Cara menghapus data Anda:</strong><br/>
+              Aplikasi tidak menyimpan riwayat apa yang Anda cek atau cari. Menghapus penyimpanan aplikasi di pengaturan Android, atau mencopot aplikasi, akan menghapus pengaturan Anda. Izin mikrofon dapat dicabut kapan saja di pengaturan Android.
+            </div>
+
+            <h3>8. Anak-anak</h3>
+            <p>Aplikasi ditujukan untuk pengguna umum dan tidak mengumpulkan informasi pribadi dari siapa pun, termasuk anak-anak.</p>
+
+            <h3>9. Perubahan kebijakan</h3>
+            <p>Jika penanganan data oleh aplikasi berubah, kami akan memperbarui halaman ini beserta tanggal berlakunya sebelum perubahan diterapkan.</p>
+
+            <h3>10. Kontak</h3>
+            <p>Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return null;
 }
 
