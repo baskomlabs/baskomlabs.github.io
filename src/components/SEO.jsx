@@ -14,7 +14,7 @@ import { SITE, metaFor } from '../seo/siteMeta';
 function SEO() {
   const { i18n } = useTranslation();
   const location = useLocation();
-  const lang = i18n.language === 'en' ? 'en' : 'id';
+  const lang = i18n.language === 'id' ? 'id' : 'en';
   const { title, description, canonical } = metaFor(location.pathname, lang);
   const ogImage = SITE.url + SITE.ogImage;
 
@@ -26,7 +26,7 @@ function SEO() {
     url: SITE.url,
     logo: SITE.url + '/apple-touch-icon.png',
     email: SITE.email,
-    description: lang === 'en' ? SITE.tagline_en : SITE.tagline_id,
+    description: lang === 'id' ? SITE.tagline_id : SITE.tagline_en,
     sameAs: [SITE.playDeveloperUrl],
   };
 
@@ -42,7 +42,7 @@ function SEO() {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:locale" content={lang === 'en' ? 'en_US' : SITE.locale} />
+      <meta property="og:locale" content={lang === 'id' ? 'id_ID' : SITE.locale} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

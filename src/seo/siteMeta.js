@@ -6,7 +6,7 @@
  *   - scripts/prerender.mjs   (build time, writes a real HTML file per route)
  *
  * Titles and descriptions are written for search results, not copied from the
- * page H1s. Indonesian is the indexed language: the language toggle is
+ * page H1s. English is the indexed language: the language toggle is
  * client-side and does not change the URL, so a crawler only ever sees one.
  */
 
@@ -17,8 +17,8 @@ export const SITE = {
   tagline_en: 'Bengkel Aplikasi Kompeni',
   email: 'baskomdevs@gmail.com',
   ogImage: '/og-image.png',
-  defaultLang: 'id',
-  locale: 'id_ID',
+  defaultLang: 'en',
+  locale: 'en_US',
   playDeveloperUrl: 'https://play.google.com/store/apps/dev?id=4678418670975116062',
 };
 
@@ -322,7 +322,7 @@ export function canonicalUrl(path) {
 export function metaFor(pathname, lang = SITE.defaultLang) {
   const path = normalizePath(pathname);
   const route = ROUTES.find((r) => r.path === path) || ROUTES[0];
-  const suffix = lang === 'en' ? '_en' : '_id';
+  const suffix = lang === 'id' ? '_id' : '_en';
   return {
     path: route.path,
     title: route[`title${suffix}`],

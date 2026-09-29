@@ -31,14 +31,14 @@ const jsonLd = JSON.stringify({
   url: SITE.url,
   logo: SITE.url + '/apple-touch-icon.png',
   email: SITE.email,
-  description: SITE.tagline_id,
+  description: SITE.tagline_en,
   sameAs: [SITE.playDeveloperUrl],
 });
 
 function headFor(route) {
   const canonical = canonicalUrl(route.canonical || route.path);
-  const title = route.title_id;
-  const desc = route.desc_id;
+  const title = route.title_en;
+  const desc = route.desc_en;
   const ogImage = SITE.url + SITE.ogImage;
   return `
     <meta property="og:type" content="website">
@@ -59,10 +59,10 @@ function headFor(route) {
 function renderRoute(route) {
   const canonical = canonicalUrl(route.canonical || route.path);
   let html = template;
-  html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(route.title_id)}</title>`);
+  html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(route.title_en)}</title>`);
   html = html.replace(
     /<meta name="description" content="[^"]*">/,
-    `<meta name="description" content="${esc(route.desc_id)}">`
+    `<meta name="description" content="${esc(route.desc_en)}">`
   );
   html = html.replace(
     /<link rel="canonical" href="[^"]*">/,
