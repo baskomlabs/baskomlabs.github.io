@@ -34,16 +34,41 @@ mereka bertahan.
 
 **Nama developer:** `Baskom`
 
-**Deskripsi:**
+**Deskripsi (Indonesia):**
 
 ```
 Baskom itu wadah — tempat semua diaduk jadi satu. Di sini isinya kode.
 
-Aplikasi-aplikasi kecil buat keperluan sehari-hari: cek saldo kartu, baca kode QRIS,
-dan tahlilan. Dibikin di rumah, dipakai sendiri, dibagi ke yang butuh.
+Aplikasi Android kecil buat keperluan sehari-hari, gratis dan tanpa iklan:
+• Quran Discovery — cari ayat Al-Quran dari suara bacaan, lengkap dengan terjemahan dan tafsir
+• QRSTU — scan QRIS, bongkar isinya, sekalian belajar cara kerjanya
+• PembacaKUE — cek saldo kartu eMoney dan Flazz lewat NFC
+• Yasin Tahlil NU — Yasin, Tahlil, Maulid dan sholawat lengkap, bisa offline
+
+Dibikin di rumah, dipakai sendiri, dibagi ke yang butuh. Belajar cara kerjanya di baskom.fun/learning.
 
 do code for fun, no.. serious things.
 ```
+
+**Description (English):**
+
+```
+Baskom is the enamel basin where everything gets mixed. Ours is full of code.
+
+Small, free Android apps for everyday things, with no ads:
+• Quran Discovery: find a Quran verse by listening to recitation, with translation and tafsir
+• QRSTU: scan a QRIS code, unpack what is inside and learn how it works
+• PembacaKUE: check eMoney and Flazz card balances over NFC
+• Yasin Tahlil NU: Yasin, Tahlil, Maulid and sholawat in full, works offline
+
+Built at home, used at home, passed on to whoever needs them. Learn how they work at baskom.fun/learning.
+
+do code for fun, no.. serious things.
+```
+
+> Hadith Discovery belum masuk daftar. Tambahkan satu baris setelah listing-nya publik.
+> Deskripsi halaman developer hanya bisa diubah lewat Play Console (Grow users → Store presence →
+> Developer page); Play Developer API dan fastlane tidak menjangkaunya.
 
 ---
 
