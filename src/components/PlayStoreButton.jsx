@@ -25,11 +25,11 @@ const PlayStoreButton = ({ url, appName, pending = false }) => {
         className="playstore-button"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Download ${appName} di Google Play`}
+        aria-label={`Get ${appName} on Google Play`}
       >
         <img
           src="/google-play-badge.png"
-          alt={`Dapatkan ${appName} di Google Play`}
+          alt={`Get ${appName} on Google Play`}
         />
       </a>
     </div>

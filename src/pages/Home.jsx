@@ -4,6 +4,10 @@ import { Trans, useTranslation } from 'react-i18next';
 import BaskomMark from '../components/BaskomMark';
 import PlayStoreButton from '../components/PlayStoreButton';
 import RuangIlmu from '../components/RuangIlmu';
+import { APPS as APP_META } from '../seo/siteMeta';
+
+// Release state lives in siteMeta.js (also feeds the structured data).
+const PENDING = new Set(APP_META.filter((a) => a.pending).map((a) => a.short));
 
 const PLAY_DEV_URL = 'https://play.google.com/store/apps/dev?id=4678418670975116062';
 
@@ -40,7 +44,6 @@ const APPS = [
     tags: ['Al-Quran', 'Cari Ayat', 'Tafsir'],
     url: 'https://play.google.com/store/apps/details?id=com.baskomlabs.qurandiscovery',
     icon: '/apps/qurandiscovery.png',
-    pending: true, // in Google Play review; flip off once the listing is public
   },
   {
     name: 'Hadith Discovery',
@@ -49,7 +52,7 @@ const APPS = [
     tags: ['Hadis', 'Cek Sumber', 'Offline'],
     url: 'https://play.google.com/store/apps/details?id=com.baskomlabs.hadithdiscovery',
     icon: '/apps/hadithdiscovery.png',
-    pending: true, // in Google Play review; flip off once the listing is public
+    pending: PENDING.has('Hadith Discovery'),
   },
 ];
 
@@ -144,7 +147,7 @@ function Home({ scrollToContact }) {
           {APPS.map((app) => (
             <article key={app.name} className={`lp-app lp-app--${app.theme}`}>
               <div className="lp-app-top">
-                <img className="lp-app-icon" src={app.icon} alt="" width="56" height="56" loading="lazy" />
+                <img className="lp-app-icon" src={app.icon} alt={`${app.name} app icon`} width="56" height="56" loading="lazy" />
                 <h3>{app.name}</h3>
               </div>
               <p>{t(app.descKey)}</p>

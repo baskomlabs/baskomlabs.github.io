@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
-import { SITE, metaFor } from '../seo/siteMeta';
+import { SITE, metaFor, jsonLdFor } from '../seo/siteMeta';
 
 /**
  * Per-route <head>. Metadata comes from src/seo/siteMeta.js, which the build
@@ -18,17 +18,7 @@ function SEO() {
   const { title, description, canonical } = metaFor(location.pathname, lang);
   const ogImage = SITE.url + SITE.ogImage;
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: SITE.name,
-    alternateName: 'Baskom',
-    url: SITE.url,
-    logo: SITE.url + '/apple-touch-icon.png',
-    email: SITE.email,
-    description: lang === 'id' ? SITE.tagline_id : SITE.tagline_en,
-    sameAs: [SITE.playDeveloperUrl],
-  };
+  const jsonLd = jsonLdFor(location.pathname, lang);
 
   return (
     <Helmet htmlAttributes={{ lang }}>
@@ -42,12 +32,16 @@ function SEO() {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={SITE.ogImageAlt} />
       <meta property="og:locale" content={lang === 'id' ? 'id_ID' : SITE.locale} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={SITE.ogImageAlt} />
 
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>

@@ -8,7 +8,7 @@ function HistoryTrivia() {
     <section className="active-view">
       <div className="glass-card document-card">
         <div className="card-header">
-          <h2>{t('learning.ht_title')}</h2>
+          <h1>{t('learning.ht_title')}</h1>
           <Link to="/learning" className="close-btn btn-secondary">{t('learning.btn_back_hub')}</Link>
         </div>
         <div className="document-content">

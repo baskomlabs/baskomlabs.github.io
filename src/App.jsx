@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import SEO from './components/SEO';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import LearningAppCta from './components/LearningAppCta';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
@@ -113,6 +114,7 @@ function App() {
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
+            <LearningAppCta />
           </ScrollWrapper>
         </main>
         <Footer />

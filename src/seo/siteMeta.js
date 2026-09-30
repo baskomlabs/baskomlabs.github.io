@@ -17,6 +17,7 @@ export const SITE = {
   tagline_en: 'Bengkel Aplikasi Kompeni',
   email: 'baskomdevs@gmail.com',
   ogImage: '/og-image.png',
+  ogImageAlt: 'BaskomLabs — indie app and web studio from Indonesia',
   defaultLang: 'en',
   locale: 'en_US',
   playDeveloperUrl: 'https://play.google.com/store/apps/dev?id=4678418670975116062',
@@ -24,16 +25,76 @@ export const SITE = {
 
 const L = ' | BaskomLabs';
 
+/**
+ * Apps that appear in structured data. Home.jsx reads `pending` from here, so
+ * flipping a listing live is a one-line change in one place. Pending apps stay
+ * out of the JSON-LD: there is no public store page to point at yet.
+ */
+export const APPS = [
+  {
+    name: 'QRSTU: Scanner QRIS & Edukasi',
+    short: 'QRSTU',
+    playId: 'com.baskom.qrisparser',
+    icon: '/apps/qrstu.png',
+    category: 'FinanceApplication',
+    desc: 'Scan a QRIS code, unpack what is inside it (merchant, city, category, TLV fields) and learn how it works.',
+  },
+  {
+    name: 'PembacaKUE',
+    short: 'PembacaKUE',
+    playId: 'com.baskom.pembacakue',
+    icon: '/apps/pembacakue.png',
+    category: 'UtilitiesApplication',
+    desc: 'Check eMoney, Flazz and other NFC card balances straight from your Android phone.',
+  },
+  {
+    name: 'Yasin Tahlil NU',
+    short: 'Yasin Tahlil NU',
+    playId: 'com.baskom.yasintahlilmaulid',
+    icon: '/apps/yasintahlil.png',
+    category: 'ReferenceApplication',
+    desc: 'Yasin, Tahlil, Maulid and Sholawat in full. Works offline.',
+  },
+  {
+    name: 'Quran Discovery',
+    short: 'Quran Discovery',
+    playId: 'com.baskomlabs.qurandiscovery',
+    icon: '/apps/qurandiscovery.png',
+    category: 'ReferenceApplication',
+    desc: 'Find a Quran verse by listening to recitation. Read it with translation and tafsir.',
+  },
+  {
+    name: 'Hadith Discovery',
+    short: 'Hadith Discovery',
+    playId: 'com.baskomlabs.hadithdiscovery',
+    icon: '/apps/hadithdiscovery.png',
+    category: 'ReferenceApplication',
+    desc: 'Paste a hadith to see which book and number it comes from, with grading quoted from named scholars.',
+    pending: true, // in Google Play review; flip off once the listing is public
+  },
+];
+
+export const playUrl = (playId) => `https://play.google.com/store/apps/details?id=${playId}`;
+
+/** Which app a learning page leads into. Drives the install CTA and related-app schema. */
+export function appForPath(path) {
+  if (path.startsWith('/learning/qris-')) return 'com.baskom.qrisparser';
+  if (/^\/learning\/(yasin|tahlil|maulid|tradisi-nu)-hikmah$/.test(path))
+    return 'com.baskom.yasintahlilmaulid';
+  if (/^\/learning\/[^/]+$/.test(path)) return 'com.baskom.pembacakue'; // NFC track
+  return null;
+}
+
 export const ROUTES = [
   {
     path: '/',
     priority: 1.0,
-    title_id: 'BaskomLabs — Bengkel Aplikasi Kompeni',
-    title_en: 'BaskomLabs — Indie App & Web Studio from Indonesia',
+    title_id: 'BaskomLabs — Aplikasi Quran, QRIS & NFC untuk Android',
+    title_en: 'BaskomLabs — Quran, QRIS & NFC Apps for Android',
     desc_id:
-      'Studio indie yang ngoprek aplikasi Android dan web buat keperluan sehari-hari: baca kartu NFC, scan QRIS, cari ayat Al-Quran dari suara, cek sumber hadis, sampai Yasin & Tahlil. Wadahnya ngoprek.',
+      'Studio indie Indonesia di balik Quran Discovery (cari ayat dari suara), QRSTU (scanner QRIS), PembacaKUE (cek saldo kartu NFC) dan Yasin Tahlil NU. Aplikasi Android gratis di Google Play.',
     desc_en:
-      'A small Indonesian studio building everyday Android apps and websites: NFC card reading, QRIS scanning, finding Quran verses by voice, checking where a hadith comes from, and Yasin & Tahlil. Where the tinkering happens.',
+      'Indie Indonesian studio behind Quran Discovery (find a verse by voice), QRSTU (QRIS scanner), PembacaKUE (NFC card balance) and Yasin Tahlil NU. Free Android apps on Google Play.',
   },
   {
     path: '/contact',
@@ -330,4 +391,84 @@ export function metaFor(pathname, lang = SITE.defaultLang) {
     canonical: canonicalUrl(route.canonical || route.path),
     priority: route.priority,
   };
+}
+
+const stripSuffix = (t) => t.replace(/ \| BaskomLabs$/, '');
+
+/**
+ * Structured data for a route, as a single @graph.
+ *   /                 Organization + WebSite + one MobileApplication per live app
+ *   /learning         CollectionPage + breadcrumb
+ *   /learning/<slug>  TechArticle + breadcrumb, `about` the app it leads into
+ * Everything else gets Organization only.
+ */
+export function jsonLdFor(pathname, lang = SITE.defaultLang) {
+  const path = normalizePath(pathname);
+  const route = ROUTES.find((r) => r.path === path) || ROUTES[0];
+  const suffix = lang === 'id' ? '_id' : '_en';
+  const url = canonicalUrl(route.canonical || route.path);
+  const orgId = SITE.url + '/#org';
+
+  const org = {
+    '@type': 'Organization',
+    '@id': orgId,
+    name: SITE.name,
+    alternateName: 'Baskom',
+    url: SITE.url + '/',
+    logo: SITE.url + '/apple-touch-icon.png',
+    email: SITE.email,
+    description: lang === 'id' ? SITE.tagline_id : SITE.tagline_en,
+    sameAs: [SITE.playDeveloperUrl],
+  };
+  const graph = [org];
+
+  if (route.path === '/') {
+    graph.push({
+      '@type': 'WebSite',
+      '@id': SITE.url + '/#website',
+      url: SITE.url + '/',
+      name: SITE.name,
+      inLanguage: ['en', 'id'],
+      publisher: { '@id': orgId },
+    });
+    for (const app of APPS.filter((a) => !a.pending)) {
+      graph.push({
+        '@type': 'MobileApplication',
+        name: app.name,
+        url: playUrl(app.playId),
+        image: SITE.url + app.icon,
+        description: app.desc,
+        operatingSystem: 'ANDROID',
+        applicationCategory: app.category,
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'IDR' },
+        author: { '@id': orgId },
+      });
+    }
+  } else if (route.path === '/learning' || route.path.startsWith('/learning/')) {
+    const title = stripSuffix(route[`title${suffix}`]);
+    const crumbs = [{ name: 'Home', url: SITE.url + '/' }, { name: 'Learning', url: canonicalUrl('/learning') }];
+    if (route.path !== '/learning') crumbs.push({ name: title, url });
+    graph.push({
+      '@type': 'BreadcrumbList',
+      itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })),
+    });
+    const page = {
+      '@type': route.path === '/learning' ? 'CollectionPage' : 'TechArticle',
+      headline: title,
+      name: title,
+      description: route[`desc${suffix}`],
+      url,
+      inLanguage: lang,
+      image: SITE.url + SITE.ogImage,
+      author: { '@id': orgId },
+      publisher: { '@id': orgId },
+      isPartOf: { '@id': SITE.url + '/#website' },
+    };
+    const playId = appForPath(route.path);
+    const app = playId && APPS.find((a) => a.playId === playId && !a.pending);
+    if (app) page.about = { '@type': 'MobileApplication', name: app.name, url: playUrl(app.playId) };
+    graph.push(page);
+  }
+
+  return { '@context': 'https://schema.org', '@graph': graph };
 }

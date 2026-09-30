@@ -9,7 +9,7 @@ function QRISBasics() {
     <section className="active-view fade-in">
       <div className="glass-card document-card">
         <div className="document-content">
-          <h2>{t('learning.qris_basics_title')}</h2>
+          <h1>{t('learning.qris_basics_title')}</h1>
           <Link to="/learning" className="close-btn btn-secondary">{t('learning.btn_back_hub')}</Link>
           
           <div style={{ marginTop: '2rem' }}>

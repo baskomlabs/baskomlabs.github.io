@@ -14,7 +14,7 @@
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE, ROUTES, canonicalUrl } from '../src/seo/siteMeta.js';
+import { SITE, ROUTES, APPS, canonicalUrl, playUrl, jsonLdFor } from '../src/seo/siteMeta.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
@@ -22,18 +22,6 @@ const template = readFileSync(join(dist, 'index.html'), 'utf8');
 
 const esc = (s) =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-
-const jsonLd = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: SITE.name,
-  alternateName: 'Baskom',
-  url: SITE.url,
-  logo: SITE.url + '/apple-touch-icon.png',
-  email: SITE.email,
-  description: SITE.tagline_en,
-  sameAs: [SITE.playDeveloperUrl],
-});
 
 function headFor(route) {
   const canonical = canonicalUrl(route.canonical || route.path);
@@ -47,13 +35,45 @@ function headFor(route) {
     <meta property="og:description" content="${esc(desc)}">
     <meta property="og:url" content="${esc(canonical)}">
     <meta property="og:image" content="${esc(ogImage)}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="${esc(SITE.ogImageAlt)}">
     <meta property="og:locale" content="${esc(SITE.locale)}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(title)}">
     <meta name="twitter:description" content="${esc(desc)}">
     <meta name="twitter:image" content="${esc(ogImage)}">
-    <script type="application/ld+json">${jsonLd}</script>
+    <meta name="twitter:image:alt" content="${esc(SITE.ogImageAlt)}">
+    <script type="application/ld+json">${JSON.stringify(jsonLdFor(route.path, 'en'))}</script>
 `;
+}
+
+/**
+ * Crawler-visible body. The real page is rendered client-side, so without this
+ * the raw HTML has an empty <div id="root">. <noscript> keeps it out of the way
+ * for people while giving text-only crawlers the headline, summary and links.
+ */
+function noscriptFor(route) {
+  const title = route.title_en.replace(/ \| BaskomLabs$/, '');
+  let extra = '';
+  if (route.path === '/') {
+    extra =
+      '<h2>Apps</h2><ul>' +
+      APPS.filter((a) => !a.pending)
+        .map((a) => `<li><a href="${esc(playUrl(a.playId))}">${esc(a.name)}</a> — ${esc(a.desc)}</li>`)
+        .join('') +
+      '</ul><p><a href="/learning/">Learning hub: NFC, QRIS and NU traditions explained</a></p>';
+  } else if (route.path === '/learning') {
+    extra =
+      '<ul>' +
+      ROUTES.filter((r) => r.path.startsWith('/learning/'))
+        .map((r) => `<li><a href="${esc(canonicalUrl(r.path))}">${esc(r.title_en.replace(/ \| BaskomLabs$/, ''))}</a> — ${esc(r.desc_en)}</li>`)
+        .join('') +
+      '</ul>';
+  } else if (route.path.startsWith('/learning/')) {
+    extra = '<p><a href="/learning/">Back to the learning hub</a></p>';
+  }
+  return `<noscript><h1>${esc(title)}</h1><p>${esc(route.desc_en)}</p>${extra}</noscript>`;
 }
 
 function renderRoute(route) {
@@ -69,6 +89,7 @@ function renderRoute(route) {
     `<link rel="canonical" href="${esc(canonical)}">`
   );
   html = html.replace('</head>', `${headFor(route)}  </head>`);
+  html = html.replace('<div id="root"></div>', `<div id="root"></div>\n    ${noscriptFor(route)}`);
   return html;
 }
 
