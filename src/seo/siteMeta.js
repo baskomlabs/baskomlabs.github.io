@@ -10,8 +10,17 @@
  * client-side and does not change the URL, so a crawler only ever sees one.
  */
 
+// Origin the site is served from. CI passes SITE_URL (baskom.fun while the custom
+// domain is healthy, github.io after the watchdog falls back), so canonicals and
+// the sitemap never name a host that just 301s elsewhere. Vite inlines it for the
+// client through `define`; the prerender script reads the env var directly.
+const BUILD_URL =
+  (typeof __SITE_URL__ !== 'undefined' && __SITE_URL__) ||
+  (typeof process !== 'undefined' && process.env.SITE_URL) ||
+  '';
+
 export const SITE = {
-  url: 'https://baskomlabs.github.io',
+  url: (BUILD_URL || 'https://baskomlabs.github.io').replace(/\/+$/, ''),
   name: 'BaskomLabs',
   tagline_id: 'Bengkel Aplikasi Kompeni',
   tagline_en: 'Bengkel Aplikasi Kompeni',

@@ -106,6 +106,8 @@ for (const route of ROUTES) {
 // they now exist as their own files.
 copyFileSync(join(dist, 'index.html'), join(dist, '404.html'));
 
+writeFileSync(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`, 'utf8');
+
 const today = new Date().toISOString().slice(0, 10);
 const urls = ROUTES.filter((r) => !r.canonical && !r.hidden) // skip canonicalised and hidden routes
   .map(

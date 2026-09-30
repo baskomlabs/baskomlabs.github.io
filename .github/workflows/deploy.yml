@@ -30,10 +30,15 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
+      # Before the build: its `origin` output is the live host (baskom.fun while the
+      # custom domain is enabled, github.io after the watchdog removes it).
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
       - name: Build
         run: npm run build
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+        env:
+          SITE_URL: ${{ steps.pages.outputs.origin }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

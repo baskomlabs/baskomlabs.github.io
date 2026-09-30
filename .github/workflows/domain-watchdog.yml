@@ -107,3 +107,10 @@ jobs:
             fi
           fi
           gh api "repos/$REPO/pages" --jq '{cname, https_enforced, html_url}'
+
+          # Canonicals/sitemap are baked in at build time, so rebuild when the host changed.
+          after=$(gh api "repos/$REPO/pages" --jq '.cname // ""')
+          if [ "$after" != "$current" ]; then
+            gh workflow run deploy.yml --repo "$REPO" \
+              || echo "::warning::Could not trigger a redeploy (token needs Actions: write); canonicals stay stale until the next push"
+          fi
