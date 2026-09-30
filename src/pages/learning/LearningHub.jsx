@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { APPS } from '../../seo/siteMeta';
 
 function LearningHub() {
   const { t } = useTranslation();
+  // The lesson page is published, but the hub only promotes it once the app is live on Play.
+  const hadithLive = !APPS.find((a) => a.playId === 'com.baskomlabs.hadithdiscovery')?.pending;
 
   return (
     <section className="active-view">
@@ -146,6 +149,26 @@ function LearningHub() {
           </div>
         </Link>
       </div>
+
+      {hadithLive && (
+        <>
+          <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
+            <div className="divider-text">HADITH DISCOVERY: {t('learning.hub_hd_title')}</div>
+          </div>
+
+          <div className="products-grid reveal-on-scroll">
+            <Link to="/learning/hadith-discovery" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="product-card glass-card" style={{ height: '100%' }}>
+                <div className="product-icon-wrapper qrstu-theme" style={{ fontSize: '2.5rem' }}>🔎</div>
+                <div className="product-info">
+                  <h3>{t('learning.hub_hd_card1_title')}</h3>
+                  <p>{t('learning.hub_hd_card1_desc')}</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </>
+      )}
 
       <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
         <div className="divider-text">YASIN TAHLIL NU: {t('learning.hub_yasintahlil_title')}</div>

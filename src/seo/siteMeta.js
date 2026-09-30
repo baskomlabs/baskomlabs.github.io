@@ -79,6 +79,7 @@ export const playUrl = (playId) => `https://play.google.com/store/apps/details?i
 /** Which app a learning page leads into. Drives the install CTA and related-app schema. */
 export function appForPath(path) {
   if (path === '/learning/quran-discovery') return 'com.baskomlabs.qurandiscovery';
+  if (path === '/learning/hadith-discovery') return 'com.baskomlabs.hadithdiscovery';
   if (path.startsWith('/learning/qris-')) return 'com.baskom.qrisparser';
   if (/^\/learning\/(yasin|tahlil|maulid|tradisi-nu)-hikmah$/.test(path))
     return 'com.baskom.yasintahlilmaulid';
@@ -295,6 +296,17 @@ export const ROUTES = [
       'Bagaimana aplikasi mengenali ayat dari suara? Dari rekaman mikrofon, pengenalan suara Arab di HP, sampai pencocokan ke 6.236 ayat — tanpa unggah audio.',
     desc_en:
       'How does an app identify a Quran verse from sound? From microphone capture and on-device Arabic speech recognition to matching against all 6,236 verses, with no audio uploaded.',
+  },
+
+  {
+    path: '/learning/hadith-discovery',
+    priority: 0.8,
+    title_id: `Cara Mengecek Hadis Kiriman: Sumber, Nomor, dan Derajat${L}`,
+    title_en: `How to Check a Hadith Before You Forward It${L}`,
+    desc_id:
+      'Hadis beredar di WhatsApp, bagaimana menelusuri kitab dan nomornya? Cara pencocokan teks, lima kemungkinan hasil, dan kenapa “tidak ditemukan” bukan berarti palsu.',
+    desc_en:
+      'Got a hadith forwarded on WhatsApp? How a quote is traced to a collection and number, the five possible results, and why “not found” never means fake.',
   },
 
   // --- Legal (kept indexable: Play requires these to be publicly reachable) ---

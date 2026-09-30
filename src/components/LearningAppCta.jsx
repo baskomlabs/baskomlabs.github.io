@@ -9,6 +9,7 @@ const DESC_KEY = {
   PembacaKUE: 'home.pembacakue_desc',
   'Yasin Tahlil NU': 'home.yasintahlil_desc',
   'Quran Discovery': 'home.qurandiscovery_desc',
+  'Hadith Discovery': 'home.hadithdiscovery_desc',
 };
 
 /**

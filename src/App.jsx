@@ -4,6 +4,7 @@ import SEO from './components/SEO';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import QuranDiscovery from './pages/learning/QuranDiscovery';
+import HadithDiscovery from './pages/learning/HadithDiscovery';
 import LearningAppCta from './components/LearningAppCta';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -115,6 +116,7 @@ function App() {
 
               {/* Quran Discovery */}
               <Route path="/learning/quran-discovery" element={<QuranDiscovery />} />
+              <Route path="/learning/hadith-discovery" element={<HadithDiscovery />} />
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
