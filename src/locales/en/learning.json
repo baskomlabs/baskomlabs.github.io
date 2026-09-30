@@ -22,7 +22,6 @@
   "hub_card6_title": "Terminology",
   "hub_card6_desc": "A list of important terms in the world of IoT and Smart Cards.",
   "hub_extra_trivia": "NFC EXTRAS & TRIVIA",
-
   "nfc_title": "1. NFC Basics: The Mystery of Wireless Communication",
   "btn_back_hub": "Back to Hub",
   "nfc_meta": "An E-Toll card can be read by your phone even without a battery. The technology behind this is NFC.",
@@ -44,7 +43,6 @@
   "nfc_li_3": "The magnetic field turns into electricity.",
   "nfc_li_4": "The card chip turns on without a battery!",
   "nfc_next_btn": "Next: How Data is Exchanged ➔",
-
   "dx_title": "2. Data Exchange: From Waves to Information",
   "dx_meta": "In addition to generating electricity, magnetic waves are used to transmit balance information.",
   "dx_h3_1": "Modulation: The Secret Language of Waves",
@@ -69,7 +67,6 @@
   "dx_code_3": "// Card Response",
   "dx_code_4": "(Success)",
   "dx_next_btn": "Next: Project Components ➔",
-
   "comp_title": "3. Project Components: Dissecting PembacaKUE",
   "comp_meta": "Here is the implementation of NFC technology in the PembacaKUE application code.",
   "comp_h3_1": "1. Reader Device (Initiator)",
@@ -90,7 +87,6 @@
   "comp_congrats": "Congratulations! 🎉",
   "comp_congrats_desc": "You have completed the basic guide on how NFC works behind <strong>PembacaKUE</strong>. The processes of magnetic induction, modulation, and APDU happen every time you tap your ID card to your phone.",
   "comp_next_btn": "Back to Learning Hub ↺",
-
   "rw_title": "Radio Waves: Catching the Invisible",
   "rw_meta": "NFC, Wi-Fi, and Bluetooth all operate using radio waves.",
   "rw_h3_1": "What are Radio Waves?",
@@ -109,7 +105,6 @@
   "rw_p3_2": "This pushing and pulling creates a <strong>microscopic alternating current (AC)</strong> in the antenna wire. The electronic circuits in our phone or radio are then tasked with detecting this small electrical current, amplifying it (Amplifier), and separating it from \"noise\" (Tuning / Resonance).",
   "rw_p3_3": "<strong>This is where the connection with NFC lies!</strong><br/>The antenna inside your E-Toll/ID card is not straight like a radio mast, but is rolled to form a coil. When radio waves from the phone hit the metal coil in the card, the electrons inside it wiggle violently and produce an electrical current strong enough to turn on the smart chip inside without needing a battery. This law of physics is called <em>Faraday's Law of Induction</em>.",
   "rw_next_btn": "Next: NFC Basics ➔",
-
   "ht_title": "NFC History & Trivia",
   "ht_meta": "NFC technology has a long history before becoming the standard for transportation payments in Indonesia.",
   "ht_h3_1": "Evolution: From World War to Smartphones",
@@ -130,7 +125,6 @@
   "ht_trivia3_title": "Wireless Charging",
   "ht_trivia3_desc": "Because the underlying technology is electromagnetic induction, the NFC Forum in 2020 released specifications so NFC could be used to charge the batteries of small devices (like smartwatches or earphones) at power levels up to 1 Watt (WLC standard).",
   "ht_next_btn": "Next: Terminology ➔",
-
   "term_title": "Smart IoT & NFC Dictionary",
   "term_meta": "Confused by technical abbreviations? Here is a cheat sheet dictionary of all the technical words we use in this project.",
   "term_nfc_desc": "Near Field Communication. A technology that allows two devices to exchange data when brought close together with a maximum distance of about 4 cm at a frequency of 13.56 MHz.",
@@ -257,5 +251,26 @@
   "yt_tradisi_h3_2": "The Power of Congregation",
   "yt_tradisi_p2_1": "Doing these practices together fosters a strong sense of community (Ukhuwah) and ensures that the younger generation stays connected to their spiritual roots.",
   "yt_tradisi_next_btn": "Back to Hub ↺",
-  "cta_title": "See it in action: {{app}}"
+  "cta_title": "See it in action: {{app}}",
+  "hub_qd_title": "FINDING A QURAN VERSE FROM SOUND",
+  "hub_qd_card1_title": "How Quran Discovery Works",
+  "hub_qd_card1_desc": "From a recitation you hear to the surah and ayah: on-device speech recognition and verse matching, explained step by step.",
+  "qd_title": "Quran Discovery: How a Verse Is Found from Sound",
+  "qd_meta": "Heard a recitation and wondered which verse it was? Here is what happens between the microphone and the answer.",
+  "qd_h3_1": "The problem: sound in, verse out",
+  "qd_p1_1": "A recitation is just air vibrating. The app has to turn it into <strong>Arabic text</strong>, then work out <strong>which of the 6,236 verses</strong> of the Quran that text belongs to.",
+  "qd_p1_2": "That is two different jobs: <em>speech recognition</em> (sound to words) and <em>verse matching</em> (words to a surah and ayah).",
+  "qd_h3_2": "The pipeline, step by step",
+  "qd_step1": "<strong>Capture.</strong> The microphone records up to 20 seconds, or you pick an audio or video file and the first 30 seconds are used.",
+  "qd_step2": "<strong>Normalise.</strong> Audio is converted to mono 16 kHz samples, the format the recognition model expects.",
+  "qd_step3": "<strong>Recognise.</strong> An Arabic speech model running on the phone turns the samples into a rough transcript, using a CTC decoder.",
+  "qd_step4": "<strong>Match.</strong> The transcript is compared with the full Quran text. Near-misses in spelling are tolerated, and the closest verses are shown as possible matches.",
+  "qd_h3_3": "Why matching has to be forgiving",
+  "qd_p3_1": "Speech recognition is never perfect: background noise, reciting style and echo in a mosque all change the transcript. So the matcher does not demand an exact string. It scores word similarity and needs several distinct words before it offers any answer.",
+  "qd_p3_2": "Some phrases repeat many times, such as the refrain in Surah Ar-Rahman. In that case the app keeps every location and tells you how many candidates there are, instead of guessing one.",
+  "qd_h3_4": "Why it runs on the phone",
+  "qd_p4_1": "The recognition model is downloaded once; after that, finding a verse works offline. Your audio is processed on the device and is never uploaded or stored, and there is no account. That is also why the first use needs a one-time download.",
+  "qd_h3_5": "Honest limits",
+  "qd_p5_1": "Results are labelled <strong>possible matches</strong>, not certainties. Accuracy varies with noise, reciter and device, so always confirm against the mushaf. The Arabic text comes from the Tanzil Project, unmodified.",
+  "qd_next_btn": "Back to Hub ↺"
 }

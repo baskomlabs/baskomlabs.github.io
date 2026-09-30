@@ -22,7 +22,6 @@
   "hub_card6_title": "Kamus Istilah",
   "hub_card6_desc": "Daftar istilah penting dalam dunia IoT dan Smart Card.",
   "hub_extra_trivia": "PENDALAMAN & TRIVIA NFC",
-
   "nfc_title": "1. Dasar NFC: Misteri Komunikasi Tanpa Kabel",
   "btn_back_hub": "Back to Hub",
   "nfc_meta": "Kartu E-Toll bisa terbaca oleh HP meski tidak memiliki baterai. Teknologi di baliknya adalah NFC.",
@@ -44,7 +43,6 @@
   "nfc_li_3": "Medan magnet berubah jadi listrik.",
   "nfc_li_4": "Chip kartu menyala tanpa baterai!",
   "nfc_next_btn": "Lanjut: Cara Data Bertukar ➔",
-
   "dx_title": "2. Pertukaran Data: Dari Gelombang ke Informasi",
   "dx_meta": "Selain menghasilkan listrik, gelombang magnetik juga digunakan untuk mengirimkan informasi saldo.",
   "dx_h3_1": "Modulasi: Bahasa Rahasia Gelombang",
@@ -69,7 +67,6 @@
   "dx_code_3": "// Response Kartu",
   "dx_code_4": "(Sukses)",
   "dx_next_btn": "Lanjut: Komponen Project ➔",
-
   "comp_title": "3. Komponen Project: Membedah PembacaKUE",
   "comp_meta": "Berikut adalah penerapan teknologi NFC ke dalam kode pada aplikasi PembacaKUE.",
   "comp_h3_1": "1. Perangkat Pembaca (Reader / Initiator)",
@@ -90,7 +87,6 @@
   "comp_congrats": "Selamat! 🎉",
   "comp_congrats_desc": "Kamu telah menyelesaikan panduan dasar cara kerja NFC di balik <strong>PembacaKUE</strong>. Proses induksi magnetik, modulasi, dan APDU ini terjadi setiap kali kamu menempelkan KTP ke HP.",
   "comp_next_btn": "Kembali ke Learning Hub ↺",
-
   "rw_title": "Gelombang Radio: Menangkap yang Tak Kasat Mata",
   "rw_meta": "NFC, Wi-Fi, dan Bluetooth semuanya beroperasi menggunakan gelombang radio.",
   "rw_h3_1": "Apa itu Gelombang Radio?",
@@ -109,7 +105,6 @@
   "rw_p3_2": "Dorongan dan tarikan ini menciptakan <strong>arus listrik bolak-balik (AC) mikroskopis</strong> di dalam kabel antena. Sirkuit elektronik di HP atau radio kita kemudian bertugas untuk mendeteksi arus listrik kecil ini, memperkuatnya (Amplifier), dan memisahkannya dari suara \"noise\" (Tuning / Resonansi).",
   "rw_p3_3": "<strong>Di sinilah letak kaitan dengan NFC!</strong><br/>Antena di dalam kartu E-Toll/KTP Anda tidak berbentuk lurus seperti tiang radio, melainkan digulung membentuk kumparan (Coil). Ketika gelombang radio dari HP menabrak kumparan logam di kartu, elektron di dalamnya bergoyang keras dan menghasilkan arus listrik yang cukup kuat untuk menyalakan chip pintar di dalamnya tanpa butuh baterai. Hukum fisika ini disebut <em>Hukum Induksi Faraday</em>.",
   "rw_next_btn": "Lanjut: Dasar NFC ➔",
-
   "ht_title": "Sejarah & Trivia NFC",
   "ht_meta": "Teknologi NFC memiliki sejarah panjang sebelum akhirnya menjadi standar pembayaran di transportasi Indonesia.",
   "ht_h3_1": "Evolusi: Dari Perang Dunia ke Smartphone",
@@ -130,7 +125,6 @@
   "ht_trivia3_title": "Pengisi Daya Nirkabel (Wireless Charging)",
   "ht_trivia3_desc": "Karena teknologi dasarnya adalah induksi elektromagnetik, NFC Forum pada 2020 merilis spesifikasi agar NFC bisa dipakai men-charge baterai perangkat kecil (seperti smartwatch atau earphone) pada daya hingga 1 Watt (WLC standard).",
   "ht_next_btn": "Lanjut: Kamus Istilah ➔",
-
   "term_title": "Kamus Pintar IoT & NFC",
   "term_meta": "Bingung dengan singkatan-singkatan teknis? Berikut adalah contekan kamus istilah dari semua kata teknis yang kita gunakan di project ini.",
   "term_nfc_desc": "Komunikasi Nirkabel Jarak Dekat. Teknologi yang memungkinkan dua perangkat saling bertukar data saat didekatkan dengan jarak maksimal sekitar 4 cm pada frekuensi 13.56 MHz.",
@@ -257,5 +251,26 @@
   "yt_tradisi_h3_2": "Kekuatan Berjamaah",
   "yt_tradisi_p2_1": "Melakukan amalan ini bersama-sama memupuk rasa persaudaraan (Ukhuwah) yang kuat dan memastikan generasi muda tetap terhubung dengan akar spiritual mereka.",
   "yt_tradisi_next_btn": "Kembali ke Hub ↺",
-  "cta_title": "Lihat langsung di {{app}}"
+  "cta_title": "Lihat langsung di {{app}}",
+  "hub_qd_title": "MENEMUKAN AYAT DARI SUARA",
+  "hub_qd_card1_title": "Cara Kerja Quran Discovery",
+  "hub_qd_card1_desc": "Dari bacaan yang didengar sampai surah dan ayatnya: pengenalan suara di perangkat dan pencocokan ayat, dijelaskan bertahap.",
+  "qd_title": "Quran Discovery: Cara Ayat Ditemukan dari Suara",
+  "qd_meta": "Dengar bacaan tapi lupa itu ayat berapa? Begini yang terjadi antara mikrofon dan jawabannya.",
+  "qd_h3_1": "Masalahnya: suara masuk, ayat keluar",
+  "qd_p1_1": "Bacaan hanyalah getaran udara. Aplikasi harus mengubahnya jadi <strong>teks Arab</strong>, lalu mencari <strong>ayat mana dari 6.236 ayat</strong> Al-Quran yang cocok.",
+  "qd_p1_2": "Itu dua pekerjaan berbeda: <em>pengenalan suara</em> (suara jadi kata) dan <em>pencocokan ayat</em> (kata jadi surah dan ayat).",
+  "qd_h3_2": "Alurnya, selangkah demi selangkah",
+  "qd_step1": "<strong>Rekam.</strong> Mikrofon merekam maksimal 20 detik, atau Anda memilih file audio/video dan 30 detik pertama yang dipakai.",
+  "qd_step2": "<strong>Normalisasi.</strong> Audio diubah jadi sampel mono 16 kHz, format yang dipahami model pengenalan.",
+  "qd_step3": "<strong>Kenali.</strong> Model suara Arab yang berjalan di HP mengubah sampel jadi transkrip kasar dengan decoder CTC.",
+  "qd_step4": "<strong>Cocokkan.</strong> Transkrip dibandingkan dengan seluruh teks Al-Quran. Selisih ejaan kecil ditoleransi, dan ayat terdekat ditampilkan sebagai kemungkinan.",
+  "qd_h3_3": "Kenapa pencocokan harus toleran",
+  "qd_p3_1": "Pengenalan suara tidak pernah sempurna: bising, gaya membaca, dan gema di masjid mengubah transkrip. Karena itu pencocok tidak menuntut teks persis sama. Ia menghitung kemiripan kata dan butuh beberapa kata berbeda sebelum memberi jawaban.",
+  "qd_p3_2": "Sebagian frasa berulang berkali-kali, seperti ayat pengulangan di Surah Ar-Rahman. Di kasus itu aplikasi menyimpan semua lokasinya dan menyebut jumlah kandidat, bukan menebak satu.",
+  "qd_h3_4": "Kenapa berjalan di HP",
+  "qd_p4_1": "Model pengenalan diunduh sekali; setelah itu pencarian ayat berjalan offline. Audio diproses di perangkat, tidak diunggah atau disimpan, dan tanpa akun. Karena itu pemakaian pertama butuh unduhan model satu kali.",
+  "qd_h3_5": "Batasan yang jujur",
+  "qd_p5_1": "Hasil berlabel <strong>kemungkinan</strong>, bukan kepastian. Akurasi bergantung pada bising, qari, dan perangkat, jadi selalu cek ke mushaf. Teks Arabnya dari Tanzil Project, tanpa diubah.",
+  "qd_next_btn": "Kembali ke Hub ↺"
 }

@@ -132,6 +132,22 @@ function LearningHub() {
       </div>
 
       <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
+        <div className="divider-text">QURAN DISCOVERY: {t('learning.hub_qd_title')}</div>
+      </div>
+
+      <div className="products-grid reveal-on-scroll">
+        <Link to="/learning/quran-discovery" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="product-card glass-card" style={{ height: '100%' }}>
+            <div className="product-icon-wrapper qrstu-theme" style={{ fontSize: '2.5rem' }}>🎙️</div>
+            <div className="product-info">
+              <h3>{t('learning.hub_qd_card1_title')}</h3>
+              <p>{t('learning.hub_qd_card1_desc')}</p>
+            </div>
+          </div>
+        </Link>
+      </div>
+
+      <div className="section-divider reveal-on-scroll" style={{ marginTop: '4rem' }}>
         <div className="divider-text">YASIN TAHLIL NU: {t('learning.hub_yasintahlil_title')}</div>
       </div>
 

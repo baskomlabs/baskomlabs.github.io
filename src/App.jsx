@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import SEO from './components/SEO';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import QuranDiscovery from './pages/learning/QuranDiscovery';
 import LearningAppCta from './components/LearningAppCta';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -111,6 +112,9 @@ function App() {
               <Route path="/learning/tahlil-hikmah" element={<TahlilHikmah />} />
               <Route path="/learning/maulid-hikmah" element={<MaulidHikmah />} />
               <Route path="/learning/tradisi-nu-hikmah" element={<TradisiNUHikmah />} />
+
+              {/* Quran Discovery */}
+              <Route path="/learning/quran-discovery" element={<QuranDiscovery />} />
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

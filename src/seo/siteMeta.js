@@ -78,6 +78,7 @@ export const playUrl = (playId) => `https://play.google.com/store/apps/details?i
 
 /** Which app a learning page leads into. Drives the install CTA and related-app schema. */
 export function appForPath(path) {
+  if (path === '/learning/quran-discovery') return 'com.baskomlabs.qurandiscovery';
   if (path.startsWith('/learning/qris-')) return 'com.baskom.qrisparser';
   if (/^\/learning\/(yasin|tahlil|maulid|tradisi-nu)-hikmah$/.test(path))
     return 'com.baskom.yasintahlilmaulid';
@@ -282,6 +283,18 @@ export const ROUTES = [
       'Melestarikan amalan jamaah khas Nahdlatul Ulama — tahlilan, yasinan, maulidan — dan hikmah yang terkandung di dalamnya.',
     desc_en:
       'The communal practices of Nahdlatul Ulama — tahlilan, yasinan, maulidan — and the wisdom they carry.',
+  },
+
+  // --- Quran Discovery track ---
+  {
+    path: '/learning/quran-discovery',
+    priority: 0.8,
+    title_id: `Cara Mencari Ayat Al-Quran dari Suara Bacaan${L}`,
+    title_en: `How to Find a Quran Verse from Recitation Audio${L}`,
+    desc_id:
+      'Bagaimana aplikasi mengenali ayat dari suara? Dari rekaman mikrofon, pengenalan suara Arab di HP, sampai pencocokan ke 6.236 ayat — tanpa unggah audio.',
+    desc_en:
+      'How does an app identify a Quran verse from sound? From microphone capture and on-device Arabic speech recognition to matching against all 6,236 verses, with no audio uploaded.',
   },
 
   // --- Legal (kept indexable: Play requires these to be publicly reachable) ---

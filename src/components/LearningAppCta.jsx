@@ -8,6 +8,7 @@ const DESC_KEY = {
   QRSTU: 'home.qrstu_desc',
   PembacaKUE: 'home.pembacakue_desc',
   'Yasin Tahlil NU': 'home.yasintahlil_desc',
+  'Quran Discovery': 'home.qurandiscovery_desc',
 };
 
 /**
