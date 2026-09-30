@@ -1019,3 +1019,33 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
 .learn-cta-copy { flex: 1 1 240px; }
 .learn-cta-copy h2 { font-family: var(--font-heading); font-size: 1.1rem; margin: 0 0 0.25rem; color: var(--text-primary); }
 .learn-cta-copy p { margin: 0; color: var(--text-secondary); font-size: 0.95rem; }
+
+/* ---------- Learning hub ---------- */
+.hub-hero { padding: 3rem 0 1rem; max-width: 52rem; }
+.hub-title { font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; margin-bottom: 1rem; color: var(--text-primary); }
+.hub-lead { font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary); max-width: 44rem; }
+.hub-steps { list-style: none; padding: 0; margin: 1.75rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
+.hub-steps li { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.9rem 1rem; border: 1px solid var(--border-subtle); border-radius: 12px; background: var(--surface-sunken); color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+.hub-steps li span { flex: none; width: 1.6rem; height: 1.6rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-mono); font-size: 0.8rem; color: var(--rim); border: 1px solid var(--rim); }
+.hub-jump { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.hub-jump > span { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); margin-right: 0.25rem; }
+.hub-chip { padding: 0.4rem 0.85rem; border-radius: 999px; border: 1px solid var(--border-subtle); color: var(--text-primary); text-decoration: none; font-size: 0.9rem; transition: border-color 0.2s, color 0.2s; }
+.hub-chip:hover, .hub-chip:focus-visible { border-color: var(--rim); color: var(--rim); }
+.hub-track { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); scroll-margin-top: 5rem; max-width: 52rem; }
+.hub-track-head { display: flex; gap: 1.1rem; align-items: flex-start; margin-bottom: 1.25rem; }
+.hub-glyph { flex: none; width: 3.2rem; height: 3.2rem; border-radius: 14px; display: grid; place-items: center; font-family: var(--font-mono); font-size: 1.1rem; color: var(--rim); background: var(--surface-sunken); border: 1px solid var(--border-subtle); }
+.hub-track h2 { font-family: var(--font-heading); font-size: 1.6rem; color: var(--text-primary); margin: 0 0 0.3rem; }
+.hub-track-intro { color: var(--text-secondary); line-height: 1.6; margin: 0 0 0.4rem; }
+.hub-track-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; font-size: 0.85rem; color: var(--text-muted); }
+.hub-track-meta a { color: var(--rim); text-underline-offset: 3px; }
+.hub-sub { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin: 1.5rem 0 0.6rem; font-weight: 500; }
+.hub-lessons { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; counter-reset: lesson; }
+.hub-lesson { display: flex; align-items: center; gap: 1rem; padding: 0.95rem 1.1rem; border: 1px solid var(--border-subtle); border-radius: 12px; text-decoration: none; color: inherit; background: var(--surface-sunken); transition: border-color 0.2s, transform 0.2s; }
+.hub-lesson:hover, .hub-lesson:focus-visible { border-color: var(--rim); transform: translateY(-1px); }
+.hub-lessons.is-ordered li { counter-increment: lesson; }
+.hub-lessons.is-ordered .hub-lesson::before { content: counter(lesson); flex: none; width: 1.8rem; height: 1.8rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-mono); font-size: 0.85rem; color: var(--rim); border: 1px solid var(--rim); }
+.hub-lesson-body { flex: 1; display: grid; gap: 0.2rem; }
+.hub-lesson-title { font-family: var(--font-heading); font-weight: 600; color: var(--text-primary); }
+.hub-lesson-desc { font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); }
+.hub-lesson svg { flex: none; width: 1.1rem; height: 1.1rem; fill: none; stroke: var(--text-muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 600px) { .hub-track-head { flex-direction: column; gap: 0.75rem; } .hub-lesson { padding: 0.85rem; } }

@@ -121,12 +121,12 @@ export const ROUTES = [
   {
     path: '/learning',
     priority: 0.9,
-    title_id: `Pembelajaran: NFC, QRIS & Tradisi NU${L}`,
-    title_en: `Learning Hub: NFC, QRIS & NU Traditions${L}`,
+    title_id: `Belajar NFC, QRIS, Al-Quran & Hadis: Panduan Singkat${L}`,
+    title_en: `Learn How NFC, QRIS & Quran Apps Work${L}`,
     desc_id:
-      'Belajar cara kerja NFC, QRIS, dan teknologi di balik aplikasi kami — dijelaskan pelan-pelan, dari gelombang radio sampai format TLV.',
+      'Pelajaran singkat berbahasa sehari-hari: cara kerja NFC, QRIS, pengenalan ayat Al-Quran dari suara, dan pengecekan hadis, plus tradisi Yasin & Tahlil.',
     desc_en:
-      'Learn how NFC, QRIS, and the tech behind our apps actually work — explained slowly, from radio waves to TLV parsing.',
+      'Short plain-language lessons on how NFC, QRIS, Quran verse recognition and hadith checking work, plus Yasin & Tahlil traditions.',
   },
 
   // --- NFC track ---
@@ -486,6 +486,7 @@ export function jsonLdFor(pathname, lang = SITE.defaultLang) {
       '@type': 'BreadcrumbList',
       itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })),
     });
+    const lessons = ROUTES.filter((r) => r.path.startsWith('/learning/') && !r.hidden);
     const page = {
       '@type': route.path === '/learning' ? 'CollectionPage' : 'TechArticle',
       headline: title,
@@ -498,6 +499,17 @@ export function jsonLdFor(pathname, lang = SITE.defaultLang) {
       publisher: { '@id': orgId },
       isPartOf: { '@id': SITE.url + '/#website' },
     };
+    if (route.path === '/learning') {
+      page.mainEntity = {
+        '@type': 'ItemList',
+        itemListElement: lessons.map((r, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: stripSuffix(r[`title${suffix}`]),
+          url: canonicalUrl(r.path),
+        })),
+      };
+    }
     const playId = appForPath(route.path);
     const app = playId && APPS.find((a) => a.playId === playId && !a.pending);
     if (app) page.about = { '@type': 'MobileApplication', name: app.name, url: playUrl(app.playId) };
