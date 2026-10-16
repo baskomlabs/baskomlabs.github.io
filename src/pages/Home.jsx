@@ -52,7 +52,6 @@ const APPS = [
     tags: ['Hadis', 'Cek Sumber', 'Offline'],
     url: 'https://play.google.com/store/apps/details?id=com.baskomlabs.hadithdiscovery',
     icon: '/apps/hadithdiscovery.png',
-    pending: PENDING.has('Hadith Discovery'),
   },
 ];
 
@@ -156,7 +155,7 @@ function Home({ scrollToContact }) {
                   <span key={tag} className={`tag tag-${app.theme}`}>{tag}</span>
                 ))}
               </div>
-              <PlayStoreButton url={app.url} appName={app.name} pending={app.pending} />
+              <PlayStoreButton url={app.url} appName={app.name} pending={PENDING.has(app.name)} />
             </article>
           ))}
         </div>

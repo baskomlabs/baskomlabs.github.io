@@ -80,7 +80,6 @@ export const APPS = [
     icon: '/apps/hadithdiscovery.png',
     category: 'ReferenceApplication',
     desc: 'Paste a hadith to see which book and number it comes from, with grading quoted from named scholars.',
-    pending: true, // in Google Play review; flip off once the listing is public
   },
 ];
 
@@ -101,12 +100,12 @@ export const ROUTES = [
   {
     path: '/',
     priority: 1.0,
-    title_id: 'BaskomLabs — Aplikasi Quran, QRIS & NFC untuk Android',
-    title_en: 'BaskomLabs — Quran, QRIS & NFC Apps for Android',
+    title_id: 'BaskomLabs — Aplikasi Quran, Hadis, QRIS & NFC untuk Android',
+    title_en: 'BaskomLabs — Quran, Hadith, QRIS & NFC Apps for Android',
     desc_id:
-      'Studio indie Indonesia di balik Quran Discovery (cari ayat dari suara), QRSTU (scanner QRIS), PembacaKUE (cek saldo kartu NFC) dan Yasin Tahlil NU. Aplikasi Android gratis di Google Play.',
+      'Studio indie Indonesia di balik Quran Discovery (cari ayat dari suara), Hadith Discovery (cek sumber hadis), QRSTU (scanner QRIS), PembacaKUE (cek saldo kartu NFC) dan Yasin Tahlil NU. Aplikasi Android gratis di Google Play.',
     desc_en:
-      'Indie Indonesian studio behind Quran Discovery (find a verse by voice), QRSTU (QRIS scanner), PembacaKUE (NFC card balance) and Yasin Tahlil NU. Free Android apps on Google Play.',
+      'Indie Indonesian studio behind Quran Discovery (find a verse by voice), Hadith Discovery (trace hadith sources), QRSTU (QRIS scanner), PembacaKUE (NFC card balance) and Yasin Tahlil NU. Free Android apps on Google Play.',
   },
   {
     path: '/contact',
@@ -133,7 +132,7 @@ export const ROUTES = [
     path: '/learning',
     priority: 0.9,
     title_id: `Belajar NFC, QRIS, Al-Quran & Hadis: Panduan Singkat${L}`,
-    title_en: `Learn How NFC, QRIS & Quran Apps Work${L}`,
+    title_en: `Learn How NFC, QRIS, Quran & Hadith Apps Work${L}`,
     desc_id:
       'Pelajaran singkat berbahasa sehari-hari: cara kerja NFC, QRIS, pengenalan ayat Al-Quran dari suara, dan pengecekan hadis, plus tradisi Yasin & Tahlil.',
     desc_en:
