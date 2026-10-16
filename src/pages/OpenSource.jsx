@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 const PROJECTS = [
   {
     id: 'conote',
-    titleKey: 'opensource.project_conote_title',
-    descKey: 'opensource.project_conote_desc',
+    titleKey: 'opensource.conote_title',
+    descKey: 'opensource.conote_desc',
     badgeKey: 'opensource.conote_badge',
     repoUrl: 'https://github.com/muhakmal/conote-for-confluence',
     glyph: '📝',
@@ -18,8 +18,8 @@ const PROJECTS = [
   },
   {
     id: 'qris',
-    titleKey: 'opensource.project_qris_title',
-    descKey: 'opensource.project_qris_desc',
+    titleKey: 'opensource.qris_title',
+    descKey: 'opensource.qris_desc',
     badgeKey: 'opensource.qris_badge',
     repoUrl: 'https://github.com/muhakmal/qris-parser',
     glyph: '[▦]',
@@ -33,8 +33,8 @@ const PROJECTS = [
   },
   {
     id: 'blog',
-    titleKey: 'opensource.project_blog_title',
-    descKey: 'opensource.project_blog_desc',
+    titleKey: 'opensource.blog_title',
+    descKey: 'opensource.blog_desc',
     badgeKey: 'opensource.blog_badge',
     repoUrl: 'https://github.com/muhakmal/blog',
     glyph: '⚡',
@@ -47,8 +47,8 @@ const PROJECTS = [
   },
   {
     id: 'web',
-    titleKey: 'opensource.project_web_title',
-    descKey: 'opensource.project_web_desc',
+    titleKey: 'opensource.web_title',
+    descKey: 'opensource.web_desc',
     badgeKey: 'opensource.web_badge',
     repoUrl: 'https://github.com/baskomlabs/baskomlabs.github.io',
     glyph: '<>',
