@@ -576,6 +576,13 @@ export function jsonLdFor(pathname, lang = SITE.defaultLang) {
             codeRepository: 'https://github.com/muhakmal/qris-parser',
             description: 'Production-grade Python parser, compliance validator, and dynamic generator for QRIS.',
           },
+          {
+            '@type': 'SoftwareSourceCode',
+            position: 3,
+            name: 'KUE Reader (Indonesian Card Reader SDK)',
+            codeRepository: 'https://github.com/muhakmal/osp-kue-reader',
+            description: 'Android NFC IsoDep APDU reader SDK for Mandiri e-money, BCA Flazz, BNI TapCash, BRI Brizzi, JakCard, and FeliCa transit cards.',
+          },
         ],
       },
     });

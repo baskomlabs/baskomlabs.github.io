@@ -31,6 +31,21 @@ const PROJECTS = [
     ],
     tags: ['Python', 'QRIS', 'EMVCo', 'ASPI v1.0', 'CLI', 'TLV'],
   },
+  {
+    id: 'kue',
+    titleKey: 'opensource.kue_title',
+    descKey: 'opensource.kue_desc',
+    badgeKey: 'opensource.kue_badge',
+    repoUrl: 'https://github.com/muhakmal/osp-kue-reader',
+    glyph: '((·))',
+    features: [
+      'opensource.kue_f1',
+      'opensource.kue_f2',
+      'opensource.kue_f3',
+      'opensource.kue_f4',
+    ],
+    tags: ['Kotlin', 'Android NFC', 'IsoDep', 'Indo e-Money', 'Apache 2.0'],
+  },
 ];
 
 function OpenSource() {
@@ -56,7 +71,7 @@ function OpenSource() {
         <div className="oss-creator-left">
           <div className="oss-avatar-wrap">
             <img
-              src="https://avatars.githubusercontent.com/u/muhakmal"
+              src="/akmal.png"
               alt="Akmal, M."
               className="oss-avatar"
               onError={(e) => {
@@ -162,30 +177,12 @@ function OpenSource() {
         </div>
       </section>
 
-      {/* ---------- IN THE WORKSHOP (UPCOMING) ---------- */}
-      <section className="oss-upcoming reveal-on-scroll">
-        <div className="oss-upcoming-header">
-          <div className="lp-eyebrow">
-            <span>02</span>
-            {t('opensource.upcoming_label')}
-          </div>
-          <span className="oss-card-badge oss-badge-pulse">{t('opensource.upcoming_badge')}</span>
-        </div>
-        <div className="oss-upcoming-card">
-          <div className="oss-glyph" aria-hidden="true">((·))</div>
-          <div className="oss-upcoming-body">
-            <h3>{t('opensource.upcoming_title')}</h3>
-            <p>{t('opensource.upcoming_desc')}</p>
-          </div>
-        </div>
-      </section>
-
       {/* ---------- COMMUNITY / CONTRIBUTE SECTION ---------- */}
       <section className="oss-contribute reveal-on-scroll">
         <div className="oss-contribute-card">
           <div className="oss-contribute-copy">
             <div className="lp-eyebrow">
-              <span>03</span>
+              <span>02</span>
               {t('opensource.contribute_label')}
             </div>
             <h2>{t('opensource.contribute_title')}</h2>
