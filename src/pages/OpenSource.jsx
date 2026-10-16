@@ -31,34 +31,6 @@ const PROJECTS = [
     ],
     tags: ['Python', 'QRIS', 'EMVCo', 'ASPI v1.0', 'CLI', 'TLV'],
   },
-  {
-    id: 'blog',
-    titleKey: 'opensource.blog_title',
-    descKey: 'opensource.blog_desc',
-    badgeKey: 'opensource.blog_badge',
-    repoUrl: 'https://github.com/muhakmal/blog',
-    glyph: '⚡',
-    features: [
-      'opensource.blog_f1',
-      'opensource.blog_f2',
-      'opensource.blog_f3',
-    ],
-    tags: ['Next.js 16', 'React 19', 'Tailwind CSS v4', 'Remark'],
-  },
-  {
-    id: 'web',
-    titleKey: 'opensource.web_title',
-    descKey: 'opensource.web_desc',
-    badgeKey: 'opensource.web_badge',
-    repoUrl: 'https://github.com/baskomlabs/baskomlabs.github.io',
-    glyph: '<>',
-    features: [
-      'opensource.web_f1',
-      'opensource.web_f2',
-      'opensource.web_f3',
-    ],
-    tags: ['React 19', 'Vite', 'Prerender', 'i18n', 'GitHub Pages'],
-  },
 ];
 
 function OpenSource() {
@@ -85,7 +57,7 @@ function OpenSource() {
           <div className="oss-avatar-wrap">
             <img
               src="https://avatars.githubusercontent.com/u/muhakmal"
-              alt="Muh Akmal"
+              alt="Akmal, M."
               className="oss-avatar"
               onError={(e) => {
                 // Fallback to SVG placeholder if offline / network error
