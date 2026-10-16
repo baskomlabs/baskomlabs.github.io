@@ -273,6 +273,7 @@ function Home({ scrollToContact }) {
           <ul className="lp-suite-features">
             <li><span aria-hidden="true">&gt;_</span>CoNote: local-first PRD & Markdown notebook for Confluence</li>
             <li><span aria-hidden="true">&gt;_</span>QRIS Parser: ASPI v1.0 & EMVCo compliance auditor in Python</li>
+            <li><span aria-hidden="true">&gt;_</span>KUE Reader: Android NFC contactless card reader SDK</li>
             <li><span aria-hidden="true">&gt;_</span>Lead author & developer: Akmal, M. (@muhakmal)</li>
           </ul>
         </div>
