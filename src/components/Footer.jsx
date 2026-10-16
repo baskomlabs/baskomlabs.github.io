@@ -26,7 +26,22 @@ function Footer() {
           </Link>
           <p className="footer-tagline">{t('home.hero_tagline')}</p>
           <div className="footer-signature">{t('footer.signature')}</div>
-          <a href="mailto:baskomdevs@gmail.com" className="footer-email">baskomdevs@gmail.com</a>
+          <div className="footer-brand-links">
+            <a href="mailto:baskomdevs@gmail.com" className="footer-email">baskomdevs@gmail.com</a>
+            <span className="footer-sep" aria-hidden="true">·</span>
+            <a
+              href="https://github.com/muhakmal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-github"
+            >
+              {t('footer.github_author')}
+            </a>
+            <span className="footer-sep" aria-hidden="true">·</span>
+            <Link to="/open-source" className="footer-link">
+              {t('navbar.opensource')}
+            </Link>
+          </div>
         </div>
 
         <div className="footer-policies">

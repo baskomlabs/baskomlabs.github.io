@@ -1049,3 +1049,394 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
 .hub-lesson-desc { font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary); }
 .hub-lesson svg { flex: none; width: 1.1rem; height: 1.1rem; fill: none; stroke: var(--text-muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 @media (max-width: 600px) { .hub-track-head { flex-direction: column; gap: 0.75rem; } .hub-lesson { padding: 0.85rem; } }
+
+/* ---------- Navbar GitHub & Footer Author Links ---------- */
+.nav-github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    height: 34px;
+    padding: 0 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    text-decoration: none;
+}
+.nav-github-link:hover {
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+    background: var(--surface-muted);
+}
+.nav-github-link svg {
+    flex-shrink: 0;
+}
+.footer-brand-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+.footer-github {
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-strong);
+    transition: color 0.2s, border-color 0.2s;
+}
+.footer-github:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+/* ---------- Open Source Page ---------- */
+.oss-page {
+    padding: 3rem 0 4rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.oss-hero {
+    margin-bottom: 2.5rem;
+}
+.oss-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5.2vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+.oss-lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 48rem;
+}
+
+/* Creator Spotlight Card */
+.oss-creator-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+    padding: 1.8rem 2.2rem;
+    margin-bottom: 3.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+.oss-creator-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--enamel-green), var(--rim-blue));
+}
+.oss-creator-left {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+.oss-avatar-wrap {
+    flex-shrink: 0;
+    position: relative;
+}
+.oss-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-strong);
+    box-shadow: 0 4px 12px rgba(15, 27, 45, 0.12);
+}
+.oss-avatar-fallback {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--surface-sunken);
+    border: 2px solid var(--border-strong);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--rim);
+    font-size: 1.2rem;
+}
+.oss-creator-badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+}
+.oss-creator-name {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin: 0;
+}
+.oss-creator-handle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.15rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+.oss-creator-handle a {
+    color: var(--rim);
+    font-weight: 600;
+}
+.oss-creator-handle a:hover {
+    text-decoration: underline;
+}
+.oss-creator-role {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+.oss-creator-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    justify-content: center;
+}
+.oss-creator-bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+.oss-creator-btn {
+    align-self: flex-start;
+}
+
+/* Projects Grid */
+.oss-projects-section {
+    margin-bottom: 3.5rem;
+}
+.oss-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+}
+.oss-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.oss-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-md);
+}
+.oss-card-head {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+.oss-glyph {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--rim);
+    background: var(--surface-sunken);
+    border: 1px solid var(--border-subtle);
+}
+.oss-card-head-meta {
+    flex: 1;
+}
+.oss-card-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+}
+.oss-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.25;
+    margin: 0;
+}
+.oss-card-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+}
+.oss-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+.oss-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+.oss-check {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+.oss-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
+    margin-bottom: 1.25rem;
+}
+.oss-tag {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    background: var(--surface-sunken);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+}
+.oss-card-actions {
+    display: flex;
+    align-items: center;
+}
+.oss-repo-link {
+    width: 100%;
+    justify-content: center;
+    gap: 0.55rem;
+    font-size: 0.88rem;
+}
+
+/* Upcoming card */
+.oss-upcoming {
+    margin-bottom: 3rem;
+}
+.oss-upcoming-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+.oss-badge-pulse {
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+}
+.oss-upcoming-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.4rem 1.75rem;
+    background: var(--surface-sunken);
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius);
+}
+.oss-upcoming-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem 0;
+}
+.oss-upcoming-body p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Community & Contribute */
+.oss-contribute {
+    margin-bottom: 2rem;
+}
+.oss-contribute-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2.2rem 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+.oss-contribute-copy h2 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0.25rem 0 0.5rem 0;
+}
+.oss-contribute-copy p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+    max-width: 520px;
+}
+.oss-contribute-actions {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .oss-creator-card {
+        grid-template-columns: 1fr;
+        padding: 1.4rem;
+        gap: 1.25rem;
+    }
+    .oss-grid {
+        grid-template-columns: 1fr;
+    }
+    .oss-contribute-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.5rem;
+        gap: 1.25rem;
+    }
+    .nav-github-label {
+        display: none;
+    }
+    .nav-github-link {
+        padding: 0 0.55rem;
+    }
+}
+

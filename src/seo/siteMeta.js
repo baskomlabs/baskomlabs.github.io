@@ -25,6 +25,7 @@ export const SITE = {
   tagline_id: 'Bengkel Aplikasi Kompeni',
   tagline_en: 'Bengkel Aplikasi Kompeni',
   email: 'baskomdevs@gmail.com',
+  githubUrl: 'https://github.com/muhakmal',
   ogImage: '/og-image.png',
   ogImageAlt: 'BaskomLabs — indie app and web studio from Indonesia',
   defaultLang: 'en',
@@ -115,6 +116,16 @@ export const ROUTES = [
     title_en: `Contact${L}`,
     desc_id: 'Punya ide proyek, mau kolaborasi, atau nemu bug di aplikasi kami? Sapa kami lewat email.',
     desc_en: 'Got a project idea, want to collaborate, or found a bug in one of our apps? Drop us a line.',
+  },
+  {
+    path: '/open-source',
+    priority: 0.9,
+    title_id: `Proyek Open Source${L}`,
+    title_en: `Open Source Projects${L}`,
+    desc_id:
+      'Perkakas developer, parser QRIS, dan notebook PRD Markdown oleh Muh Akmal dan BaskomLabs. Terbuka, gratis, dan bebas dipakai.',
+    desc_en:
+      'Open-source developer tools, QRIS parsers, and Markdown PRD notebooks by Muh Akmal and BaskomLabs. Free and public on GitHub.',
   },
 
   // --- Learning hub ---
@@ -452,7 +463,11 @@ export function jsonLdFor(pathname, lang = SITE.defaultLang) {
     logo: SITE.url + '/apple-touch-icon.png',
     email: SITE.email,
     description: lang === 'id' ? SITE.tagline_id : SITE.tagline_en,
-    sameAs: [SITE.playDeveloperUrl],
+    sameAs: [
+      SITE.playDeveloperUrl,
+      'https://github.com/muhakmal',
+      'https://github.com/baskomlabs',
+    ],
   };
   const graph = [org];
 
@@ -514,6 +529,70 @@ export function jsonLdFor(pathname, lang = SITE.defaultLang) {
     const app = playId && APPS.find((a) => a.playId === playId && !a.pending);
     if (app) page.about = { '@type': 'MobileApplication', name: app.name, url: playUrl(app.playId) };
     graph.push(page);
+  } else if (route.path === '/open-source') {
+    const title = stripSuffix(route[`title${suffix}`]);
+    const crumbs = [
+      { name: 'Home', url: SITE.url + '/' },
+      { name: 'Open Source', url: canonicalUrl('/open-source') },
+    ];
+    graph.push({
+      '@type': 'BreadcrumbList',
+      itemListElement: crumbs.map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: c.name,
+        item: c.url,
+      })),
+    });
+    graph.push({
+      '@type': 'CollectionPage',
+      headline: title,
+      name: title,
+      description: route[`desc${suffix}`],
+      url,
+      inLanguage: lang,
+      image: SITE.url + SITE.ogImage,
+      author: {
+        '@type': 'Person',
+        name: 'Muh Akmal',
+        url: 'https://github.com/muhakmal',
+      },
+      publisher: { '@id': orgId },
+      isPartOf: { '@id': SITE.url + '/#website' },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: [
+          {
+            '@type': 'SoftwareSourceCode',
+            position: 1,
+            name: 'CoNote for Confluence',
+            codeRepository: 'https://github.com/muhakmal/conote-for-confluence',
+            description: 'Fast, local-first PRD & Markdown notebook for Confluence Cloud.',
+          },
+          {
+            '@type': 'SoftwareSourceCode',
+            position: 2,
+            name: 'QRIS Parser & Validator',
+            codeRepository: 'https://github.com/muhakmal/qris-parser',
+            description: 'Production-grade Python parser, compliance validator, and dynamic generator for QRIS.',
+          },
+          {
+            '@type': 'SoftwareSourceCode',
+            position: 3,
+            name: 'Developer Blog & Writing Platform',
+            codeRepository: 'https://github.com/muhakmal/blog',
+            description: 'Modern personal developer blog and technical writing platform.',
+          },
+          {
+            '@type': 'SoftwareSourceCode',
+            position: 4,
+            name: 'BaskomLabs Open Web',
+            codeRepository: 'https://github.com/baskomlabs/baskomlabs.github.io',
+            description: 'Open-source website frontend and interactive learning hub.',
+          },
+        ],
+      },
+    });
   }
 
   return { '@context': 'https://schema.org', '@graph': graph };
