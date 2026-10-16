@@ -70,6 +70,14 @@ function noscriptFor(route) {
         .map((r) => `<li><a href="${esc(canonicalUrl(r.path))}">${esc(r.title_en.replace(/ \| BaskomLabs$/, ''))}</a> — ${esc(r.desc_en)}</li>`)
         .join('') +
       '</ul>';
+  } else if (route.path === '/open-source') {
+    extra =
+      '<h2>Featured Open Source Projects</h2><ul>' +
+      '<li><a href="https://github.com/muhakmal/conote-for-confluence">CoNote for Confluence</a> — Fast, local-first PRD & Markdown notebook for Confluence Cloud</li>' +
+      '<li><a href="https://github.com/muhakmal/qris-parser">QRIS Parser & Validator</a> — Production-grade Python parser, compliance validator, and dynamic generator for QRIS</li>' +
+      '<li><a href="https://github.com/muhakmal/blog">Developer Blog & Writing Platform</a> — Modern personal developer blog and technical writing platform</li>' +
+      '<li><a href="https://github.com/baskomlabs/baskomlabs.github.io">BaskomLabs Open Web</a> — Open-source frontend and learning platform</li>' +
+      '</ul><p>Lead developer: <a href="https://github.com/muhakmal">Muh Akmal (@muhakmal)</a></p>';
   } else if (route.path.startsWith('/learning/')) {
     extra = '<p><a href="/learning/">Back to the learning hub</a></p>';
   }
