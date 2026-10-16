@@ -123,9 +123,9 @@ export const ROUTES = [
     title_id: `Proyek Open Source${L}`,
     title_en: `Open Source Projects${L}`,
     desc_id:
-      'Perkakas developer, parser QRIS, dan notebook PRD Markdown oleh Muh Akmal dan BaskomLabs. Terbuka, gratis, dan bebas dipakai.',
+      'Perkakas developer, parser QRIS, dan notebook PRD Markdown oleh Akmal, M. dan BaskomLabs. Terbuka, gratis, dan bebas dipakai.',
     desc_en:
-      'Open-source developer tools, QRIS parsers, and Markdown PRD notebooks by Muh Akmal and BaskomLabs. Free and public on GitHub.',
+      'Open-source developer tools, QRIS parsers, and Markdown PRD notebooks by Akmal, M. and BaskomLabs. Free and public on GitHub.',
   },
 
   // --- Learning hub ---
@@ -554,7 +554,7 @@ export function jsonLdFor(pathname, lang = SITE.defaultLang) {
       image: SITE.url + SITE.ogImage,
       author: {
         '@type': 'Person',
-        name: 'Muh Akmal',
+        name: 'Akmal, M.',
         url: 'https://github.com/muhakmal',
       },
       publisher: { '@id': orgId },
@@ -575,20 +575,6 @@ export function jsonLdFor(pathname, lang = SITE.defaultLang) {
             name: 'QRIS Parser & Validator',
             codeRepository: 'https://github.com/muhakmal/qris-parser',
             description: 'Production-grade Python parser, compliance validator, and dynamic generator for QRIS.',
-          },
-          {
-            '@type': 'SoftwareSourceCode',
-            position: 3,
-            name: 'Developer Blog & Writing Platform',
-            codeRepository: 'https://github.com/muhakmal/blog',
-            description: 'Modern personal developer blog and technical writing platform.',
-          },
-          {
-            '@type': 'SoftwareSourceCode',
-            position: 4,
-            name: 'BaskomLabs Open Web',
-            codeRepository: 'https://github.com/baskomlabs/baskomlabs.github.io',
-            description: 'Open-source website frontend and interactive learning hub.',
           },
         ],
       },
