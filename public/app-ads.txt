@@ -4,6 +4,9 @@ OWNERDOMAIN=baskom.fun
 # Unity LevelPlay / ironSource Ads
 ironsrc.com, 671463, DIRECT
 
+# Unity Ads (bidding in LevelPlay); line from Unity Dashboard > Monetization > Settings > Organization, 2026-10-21
+unity.com, 94965741, DIRECT, 96cabb5fbdde37a7
+
 # ironSource authorized resellers (docs.unity.com/en-us/grow/programmatic/ironsource-exchange/app-ads-txt, 2026-10-21)
 media.net, 8CUH2L333, RESELLER
 sharethrough.com, 3817, RESELLER, d53b998a7bd4ecd2
