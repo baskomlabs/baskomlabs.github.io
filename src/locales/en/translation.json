@@ -72,7 +72,8 @@
     "talks_desc": "A guest-teacher session for kindergartners at <school>IAS Al-Jannah</school>: meeting the internet, learning to put the screen down, and looking after their eyes, through three play missions. Slides, guide, script and props are free to download.",
     "talks_meta": "24 slides · film · 4 music tracks · printable props",
     "talks_cta": "Read the case study",
-    "talks_cover_alt": "Illustration of children walking past a treehouse and a toy train carrying data packets"
+    "talks_cover_alt": "Illustration of children walking past a treehouse and a toy train carrying data packets",
+    "app_details": "App details"
   },
   "opensource": {
     "hero_badge": "Public Code · Local-First",
@@ -191,5 +192,179 @@
     "system": "Follow system",
     "light": "Light mode",
     "dark": "Dark mode"
+  },
+  "apps": {
+    "common": {
+      "breadcrumb_home": "Home",
+      "badge": "Free · Android · Contains ads",
+      "cta_install": "Get it free on Google Play",
+      "features_title": "Features",
+      "screens_title": "Screenshots",
+      "screens_alt": "{{app}} screenshot {{n}}",
+      "howto_title": "How to use it",
+      "faq_title": "FAQ",
+      "learn_title": "Learn the tech behind it",
+      "legal_title": "Policies",
+      "privacy": "Privacy policy",
+      "tos": "Terms of service",
+      "other_lang": "Baca dalam Bahasa Indonesia",
+      "details": "App details",
+      "final_title": "Ready to try {{app}}?",
+      "final_desc": "Free on Google Play for Android phones."
+    },
+    "pembacakue": {
+      "eyebrow": "NFC e-money card reader",
+      "h1": "Check your e-Money, e-Toll & Flazz balance by tapping your phone",
+      "lead": "PembacaKUE reads the balance of Indonesian electronic money cards over NFC on your Android phone. Tap the card on the back of the phone and the balance appears. No login and no bank account needed.",
+      "cards_title": "Supported cards",
+      "cards": [
+        "Mandiri e-Money & e-Toll",
+        "BCA Flazz (Gen 1 & Gen 2)",
+        "BNI TapCash",
+        "BRI Brizzi",
+        "JakCard (Bank DKI)"
+      ],
+      "features": [
+        {
+          "title": "Balance in seconds",
+          "desc": "Tap the card on your phone's NFC area and the balance shows instantly. Handy before a toll gate, KRL, MRT, TransJakarta or a parking barrier."
+        },
+        {
+          "title": "Balance read out loud",
+          "desc": "A voice announcer reads the balance for you, with Indonesian voice packs (Diva Indonesia and Wong Oslo), so you don't have to look at the screen."
+        },
+        {
+          "title": "Card transaction history",
+          "desc": "See when and where your balance was deducted to keep track of travel spending (Premium)."
+        },
+        {
+          "title": "Toll rate calculator",
+          "desc": "Estimate the toll fare for your vehicle class before you set off."
+        },
+        {
+          "title": "Read-only, data stays on your phone",
+          "desc": "Balance and history are read from the card chip and kept on your device. The app never writes to the card or changes the balance."
+        },
+        {
+          "title": "Dark mode",
+          "desc": "A responsive interface with full Dark Mode support."
+        }
+      ],
+      "howto": [
+        "Make sure your Android phone has NFC and that NFC is switched on in the phone's settings.",
+        "Open PembacaKUE.",
+        "Hold your e-Money, e-Toll, Flazz, TapCash, Brizzi or JakCard against the back of the phone (the NFC area) until the balance appears."
+      ],
+      "faq": [
+        {
+          "q": "Can I check an e-Toll balance with my phone?",
+          "a": "Yes, as long as your phone has NFC. Mandiri e-Money/e-Toll is supported, as are BCA Flazz, BNI TapCash, BRI Brizzi and JakCard."
+        },
+        {
+          "q": "Which phones work?",
+          "a": "Android phones with NFC switched on. Without NFC the card cannot be read."
+        },
+        {
+          "q": "Do I need to log in or enter bank details?",
+          "a": "No. There is no account to create and no bank credentials to enter. The balance is read straight from the card chip."
+        },
+        {
+          "q": "Can it top up or change my balance?",
+          "a": "No. PembacaKUE only reads the card and never writes to it, so it cannot change or top up a balance."
+        },
+        {
+          "q": "Is it free?",
+          "a": "Free on Google Play with ads. An ad-free subscription is available inside the app."
+        }
+      ],
+      "learn": [
+        {
+          "to": "/learning/nfc-basics",
+          "label": "NFC basics: why a card works just by tapping it"
+        },
+        {
+          "to": "/learning/components",
+          "label": "Inside PembacaKUE: APDU commands and how a card answers"
+        }
+      ]
+    },
+    "qrstu": {
+      "eyebrow": "QRIS reader, scanner & tracker",
+      "h1": "Scan a QRIS and see what's inside before you pay",
+      "lead": "QRSTU (QRIS Reader, Scoring & Tracking Utility) reads any QRIS code and shows what is inside it: merchant name, city, amount, NNS/acquirer and every EMVCo tag. It can also read QRIS Tap over NFC.",
+      "notice": "QRSTU only reads and explains QRIS codes. It does not make payments or move money.",
+      "features": [
+        {
+          "title": "Scan from anywhere",
+          "desc": "Point the camera at a QRIS (with flash for dim counters), pick an image from your gallery, share a screenshot from another app, or paste a raw QRIS string."
+        },
+        {
+          "title": "Read QRIS Tap (NFC)",
+          "desc": "Switch from Scan to Tap and hold a phone running a QRIS Tap app against the back of yours. Card data stays hidden until you choose to reveal it."
+        },
+        {
+          "title": "QRIS MPM & CPM parser",
+          "desc": "Decode static and dynamic QRIS MPM and CPM payloads. Validate against EMVCo/QRIS rules, fix a broken CRC, and turn a static QR into a dynamic one."
+        },
+        {
+          "title": "Searchable history",
+          "desc": "Every scan is saved with date, merchant, city and amount. Search, filter by MPM, CPM, NFC Tap or compliance, and export to CSV or JSON."
+        },
+        {
+          "title": "Levels & leaderboard",
+          "desc": "Earn points for every scan and evolve through 5 levels: Nubie, Aktivis Kyuris, Juragan, Konglo and Dewa QRIS."
+        },
+        {
+          "title": "Learning center",
+          "desc": "Short articles on QR code basics, the history of QRIS, MPM vs CPM, QRIS Tap, security and regulation."
+        }
+      ],
+      "howto": [
+        "Open QRSTU and choose Scan.",
+        "Point the camera at the QRIS code, pick its image from your gallery, or paste the QRIS string.",
+        "Check the result: merchant name, city, amount, acquirer and the breakdown of every tag."
+      ],
+      "faq": [
+        {
+          "q": "Can I scan a QRIS from a screenshot or the gallery?",
+          "a": "Yes. Pick a QR image from your gallery or share a screenshot from another app to QRSTU."
+        },
+        {
+          "q": "What is the difference between QRIS MPM and CPM?",
+          "a": "MPM (Merchant Presented Mode) is the QR a merchant shows for you to scan. CPM (Customer Presented Mode) is the QR your payment app shows for the merchant to scan. QRSTU reads both."
+        },
+        {
+          "q": "What is QRIS Tap?",
+          "a": "QRIS Tap is QRIS payment over NFC: the phone is tapped instead of scanned. QRSTU can read and show the tag structure from a phone running a QRIS Tap app."
+        },
+        {
+          "q": "Can I pay with QRSTU?",
+          "a": "No. QRSTU only reads and explains QRIS codes. It does not make payments or move money."
+        },
+        {
+          "q": "Do I have to sign in?",
+          "a": "No. As a guest your history stays on the device. Signing in is for backing your history up to the cloud."
+        },
+        {
+          "q": "Is it free?",
+          "a": "Every feature is free with ads. Premium removes all ads and adds a badge next to your name on the leaderboard."
+        }
+      ],
+      "learn": [
+        {
+          "to": "/learning/qris-basics",
+          "label": "QRIS basics: the EMVCo standard behind one QR for every wallet"
+        },
+        {
+          "to": "/learning/qris-data-parsing",
+          "label": "Parsing QRIS data: reading the TLV format"
+        }
+      ]
+    }
+  },
+  "notfound": {
+    "title": "Page not found",
+    "desc": "This address doesn't exist or has moved. Start from the home page or go straight to an app page.",
+    "home": "Go to the home page"
   }
 }

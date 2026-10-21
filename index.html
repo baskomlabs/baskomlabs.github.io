@@ -19,6 +19,9 @@
           var path = h.slice(1);
           if (path === '/home') path = '/';
           window.location.replace(path + window.location.search);
+        } else if (/^#(privacy-policy|tos-)[a-z-]*$/.test(h)) {
+          // Older Play listings use /#privacy-policy-<app> (no slash).
+          window.location.replace('/' + h.slice(1) + '/' + window.location.search);
         }
       })();
     </script>

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import PlayStoreButton from './PlayStoreButton';
-import { APPS, appForPath, normalizePath, playUrl } from '../seo/siteMeta';
+import { APPS, appForPath, normalizePath, playInstallUrl } from '../seo/siteMeta';
 
 // Short name -> the home.* key holding its one-line description.
 const DESC_KEY = {
@@ -30,7 +30,7 @@ function LearningAppCta() {
         <h2>{t('learning.cta_title', { app: app.short })}</h2>
         <p>{t(DESC_KEY[app.short])}</p>
       </div>
-      <PlayStoreButton url={playUrl(app.playId)} appName={app.short} />
+      <PlayStoreButton url={playInstallUrl(app.playId, 'learning')} appName={app.short} />
     </aside>
   );
 }

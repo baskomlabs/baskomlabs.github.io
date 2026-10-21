@@ -42,10 +42,17 @@ const L = ' | BaskomLabs';
  */
 export const APPS = [
   {
-    name: 'QRSTU: Scanner QRIS & Edukasi',
+    name: 'QRSTU: QRIS Scanner & NFC Tap',
     short: 'QRSTU',
     playId: 'com.baskom.qrisparser',
+    slug: 'qrstu',
     icon: '/apps/qrstu.png',
+    // Exported from the app repo's fastlane phoneScreenshots (540x960 WebP).
+    screenshots: {
+      id: [1, 2, 3, 4, 5, 6].map((n) => `/apps/qrstu/screen-id-${n}.webp`),
+      en: [1, 2, 3, 4, 5, 6].map((n) => `/apps/qrstu/screen-en-${n}.webp`),
+    },
+    privacy: '/privacy-policy',
     category: 'FinanceApplication',
     desc: 'Scan a QRIS code, unpack what is inside it (merchant, city, category, TLV fields) and learn how it works.',
   },
@@ -53,7 +60,12 @@ export const APPS = [
     name: 'PembacaKUE',
     short: 'PembacaKUE',
     playId: 'com.baskom.pembacakue',
+    slug: 'pembacakue',
     icon: '/apps/pembacakue.png',
+    // Play only has Indonesian screenshots for this app; both pages use them.
+    screenshots: { id: [1, 2, 3, 4].map((n) => `/apps/pembacakue/screen-${n}.webp`) },
+    privacy: '/privacy-policy-pembacakue',
+    tos: '/tos-pembacakue',
     category: 'UtilitiesApplication',
     desc: 'Check eMoney, Flazz and other NFC card balances straight from your Android phone.',
   },
@@ -83,7 +95,22 @@ export const APPS = [
   },
 ];
 
+/** The bare listing URL. Used in structured data, where it identifies the app. */
 export const playUrl = (playId) => `https://play.google.com/store/apps/details?id=${playId}`;
+
+/**
+ * The listing URL people actually click. Play hands `referrer` to the install
+ * referrer and its utm_* keys show up in Play Console's acquisition reports, so
+ * installs from the site are attributable per placement (home, app page, lesson).
+ * The source stays "baskom.fun" even on the github.io fallback so reports don't split.
+ */
+export const playInstallUrl = (playId, placement = 'site') =>
+  `${playUrl(playId)}&referrer=${encodeURIComponent(
+    `utm_source=baskom.fun&utm_medium=website&utm_campaign=${placement}`
+  )}`;
+
+/** Path of an app's landing page in a given language (Indonesian is the default URL). */
+export const appPagePath = (slug, lang = 'id') => (lang === 'en' ? `/en/apps/${slug}` : `/apps/${slug}`);
 
 /**
  * Guest-teacher session at IAS Al-Jannah. The talk page, the Home card, the
@@ -134,6 +161,17 @@ export function appForPath(path) {
   return null;
 }
 
+/** An app landing page in both languages, each pointing at the other via `alternates`. */
+function appRoutes({ slug, priority, title_id, title_en, desc_id, desc_en, ogImageAlt }) {
+  const alternates = { id: appPagePath(slug, 'id'), en: appPagePath(slug, 'en') };
+  const base = { app: slug, priority, alternates, title_id, title_en, desc_id, desc_en, ogImageAlt };
+  base.ogImage = `/apps/${slug}/og.jpg`;
+  return [
+    { ...base, path: alternates.id, lang: 'id' },
+    { ...base, path: alternates.en, lang: 'en', priority: priority - 0.1 },
+  ];
+}
+
 export const ROUTES = [
   {
     path: '/',
@@ -178,6 +216,33 @@ export const ROUTES = [
     desc_en:
       'Interactive slides, teacher guide, script, printable props, film and music from a kindergarten guest-teacher session at IAS Al-Jannah. Three missions on the internet, screen time and eye care. Free to download under CC BY-NC 4.0.',
   },
+
+  // --- App landing pages ---
+  // Indonesian first: most people searching for these apps search in Indonesian.
+  // Each page exists at a fixed-language URL (/apps/x = id, /en/apps/x = en), so
+  // both languages get indexed and tied together with hreflang.
+  ...appRoutes({
+    slug: 'pembacakue',
+    priority: 0.95,
+    title_id: `PembacaKUE: Cek Saldo e-Money, e-Toll & Flazz via NFC${L}`,
+    title_en: `PembacaKUE: Check e-Money, e-Toll & Flazz Balance via NFC${L}`,
+    desc_id:
+      'Cek saldo kartu e-Money, e-Toll, Flazz, TapCash, Brizzi dan JakCard cukup ditempel ke HP Android ber-NFC. Tanpa login, gratis di Google Play.',
+    desc_en:
+      'Check Mandiri e-Money, e-Toll, BCA Flazz, BNI TapCash, BRI Brizzi and JakCard balances by tapping the card on an NFC Android phone. No login, free on Google Play.',
+    ogImageAlt: 'PembacaKUE — cek saldo kartu uang elektronik dengan NFC',
+  }),
+  ...appRoutes({
+    slug: 'qrstu',
+    priority: 0.95,
+    title_id: `QRSTU: Scan & Cek QRIS, Baca QRIS Tap NFC${L}`,
+    title_en: `QRSTU: QRIS Scanner & Reader, QRIS Tap over NFC${L}`,
+    desc_id:
+      'Scan QRIS dari kamera atau galeri, lihat nama merchant, kota, nominal dan setiap tag EMVCo sebelum bayar. Baca QRIS MPM, CPM dan QRIS Tap (NFC). Gratis di Google Play.',
+    desc_en:
+      'Scan a QRIS from the camera or gallery and see the merchant, city, amount and every EMVCo tag before you pay. Reads QRIS MPM, CPM and QRIS Tap over NFC. Free on Google Play.',
+    ogImageAlt: 'QRSTU — scan dan cek isi kode QRIS',
+  }),
 
   // --- Learning hub ---
   {
@@ -476,11 +541,29 @@ export function canonicalUrl(path) {
   return path === '/' ? SITE.url + '/' : SITE.url + path + '/';
 }
 
-export function metaFor(pathname, lang = SITE.defaultLang) {
+/** The route for a pathname, or undefined when the path is not a known page. */
+export function routeFor(pathname) {
   const path = normalizePath(pathname);
-  const route = ROUTES.find((r) => r.path === path) || ROUTES[0];
+  return ROUTES.find((r) => r.path === path);
+}
+
+/** hreflang alternates for a route as absolute URLs, x-default = Indonesian. */
+export function alternatesFor(route) {
+  if (!route || !route.alternates) return [];
+  return [
+    ...Object.entries(route.alternates).map(([hreflang, p]) => ({ hreflang, href: canonicalUrl(p) })),
+    { hreflang: 'x-default', href: canonicalUrl(route.alternates.id) },
+  ];
+}
+
+export function metaFor(pathname, lang = SITE.defaultLang) {
+  const route = routeFor(pathname) || ROUTES[0];
+  // Fixed-language pages ignore the toggle: the URL decides the language.
+  if (route.lang) lang = route.lang;
   const suffix = lang === 'id' ? '_id' : '_en';
   return {
+    lang,
+    alternates: alternatesFor(route),
     path: route.path,
     title: route[`title${suffix}`],
     description: route[`desc${suffix}`],
@@ -504,6 +587,7 @@ const stripSuffix = (t) => t.replace(/ \| BaskomLabs$/, '');
 export function jsonLdFor(pathname, lang = SITE.defaultLang) {
   const path = normalizePath(pathname);
   const route = ROUTES.find((r) => r.path === path) || ROUTES[0];
+  if (route.lang) lang = route.lang;
   const suffix = lang === 'id' ? '_id' : '_en';
   const url = canonicalUrl(route.canonical || route.path);
   const orgId = SITE.url + '/#org';
@@ -537,8 +621,10 @@ export function jsonLdFor(pathname, lang = SITE.defaultLang) {
     for (const app of APPS.filter((a) => !a.pending)) {
       graph.push({
         '@type': 'MobileApplication',
+        ...(app.slug && { '@id': canonicalUrl(appPagePath(app.slug)) + '#app' }),
         name: app.name,
-        url: playUrl(app.playId),
+        url: app.slug ? canonicalUrl(appPagePath(app.slug)) : playUrl(app.playId),
+        ...(app.slug && { installUrl: playUrl(app.playId), sameAs: [playUrl(app.playId)] }),
         image: SITE.url + app.icon,
         description: app.desc,
         operatingSystem: 'ANDROID',
@@ -547,6 +633,47 @@ export function jsonLdFor(pathname, lang = SITE.defaultLang) {
         author: { '@id': orgId },
       });
     }
+  } else if (route.app) {
+    const app = APPS.find((a) => a.slug === route.app);
+    const title = stripSuffix(route[`title${suffix}`]);
+    const home = lang === 'id' ? 'Beranda' : 'Home';
+    graph.push({
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: home, item: SITE.url + '/' },
+        { '@type': 'ListItem', position: 2, name: app.short, item: url },
+      ],
+    });
+    graph.push({
+      '@type': 'WebPage',
+      '@id': url + '#page',
+      url,
+      name: title,
+      description: route[`desc${suffix}`],
+      inLanguage: lang,
+      isPartOf: { '@id': SITE.url + '/#website' },
+      primaryImageOfPage: SITE.url + route.ogImage,
+      mainEntity: { '@id': canonicalUrl(appPagePath(app.slug)) + '#app' },
+    });
+    graph.push({
+      '@type': ['SoftwareApplication', 'MobileApplication'],
+      '@id': canonicalUrl(appPagePath(app.slug)) + '#app',
+      name: app.name,
+      alternateName: app.short,
+      url: canonicalUrl(appPagePath(app.slug)),
+      description: route[`desc${suffix}`],
+      image: SITE.url + app.icon,
+      screenshot: (app.screenshots?.[lang] || app.screenshots?.id || []).map((s) => SITE.url + s),
+      operatingSystem: 'Android',
+      applicationCategory: app.category,
+      inLanguage: ['id', 'en'],
+      installUrl: playUrl(app.playId),
+      downloadUrl: playUrl(app.playId),
+      sameAs: [playUrl(app.playId)],
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'IDR' },
+      author: { '@id': orgId },
+      publisher: { '@id': orgId },
+    });
   } else if (route.path === '/learning' || route.path.startsWith('/learning/')) {
     const title = stripSuffix(route[`title${suffix}`]);
     const crumbs = [{ name: 'Home', url: SITE.url + '/' }, { name: 'Learning', url: canonicalUrl('/learning') }];

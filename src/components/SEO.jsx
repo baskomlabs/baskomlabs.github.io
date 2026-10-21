@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
-import { SITE, metaFor, jsonLdFor } from '../seo/siteMeta';
+import { SITE, metaFor, jsonLdFor, routeFor } from '../seo/siteMeta';
 
 /**
  * Per-route <head>. Metadata comes from src/seo/siteMeta.js, which the build
@@ -14,16 +14,21 @@ import { SITE, metaFor, jsonLdFor } from '../seo/siteMeta';
 function SEO() {
   const { i18n } = useTranslation();
   const location = useLocation();
-  const lang = i18n.language === 'id' ? 'id' : 'en';
-  const { title, description, canonical, ogImage, ogImageAlt } = metaFor(location.pathname, lang);
-
+  const uiLang = i18n.language === 'id' ? 'id' : 'en';
+  // Fixed-language pages (the app landing pages) report their own language.
+  const { lang, title, description, canonical, ogImage, ogImageAlt, alternates } = metaFor(location.pathname, uiLang);
   const jsonLd = jsonLdFor(location.pathname, lang);
+  // Unknown paths render the 404 page, which sets its own robots/title.
+  const known = Boolean(routeFor(location.pathname));
 
   return (
     <Helmet htmlAttributes={{ lang }}>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={canonical} />
+      {known && <link rel="canonical" href={canonical} />}
+      {alternates.map((a) => (
+        <link key={a.hreflang} rel="alternate" hrefLang={a.hreflang} href={a.href} />
+      ))}
 
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={SITE.name} />

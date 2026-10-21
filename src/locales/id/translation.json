@@ -72,7 +72,8 @@
     "talks_desc": "Sesi guru tamu untuk anak TK B di <school>IAS Al-Jannah</school>: kenalan dengan internet, belajar mengerem layar, dan menjaga mata lewat tiga misi bermain. Slide, panduan, naskah, dan alat peraganya bebas diunduh.",
     "talks_meta": "24 slide · film · 4 musik · alat peraga cetak",
     "talks_cta": "Lihat studi kasus",
-    "talks_cover_alt": "Ilustrasi anak-anak berjalan di dekat rumah pohon dan kereta mainan pembawa paket data"
+    "talks_cover_alt": "Ilustrasi anak-anak berjalan di dekat rumah pohon dan kereta mainan pembawa paket data",
+    "app_details": "Detail aplikasi"
   },
   "opensource": {
     "hero_badge": "Kode Terbuka · Local-First",
@@ -191,5 +192,179 @@
     "system": "Ikuti sistem",
     "light": "Mode terang",
     "dark": "Mode gelap"
+  },
+  "apps": {
+    "common": {
+      "breadcrumb_home": "Beranda",
+      "badge": "Gratis · Android · Berisi iklan",
+      "cta_install": "Pasang gratis dari Google Play",
+      "features_title": "Fitur",
+      "screens_title": "Tampilan aplikasi",
+      "screens_alt": "Screenshot {{app}} {{n}}",
+      "howto_title": "Cara pakai",
+      "faq_title": "Pertanyaan umum",
+      "learn_title": "Pelajari teknologinya",
+      "legal_title": "Kebijakan",
+      "privacy": "Kebijakan privasi",
+      "tos": "Syarat & ketentuan",
+      "other_lang": "Read in English",
+      "details": "Detail aplikasi",
+      "final_title": "Siap mencoba {{app}}?",
+      "final_desc": "Gratis di Google Play untuk HP Android."
+    },
+    "pembacakue": {
+      "eyebrow": "Pembaca kartu uang elektronik NFC",
+      "h1": "Cek saldo e-Money, e-Toll & Flazz cukup tempel ke HP",
+      "lead": "PembacaKUE membaca saldo kartu uang elektronik lewat NFC di HP Android Anda. Tempelkan kartu ke bagian belakang HP, saldo langsung muncul. Tanpa login dan tanpa akun bank.",
+      "cards_title": "Kartu yang didukung",
+      "cards": [
+        "Mandiri e-Money & e-Toll",
+        "BCA Flazz (Gen 1 & Gen 2)",
+        "BNI TapCash",
+        "BRI Brizzi",
+        "JakCard (Bank DKI)"
+      ],
+      "features": [
+        {
+          "title": "Cek saldo dalam hitungan detik",
+          "desc": "Tempel kartu di area NFC HP dan saldo tampil seketika. Pas untuk dicek sebelum lewat gerbang tol, naik KRL, MRT, TransJakarta, atau bayar parkir."
+        },
+        {
+          "title": "Saldo dibacakan suara",
+          "desc": "Asisten suara membacakan nominal saldo, dengan pilihan suara Diva Indonesia dan Wong Oslo, jadi tidak perlu melihat layar."
+        },
+        {
+          "title": "Riwayat transaksi kartu",
+          "desc": "Lihat kapan dan di mana saldo terpotong untuk memantau pengeluaran perjalanan (fitur Premium)."
+        },
+        {
+          "title": "Kalkulator tarif tol",
+          "desc": "Perkirakan tarif tol sesuai golongan kendaraan Anda sebelum berangkat."
+        },
+        {
+          "title": "Hanya membaca, data di HP Anda",
+          "desc": "Saldo dan riwayat dibaca dari cip kartu dan disimpan di perangkat. Aplikasi tidak pernah menulis ke kartu atau mengubah saldo."
+        },
+        {
+          "title": "Mode gelap",
+          "desc": "Tampilan responsif yang juga mendukung Dark Mode."
+        }
+      ],
+      "howto": [
+        "Pastikan HP Android Anda punya NFC dan NFC sudah dinyalakan di pengaturan HP.",
+        "Buka PembacaKUE.",
+        "Tempelkan kartu e-Money, e-Toll, Flazz, TapCash, Brizzi atau JakCard ke bagian belakang HP (area NFC) dan tahan sebentar sampai saldo muncul."
+      ],
+      "faq": [
+        {
+          "q": "Bisa cek saldo e-Toll pakai HP?",
+          "a": "Bisa, selama HP Anda punya NFC. Kartu Mandiri e-Money/e-Toll didukung, begitu juga BCA Flazz, BNI TapCash, BRI Brizzi dan JakCard."
+        },
+        {
+          "q": "HP seperti apa yang bisa dipakai?",
+          "a": "HP Android dengan fitur NFC yang aktif. Tanpa NFC, kartu tidak bisa dibaca."
+        },
+        {
+          "q": "Perlu login atau data bank?",
+          "a": "Tidak. Tidak perlu daftar akun atau memasukkan data perbankan. Saldo dibaca langsung dari cip kartu."
+        },
+        {
+          "q": "Bisa isi ulang (top up) atau mengubah saldo?",
+          "a": "Tidak. PembacaKUE hanya membaca kartu dan tidak menulis apa pun ke kartu, jadi tidak bisa mengubah atau mengisi saldo."
+        },
+        {
+          "q": "Apakah gratis?",
+          "a": "Gratis di Google Play dengan iklan. Tersedia langganan bebas iklan di dalam aplikasi."
+        }
+      ],
+      "learn": [
+        {
+          "to": "/learning/nfc-basics",
+          "label": "Dasar NFC: kenapa kartu bisa terbaca cukup dengan ditempel"
+        },
+        {
+          "to": "/learning/components",
+          "label": "Membedah PembacaKUE: perintah APDU dan cara kartu menjawab"
+        }
+      ]
+    },
+    "qrstu": {
+      "eyebrow": "QRIS reader, scanner & tracker",
+      "h1": "Scan QRIS dan cek isinya sebelum bayar",
+      "lead": "QRSTU (QRIS Reader, Scoring & Tracking Utility) membaca kode QRIS apa pun dan menampilkan isinya: nama merchant, kota, nominal, NNS/acquirer, sampai setiap tag EMVCo. QRIS Tap lewat NFC juga bisa dibaca.",
+      "notice": "QRSTU hanya membaca dan menjelaskan kode QRIS. Aplikasi ini tidak melakukan pembayaran atau memindahkan dana.",
+      "features": [
+        {
+          "title": "Scan dari mana saja",
+          "desc": "Arahkan kamera ke QRIS (ada flash untuk tempat redup), pilih gambar dari galeri, bagikan screenshot dari aplikasi lain, atau tempel string QRIS."
+        },
+        {
+          "title": "Baca QRIS Tap (NFC)",
+          "desc": "Ganti dari Scan ke Tap, lalu tempelkan ponsel yang menjalankan aplikasi QRIS Tap ke belakang ponselmu. Data kartu tetap tersembunyi sampai kamu memilih menampilkannya."
+        },
+        {
+          "title": "Parser QRIS MPM & CPM",
+          "desc": "Bedah QRIS MPM statis dan dinamis serta CPM. Validasi sesuai aturan EMVCo/QRIS, perbaiki CRC yang rusak, dan ubah QR statis menjadi dinamis."
+        },
+        {
+          "title": "Riwayat yang bisa dicari",
+          "desc": "Setiap scan tersimpan dengan tanggal, merchant, kota dan nominal. Cari, filter MPM, CPM, NFC Tap atau kepatuhan, lalu ekspor ke CSV atau JSON."
+        },
+        {
+          "title": "Level & leaderboard",
+          "desc": "Kumpulkan poin dari setiap scan dan naik lewat 5 level: Nubie, Aktivis Kyuris, Juragan, Konglo, dan Dewa QRIS."
+        },
+        {
+          "title": "Pusat belajar",
+          "desc": "Artikel singkat tentang dasar QR code, sejarah QRIS, MPM vs CPM, QRIS Tap, keamanan, dan regulasi."
+        }
+      ],
+      "howto": [
+        "Buka QRSTU dan pilih Scan.",
+        "Arahkan kamera ke kode QRIS, atau pilih gambarnya dari galeri, atau tempel string QRIS.",
+        "Periksa hasilnya: nama merchant, kota, nominal, acquirer, dan rincian setiap tag."
+      ],
+      "faq": [
+        {
+          "q": "Bisa scan QRIS dari screenshot atau galeri?",
+          "a": "Bisa. Pilih gambar QR dari galeri atau bagikan screenshot dari aplikasi lain ke QRSTU."
+        },
+        {
+          "q": "Apa bedanya QRIS MPM dan CPM?",
+          "a": "MPM (Merchant Presented Mode) adalah QR yang ditampilkan merchant untuk kamu scan. CPM (Customer Presented Mode) adalah QR dari aplikasi pembayaranmu yang discan merchant. QRSTU bisa membaca keduanya."
+        },
+        {
+          "q": "Apa itu QRIS Tap?",
+          "a": "QRIS Tap adalah pembayaran QRIS lewat NFC: ponsel ditempel, bukan discan. QRSTU bisa membaca dan menampilkan struktur tag dari ponsel yang menjalankan aplikasi QRIS Tap."
+        },
+        {
+          "q": "Apakah QRSTU bisa dipakai untuk membayar?",
+          "a": "Tidak. QRSTU hanya membaca dan menjelaskan kode QRIS, tidak melakukan pembayaran atau memindahkan dana."
+        },
+        {
+          "q": "Harus login?",
+          "a": "Tidak. Sebagai tamu, riwayat tersimpan di perangkat. Login dipakai untuk backup riwayat ke cloud."
+        },
+        {
+          "q": "Apakah gratis?",
+          "a": "Semua fitur gratis dengan iklan. Premium menghapus semua iklan dan menambahkan lencana di samping namamu pada leaderboard."
+        }
+      ],
+      "learn": [
+        {
+          "to": "/learning/qris-basics",
+          "label": "Dasar QRIS: standar EMVCo di balik satu QR untuk semua dompet"
+        },
+        {
+          "to": "/learning/qris-data-parsing",
+          "label": "Parsing data QRIS: cara membaca format TLV"
+        }
+      ]
+    }
+  },
+  "notfound": {
+    "title": "Halaman tidak ditemukan",
+    "desc": "Alamat ini tidak ada atau sudah dipindah. Coba mulai dari beranda atau langsung ke halaman aplikasi.",
+    "home": "Ke beranda"
   }
 }

@@ -11,6 +11,8 @@ import OpenSource from './pages/OpenSource';
 import KaptenDigital from './pages/talks/KaptenDigital';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import AppPage from './pages/AppPage';
+import NotFound from './pages/NotFound';
 
 import LearningHub from './pages/learning/LearningHub';
 import NFCBasics from './pages/learning/NFCBasics';
@@ -82,6 +84,11 @@ function App() {
               {/* Root is the canonical home; /home stays as a redirect for old links */}
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Navigate to="/" replace />} />
+              {/* App landing pages: Indonesian at /apps/*, English at /en/apps/* */}
+              <Route path="/apps/pembacakue" element={<AppPage key="pk-id" slug="pembacakue" lang="id" />} />
+              <Route path="/en/apps/pembacakue" element={<AppPage key="pk-en" slug="pembacakue" lang="en" />} />
+              <Route path="/apps/qrstu" element={<AppPage key="qr-id" slug="qrstu" lang="id" />} />
+              <Route path="/en/apps/qrstu" element={<AppPage key="qr-en" slug="qrstu" lang="en" />} />
               <Route path="/open-source" element={<OpenSource />} />
               <Route path="/talks/kapten-digital" element={<KaptenDigital />} />
               <Route path="/contact" element={<Home scrollToContact />} />
@@ -122,7 +129,7 @@ function App() {
               <Route path="/learning/quran-discovery" element={<QuranDiscovery />} />
               <Route path="/learning/hadith-discovery" element={<HadithDiscovery />} />
 
-              <Route path="*" element={<Navigate to="/" replace />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
             <LearningAppCta />
           </ScrollWrapper>
