@@ -14,7 +14,7 @@
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE, ROUTES, APPS, canonicalUrl, playUrl, jsonLdFor } from '../src/seo/siteMeta.js';
+import { SITE, ROUTES, APPS, TALK_KAPTEN, canonicalUrl, playUrl, jsonLdFor } from '../src/seo/siteMeta.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
@@ -27,7 +27,8 @@ function headFor(route) {
   const canonical = canonicalUrl(route.canonical || route.path);
   const title = route.title_en;
   const desc = route.desc_en;
-  const ogImage = SITE.url + SITE.ogImage;
+  const ogImage = SITE.url + (route.ogImage || SITE.ogImage);
+  const ogImageAlt = route.ogImageAlt || SITE.ogImageAlt;
   return `
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="${esc(SITE.name)}">
@@ -37,13 +38,13 @@ function headFor(route) {
     <meta property="og:image" content="${esc(ogImage)}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="${esc(SITE.ogImageAlt)}">
+    <meta property="og:image:alt" content="${esc(ogImageAlt)}">
     <meta property="og:locale" content="${esc(SITE.locale)}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(title)}">
     <meta name="twitter:description" content="${esc(desc)}">
     <meta name="twitter:image" content="${esc(ogImage)}">
-    <meta name="twitter:image:alt" content="${esc(SITE.ogImageAlt)}">
+    <meta name="twitter:image:alt" content="${esc(ogImageAlt)}">
     <script type="application/ld+json">${JSON.stringify(jsonLdFor(route.path, 'en'))}</script>
 `;
 }
@@ -62,7 +63,8 @@ function noscriptFor(route) {
       APPS.filter((a) => !a.pending)
         .map((a) => `<li><a href="${esc(playUrl(a.playId))}">${esc(a.name)}</a> — ${esc(a.desc)}</li>`)
         .join('') +
-      '</ul><p><a href="/learning/">Learning hub: NFC, QRIS and NU traditions explained</a></p>';
+      '</ul><p><a href="/learning/">Learning hub: NFC, QRIS and NU traditions explained</a></p>' +
+      '<p><a href="/talks/kapten-digital/">Talk: Petualangan Kapten Digital, guest teacher at IAS Al-Jannah</a></p>';
   } else if (route.path === '/learning') {
     extra =
       '<ul>' +
@@ -77,6 +79,15 @@ function noscriptFor(route) {
       '<li><a href="https://github.com/muhakmal/qris-parser">QRIS Parser & Validator</a> — Production-grade Python parser, compliance validator, and dynamic generator for QRIS</li>' +
       '<li><a href="https://github.com/muhakmal/osp-kue-reader">KUE Reader</a> — Indonesian contactless NFC card reader SDK for Android (Mandiri e-money, BCA Flazz, BNI TapCash, BRI Brizzi, JakCard, FeliCa)</li>' +
       '</ul><p>Lead developer: <a href="https://github.com/muhakmal">Akmal, M. (@muhakmal)</a></p>';
+  } else if (route.path === TALK_KAPTEN.path) {
+    const t = TALK_KAPTEN;
+    extra =
+      `<p>Guest teacher session at <a href="${esc(t.school.url)}">${esc(t.school.name)}</a> ` +
+      `(<a href="${esc(t.school.instagram)}">Instagram</a>), ${esc(t.date)}, by Akmal, M.</p>` +
+      `<p><a href="${esc(t.slideUrl)}">Open the interactive slides</a></p><h2>Downloads</h2><ul>` +
+      t.files.map((f) => `<li><a href="${esc(f.href)}">${esc(f.name)}</a> (${esc(f.type)}, ${esc(f.size)})</li>`).join('') +
+      `<li><a href="${esc(t.zip.href)}">All materials (ZIP, ${esc(t.zip.size)})</a></li></ul>` +
+      `<p>License: <a href="${esc(t.license)}">CC BY-NC 4.0</a></p>`;
   } else if (route.path.startsWith('/learning/')) {
     extra = '<p><a href="/learning/">Back to the learning hub</a></p>';
   }
