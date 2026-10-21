@@ -4,7 +4,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import BaskomMark from '../components/BaskomMark';
 import PlayStoreButton from '../components/PlayStoreButton';
 import RuangIlmu from '../components/RuangIlmu';
-import { APPS as APP_META, TALK_KAPTEN as TALK } from '../seo/siteMeta';
+import { APPS as APP_META, TALK_KAPTEN as TALK, appPagePath, playInstallUrl } from '../seo/siteMeta';
 
 // Release state lives in siteMeta.js (also feeds the structured data).
 const PENDING = new Set(APP_META.filter((a) => a.pending).map((a) => a.short));
@@ -18,23 +18,25 @@ const APPS = [
     theme: 'qrstu',
     descKey: 'home.qrstu_desc',
     tags: ['QRIS', 'Scanner', 'Edukasi'],
-    url: 'https://play.google.com/store/apps/details?id=com.baskom.qrisparser',
+    url: playInstallUrl('com.baskom.qrisparser', 'home'),
     icon: '/apps/qrstu.png',
+    slug: 'qrstu',
   },
   {
     name: 'PembacaKUE',
     theme: 'pembacakue',
     descKey: 'home.pembacakue_desc',
     tags: ['eMoney', 'Flazz', 'NFC'],
-    url: 'https://play.google.com/store/apps/details?id=com.baskom.pembacakue',
+    url: playInstallUrl('com.baskom.pembacakue', 'home'),
     icon: '/apps/pembacakue.png',
+    slug: 'pembacakue',
   },
   {
     name: 'Yasin Tahlil NU',
     theme: 'yasintahlil',
     descKey: 'home.yasintahlil_desc',
     tags: ['Yasin', 'Tahlil', 'Offline'],
-    url: 'https://play.google.com/store/apps/details?id=com.baskom.yasintahlilmaulid',
+    url: playInstallUrl('com.baskom.yasintahlilmaulid', 'home'),
     icon: '/apps/yasintahlil.png',
   },
   {
@@ -42,7 +44,7 @@ const APPS = [
     theme: 'qurandiscovery',
     descKey: 'home.qurandiscovery_desc',
     tags: ['Al-Quran', 'Cari Ayat', 'Tafsir'],
-    url: 'https://play.google.com/store/apps/details?id=com.baskomlabs.qurandiscovery',
+    url: playInstallUrl('com.baskomlabs.qurandiscovery', 'home'),
     icon: '/apps/qurandiscovery.png',
   },
   {
@@ -50,7 +52,7 @@ const APPS = [
     theme: 'hadithdiscovery',
     descKey: 'home.hadithdiscovery_desc',
     tags: ['Hadis', 'Cek Sumber', 'Offline'],
-    url: 'https://play.google.com/store/apps/details?id=com.baskomlabs.hadithdiscovery',
+    url: playInstallUrl('com.baskomlabs.hadithdiscovery', 'home'),
     icon: '/apps/hadithdiscovery.png',
   },
 ];
@@ -76,7 +78,7 @@ function SectionHead({ index, label, title }) {
 }
 
 function Home({ scrollToContact }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     if (scrollToContact) {
@@ -156,6 +158,12 @@ function Home({ scrollToContact }) {
                 ))}
               </div>
               <PlayStoreButton url={app.url} appName={app.name} pending={PENDING.has(app.name)} />
+              {app.slug && (
+                <Link to={appPagePath(app.slug, i18n.language === 'en' ? 'en' : 'id')} className="lp-link">
+                  {t('home.app_details')}
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </Link>
+              )}
             </article>
           ))}
         </div>

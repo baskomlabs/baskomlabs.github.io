@@ -11,22 +11,35 @@
  * cards without JavaScript. The page body is still rendered client-side — this
  * is head-level prerendering, not full SSR.
  */
-import { readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE, ROUTES, APPS, TALK_KAPTEN, canonicalUrl, playUrl, jsonLdFor } from '../src/seo/siteMeta.js';
+import { SITE, ROUTES, APPS, TALK_KAPTEN, canonicalUrl, playUrl, playInstallUrl, appPagePath, alternatesFor, jsonLdFor } from '../src/seo/siteMeta.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 const template = readFileSync(join(dist, 'index.html'), 'utf8');
+const locales = {
+  id: JSON.parse(readFileSync(join(root, 'src/locales/id/translation.json'), 'utf8')),
+  en: JSON.parse(readFileSync(join(root, 'src/locales/en/translation.json'), 'utf8')),
+};
+
+// Fixed-language routes (the app pages) carry their own lang; everything else
+// is rendered with the English default, as before.
+const langOf = (route) => route.lang || 'en';
+const textOf = (route) => {
+  const sfx = langOf(route) === 'id' ? '_id' : '_en';
+  return { title: route[`title${sfx}`], desc: route[`desc${sfx}`] };
+};
+const OG_LOCALE = { id: 'id_ID', en: 'en_US' };
 
 const esc = (s) =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 function headFor(route) {
   const canonical = canonicalUrl(route.canonical || route.path);
-  const title = route.title_en;
-  const desc = route.desc_en;
+  const { title, desc } = textOf(route);
+  const lang = langOf(route);
   const ogImage = SITE.url + (route.ogImage || SITE.ogImage);
   const ogImageAlt = route.ogImageAlt || SITE.ogImageAlt;
   return `
@@ -39,13 +52,14 @@ function headFor(route) {
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="${esc(ogImageAlt)}">
-    <meta property="og:locale" content="${esc(SITE.locale)}">
+    <meta property="og:locale" content="${esc(route.lang ? OG_LOCALE[lang] : SITE.locale)}">
+${alternatesFor(route).map((a) => `    <link rel="alternate" hreflang="${a.hreflang}" href="${esc(a.href)}">`).join('\n')}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${esc(title)}">
     <meta name="twitter:description" content="${esc(desc)}">
     <meta name="twitter:image" content="${esc(ogImage)}">
     <meta name="twitter:image:alt" content="${esc(ogImageAlt)}">
-    <script type="application/ld+json">${JSON.stringify(jsonLdFor(route.path, 'en'))}</script>
+    <script type="application/ld+json">${JSON.stringify(jsonLdFor(route.path, lang))}</script>
 `;
 }
 
@@ -54,14 +68,44 @@ function headFor(route) {
  * the raw HTML has an empty <div id="root">. <noscript> keeps it out of the way
  * for people while giving text-only crawlers the headline, summary and links.
  */
+function appNoscript(route) {
+  const app = APPS.find((a) => a.slug === route.app);
+  const lang = langOf(route);
+  const c = locales[lang].apps;
+  const a = c[route.app];
+  const shots = app.screenshots[lang] || app.screenshots.id;
+  const other = lang === 'id' ? 'en' : 'id';
+  return (
+    `<h1>${esc(a.h1)}</h1><p>${esc(a.lead)}</p>` +
+    (a.notice ? `<p>${esc(a.notice)}</p>` : '') +
+    `<p><a href="${esc(playInstallUrl(app.playId, 'app-page-noscript'))}">${esc(c.common.cta_install)}</a> (${esc(c.common.badge)})</p>` +
+    (a.cards ? `<h2>${esc(a.cards_title)}</h2><ul>${a.cards.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '') +
+    `<h2>${esc(c.common.features_title)}</h2>` +
+    a.features.map((f) => `<h3>${esc(f.title)}</h3><p>${esc(f.desc)}</p>`).join('') +
+    `<h2>${esc(c.common.screens_title)}</h2>` +
+    shots.map((src, i) => `<img src="${esc(src)}" width="540" height="960" loading="lazy" alt="${esc(c.common.screens_alt.replace('{{app}}', app.short).replace('{{n}}', i + 1))}">`).join('') +
+    `<h2>${esc(c.common.howto_title)}</h2><ol>${a.howto.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>` +
+    `<h2>${esc(c.common.faq_title)}</h2>` +
+    a.faq.map((f) => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join('') +
+    `<p><a href="${esc(app.privacy)}/">${esc(c.common.privacy)}</a>` +
+    (app.tos ? ` · <a href="${esc(app.tos)}/">${esc(c.common.tos)}</a>` : '') +
+    ` · <a href="${esc(appPagePath(app.slug, other))}/" hreflang="${other}">${esc(c.common.other_lang)}</a></p>`
+  );
+}
+
 function noscriptFor(route) {
+  if (route.app) return `<noscript>${appNoscript(route)}</noscript>`;
   const title = route.title_en.replace(/ \| BaskomLabs$/, '');
   let extra = '';
   if (route.path === '/') {
     extra =
       '<h2>Apps</h2><ul>' +
       APPS.filter((a) => !a.pending)
-        .map((a) => `<li><a href="${esc(playUrl(a.playId))}">${esc(a.name)}</a> — ${esc(a.desc)}</li>`)
+        .map((a) =>
+          a.slug
+            ? `<li><a href="${esc(appPagePath(a.slug, 'en'))}/">${esc(a.name)}</a> — ${esc(a.desc)} (<a href="${esc(playUrl(a.playId))}">Google Play</a>)</li>`
+            : `<li><a href="${esc(playUrl(a.playId))}">${esc(a.name)}</a> — ${esc(a.desc)}</li>`
+        )
         .join('') +
       '</ul><p><a href="/learning/">Learning hub: NFC, QRIS and NU traditions explained</a></p>' +
       '<p><a href="/talks/kapten-digital/">Talk: Petualangan Kapten Digital, guest teacher at IAS Al-Jannah</a></p>';
@@ -96,11 +140,13 @@ function noscriptFor(route) {
 
 function renderRoute(route) {
   const canonical = canonicalUrl(route.canonical || route.path);
+  const { title, desc } = textOf(route);
   let html = template;
-  html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(route.title_en)}</title>`);
+  html = html.replace(/<html lang="[^"]*">/, `<html lang="${langOf(route)}">`);
+  html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(title)}</title>`);
   html = html.replace(
     /<meta name="description" content="[^"]*">/,
-    `<meta name="description" content="${esc(route.desc_en)}">`
+    `<meta name="description" content="${esc(desc)}">`
   );
   html = html.replace(
     /<link rel="canonical" href="[^"]*">/,
@@ -120,9 +166,15 @@ for (const route of ROUTES) {
   written++;
 }
 
-// Unknown paths: GitHub Pages serves this. Real routes never reach it because
-// they now exist as their own files.
-copyFileSync(join(dist, 'index.html'), join(dist, '404.html'));
+// Unknown paths: GitHub Pages serves this with a 404 status. Real routes and
+// real files (app-ads.txt, robots.txt, sitemap.xml) never reach it because they
+// exist as their own files. It is the plain bundle, marked noindex and without
+// a canonical, and the app renders its NotFound view.
+const notFound = template
+  .replace(/<title>[\s\S]*?<\/title>/, '<title>404 — Page not found | BaskomLabs</title>')
+  .replace(/<meta name="robots" content="[^"]*">/, '<meta name="robots" content="noindex, follow">')
+  .replace(/\s*<link rel="canonical" href="[^"]*">/, '');
+writeFileSync(join(dist, '404.html'), notFound, 'utf8');
 
 writeFileSync(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`, 'utf8');
 
@@ -133,14 +185,15 @@ const urls = ROUTES.filter((r) => !r.canonical && !r.hidden) // skip canonicalis
     <loc>${canonicalUrl(r.path)}</loc>
     <lastmod>${today}</lastmod>
     <priority>${r.priority.toFixed(1)}</priority>
-  </url>`
+${alternatesFor(r).map((a) => `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${a.href}"/>`).join('\n')}
+  </url>`.replace(/\n\n/g, '\n')
   )
   .join('\n');
 
 writeFileSync(
   join(dist, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls}
 </urlset>
 `,

@@ -1,16 +1,25 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BaskomMark from './BaskomMark';
 import ThemeToggle from './ThemeToggle';
+import { routeFor } from '../seo/siteMeta';
 
 function Navbar() {
   const location = useLocation();
   const { t, i18n } = useTranslation();
 
+  const navigate = useNavigate();
+
+  // Fixed-language pages (the app pages) have a URL per language, so the
+  // toggle moves to the other URL instead of only swapping the UI strings.
   const toggleLanguage = () => {
-    const newLang = i18n.language === 'id' ? 'en' : 'id';
+    const route = routeFor(location.pathname);
+    const current = route?.lang || (i18n.language === 'id' ? 'id' : 'en');
+    const newLang = current === 'id' ? 'en' : 'id';
     i18n.changeLanguage(newLang);
+    const target = route?.alternates?.[newLang];
+    if (target && target !== route.path) navigate(`${target}/`);
   };
 
   useEffect(() => {

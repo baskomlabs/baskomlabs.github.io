@@ -11,7 +11,7 @@ const PlayStoreButton = ({ url, appName, pending = false }) => {
     return (
       <div className="playstore-button-container">
         <span className="playstore-button is-pending" aria-disabled="true">
-          <img src="/google-play-badge.png" alt={`${appName} — ${t('home.play_pending')}`} />
+          <img src="/google-play-badge.png" width="646" height="250" alt={`${appName} — ${t('home.play_pending')}`} />
         </span>
         <span className="playstore-pending-note">{t('home.play_pending')}</span>
       </div>
@@ -29,6 +29,8 @@ const PlayStoreButton = ({ url, appName, pending = false }) => {
       >
         <img
           src="/google-play-badge.png"
+          width="646"
+          height="250"
           alt={`Get ${appName} on Google Play`}
         />
       </a>

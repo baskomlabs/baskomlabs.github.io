@@ -10,31 +10,82 @@ function PrivacyPolicy({ app }) {
             <Link to="/" className="close-btn btn-secondary">Back to Home</Link>
           </div>
           <div className="document-content">
-            <p className="meta">Effective Date: January 11, 2026</p>
-            <p><strong>QRSTU</strong> ("we", "our", or "us") is committed to protecting your privacy.</p>
-            
-            <h3>1. Information We Collect</h3>
-            <h4>Permission-Based Data</h4>
+            <p className="meta">Effective Date: October 21, 2026 · App ID com.baskom.qrisparser · <a href="#id">Bahasa Indonesia ↓</a></p>
+            <p><strong>QRSTU</strong> ("the app", "we", "our") is a QRIS reader, scanner and tracker for Android, operated by BaskomLabs. It only reads and explains QRIS codes. It does not make payments or move money.</p>
+
+            <h3>1. Camera, images and NFC</h3>
             <ul>
-                <li><strong>Camera</strong>: Used strictly for scanning QR codes locally. No video data is sent to servers.</li>
-            </ul>
-            
-            <h4>Third-Party Services</h4>
-            <ul>
-                <li><strong>Firebase Authentication</strong>: For secure sign-ins.</li>
-                <li><strong>Firebase Crashlytics</strong>: For anonymous crash reporting.</li>
-                <li><strong>Firebase Firestore</strong>: For data syncing.</li>
+              <li><strong>Camera</strong>: used only while you scan. Frames are decoded on your device and are not uploaded.</li>
+              <li><strong>Images and shared screenshots</strong>: an image you pick or share is decoded on your device to find the QR code. The image is not uploaded.</li>
+              <li><strong>NFC</strong>: used only in Tap mode, to read QRIS Tap data from a phone held against yours. Card data stays hidden until you choose to reveal it.</li>
             </ul>
 
-            <h3>2. Data Retention & Deletion</h3>
+            <h3>2. Scan history</h3>
+            <p>Each scan is saved with its date, merchant, city and amount. As a guest, history stays on your device. If you sign in with Google, your history is also backed up to Firebase Cloud Firestore under your account so it can be restored.</p>
+
+            <h3>3. Account, leaderboard and statistics</h3>
+            <ul>
+              <li><strong>Firebase Authentication (Google sign-in, optional)</strong>: your Google display name, email address, profile photo and a user ID.</li>
+              <li><strong>Leaderboard</strong>: if you are signed in, your display name, profile photo, scan count/points and whether you have Premium are shown to other users.</li>
+              <li><strong>Merchant statistics</strong>: merchant names and cities from scanned codes are counted to show aggregate statistics.</li>
+              <li><strong>Firebase Remote Config</strong>: fetches app settings. <strong>Firebase Crashlytics</strong>: sends crash reports with device and app technical details.</li>
+            </ul>
+
+            <h3>4. Advertising</h3>
+            <p>The free version shows ads served through <strong>Unity LevelPlay (ironSource)</strong> mediation, with partner networks including Unity Ads, AppLovin, Pangle, Mintegral and Meta Audience Network. These services may use your device's <strong>Advertising ID</strong> and technical information to show and measure ads, under their own privacy policies. Where required, the app shows Google's consent form (User Messaging Platform) before ads load. You can change your choice at any time in <strong>About → Ad Privacy Settings</strong>, and you can reset or delete your Advertising ID in Android settings.</p>
+            <p><strong>Premium</strong> removes all ads. Payment is handled by Google Play Billing; we never receive your card details.</p>
+
+            <h3>5. Children</h3>
+            <p>The app is not directed at children under 13, and we do not knowingly collect data from them.</p>
+
+            <h3>6. Data retention & deletion</h3>
             <div className="alert-box">
                 <strong>How to Delete Your Data:</strong><br/>
-                Open App &gt; <strong>Settings</strong> &gt; <strong>Account</strong> &gt; <strong>Delete Account</strong>.<br/>
-                This permanently removes your data.
+                Open App &gt; <strong>Settings</strong> &gt; <strong>Account</strong> &gt; <strong>Delete Account</strong>. This permanently removes your account and cloud data. Guest data is removed by clearing the app's data or uninstalling it. You can also email us to request deletion.
             </div>
 
-            <h3>3. Contact Us</h3>
-            <p>Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+            <h3>7. Changes and contact</h3>
+            <p>If this policy changes, the date at the top is updated. Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+
+            <hr id="id" style={{ margin: '3rem 0', opacity: 0.2 }} />
+
+            <h3>Kebijakan Privasi QRSTU (Bahasa Indonesia)</h3>
+            <p className="meta">Berlaku sejak 21 Oktober 2026</p>
+            <p><strong>QRSTU</strong> adalah aplikasi Android untuk membaca, memindai dan mencatat QRIS, dikelola oleh BaskomLabs. Aplikasi ini hanya membaca dan menjelaskan kode QRIS, tidak melakukan pembayaran atau memindahkan dana.</p>
+
+            <h3>1. Kamera, gambar dan NFC</h3>
+            <ul>
+              <li><strong>Kamera</strong>: hanya dipakai saat memindai. Gambar diproses di perangkat dan tidak diunggah.</li>
+              <li><strong>Gambar dan screenshot</strong>: gambar yang Anda pilih atau bagikan diproses di perangkat untuk mencari kode QR, dan tidak diunggah.</li>
+              <li><strong>NFC</strong>: hanya dipakai di mode Tap untuk membaca data QRIS Tap dari ponsel yang ditempelkan. Data kartu tetap tersembunyi sampai Anda memilih menampilkannya.</li>
+            </ul>
+
+            <h3>2. Riwayat scan</h3>
+            <p>Setiap scan disimpan dengan tanggal, merchant, kota dan nominal. Sebagai tamu, riwayat hanya ada di perangkat. Jika Anda login dengan Google, riwayat juga dicadangkan ke Firebase Cloud Firestore di akun Anda agar bisa dipulihkan.</p>
+
+            <h3>3. Akun, leaderboard dan statistik</h3>
+            <ul>
+              <li><strong>Firebase Authentication (login Google, opsional)</strong>: nama tampilan, alamat email, foto profil Google dan ID pengguna.</li>
+              <li><strong>Leaderboard</strong>: jika login, nama tampilan, foto profil, jumlah scan/poin dan status Premium Anda terlihat oleh pengguna lain.</li>
+              <li><strong>Statistik merchant</strong>: nama dan kota merchant dari kode yang dipindai dihitung untuk statistik gabungan.</li>
+              <li><strong>Firebase Remote Config</strong>: mengambil pengaturan aplikasi. <strong>Firebase Crashlytics</strong>: mengirim laporan crash beserta detail teknis perangkat dan aplikasi.</li>
+            </ul>
+
+            <h3>4. Iklan</h3>
+            <p>Versi gratis menampilkan iklan melalui mediasi <strong>Unity LevelPlay (ironSource)</strong>, dengan jaringan mitra antara lain Unity Ads, AppLovin, Pangle, Mintegral dan Meta Audience Network. Layanan ini dapat memakai <strong>Advertising ID</strong> dan informasi teknis perangkat untuk menampilkan dan mengukur iklan, sesuai kebijakan privasi masing-masing. Bila diwajibkan, aplikasi menampilkan formulir persetujuan Google (User Messaging Platform) sebelum iklan dimuat. Pilihan itu bisa diubah kapan saja lewat <strong>Tentang → Pengaturan Privasi Iklan</strong>, dan Advertising ID bisa direset atau dihapus di pengaturan Android.</p>
+            <p><strong>Premium</strong> menghapus semua iklan. Pembayaran ditangani Google Play Billing; kami tidak pernah menerima data kartu Anda.</p>
+
+            <h3>5. Anak-anak</h3>
+            <p>Aplikasi ini tidak ditujukan untuk anak di bawah 13 tahun dan kami tidak dengan sengaja mengumpulkan data dari mereka.</p>
+
+            <h3>6. Penyimpanan & penghapusan data</h3>
+            <div className="alert-box">
+                <strong>Cara menghapus data:</strong><br/>
+                Buka aplikasi &gt; <strong>Pengaturan</strong> &gt; <strong>Akun</strong> &gt; <strong>Hapus Akun</strong>. Ini menghapus akun dan data cloud Anda secara permanen. Data tamu terhapus dengan membersihkan data aplikasi atau mencopot aplikasi. Anda juga bisa meminta penghapusan lewat email.
+            </div>
+
+            <h3>7. Perubahan dan kontak</h3>
+            <p>Bila kebijakan ini berubah, tanggal di atas ikut diperbarui. Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
           </div>
         </div>
       </section>
@@ -84,26 +135,79 @@ function PrivacyPolicy({ app }) {
             <Link to="/" className="close-btn btn-secondary">Back to Home</Link>
           </div>
           <div className="document-content">
-            <p className="meta">Effective Date: July 13, 2026</p>
-            <p><strong>PembacaKUE</strong> ("we", "our", or "us") is an Identity Card Reader & Verifier application operated by BaskomLabs.</p>
-            
-            <h3>1. Information We Collect and Process</h3>
-            <h4>Permission-Based Data & Hardware</h4>
+            <p className="meta">Effective Date: October 21, 2026 · App ID com.baskom.pembacakue · <a href="#id">Bahasa Indonesia ↓</a></p>
+            <p><strong>PembacaKUE</strong> ("the app", "we", "our") reads the balance and transaction history of Indonesian electronic money cards (e-Money/e-Toll, Flazz, TapCash, Brizzi, JakCard) over NFC. It is operated by BaskomLabs.</p>
+            <p><strong>In short:</strong> your card balance, serial number and transaction history are read and stored on your own device. Card contents are never sent to any server, and the app cannot change your balance: it only reads, it never writes.</p>
+
+            <h3>1. Data that stays on your device</h3>
             <ul>
-                <li><strong>NFC (Near Field Communication)</strong>: We use your device's NFC capabilities strictly to read data directly from supported identity cards (such as e-KTP).</li>
+              <li><strong>Card balance and transaction history</strong>, read over NFC each time you tap a card and, if history is on, kept in the app's local database.</li>
+              <li><strong>Card nicknames</strong> you give yourself.</li>
+              <li><strong>Preferences</strong>: language, balance voice, vehicle class and your ad-consent choice.</li>
             </ul>
-            
-            <h3>2. Data Processing and Storage</h3>
-            <p>All identity data read by PembacaKUE is processed <strong>locally on your device</strong>. We do not transmit, collect, or store your personal identity information on our servers. Any data handled during a scanning session is transient and discarded after use or stored only locally if explicitly saved by you.</p>
+            <p>Delete all of this at any time with <strong>Settings → Delete All History</strong>, or by uninstalling. History saving can be switched off entirely in <strong>Settings → Save Scan History</strong>.</p>
 
-            <h3>3. Data Retention & Deletion</h3>
-            <div className="alert-box">
-                <strong>How to Delete Your Data:</strong><br/>
-                Because no data is sent to our servers, simply uninstalling the application or clearing the app's local data will permanently delete any saved information.
-            </div>
+            <h3>2. Data sent to our servers</h3>
+            <ul>
+              <li><strong>A SHA-256 hash of the card serial number</strong> (not the number itself), the <strong>card type</strong> and the <strong>read time</strong>: used to count how many different cards are read so we know which card types need better support. The real serial number is never sent and cannot be recovered from the hash.</li>
+              <li><strong>Terminal/gate names you correct yourself</strong>: crowdsourced so other users see a readable place name instead of a raw terminal code. Place names only, not linked to your identity.</li>
+              <li><strong>An anonymous Firebase Authentication ID</strong>, created automatically without email, phone number or any account, used only to prevent abuse of data writes.</li>
+            </ul>
+            <p>Your balance and transaction list are <strong>never</strong> sent to our servers.</p>
 
-            <h3>4. Contact Us</h3>
-            <p>Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+            <h3>3. Location</h3>
+            <p>Location permission is requested only when you open the <strong>Toll Rate Calculator</strong>, and used only while that screen is open. Coordinates are sent to third-party map services to turn them into place names and routes: OpenStreetMap Nominatim, Photon (Komoot) and OSRM. We do not store your location history, on the device or on our servers. Declining location does not affect card reading.</p>
+
+            <h3>4. Advertising</h3>
+            <p>The free version shows ads through <strong>ironSource / Unity LevelPlay</strong>, which may use your device's <strong>Advertising ID</strong>. Before ads load, the app shows Google's official consent form (User Messaging Platform). You can change that choice at any time in <strong>Settings → Ad Privacy Settings</strong>.</p>
+            <p>The ad-free subscription stops ads from loading entirely. Payment is handled by Google Play Billing; we never receive or store your card details.</p>
+
+            <h3>5. Data export</h3>
+            <p>History export (CSV) creates a file in the app's temporary storage and hands it to Android's share menu. Where it goes is your decision; we do not receive a copy.</p>
+
+            <h3>6. Children</h3>
+            <p>The app is not directed at children under 13, and we do not knowingly collect data from them.</p>
+
+            <h3>7. Changes and contact</h3>
+            <p>If this policy changes, the date at the top is updated. Questions or deletion requests: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+
+            <hr id="id" style={{ margin: '3rem 0', opacity: 0.2 }} />
+
+            <h3>Kebijakan Privasi PembacaKUE (Bahasa Indonesia)</h3>
+            <p className="meta">Berlaku sejak 21 Oktober 2026</p>
+            <p><strong>Ringkasnya:</strong> saldo, nomor seri, dan riwayat transaksi kartu uang elektronik Anda dibaca dan disimpan di perangkat Anda sendiri. Isi kartu tidak pernah kami kirim ke server mana pun, dan kami tidak pernah bisa mengubah saldo kartu Anda. Aplikasi ini hanya membaca, tidak menulis.</p>
+
+            <h3>1. Data yang tetap di perangkat Anda</h3>
+            <ul>
+              <li><strong>Saldo dan riwayat transaksi kartu</strong>, dibaca lewat NFC setiap kali Anda menempelkan kartu dan (bila fitur riwayat aktif) disimpan di basis data lokal aplikasi.</li>
+              <li><strong>Nama panggilan kartu</strong> yang Anda beri sendiri.</li>
+              <li><strong>Preferensi</strong>: bahasa, suara pembaca saldo, golongan kendaraan, dan pilihan persetujuan iklan.</li>
+            </ul>
+            <p>Semua ini bisa dihapus kapan saja lewat <strong>Pengaturan → Hapus Semua Riwayat</strong>, atau dengan mencopot aplikasi. Penyimpanan riwayat bisa dimatikan lewat <strong>Pengaturan → Simpan Riwayat Scan</strong>.</p>
+
+            <h3>2. Data yang dikirim ke server kami</h3>
+            <ul>
+              <li><strong>Sidik (hash) SHA-256 nomor seri kartu</strong> (bukan nomor aslinya), <strong>jenis kartu</strong> dan <strong>waktu pembacaan</strong>: untuk menghitung berapa banyak kartu berbeda yang terbaca, supaya kami tahu jenis kartu mana yang perlu didukung lebih baik. Nomor seri asli tidak pernah dikirim dan tidak bisa dipulihkan dari hash-nya.</li>
+              <li><strong>Nama terminal/gerbang yang Anda perbaiki sendiri</strong>: urun daya agar pengguna lain melihat nama tempat yang mudah dibaca. Hanya nama tempat, tanpa kaitan ke identitas Anda.</li>
+              <li><strong>ID anonim Firebase Authentication</strong>, dibuat otomatis tanpa email, nomor telepon atau akun apa pun, semata-mata untuk mencegah penyalahgunaan penulisan data.</li>
+            </ul>
+            <p>Nominal saldo dan daftar transaksi <strong>tidak pernah</strong> dikirim ke server kami.</p>
+
+            <h3>3. Lokasi</h3>
+            <p>Izin lokasi hanya diminta saat Anda membuka <strong>Kalkulator Tarif Tol</strong>, dan hanya dipakai selama layar itu terbuka. Koordinat dikirim ke layanan peta pihak ketiga untuk diubah menjadi nama tempat dan rute: OpenStreetMap Nominatim, Photon (Komoot) dan OSRM. Kami tidak menyimpan riwayat lokasi Anda. Menolak izin lokasi tidak memengaruhi pembacaan kartu.</p>
+
+            <h3>4. Iklan</h3>
+            <p>Versi gratis menampilkan iklan melalui <strong>ironSource / Unity LevelPlay</strong>, yang dapat menggunakan <strong>Advertising ID</strong> perangkat Anda. Sebelum iklan dimuat, aplikasi menampilkan formulir persetujuan resmi Google (User Messaging Platform). Pilihan itu bisa diubah kapan saja lewat <strong>Pengaturan → Pengaturan Privasi Iklan</strong>.</p>
+            <p>Berlangganan bebas iklan menghentikan pemuatan iklan sepenuhnya. Pembayaran ditangani Google Play Billing; kami tidak pernah menerima atau menyimpan data kartu kredit Anda.</p>
+
+            <h3>5. Ekspor data</h3>
+            <p>Ekspor Riwayat (CSV) membuat berkas di penyimpanan sementara aplikasi dan menyerahkannya ke menu berbagi Android. Ke mana berkas itu pergi sepenuhnya keputusan Anda; kami tidak menerima salinannya.</p>
+
+            <h3>6. Anak-anak</h3>
+            <p>Aplikasi ini tidak ditujukan untuk anak di bawah 13 tahun dan kami tidak dengan sengaja mengumpulkan data dari mereka.</p>
+
+            <h3>7. Perubahan dan kontak</h3>
+            <p>Bila kebijakan ini berubah, tanggal di atas ikut diperbarui. Pertanyaan atau permintaan penghapusan data: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
           </div>
         </div>
       </section>

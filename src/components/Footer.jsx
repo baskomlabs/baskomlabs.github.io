@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import BaskomMark from './BaskomMark';
+import { appPagePath } from '../seo/siteMeta';
 
 // Each app's legal pages, grouped so the footer reads as a list, not a wall of links.
 const POLICIES = [
-  { app: 'QRSTU', privacy: '/privacy-policy' },
-  { app: 'PembacaKUE', privacy: '/privacy-policy-pembacakue', tos: '/tos-pembacakue' },
+  { app: 'QRSTU', page: 'qrstu', privacy: '/privacy-policy' },
+  { app: 'PembacaKUE', page: 'pembacakue', privacy: '/privacy-policy-pembacakue', tos: '/tos-pembacakue' },
   { app: 'Yasin Tahlil NU', privacy: '/privacy-policy-yasintahlil', tos: '/tos-yasintahlil' },
   // Bensy is hidden for now; its pages stay reachable by direct URL.
   // { app: 'Bensy', privacy: '/privacy-policy-bensy', tos: '/tos-bensy' },
@@ -14,7 +15,7 @@ const POLICIES = [
 ];
 
 function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <footer className="site-footer">
@@ -49,7 +50,11 @@ function Footer() {
           <ul>
             {POLICIES.map((p) => (
               <li key={p.app}>
-                <span className="footer-app">{p.app}</span>
+                {p.page ? (
+                  <Link to={`${appPagePath(p.page, i18n.language === 'en' ? 'en' : 'id')}/`} className="footer-app">{p.app}</Link>
+                ) : (
+                  <span className="footer-app">{p.app}</span>
+                )}
                 <span className="footer-app-links">
                   <Link to={p.privacy} className="footer-link">{t('footer.privacy')}</Link>
                   {p.tos && (
