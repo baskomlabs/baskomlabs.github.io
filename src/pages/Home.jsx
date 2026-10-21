@@ -4,7 +4,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import BaskomMark from '../components/BaskomMark';
 import PlayStoreButton from '../components/PlayStoreButton';
 import RuangIlmu from '../components/RuangIlmu';
-import { APPS as APP_META } from '../seo/siteMeta';
+import { APPS as APP_META, TALK_KAPTEN as TALK } from '../seo/siteMeta';
 
 // Release state lives in siteMeta.js (also feeds the structured data).
 const PENDING = new Set(APP_META.filter((a) => a.pending).map((a) => a.short));
@@ -208,9 +208,39 @@ function Home({ scrollToContact }) {
         </div>
       </section>
 
+      {/* ---------- TALKS ---------- */}
+      <section id="talks" className="lp-section">
+        <SectionHead index="04" label={t('home.talks_label')} title={t('home.talks_title')} />
+
+        <article className="lp-talk reveal-on-scroll">
+          <Link to={TALK.path} className="lp-talk-cover" tabIndex={-1} aria-hidden="true">
+            <img src={TALK.cover} alt={t('home.talks_cover_alt')} width="960" height="536" loading="lazy" />
+          </Link>
+          <div className="lp-talk-body">
+            <div className="product-tags">
+              {['talks_tag_1', 'talks_tag_2', 'talks_tag_3'].map((key) => (
+                <span key={key} className="tag tag-talk">{t(`home.${key}`)}</span>
+              ))}
+            </div>
+            <h3>{t('home.talks_card_title')}</h3>
+            <p>
+              <Trans
+                i18nKey="home.talks_desc"
+                components={{ school: <a href={TALK.school.url} target="_blank" rel="noopener" /> }}
+              />
+            </p>
+            <p className="lp-talk-meta">{t('home.talks_meta')}</p>
+            <Link to={TALK.path} className="btn-solid">
+              {t('home.talks_cta')}
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </Link>
+          </div>
+        </article>
+      </section>
+
       {/* ---------- WHY BASKOM ---------- */}
       <section className="lp-section">
-        <SectionHead index="04" label={t('home.origin_label')} />
+        <SectionHead index="05" label={t('home.origin_label')} />
 
         <div className="lp-origin reveal-on-scroll">
           <div className="lp-origin-mark">
@@ -226,7 +256,7 @@ function Home({ scrollToContact }) {
 
       {/* ---------- WHAT WE TINKER WITH ---------- */}
       <section className="lp-section">
-        <SectionHead index="05" label={t('home.core_technologies')} title={t('home.tech_title')} />
+        <SectionHead index="06" label={t('home.core_technologies')} title={t('home.tech_title')} />
 
         <div className="lp-tech reveal-on-scroll">
           {TECH.map((item) => (
@@ -245,7 +275,7 @@ function Home({ scrollToContact }) {
 
       {/* ---------- OPEN SOURCE ---------- */}
       <section className="lp-section">
-        <SectionHead index="06" label={t('home.oss_label')} title={t('home.oss_title')} />
+        <SectionHead index="07" label={t('home.oss_label')} title={t('home.oss_title')} />
 
         <div className="lp-suite reveal-on-scroll">
           <div className="lp-suite-info">

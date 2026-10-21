@@ -85,6 +85,44 @@ export const APPS = [
 
 export const playUrl = (playId) => `https://play.google.com/store/apps/details?id=${playId}`;
 
+/**
+ * Guest-teacher session at IAS Al-Jannah. The talk page, the Home card, the
+ * prerendered <noscript> and the JSON-LD all read from here. Small files live
+ * in public/talks/kapten-digital; the big ones are GitHub Release assets.
+ */
+const TALK_BASE = '/talks/kapten-digital';
+const TALK_RELEASE =
+  'https://github.com/baskomlabs/baskomlabs.github.io/releases/download/talks-kapten-digital-2026-10';
+
+export const TALK_KAPTEN = {
+  path: TALK_BASE,
+  title: 'Petualangan Kapten Digital',
+  date: '2026-10-21',
+  slideUrl: `${TALK_BASE}/slide/`,
+  cover: `${TALK_BASE}/cover.jpg`,
+  slideCount: 24,
+  license: 'https://creativecommons.org/licenses/by-nc/4.0/',
+  school: {
+    name: 'IAS Al-Jannah',
+    url: 'https://sekolah-aljannah.com',
+    instagram: 'https://www.instagram.com/sekolah_iasaljannah/',
+  },
+  // `key` maps to talks.kapten.file_<key> / file_<key>_desc in the locales.
+  files: [
+    { key: 'slide_pdf', href: `${TALK_BASE}/files/Slide_Kapten_Digital.pdf`, type: 'PDF', size: '5,4 MB', name: 'Slide (PDF)' },
+    { key: 'pptx', href: `${TALK_RELEASE}/Slide_Kapten_Digital.pptx`, type: 'PPTX', size: '12,4 MB', name: 'Slide (PowerPoint)' },
+    { key: 'panduan', href: `${TALK_BASE}/files/Panduan_Guru_Tamu_Kapten_Digital.pdf`, type: 'PDF', size: '260 KB', name: 'Guest teacher guide' },
+    { key: 'naskah', href: `${TALK_BASE}/files/Naskah_dan_Cue_Card_Kak_Akmal.pdf`, type: 'PDF', size: '1,2 MB', name: 'Script and cue cards' },
+    { key: 'alat', href: `${TALK_BASE}/files/Alat_Peraga_Siap_Cetak.pdf`, type: 'PDF', size: '1,4 MB', name: 'Printable props' },
+    { key: 'film', href: `${TALK_BASE}/slide/assets/film.mp4`, type: 'MP4', size: '6,6 MB', name: 'Short film (90 s)' },
+    { key: 'musik1', href: `${TALK_RELEASE}/1_Musik_Estafet_WiFi_Otomatis.mp4`, type: 'MP4', size: '4,8 MB', name: 'Music: Wi-Fi relay' },
+    { key: 'musik2', href: `${TALK_RELEASE}/2_Musik_Permainan_Ceria.mp4`, type: 'MP4', size: '7,6 MB', name: 'Music: cheerful games' },
+    { key: 'musik3', href: `${TALK_RELEASE}/3_Musik_Tenang_Cerita_dan_Senam_Mata.mp4`, type: 'MP4', size: '4,3 MB', name: 'Music: calm story and eye exercise' },
+    { key: 'musik4', href: `${TALK_RELEASE}/4_Musik_Pelantikan_dan_Foto.mp4`, type: 'MP4', size: '6,1 MB', name: 'Music: graduation and photo' },
+  ],
+  zip: { href: `${TALK_RELEASE}/Kapten-Digital-Materi-Lengkap.zip`, size: '45 MB' },
+};
+
 /** Which app a learning page leads into. Drives the install CTA and related-app schema. */
 export function appForPath(path) {
   if (path === '/learning/quran-discovery') return 'com.baskomlabs.qurandiscovery';
@@ -125,6 +163,20 @@ export const ROUTES = [
       'Perkakas developer, parser QRIS, dan notebook PRD Markdown oleh Akmal, M. dan BaskomLabs. Terbuka, gratis, dan bebas dipakai.',
     desc_en:
       'Open-source developer tools, QRIS parsers, and Markdown PRD notebooks by Akmal, M. and BaskomLabs. Free and public on GitHub.',
+  },
+
+  // --- Talks ---
+  {
+    path: TALK_BASE,
+    priority: 0.8,
+    ogImage: `${TALK_BASE}/og.jpg`,
+    ogImageAlt: 'Petualangan Kapten Digital — illustrated kids walking past a treehouse and a toy data train',
+    title_id: `Kapten Digital: Materi Guru Tamu TK tentang Internet (Gratis)${L}`,
+    title_en: `Kapten Digital: Free Internet Safety Lesson for Kindergarten${L}`,
+    desc_id:
+      'Slide interaktif, panduan, naskah, alat peraga, film, dan musik dari sesi guru tamu TK B di IAS Al-Jannah. Tiga misi: kenal internet, rem layar, jaga mata. Gratis diunduh, CC BY-NC 4.0.',
+    desc_en:
+      'Interactive slides, teacher guide, script, printable props, film and music from a kindergarten guest-teacher session at IAS Al-Jannah. Three missions on the internet, screen time and eye care. Free to download under CC BY-NC 4.0.',
   },
 
   // --- Learning hub ---
@@ -434,6 +486,8 @@ export function metaFor(pathname, lang = SITE.defaultLang) {
     description: route[`desc${suffix}`],
     canonical: canonicalUrl(route.canonical || route.path),
     priority: route.priority,
+    ogImage: SITE.url + (route.ogImage || SITE.ogImage),
+    ogImageAlt: route.ogImageAlt || SITE.ogImageAlt,
   };
 }
 
@@ -444,6 +498,7 @@ const stripSuffix = (t) => t.replace(/ \| BaskomLabs$/, '');
  *   /                 Organization + WebSite + one MobileApplication per live app
  *   /learning         CollectionPage + breadcrumb
  *   /learning/<slug>  TechArticle + breadcrumb, `about` the app it leads into
+ *   /talks/<slug>     LearningResource + EducationEvent at the host school
  * Everything else gets Organization only.
  */
 export function jsonLdFor(pathname, lang = SITE.defaultLang) {
@@ -584,6 +639,65 @@ export function jsonLdFor(pathname, lang = SITE.defaultLang) {
           },
         ],
       },
+    });
+  } else if (route.path === TALK_KAPTEN.path) {
+    const title = stripSuffix(route[`title${suffix}`]);
+    const t = TALK_KAPTEN;
+    const author = { '@type': 'Person', name: 'Akmal, M.', url: 'https://github.com/muhakmal' };
+    const school = {
+      '@type': 'School',
+      '@id': t.school.url + '/#school',
+      name: t.school.name,
+      url: t.school.url,
+      sameAs: [t.school.instagram],
+    };
+    graph.push({
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
+        { '@type': 'ListItem', position: 2, name: t.title, item: url },
+      ],
+    });
+    graph.push({
+      '@type': 'LearningResource',
+      '@id': url + '#resource',
+      name: t.title,
+      headline: title,
+      description: route[`desc${suffix}`],
+      url,
+      image: SITE.url + route.ogImage,
+      inLanguage: 'id',
+      learningResourceType: ['Presentation', 'Lesson plan', 'Activity'],
+      educationalLevel: 'Kindergarten',
+      audience: { '@type': 'EducationalAudience', educationalRole: 'teacher' },
+      typicalAgeRange: '5-6',
+      timeRequired: 'PT60M',
+      about: ['Internet', 'Screen time', 'Eye health'],
+      isAccessibleForFree: true,
+      license: t.license,
+      datePublished: t.date,
+      author,
+      publisher: { '@id': orgId },
+      isPartOf: { '@id': SITE.url + '/#website' },
+      hasPart: t.files.map((f) => ({
+        '@type': f.type === 'MP4' ? 'MediaObject' : 'DigitalDocument',
+        name: f.name,
+        url: f.href.startsWith('http') ? f.href : SITE.url + f.href,
+        encodingFormat: f.type === 'MP4' ? 'video/mp4' : f.type === 'PDF' ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+        license: t.license,
+      })),
+    });
+    graph.push({
+      '@type': 'EducationEvent',
+      name: `${t.title} — Guru Tamu TK B ${t.school.name}`,
+      startDate: t.date,
+      eventStatus: 'https://schema.org/EventScheduled',
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      location: school,
+      organizer: school,
+      performer: author,
+      workFeatured: { '@id': url + '#resource' },
+      url,
     });
   }
 

@@ -8,6 +8,7 @@ import HadithDiscovery from './pages/learning/HadithDiscovery';
 import LearningAppCta from './components/LearningAppCta';
 import Home from './pages/Home';
 import OpenSource from './pages/OpenSource';
+import KaptenDigital from './pages/talks/KaptenDigital';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 
@@ -82,6 +83,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Navigate to="/" replace />} />
               <Route path="/open-source" element={<OpenSource />} />
+              <Route path="/talks/kapten-digital" element={<KaptenDigital />} />
               <Route path="/contact" element={<Home scrollToContact />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy app="QRSTU" />} />
               <Route path="/privacy-policy-bensy" element={<PrivacyPolicy app="Bensy" />} />
