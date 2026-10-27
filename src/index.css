@@ -44,6 +44,9 @@
     --yasintahlil-ink: #047857;
     --qurandiscovery-ink: #8a6d2f;
     --hadithdiscovery-ink: #1f4b52;
+    --sanak-ink: #263562;
+    --salingbantu-ink: #1d6a4a;
+    --masakini-ink: #c2410c;
 
     /* legacy names still referenced by learning / policy pages */
     --bg-dark: var(--bg);
@@ -109,6 +112,12 @@
         --yasintahlil-ink: #34d399;
         --qurandiscovery-ink: #d4b77a;
         --hadithdiscovery-ink: #a8d0cc;
+    --sanak-ink: #9fb0e8;
+    --salingbantu-ink: #6fcf9f;
+    --masakini-ink: #f9a636;
+        --sanak-ink: #9fb0e8;
+        --salingbantu-ink: #6fcf9f;
+        --masakini-ink: #f9a636;
 
         --accent-blue: #3b82f6;
         --accent-indigo: #6366f1;
@@ -523,6 +532,9 @@ main { flex: 1; }
 .lp-app--yasintahlil { --app-ink: var(--yasintahlil-ink); }
 .lp-app--qurandiscovery { --app-ink: var(--qurandiscovery-ink); }
 .lp-app--hadithdiscovery { --app-ink: var(--hadithdiscovery-ink); }
+.lp-app--sanak { --app-ink: var(--sanak-ink); }
+.lp-app--salingbantu { --app-ink: var(--salingbantu-ink); }
+.lp-app--masakini { --app-ink: var(--masakini-ink); }
 .lp-app-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
 .lp-app-top .product-icon-wrapper { width: 56px; height: 56px; border-radius: 16px; margin: 0; flex-shrink: 0; }
 .lp-app h3 { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; }
@@ -831,6 +843,9 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
 .tag-yasintahlil { background: color-mix(in srgb, var(--yasintahlil-ink) 12%, transparent); color: var(--yasintahlil-ink); }
 .tag-qurandiscovery { background: color-mix(in srgb, var(--qurandiscovery-ink) 14%, transparent); color: var(--qurandiscovery-ink); }
 .tag-hadithdiscovery { background: color-mix(in srgb, var(--hadithdiscovery-ink) 14%, transparent); color: var(--hadithdiscovery-ink); }
+.tag-sanak { background: color-mix(in srgb, var(--sanak-ink) 14%, transparent); color: var(--sanak-ink); }
+.tag-salingbantu { background: color-mix(in srgb, var(--salingbantu-ink) 14%, transparent); color: var(--salingbantu-ink); }
+.tag-masakini { background: color-mix(in srgb, var(--masakini-ink) 14%, transparent); color: var(--masakini-ink); }
 
 .feature-card { border-radius: var(--radius-sm); padding: 1.5rem; }
 
