@@ -46,7 +46,7 @@
     --hadithdiscovery-ink: #1f4b52;
     --sanak-ink: #263562;
     --salingbantu-ink: #1d6a4a;
-    --masakini-ink: #c2410c;
+    --masakini-ink: #b03a0b;
 
     /* legacy names still referenced by learning / policy pages */
     --bg-dark: var(--bg);
@@ -112,9 +112,6 @@
         --yasintahlil-ink: #34d399;
         --qurandiscovery-ink: #d4b77a;
         --hadithdiscovery-ink: #a8d0cc;
-    --sanak-ink: #9fb0e8;
-    --salingbantu-ink: #6fcf9f;
-    --masakini-ink: #f9a636;
         --sanak-ink: #9fb0e8;
         --salingbantu-ink: #6fcf9f;
         --masakini-ink: #f9a636;
@@ -159,6 +156,9 @@
     --yasintahlil-ink: #34d399;
     --qurandiscovery-ink: #d4b77a;
     --hadithdiscovery-ink: #a8d0cc;
+    --sanak-ink: #9fb0e8;
+    --salingbantu-ink: #6fcf9f;
+    --masakini-ink: #f9a636;
 
     --accent-blue: #3b82f6;
     --accent-indigo: #6366f1;
@@ -542,6 +542,7 @@ main { flex: 1; }
 .lp-app .product-tags { justify-content: flex-start; }
 .lp-app .playstore-button-container { justify-content: flex-start; gap: 0.9rem; flex-wrap: wrap; margin-top: auto; padding: 1.25rem 0 0; }
 .lp-app .playstore-button { height: 46px; }
+.lp-app .pwa-button { height: 40px; font-size: 0.85rem; }
 
 .lp-apps-more {
     display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem;
