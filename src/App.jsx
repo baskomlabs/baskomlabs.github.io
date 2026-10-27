@@ -1,37 +1,37 @@
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import SEO from './components/SEO';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import QuranDiscovery from './pages/learning/QuranDiscovery';
-import HadithDiscovery from './pages/learning/HadithDiscovery';
 import LearningAppCta from './components/LearningAppCta';
 import Home from './pages/Home';
-import OpenSource from './pages/OpenSource';
-import KaptenDigital from './pages/talks/KaptenDigital';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import AppPage from './pages/AppPage';
 import NotFound from './pages/NotFound';
 
-import LearningHub from './pages/learning/LearningHub';
-import NFCBasics from './pages/learning/NFCBasics';
-import DataExchange from './pages/learning/DataExchange';
-import ComponentsPage from './pages/learning/ComponentsPage';
-import RadioWaves from './pages/learning/RadioWaves';
-import HistoryTrivia from './pages/learning/HistoryTrivia';
-import Terminology from './pages/learning/Terminology';
-import QRISBasics from './pages/learning/QRISBasics';
-import QRISDataParsing from './pages/learning/QRISDataParsing';
-import QRISComponents from './pages/learning/QRISComponents';
-import QRISCameraVision from './pages/learning/QRISCameraVision';
-import QRISHistoryTrivia from './pages/learning/QRISHistoryTrivia';
-import QRISTerminology from './pages/learning/QRISTerminology';
-
-import YasinHikmah from './pages/learning/YasinHikmah';
-import TahlilHikmah from './pages/learning/TahlilHikmah';
-import MaulidHikmah from './pages/learning/MaulidHikmah';
-import TradisiNUHikmah from './pages/learning/TradisiNUHikmah';
+// Home and 404 ship in the main bundle; every other page is its own chunk.
+const QuranDiscovery = lazy(() => import('./pages/learning/QuranDiscovery'));
+const HadithDiscovery = lazy(() => import('./pages/learning/HadithDiscovery'));
+const OpenSource = lazy(() => import('./pages/OpenSource'));
+const KaptenDigital = lazy(() => import('./pages/talks/KaptenDigital'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const AppPage = lazy(() => import('./pages/AppPage'));
+const LearningHub = lazy(() => import('./pages/learning/LearningHub'));
+const NFCBasics = lazy(() => import('./pages/learning/NFCBasics'));
+const DataExchange = lazy(() => import('./pages/learning/DataExchange'));
+const ComponentsPage = lazy(() => import('./pages/learning/ComponentsPage'));
+const RadioWaves = lazy(() => import('./pages/learning/RadioWaves'));
+const HistoryTrivia = lazy(() => import('./pages/learning/HistoryTrivia'));
+const Terminology = lazy(() => import('./pages/learning/Terminology'));
+const QRISBasics = lazy(() => import('./pages/learning/QRISBasics'));
+const QRISDataParsing = lazy(() => import('./pages/learning/QRISDataParsing'));
+const QRISComponents = lazy(() => import('./pages/learning/QRISComponents'));
+const QRISCameraVision = lazy(() => import('./pages/learning/QRISCameraVision'));
+const QRISHistoryTrivia = lazy(() => import('./pages/learning/QRISHistoryTrivia'));
+const QRISTerminology = lazy(() => import('./pages/learning/QRISTerminology'));
+const YasinHikmah = lazy(() => import('./pages/learning/YasinHikmah'));
+const TahlilHikmah = lazy(() => import('./pages/learning/TahlilHikmah'));
+const MaulidHikmah = lazy(() => import('./pages/learning/MaulidHikmah'));
+const TradisiNUHikmah = lazy(() => import('./pages/learning/TradisiNUHikmah'));
 
 // Intersection Observer for scroll animations
 function useScrollReveal(pathname) {
@@ -56,11 +56,12 @@ function useScrollReveal(pathname) {
     };
 
     checkAndObserve();
-    
-    // Allow React time to render DOM changes before re-observing
-    const timeoutId = setTimeout(checkAndObserve, 100);
+
+    // Lazy pages mount after this effect runs, so watch for them arriving.
+    const mutations = new MutationObserver(checkAndObserve);
+    mutations.observe(document.getElementById('viewport'), { childList: true, subtree: true });
     return () => {
-      clearTimeout(timeoutId);
+      mutations.disconnect();
       observer.disconnect();
     };
   }, [pathname]);
@@ -80,6 +81,7 @@ function App() {
         <Navbar />
         <main id="viewport">
           <ScrollWrapper>
+            <Suspense fallback={null}>
             <Routes>
               {/* Root is the canonical home; /home stays as a redirect for old links */}
               <Route path="/" element={<Home />} />
@@ -131,6 +133,7 @@ function App() {
 
               <Route path="*" element={<NotFound />} />
             </Routes>
+            </Suspense>
             <LearningAppCta />
           </ScrollWrapper>
         </main>

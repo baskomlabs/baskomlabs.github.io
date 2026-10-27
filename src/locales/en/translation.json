@@ -99,7 +99,7 @@
     "qris_badge": "Python Library & CLI · MIT",
     "qris_title": "QRIS Parser & Validator",
     "project_qris_title": "QRIS Parser & Validator",
-    "qris_desc": "Production-grade Python library, compliance auditor, dynamic generator, and CLI tool for Quick Response Code Indonesian Standard (QRIS), built strictly to Bank Indonesia, ASPI v1.0, and EMVCo standards.",
+    "qris_desc": "A Python library and CLI that parses, validates and generates QRIS, following the published Bank Indonesia/ASPI v1.0 and EMVCo specifications.",
     "project_qris_desc": "Production-grade Python library, compliance auditor, dynamic generator, and CLI tool for Quick Response Code Indonesian Standard (QRIS), built strictly to Bank Indonesia, ASPI v1.0, and EMVCo standards.",
     "qris_f1": "Full recursive TLV (MPM) and Base64 BER-TLV (CPM CPV01) decoding",
     "qris_f2": "ISO/IEC 13239 CRC-16 engine with repair suggestions",
