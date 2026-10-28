@@ -15,14 +15,14 @@ function QRISHistoryTrivia() {
           <div style={{ marginTop: '2rem' }}>
             <p className="meta">{t('learning.qris_ht_meta')}</p>
             
-            <h3>{t('learning.qris_ht_h3_1')}</h3>
+            <h2>{t('learning.qris_ht_h3_1')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_ht_p1_1') }} />
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_ht_p1_2') }} />
             
-            <h3 style={{ marginTop: '2rem' }}>{t('learning.qris_ht_h3_2')}</h3>
+            <h2 style={{ marginTop: '2rem' }}>{t('learning.qris_ht_h3_2')}</h2>
             <div className="features-grid" style={{ gridTemplateColumns: '1fr', marginTop: '1rem' }}>
                 <div className="feature-card" style={{ background: 'var(--surface-muted)', border: '1px solid var(--border-subtle)' }}>
-                    <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>♟️</div>
+                    <div aria-hidden="true" style={{ fontSize: '2rem', marginBottom: '1rem' }}>♟️</div>
                     <p style={{ fontSize: '1rem' }} dangerouslySetInnerHTML={{ __html: t('learning.qris_ht_p2_1') }} />
                 </div>
             </div>

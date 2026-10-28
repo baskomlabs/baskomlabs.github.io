@@ -15,26 +15,26 @@ function QRISBasics() {
           <div style={{ marginTop: '2rem' }}>
             <p className="meta">{t('learning.qris_basics_meta')}</p>
             
-            <h3>{t('learning.qris_basics_h3_1')}</h3>
+            <h2>{t('learning.qris_basics_h3_1')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_basics_p1_1') }} />
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_basics_p1_2') }} />
             
             <div style={{ padding: '1.5rem', background: 'var(--surface-sunken)', borderRadius: '12px', margin: '2rem 0', textAlign: 'center' }}>
-                <h3 style={{ fontSize: '2.5rem', color: 'var(--text-secondary)', opacity: 0.5, margin: 0 }}>EMVCo</h3>
+                <h2 style={{ fontSize: '2.5rem', color: 'var(--text-secondary)', opacity: 0.5, margin: 0 }}>EMVCo</h2>
             </div>
             
-            <h3>{t('learning.qris_basics_h3_2')}</h3>
+            <h2>{t('learning.qris_basics_h3_2')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_basics_p2_1') }} />
             
             <div className="features-grid" style={{ gridTemplateColumns: '1fr 1fr', marginTop: '1rem' }}>
                 <div className="feature-card" style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
-                    <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>📄</div>
-                    <h4 style={{ color: '#10b981' }}>{t('learning.qris_basics_static')}</h4>
+                    <div aria-hidden="true" style={{ fontSize: '2rem', marginBottom: '1rem' }}>📄</div>
+                    <h3 style={{ color: '#10b981' }}>{t('learning.qris_basics_static')}</h3>
                     <p style={{ fontSize: '0.9rem' }}>{t('learning.qris_basics_static_desc')}</p>
                 </div>
                 <div className="feature-card" style={{ background: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(59, 130, 246, 0.2)' }}>
-                    <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>📱</div>
-                    <h4 style={{ color: '#3b82f6' }}>{t('learning.qris_basics_dynamic')}</h4>
+                    <div aria-hidden="true" style={{ fontSize: '2rem', marginBottom: '1rem' }}>📱</div>
+                    <h3 style={{ color: '#3b82f6' }}>{t('learning.qris_basics_dynamic')}</h3>
                     <p style={{ fontSize: '0.9rem' }} dangerouslySetInnerHTML={{ __html: t('learning.qris_basics_dynamic_desc') }} />
                 </div>
             </div>

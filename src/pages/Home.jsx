@@ -17,7 +17,6 @@ const APPS = [
     name: 'QRSTU',
     theme: 'qrstu',
     descKey: 'home.qrstu_desc',
-    tags: ['QRIS', 'Scanner', 'Edukasi'],
     url: playInstallUrl('com.baskom.qrisparser', 'home'),
     icon: '/apps/qrstu.png',
     slug: 'qrstu',
@@ -26,7 +25,6 @@ const APPS = [
     name: 'PembacaKUE',
     theme: 'pembacakue',
     descKey: 'home.pembacakue_desc',
-    tags: ['eMoney', 'Flazz', 'NFC'],
     url: playInstallUrl('com.baskom.pembacakue', 'home'),
     icon: '/apps/pembacakue.png',
     slug: 'pembacakue',
@@ -35,7 +33,6 @@ const APPS = [
     name: 'Yasin Tahlil NU',
     theme: 'yasintahlil',
     descKey: 'home.yasintahlil_desc',
-    tags: ['Yasin', 'Tahlil', 'Offline'],
     url: playInstallUrl('com.baskom.yasintahlilmaulid', 'home'),
     icon: '/apps/yasintahlil.png',
   },
@@ -43,7 +40,6 @@ const APPS = [
     name: 'Quran Discovery',
     theme: 'qurandiscovery',
     descKey: 'home.qurandiscovery_desc',
-    tags: ['Al-Quran', 'Cari Ayat', 'Tafsir'],
     url: playInstallUrl('com.baskomlabs.qurandiscovery', 'home'),
     icon: '/apps/qurandiscovery.png',
   },
@@ -51,7 +47,6 @@ const APPS = [
     name: 'Hadith Discovery',
     theme: 'hadithdiscovery',
     descKey: 'home.hadithdiscovery_desc',
-    tags: ['Hadis', 'Cek Sumber', 'Offline'],
     url: playInstallUrl('com.baskomlabs.hadithdiscovery', 'home'),
     icon: '/apps/hadithdiscovery.png',
   },
@@ -60,7 +55,6 @@ const APPS = [
     name: 'Sanak',
     theme: 'sanak',
     descKey: 'home.sanak_desc',
-    tags: ['Silsilah', 'Tujuh Turunan', 'PWA'],
     icon: '/apps/sanak.png',
     soon: true,
   },
@@ -68,7 +62,6 @@ const APPS = [
     name: 'SalingBantu',
     theme: 'salingbantu',
     descKey: 'home.salingbantu_desc',
-    tags: ['Urun Dana', 'Tagihan', 'Komunitas'],
     icon: '/apps/salingbantu.png',
     soon: true,
   },
@@ -76,7 +69,6 @@ const APPS = [
     name: 'MasakINI',
     theme: 'masakini',
     descKey: 'home.masakini_desc',
-    tags: ['Resep', 'Stok Dapur', 'Offline'],
     icon: '/apps/masakini.png',
     soon: true,
   },
@@ -107,7 +99,9 @@ function Home({ scrollToContact }) {
 
   useEffect(() => {
     if (scrollToContact) {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('contact')?.scrollIntoView({
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      });
     } else {
       window.scrollTo(0, 0);
     }
@@ -157,7 +151,7 @@ function Home({ scrollToContact }) {
             <div className="lp-terminal-bar"><i /><i /><i /></div>
             <div className="lp-terminal-body">
               <div><span className="t-prompt">~/baskom $</span> stir ./ide</div>
-              {APPS.map((a) => (
+              {APPS.filter((a) => !a.soon).map((a) => (
                 <div key={a.name}><span className="t-ok">✓</span> {a.name}</div>
               ))}
             </div>
@@ -178,7 +172,7 @@ function Home({ scrollToContact }) {
               </div>
               <p>{t(app.descKey)}</p>
               <div className="product-tags">
-                {app.tags.map((tag) => (
+                {t(`home.tags.${app.theme}`, { returnObjects: true }).map((tag) => (
                   <span key={tag} className={`tag tag-${app.theme}`}>{tag}</span>
                 ))}
               </div>
@@ -202,9 +196,82 @@ function Home({ scrollToContact }) {
         </div>
       </section>
 
+      {/* ---------- RUANG ILMU ---------- */}
+      <section id="ruang-ilmu" className="lp-section">
+        <SectionHead index="02" label={t('home.ruang_label')} title={t('home.ruang_title')} />
+        <p className="lp-section-lead reveal-on-scroll">{t('home.ruang_desc')}</p>
+        <div className="reveal-on-scroll">
+          <RuangIlmu />
+        </div>
+      </section>
+
+      {/* ---------- TALKS ---------- */}
+      <section id="talks" className="lp-section">
+        <SectionHead index="03" label={t('home.talks_label')} title={t('home.talks_title')} />
+
+        <article className="lp-talk reveal-on-scroll">
+          <Link to={TALK.path} className="lp-talk-cover" tabIndex={-1} aria-hidden="true">
+            <img src={TALK.cover} alt={t('home.talks_cover_alt')} width="960" height="536" loading="lazy" />
+          </Link>
+          <div className="lp-talk-body">
+            <div className="product-tags">
+              {['talks_tag_1', 'talks_tag_2', 'talks_tag_3'].map((key) => (
+                <span key={key} className="tag tag-talk">{t(`home.${key}`)}</span>
+              ))}
+            </div>
+            <h3>{t('home.talks_card_title')}</h3>
+            <p>
+              <Trans
+                i18nKey="home.talks_desc"
+                components={{ school: <a href={TALK.school.url} target="_blank" rel="noopener" /> }}
+              />
+            </p>
+            <p className="lp-talk-meta">{t('home.talks_meta')}</p>
+            <Link to={TALK.path} className="btn-ghost">
+              {t('home.talks_cta')}
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </Link>
+          </div>
+        </article>
+      </section>
+
+      {/* ---------- WHY BASKOM ---------- */}
+      <section className="lp-section">
+        <SectionHead index="04" label={t('home.origin_label')} title={t('home.origin_title')} />
+
+        <div className="lp-origin reveal-on-scroll">
+          <div className="lp-origin-mark">
+            <BaskomMark size={120} />
+          </div>
+          <div className="lp-origin-body">
+            <p>{t('home.origin_p1')}</p>
+            <p><Trans i18nKey="home.origin_p2" components={{ strong: <strong /> }} /></p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- WHAT WE TINKER WITH ---------- */}
+      <section className="lp-section">
+        <SectionHead index="05" label={t('home.core_technologies')} title={t('home.tech_title')} />
+
+        <div className="lp-tech reveal-on-scroll">
+          {TECH.map((item) => (
+            <Link key={item.key} to={item.to} className="lp-tech-card">
+              <span className="lp-tech-glyph" aria-hidden="true">{item.glyph}</span>
+              <h3>{t(`home.${item.key}_title`)}</h3>
+              <p>{t(`home.${item.key}_desc`)}</p>
+              <span className="lp-link">
+                {t('home.learn_more')}
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* ---------- INTERNAL TOOLS ---------- */}
       <section id="product-suite" className="lp-section">
-        <SectionHead index="02" label={t('home.suite_label')} title={t('home.suite_title')} />
+        <SectionHead index="06" label={t('home.suite_label')} title={t('home.suite_title')} />
 
         <div className="lp-suite reveal-on-scroll">
           <div className="lp-suite-main">
@@ -232,80 +299,6 @@ function Home({ scrollToContact }) {
         </div>
       </section>
 
-      {/* ---------- RUANG ILMU ---------- */}
-      <section id="ruang-ilmu" className="lp-section">
-        <SectionHead index="03" label={t('home.ruang_label')} title={t('home.ruang_title')} />
-        <p className="lp-section-lead reveal-on-scroll">{t('home.ruang_desc')}</p>
-        <div className="reveal-on-scroll">
-          <RuangIlmu />
-        </div>
-      </section>
-
-      {/* ---------- TALKS ---------- */}
-      <section id="talks" className="lp-section">
-        <SectionHead index="04" label={t('home.talks_label')} title={t('home.talks_title')} />
-
-        <article className="lp-talk reveal-on-scroll">
-          <Link to={TALK.path} className="lp-talk-cover" tabIndex={-1} aria-hidden="true">
-            <img src={TALK.cover} alt={t('home.talks_cover_alt')} width="960" height="536" loading="lazy" />
-          </Link>
-          <div className="lp-talk-body">
-            <div className="product-tags">
-              {['talks_tag_1', 'talks_tag_2', 'talks_tag_3'].map((key) => (
-                <span key={key} className="tag tag-talk">{t(`home.${key}`)}</span>
-              ))}
-            </div>
-            <h3>{t('home.talks_card_title')}</h3>
-            <p>
-              <Trans
-                i18nKey="home.talks_desc"
-                components={{ school: <a href={TALK.school.url} target="_blank" rel="noopener" /> }}
-              />
-            </p>
-            <p className="lp-talk-meta">{t('home.talks_meta')}</p>
-            <Link to={TALK.path} className="btn-solid">
-              {t('home.talks_cta')}
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </Link>
-          </div>
-        </article>
-      </section>
-
-      {/* ---------- WHY BASKOM ---------- */}
-      <section className="lp-section">
-        <SectionHead index="05" label={t('home.origin_label')} />
-
-        <div className="lp-origin reveal-on-scroll">
-          <div className="lp-origin-mark">
-            <BaskomMark size={120} />
-          </div>
-          <div className="lp-origin-body">
-            <h3>{t('home.origin_title')}</h3>
-            <p>{t('home.origin_p1')}</p>
-            <p><Trans i18nKey="home.origin_p2" components={{ strong: <strong /> }} /></p>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- WHAT WE TINKER WITH ---------- */}
-      <section className="lp-section">
-        <SectionHead index="06" label={t('home.core_technologies')} title={t('home.tech_title')} />
-
-        <div className="lp-tech reveal-on-scroll">
-          {TECH.map((item) => (
-            <Link key={item.key} to={item.to} className="lp-tech-card">
-              <span className="lp-tech-glyph" aria-hidden="true">{item.glyph}</span>
-              <h3>{t(`home.${item.key}_title`)}</h3>
-              <p>{t(`home.${item.key}_desc`)}</p>
-              <span className="lp-link">
-                {t('home.learn_more')}
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* ---------- OPEN SOURCE ---------- */}
       <section className="lp-section">
         <SectionHead index="07" label={t('home.oss_label')} title={t('home.oss_title')} />
@@ -326,17 +319,16 @@ function Home({ scrollToContact }) {
             </div>
             <p>{t('home.oss_desc')}</p>
             <div style={{ marginTop: '1.25rem' }}>
-              <Link to="/open-source" className="btn-solid" style={{ display: 'inline-flex' }}>
+              <Link to="/open-source" className="btn-ghost" style={{ display: 'inline-flex' }}>
                 {t('home.oss_cta')}
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
               </Link>
             </div>
           </div>
           <ul className="lp-suite-features">
-            <li><span aria-hidden="true">&gt;_</span>CoNote: local-first PRD & Markdown notebook for Confluence</li>
-            <li><span aria-hidden="true">&gt;_</span>QRIS Parser: ASPI v1.0 & EMVCo compliance auditor in Python</li>
-            <li><span aria-hidden="true">&gt;_</span>KUE Reader: Android NFC contactless card reader SDK</li>
-            <li><span aria-hidden="true">&gt;_</span>Lead author & developer: Akmal, M. (@muhakmal)</li>
+            {t('home.oss_list', { returnObjects: true }).map((item) => (
+              <li key={item}><span aria-hidden="true">&gt;_</span>{item}</li>
+            ))}
           </ul>
         </div>
       </section>

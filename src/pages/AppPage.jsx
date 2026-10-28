@@ -81,7 +81,7 @@ function AppPage({ slug, lang }) {
 
       <section className="app-section">
         <h2>{t('apps.common.screens_title')}</h2>
-        <div className="app-shots">
+        <div className="app-shots" tabIndex={0} role="region" aria-label={t('apps.common.screens_title')}>
           {shots.map((src, i) => (
             <img
               key={src}
@@ -108,7 +108,7 @@ function AppPage({ slug, lang }) {
         <div className="app-faq">
           {faq.map((f) => (
             <details key={f.q}>
-              <summary><h3>{f.q}</h3></summary>
+              <summary>{f.q}</summary>
               <p>{f.a}</p>
             </details>
           ))}

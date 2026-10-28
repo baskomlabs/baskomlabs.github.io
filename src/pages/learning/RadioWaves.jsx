@@ -14,7 +14,7 @@ function RadioWaves() {
         <div className="document-content">
           <p className="meta">{t('learning.rw_meta')}</p>
           
-          <h3>{t('learning.rw_h3_1')}</h3>
+          <h2>{t('learning.rw_h3_1')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.rw_p1_1') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.rw_p1_2') }} />
 
@@ -22,18 +22,18 @@ function RadioWaves() {
             <div className="wave-animation" style={{ fontSize: '3rem', marginBottom: '1rem', display: 'flex', justifyContent: 'center', gap: '15px' }}>
                 <span>🌊</span><span>⚡</span>
             </div>
-            <h4 style={{ color: 'var(--text-primary)', margin: 0 }}>{t('learning.rw_spectrum')}</h4>
+            <h3 style={{ color: 'var(--text-primary)', margin: 0 }}>{t('learning.rw_spectrum')}</h3>
             <p style={{ fontSize: '0.9rem', marginTop: '10px', color: 'var(--text-secondary)' }} dangerouslySetInnerHTML={{ __html: t('learning.rw_spectrum_desc') }} />
           </div>
 
-          <h3>{t('learning.rw_h3_2')}</h3>
+          <h2>{t('learning.rw_h3_2')}</h2>
           <ul style={{ marginLeft: '1.5rem', marginBottom: '1.5rem', lineHeight: '1.8' }}>
             <li dangerouslySetInnerHTML={{ __html: t('learning.rw_li_1') }} />
             <li dangerouslySetInnerHTML={{ __html: t('learning.rw_li_2') }} />
             <li dangerouslySetInnerHTML={{ __html: t('learning.rw_li_3') }} />
           </ul>
 
-          <h3>{t('learning.rw_h3_3')}</h3>
+          <h2>{t('learning.rw_h3_3')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.rw_p3_1') }} />
           <div className="glass-card" style={{ padding: '1.5rem', margin: '1.5rem 0', borderLeft: '4px solid var(--accent-blue)' }}>
             <strong style={{ color: 'var(--text-primary)' }}>{t('learning.rw_magic')}</strong><br/>

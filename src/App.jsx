@@ -79,7 +79,7 @@ function App() {
       <SEO />
       <div className="container">
         <Navbar />
-        <main id="viewport">
+        <main id="viewport" tabIndex={-1}>
           <ScrollWrapper>
             <Suspense fallback={null}>
             <Routes>

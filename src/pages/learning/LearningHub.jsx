@@ -40,21 +40,21 @@ const TRACKS = [
   },
   {
     id: 'quran',
-    glyph: '🎙',
+    glyph: '(♪)',
     playId: 'com.baskomlabs.qurandiscovery',
     core: [['/learning/quran-discovery', 'hub_qd_card1']],
     more: [],
   },
   {
     id: 'hadith',
-    glyph: '🔎',
+    glyph: '[?]',
     playId: 'com.baskomlabs.hadithdiscovery',
     core: [['/learning/hadith-discovery', 'hub_hd_card1']],
     more: [],
   },
   {
     id: 'yasin',
-    glyph: '﷽',
+    glyph: '۞',
     playId: 'com.baskom.yasintahlilmaulid',
     core: [
       ['/learning/yasin-hikmah', 'hub_yt_card1'],

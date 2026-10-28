@@ -64,24 +64,21 @@
   box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
 }
 
-/* Web app (PWA) badge, sized to sit next to the Play badge */
-.pwa-button {
+/* Not released yet: neutral outline pills, deliberately not button-looking */
+.soon-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  height: 52px;
-  padding: 0 1.1rem;
+  gap: 0.45rem;
+  height: 40px;
+  padding: 0 0.9rem;
+  border: 1px dashed var(--border-strong, var(--text-muted));
   border-radius: 8px;
-  background: var(--text-primary, #000);
-  color: var(--bg, #fff);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
   font-weight: 600;
-  font-size: 0.95rem;
 }
-.pwa-button svg {
-  width: 22px; height: 22px;
-  fill: none; stroke: currentColor; stroke-width: 1.8;
+.soon-pill svg {
+  width: 18px; height: 18px;
+  fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round;
 }
-.pwa-button.is-pending {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
+.playstore-pending-note { flex-basis: 100%; }

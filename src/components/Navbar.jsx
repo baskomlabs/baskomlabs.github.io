@@ -29,7 +29,8 @@ function Navbar() {
 
   return (
     <header className="site-header">
-      <nav className="site-nav">
+      <a href="#viewport" className="skip-link">{t('navbar.skip')}</a>
+      <nav className="site-nav" aria-label={t('navbar.main_nav')}>
         <Link to="/" className="logo-text" aria-label="BaskomLabs">
           <BaskomMark size={34} className="logo-mark" />
           <span className="logo-word">Baskom<span>Labs</span></span>
@@ -39,24 +40,28 @@ function Navbar() {
           <Link
             to="/"
             className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}
+            aria-current={location.pathname === '/' ? 'page' : undefined}
           >
             {t('navbar.home')}
           </Link>
           <Link
             to="/open-source"
             className={`nav-item ${location.pathname.startsWith('/open-source') ? 'active' : ''}`}
+            aria-current={location.pathname.startsWith('/open-source') ? 'page' : undefined}
           >
             {t('navbar.opensource')}
           </Link>
           <Link
             to="/learning"
             className={`nav-item ${location.pathname.startsWith('/learning') ? 'active' : ''}`}
+            aria-current={location.pathname.startsWith('/learning') ? 'page' : undefined}
           >
             {t('navbar.learning')}
           </Link>
           <Link
             to="/contact"
             className={`nav-item ${location.pathname === '/contact' ? 'active' : ''}`}
+            aria-current={location.pathname === '/contact' ? 'page' : undefined}
           >
             {t('navbar.contact')}
           </Link>
@@ -76,7 +81,13 @@ function Navbar() {
             </svg>
             <span className="nav-github-label">GitHub</span>
           </a>
-          <button type="button" className="lang-switcher" onClick={toggleLanguage}>
+          <button
+            type="button"
+            className="lang-switcher"
+            onClick={toggleLanguage}
+            aria-label={t('navbar.switch_lang_label')}
+            lang={i18n.language === 'id' ? 'en' : 'id'}
+          >
             {t('navbar.switch_lang')}
           </button>
           <ThemeToggle />
