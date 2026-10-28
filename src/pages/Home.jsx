@@ -55,6 +55,31 @@ const APPS = [
     url: playInstallUrl('com.baskomlabs.hadithdiscovery', 'home'),
     icon: '/apps/hadithdiscovery.png',
   },
+  // `soon`: not on Play or the web yet. Both badges show greyed out until release.
+  {
+    name: 'Sanak',
+    theme: 'sanak',
+    descKey: 'home.sanak_desc',
+    tags: ['Silsilah', 'Tujuh Turunan', 'PWA'],
+    icon: '/apps/sanak.png',
+    soon: true,
+  },
+  {
+    name: 'SalingBantu',
+    theme: 'salingbantu',
+    descKey: 'home.salingbantu_desc',
+    tags: ['Urun Dana', 'Tagihan', 'Komunitas'],
+    icon: '/apps/salingbantu.png',
+    soon: true,
+  },
+  {
+    name: 'MasakINI',
+    theme: 'masakini',
+    descKey: 'home.masakini_desc',
+    tags: ['Resep', 'Stok Dapur', 'Offline'],
+    icon: '/apps/masakini.png',
+    soon: true,
+  },
 ];
 
 const SUITE_FEATURES = ['suite_f1', 'suite_f2', 'suite_f3', 'suite_f4'];
@@ -157,7 +182,7 @@ function Home({ scrollToContact }) {
                   <span key={tag} className={`tag tag-${app.theme}`}>{tag}</span>
                 ))}
               </div>
-              <PlayStoreButton url={app.url} appName={app.name} pending={PENDING.has(app.name)} />
+              <PlayStoreButton url={app.url} appName={app.name} pending={PENDING.has(app.name)} soon={app.soon} />
               {app.slug && (
                 <Link to={appPagePath(app.slug, i18n.language === 'en' ? 'en' : 'id')} className="lp-link">
                   {t('home.app_details')}

@@ -73,7 +73,12 @@
     "talks_meta": "24 slide · film · 4 musik · alat peraga cetak",
     "talks_cta": "Lihat studi kasus",
     "talks_cover_alt": "Ilustrasi anak-anak berjalan di dekat rumah pohon dan kereta mainan pembawa paket data",
-    "app_details": "Detail aplikasi"
+    "app_details": "Detail aplikasi",
+    "coming_soon": "Segera hadir, sedang disiapkan untuk rilis",
+    "pwa_button": "Web App (PWA)",
+    "sanak_desc": "Susun silsilah keluarga sampai tujuh turunan. Data tersimpan di perangkat, bisa disinkron ke Google Drive milikmu sendiri.",
+    "salingbantu_desc": "Urun dana komunitas untuk membantu bayar tagihan listrik, air, dan internet tempat ibadah, yayasan, atau warga yang membutuhkan.",
+    "masakini_desc": "Masak dari bahan yang ada. Catat stok dapur, dapatkan ide menu sesuai waktu, alat, dan porsi. Offline, tanpa akun."
   },
   "opensource": {
     "hero_badge": "Kode Terbuka · Local-First",

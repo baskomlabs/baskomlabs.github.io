@@ -73,7 +73,12 @@
     "talks_meta": "24 slides · film · 4 music tracks · printable props",
     "talks_cta": "Read the case study",
     "talks_cover_alt": "Illustration of children walking past a treehouse and a toy train carrying data packets",
-    "app_details": "App details"
+    "app_details": "App details",
+    "coming_soon": "Coming soon, getting ready for release",
+    "pwa_button": "Web App (PWA)",
+    "sanak_desc": "Build your family tree up to seven generations. Data stays on your device, with optional sync to your own Google Drive.",
+    "salingbantu_desc": "Community crowdfunding to help pay electricity, water and internet bills for places of worship, foundations and people in need.",
+    "masakini_desc": "Cook with what you have. Track your pantry and get meal ideas that fit your time, tools and portions. Offline, no account."
   },
   "opensource": {
     "hero_badge": "Public Code · Local-First",
