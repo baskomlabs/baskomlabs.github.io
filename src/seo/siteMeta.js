@@ -293,9 +293,9 @@ export const ROUTES = [
     title_id: `Gelombang Radio: Menangkap yang Tak Kasat Mata${L}`,
     title_en: `Radio Waves: Catching the Invisible${L}`,
     desc_id:
-      'Eksplorasi lebih dalam soal gelombang radio — frekuensi, panjang gelombang, dan kenapa 13,56 MHz yang dipakai kartu NFC.',
+      'Apa itu gelombang radio, sejarah penemuannya, dan bagaimana kumparan di kartu NFC menangkapnya jadi listrik tanpa baterai.',
     desc_en:
-      'A deeper look at radio waves — frequency, wavelength, and why NFC cards settled on 13.56 MHz.',
+      'What radio waves are, how they were discovered, and how the coil in an NFC card turns them into power without a battery.',
   },
   {
     path: '/learning/history-trivia',
@@ -303,9 +303,9 @@ export const ROUTES = [
     title_id: `Sejarah & Trivia NFC${L}`,
     title_en: `NFC History & Trivia${L}`,
     desc_id:
-      'Dari RFID di gudang sampai tap-tap di gerbang MRT — fakta menarik seputar perjalanan teknologi NFC.',
+      'Dari radar Perang Dunia dan Nokia 6131 sampai wajib e-toll 2017: sejarah NFC dan e-money di Indonesia, plus beberapa trivia.',
     desc_en:
-      'From warehouse RFID to tapping through transit gates — the story of how NFC got everywhere.',
+      'From wartime radar and the Nokia 6131 to Indonesia\'s 2017 cashless toll roads: the history of NFC and e-money, plus some trivia.',
   },
   {
     path: '/learning/terminology',
@@ -313,9 +313,9 @@ export const ROUTES = [
     title_id: `Kamus Istilah NFC & IoT${L}`,
     title_en: `NFC & IoT Glossary${L}`,
     desc_id:
-      'Daftar istilah penting di dunia NFC, smart card, dan IoT — APDU, ATQA, UID, dan kawan-kawan, dijelaskan singkat.',
+      'Istilah NFC, RFID, IoT, APDU, AID, ISO 14443, MIFARE dan NDEF, dijelaskan singkat.',
     desc_en:
-      'The essential vocabulary of NFC, smart cards, and IoT — APDU, ATQA, UID and friends, briefly explained.',
+      'NFC, RFID, IoT, APDU, AID, ISO 14443, MIFARE and NDEF, each explained in a line or two.',
   },
 
   // --- QRIS track ---
@@ -375,9 +375,9 @@ export const ROUTES = [
     title_id: `Kamus Istilah QRIS & EMVCo${L}`,
     title_en: `QRIS & EMVCo Glossary${L}`,
     desc_id:
-      'Daftar istilah penting dunia QRIS dan EMVCo — MPM, CPM, NMID, acquirer, dan lainnya, dijelaskan ringkas.',
+      'Istilah QRIS yang sering muncul: EMVCo, TLV, MCC dan CRC, dijelaskan ringkas.',
     desc_en:
-      'Key QRIS and EMVCo terms — MPM, CPM, NMID, acquirer and more, explained concisely.',
+      'Common QRIS terms: EMVCo, TLV, MCC and CRC, explained concisely.',
   },
 
   // --- Yasin Tahlil track ---
@@ -387,9 +387,9 @@ export const ROUTES = [
     title_id: `Surah Yasin: Jantung Al-Quran${L}`,
     title_en: `Surah Yasin: The Heart of the Quran${L}`,
     desc_id:
-      'Mengenal fadhilah Surah Yasin dan kenapa ia disebut jantung Al-Quran, serta kebiasaan membacanya di tradisi Nahdlatul Ulama.',
+      'Kenapa Surah Yasin disebut jantung Al-Quran, isi pokoknya, dan kapan biasanya dibaca.',
     desc_en:
-      'The virtues of Surah Yasin, why it is called the heart of the Quran, and how it is read in Nahdlatul Ulama tradition.',
+      'Why Surah Yasin is called the heart of the Quran, what it covers, and when it is usually read.',
   },
   {
     path: '/learning/tahlil-hikmah',
@@ -397,9 +397,9 @@ export const ROUTES = [
     title_id: `Doa Tahlil: Susunan dan Makna Dzikirnya${L}`,
     title_en: `The Tahlil: Structure and Meaning${L}`,
     desc_id:
-      'Memahami susunan bacaan tahlil dari awal sampai akhir, beserta makna spiritual di balik tiap rangkaian dzikirnya.',
+      'Ringkasan susunan bacaan tahlil, dari istighfar sampai doa, dan untuk siapa doanya dihadiahkan.',
     desc_en:
-      'Understanding the tahlil sequence from start to finish, and the meaning behind each part of the remembrance.',
+      'A short overview of the tahlil sequence, from seeking forgiveness to the closing prayer, and who it is offered for.',
   },
   {
     path: '/learning/maulid-hikmah',

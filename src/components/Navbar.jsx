@@ -22,9 +22,10 @@ function Navbar() {
     if (target && target !== route.path) navigate(`${target}/`);
   };
 
+  // Only on page changes: a hash link (#apps, hub chips) must keep its own scroll.
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
+    if (!location.hash) window.scrollTo(0, 0);
+  }, [location.pathname, location.hash]);
 
   return (
     <header className="site-header">

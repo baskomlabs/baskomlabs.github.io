@@ -104,7 +104,7 @@
     "qris_badge": "Library Python & CLI · MIT",
     "qris_title": "QRIS Parser & Validator",
     "project_qris_title": "QRIS Parser & Validator",
-    "qris_desc": "Library Python kelas produksi, auditor kepatuhan regulasi, generator dinamis, dan CLI tool untuk QRIS yang dibangun patuh terhadap standar Bank Indonesia, ASPI v1.0, dan EMVCo.",
+    "qris_desc": "Library Python dan CLI untuk membaca, memvalidasi, dan membuat QRIS, mengikuti spesifikasi BI/ASPI v1.0 dan EMVCo yang dipublikasikan.",
     "project_qris_desc": "Library Python kelas produksi, auditor kepatuhan regulasi, generator dinamis, dan CLI tool untuk QRIS yang dibangun patuh terhadap standar Bank Indonesia, ASPI v1.0, dan EMVCo.",
     "qris_f1": "Dekode rekursif TLV (MPM) dan Base64 BER-TLV (CPM CPV01) secara utuh",
     "qris_f2": "Engine checksum ISO/IEC 13239 CRC-16 dengan saran perbaikan otomatis",

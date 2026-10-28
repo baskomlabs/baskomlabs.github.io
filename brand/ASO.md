@@ -39,7 +39,7 @@ mereka bertahan.
 ```
 Baskom itu wadah — tempat semua diaduk jadi satu. Di sini isinya kode.
 
-Aplikasi Android kecil buat keperluan sehari-hari, gratis dan tanpa iklan:
+Aplikasi Android kecil buat keperluan sehari-hari, gratis (sebagian berisi iklan):
 • Quran Discovery — cari ayat Al-Quran dari suara bacaan, lengkap dengan terjemahan dan tafsir
 • QRSTU — scan QRIS, bongkar isinya, sekalian belajar cara kerjanya
 • PembacaKUE — cek saldo kartu eMoney dan Flazz lewat NFC
@@ -55,7 +55,7 @@ do code for fun, no.. serious things.
 ```
 Baskom is the enamel basin where everything gets mixed. Ours is full of code.
 
-Small, free Android apps for everyday things, with no ads:
+Small, free Android apps for everyday things (some contain ads):
 • Quran Discovery: find a Quran verse by listening to recitation, with translation and tafsir
 • QRSTU: scan a QRIS code, unpack what is inside and learn how it works
 • PembacaKUE: check eMoney and Flazz card balances over NFC
