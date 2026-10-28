@@ -14,12 +14,12 @@ function DataExchange() {
         <div className="document-content">
           <p className="meta">{t('learning.dx_meta')}</p>
           
-          <h3>{t('learning.dx_h3_1')}</h3>
+          <h2>{t('learning.dx_h3_1')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.dx_p1_1') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.dx_p1_2') }} />
 
           <div className="glass-card" style={{ textAlign: 'center', margin: '2rem 0', padding: '2rem' }}>
-            <h4 style={{ marginTop: 0 }}>{t('learning.dx_mod_illus')}</h4>
+            <h3 style={{ marginTop: 0 }}>{t('learning.dx_mod_illus')}</h3>
             <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '1rem', alignItems: 'flex-end', height: '80px' }}>
                 <div style={{ background: 'var(--accent-blue)', width: '40px', height: '80px', borderRadius: '8px' }} title={t('learning.dx_mod_strong')}></div>
                 <div style={{ background: 'rgba(59, 130, 246, 0.3)', width: '40px', height: '40px', borderRadius: '8px' }} title={t('learning.dx_mod_weak')}></div>
@@ -29,12 +29,12 @@ function DataExchange() {
             <p style={{ marginTop: '15px', fontWeight: 'bold', letterSpacing: '25px', color: 'var(--text-primary)' }}>1011</p>
           </div>
 
-          <h3>{t('learning.dx_h3_2')}</h3>
+          <h2>{t('learning.dx_h3_2')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.dx_p2_1') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.dx_p2_2') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.dx_p2_3') }} />
 
-          <h3>{t('learning.dx_h3_3')}</h3>
+          <h2>{t('learning.dx_h3_3')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.dx_p3_1') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.dx_p3_2') }} />
           <ul style={{ marginLeft: '1.5rem', marginBottom: '1.5rem' }}>

@@ -14,27 +14,27 @@ function NFCBasics() {
         <div className="document-content">
           <p className="meta">{t('learning.nfc_meta')}</p>
           
-          <h3>{t('learning.nfc_h3_1')}</h3>
+          <h2>{t('learning.nfc_h3_1')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.nfc_p1_1') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.nfc_p1_2') }} />
 
           <div className="glass-card" style={{ textAlign: 'center', margin: '2rem 0', padding: '2rem' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📱 📶 💳</div>
-            <h4 style={{ color: 'var(--text-primary)', margin: 0 }}>{t('learning.nfc_max_dist')}</h4>
+            <div aria-hidden="true" style={{ fontSize: '3rem', marginBottom: '1rem' }}>📱 📶 💳</div>
+            <h3 style={{ color: 'var(--text-primary)', margin: 0 }}>{t('learning.nfc_max_dist')}</h3>
             <p style={{ fontSize: '0.9rem', marginTop: '10px' }}>{t('learning.nfc_max_dist_desc')}</p>
           </div>
 
-          <h3>{t('learning.nfc_h3_2')}</h3>
+          <h2>{t('learning.nfc_h3_2')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.nfc_p2_1') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.nfc_p2_2') }} />
 
-          <h3>{t('learning.nfc_h3_3')}</h3>
+          <h2>{t('learning.nfc_h3_3')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.nfc_p3_1') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.nfc_p3_2') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.nfc_p3_3') }} />
 
           <div className="glass-card" style={{ margin: '2rem 0', padding: '2rem' }}>
-            <h4 style={{ color: 'var(--accent-blue)', marginTop: 0 }}>{t('learning.nfc_induction_process')}</h4>
+            <h3 style={{ color: 'var(--accent-blue)', marginTop: 0 }}>{t('learning.nfc_induction_process')}</h3>
             <ol style={{ marginTop: '1rem', marginLeft: '1rem', lineHeight: '1.8' }}>
                 <li>{t('learning.nfc_li_1')}</li>
                 <li>{t('learning.nfc_li_2')}</li>

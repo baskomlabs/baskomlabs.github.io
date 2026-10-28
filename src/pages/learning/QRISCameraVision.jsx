@@ -15,7 +15,7 @@ function QRISCameraVision() {
           <div style={{ marginTop: '2rem' }}>
             <p className="meta">{t('learning.qris_cv_meta')}</p>
             
-            <h3>{t('learning.qris_cv_h3_1')}</h3>
+            <h2>{t('learning.qris_cv_h3_1')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_cv_p1_1') }} />
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_cv_p1_2') }} />
             
@@ -25,7 +25,7 @@ function QRISCameraVision() {
                 </div>
             </div>
 
-            <h3>{t('learning.qris_cv_h3_2')}</h3>
+            <h2>{t('learning.qris_cv_h3_2')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_cv_p2_1') }} />
             
           </div>

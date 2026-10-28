@@ -15,7 +15,7 @@ function QRISDataParsing() {
           <div style={{ marginTop: '2rem' }}>
             <p className="meta">{t('learning.qris_parsing_meta')}</p>
             
-            <h3>{t('learning.qris_parsing_h3_1')}</h3>
+            <h2>{t('learning.qris_parsing_h3_1')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_parsing_p1_1') }} />
             <ul>
                 <li dangerouslySetInnerHTML={{ __html: t('learning.qris_parsing_li_1') }} />
@@ -29,7 +29,7 @@ function QRISDataParsing() {
                 <span style={{ color: '#10b981' }}>Value</span>
             </div>
             
-            <h3>{t('learning.qris_parsing_h3_2')}</h3>
+            <h2>{t('learning.qris_parsing_h3_2')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_parsing_p2_1') }} />
             <div style={{ background: 'var(--code-bg)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--border-subtle)', marginBottom: '1.5rem', fontFamily: 'monospace' }}>
                 <span style={{ color: '#ef4444' }}>59</span><span style={{ color: '#eab308' }}>14</span><span style={{ color: '#10b981' }}>WARUNG MAKMUR </span><br/>
@@ -37,7 +37,7 @@ function QRISDataParsing() {
             </div>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_parsing_p2_2') }} />
 
-            <h3 style={{ marginTop: '2rem' }}>{t('learning.qris_parsing_h3_3')}</h3>
+            <h2 style={{ marginTop: '2rem' }}>{t('learning.qris_parsing_h3_3')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_parsing_p3_1') }} />
             <div style={{ background: 'var(--code-bg)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--border-subtle)', marginBottom: '1.5rem', fontFamily: 'monospace' }}>
                 ...<span style={{ color: '#ef4444' }}>63</span><span style={{ color: '#eab308' }}>04</span><span style={{ color: '#10b981' }}>A1B2</span>

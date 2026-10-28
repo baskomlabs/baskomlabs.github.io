@@ -4,31 +4,32 @@
     "opensource": "Open Source",
     "learning": "Pembelajaran",
     "contact": "Kontak",
-    "switch_lang": "EN"
+    "switch_lang": "EN",
+    "switch_lang_label": "Ganti ke bahasa Inggris",
+    "skip": "Langsung ke konten",
+    "main_nav": "Navigasi utama"
   },
   "home": {
-    "seo_title": "BaskomLabs | Bengkel Aplikasi Kompeni",
-    "seo_desc": "Membangun aplikasi mobile dan web yang cepat, aman, dan gampang dipakai.",
     "hero_badge": "Berdiri sejak 2017",
     "hero_title_1": "Bengkel Aplikasi",
     "hero_title_2": "Kompeni",
-    "hero_subtitle": "Kami bikin aplikasi Android dan web buat keperluan sehari-hari — cek saldo kartu, baca kode QRIS, cari ayat Al-Quran dari suara bacaan, cek sumber hadis yang beredar, sampai tahlilan. Dibikin di rumah, dipakai sendiri, dibagi ke yang butuh.",
+    "hero_subtitle": "Kami bikin aplikasi Android dan web buat keperluan sehari-hari: cek saldo kartu, baca kode QRIS, cari ayat Al-Quran dari suara bacaan, cek sumber hadis yang beredar, sampai tahlilan. Dibikin di rumah, dipakai sendiri, dibagi ke yang butuh.",
     "hero_tagline": "Wadahnya ngoprek.",
     "hero_signature": "do code for fun, no.. serious things.",
     "origin_label": "SOAL NAMA",
     "origin_title": "Kenapa Baskom?",
-    "origin_p1": "Baskom itu wadah enamel yang ada di tiap dapur — motif hijau bercak, putih di dalam, bibirnya biru tua. Murah, penyok, nggak ada matinya. Nggak ada yang memperlakukan baskom kayak barang mahal, dan justru itu intinya. Semua diaduk di situ: adonan, rujak, cucian, es kelapa buat hajatan.",
-    "origin_p2": "Nah, <strong>baskom kami isinya kode</strong>. Ide masuk, diaduk, keluar jadi aplikasi — dibikin di rumah, dipakai sendiri, dibagi ke tetangga yang butuh. Nggak pakai upacara.",
+    "origin_p1": "Baskom itu wadah enamel yang ada di tiap dapur: motif hijau bercak, putih di dalam, bibirnya biru tua. Murah, penyok, nggak ada matinya. Nggak ada yang memperlakukan baskom kayak barang mahal, dan justru itu intinya. Semua diaduk di situ: adonan, rujak, cucian, es kelapa buat hajatan.",
+    "origin_p2": "Nah, <strong>baskom kami isinya kode</strong>. Ide masuk, diaduk, keluar jadi aplikasi. Dibikin di rumah, dipakai sendiri, dibagi ke tetangga yang butuh. Nggak pakai ribet.",
     "featured_projects": "PROYEK UNGGULAN",
     "dev_profile_label": "SEMUA APLIKASI",
     "dev_profile_cta": "Lihat Profil Developer",
     "dev_profile_desc": "Semua aplikasi BaskomLabs ada di sini.",
     "qrstu_desc": "Scan kode QRIS, bongkar isi datanya, sekalian belajar cara kerjanya.",
     "pembacakue_desc": "Cek saldo eMoney, Flazz, dan kartu NFC lain langsung dari HP.",
-    "yasintahlil_desc": "Yasin, Tahlil, Maulid & Sholawat lengkap — bisa dibuka tanpa internet.",
+    "yasintahlil_desc": "Yasin, Tahlil, Maulid & Sholawat lengkap, bisa dibuka tanpa internet.",
     "core_technologies": "TEKNOLOGI INTI",
     "nfc_title": "NFC",
-    "nfc_desc": "Kami biasa ngoprek NFC buat nyambungin kartu dan HP dengan aman — mulai dari baca saldo eMoney sampai ngerti isi obrolan antara kartu dan pembaca. Semua itu yang jadi isi PembacaKUE.",
+    "nfc_desc": "Kami biasa ngoprek NFC buat nyambungin kartu dan HP dengan aman, mulai dari baca saldo eMoney sampai ngerti isi obrolan antara kartu dan pembaca. Semua itu yang jadi isi PembacaKUE.",
     "contact_title": "Hubungi Kami",
     "contact_desc": "Mau ngobrol soal proyek, nemu bug di aplikasi kami, atau sekadar nanya-nanya? Sapa aja, nggak usah sungkan.",
     "email_us": "Email Kami",
@@ -43,7 +44,7 @@
     "suite_label": "TOOLS INTERNAL",
     "suite_title": "Yang kami pakai sendiri di kantor.",
     "suite_badge": "Internal · untuk pekerjaan",
-    "suite_desc": "Product Suite adalah perkakas internal untuk menguji alur pembayaran dari satu tempat — dari simulasi transaksi sampai cek integrasi sebelum rilis. Dibikin untuk kebutuhan kerja sehari-hari tim, bukan aplikasi untuk umum.",
+    "suite_desc": "Product Suite adalah perkakas internal untuk menguji alur pembayaran dari satu tempat, mulai dari simulasi transaksi sampai cek integrasi sebelum rilis. Dibikin untuk kebutuhan kerja sehari-hari tim, bukan aplikasi untuk umum.",
     "suite_note": "Akses terbatas untuk anggota tim. Tidak tersedia untuk diunduh atau didaftarkan.",
     "suite_f1": "Simulator transaksi pembayaran",
     "suite_f2": "Generator & parser QRIS",
@@ -51,17 +52,22 @@
     "suite_f4": "Checklist & catatan UAT",
     "ruang_label": "DARI APLIKASI YASIN TAHLIL NU",
     "ruang_title": "Ruang Ilmu",
-    "ruang_desc": "Bacaan seputar keutamaan Yasin, Tahlil, kitab-kitab Maulid, tradisi NU, dan Al-Hikam — sama persis dengan menu Ruang Ilmu di dalam aplikasi. Bisa dibaca langsung di sini.",
+    "ruang_desc": "Bacaan seputar keutamaan Yasin, Tahlil, kitab-kitab Maulid, tradisi NU, dan Al-Hikam. Isinya sama dengan menu Ruang Ilmu di dalam aplikasi, dan bisa dibaca langsung di sini.",
     "ruang_tab_home": "Beranda",
     "ruang_open": "Buka di tab baru",
     "qurandiscovery_desc": "Cari ayat Al-Quran dari suara bacaan. Lengkap dengan terjemahan, tafsir & audio.",
     "hadithdiscovery_desc": "Dapat kiriman hadis? Tempel teksnya, lihat kitab dan nomornya, lengkap dengan derajat yang dikutip dari ulama. Offline, tanpa akun.",
     "play_pending": "Sedang ditinjau Google Play",
     "oss_label": "OPEN SOURCE & TOOLS",
-    "oss_title": "Kode yang kami bangun terbuka.",
+    "oss_title": "Kode yang kami buka untuk umum.",
     "oss_badge": "Terbuka · GitHub",
     "oss_card_title": "Open Source oleh Akmal, M.",
-    "oss_desc": "Selain aplikasi mobile, kami membangun dan memelihara perkakas developer terbuka, engine kepatuhan protokol pembayaran, dan perangkat lunak local-first — dari library parser QRIS hingga buku catatan Markdown offline untuk Confluence.",
+    "oss_desc": "Selain aplikasi mobile, kami juga merilis beberapa perkakas developer di GitHub: library parser QRIS, SDK pembaca kartu NFC untuk Android, dan buku catatan Markdown offline untuk Confluence.",
+    "oss_list": [
+      "Parser & validator QRIS (Python)",
+      "KUE Reader, SDK kartu NFC (Android)",
+      "CoNote for Confluence (desktop)"
+    ],
     "oss_cta": "Jelajahi Proyek Open Source",
     "talks_label": "TALKS & WORKSHOP",
     "talks_title": "Berbagi ilmu, juga di luar layar.",
@@ -78,48 +84,86 @@
     "pwa_button": "Web App (PWA)",
     "sanak_desc": "Susun silsilah keluarga sampai tujuh turunan. Data tersimpan di perangkat, bisa disinkron ke Google Drive milikmu sendiri.",
     "salingbantu_desc": "Urun dana komunitas untuk membantu bayar tagihan listrik, air, dan internet tempat ibadah, yayasan, atau warga yang membutuhkan.",
-    "masakini_desc": "Masak dari bahan yang ada. Catat stok dapur, dapatkan ide menu sesuai waktu, alat, dan porsi. Offline, tanpa akun."
+    "masakini_desc": "Masak dari bahan yang ada. Catat stok dapur, dapatkan ide menu sesuai waktu, alat, dan porsi. Offline, tanpa akun.",
+    "tags": {
+      "qrstu": [
+        "QRIS",
+        "Scanner",
+        "Edukasi"
+      ],
+      "pembacakue": [
+        "eMoney",
+        "Flazz",
+        "NFC"
+      ],
+      "yasintahlil": [
+        "Yasin",
+        "Tahlil",
+        "Offline"
+      ],
+      "qurandiscovery": [
+        "Al-Quran",
+        "Cari Ayat",
+        "Tafsir"
+      ],
+      "hadithdiscovery": [
+        "Hadis",
+        "Cek Sumber",
+        "Offline"
+      ],
+      "sanak": [
+        "Silsilah",
+        "Tujuh Turunan",
+        "PWA"
+      ],
+      "salingbantu": [
+        "Urun Dana",
+        "Tagihan",
+        "Komunitas"
+      ],
+      "masakini": [
+        "Resep",
+        "Stok Dapur",
+        "Offline"
+      ]
+    }
   },
   "opensource": {
     "hero_badge": "Kode Terbuka · Local-First",
     "hero_title_1": "Proyek",
     "hero_title_2": "Open Source",
-    "hero_lead": "Perkakas developer, parser protokol pembayaran, dan utilitas offline-first yang dibuat oleh Akmal, M. dan BaskomLabs. Terbuka, gratis, dan dibuat untuk mengatasi hambatan teknis sehari-hari.",
+    "hero_lead": "Perkakas developer, parser protokol pembayaran, dan utilitas local-first buatan Akmal, M. dan BaskomLabs. Gratis, open source, dan dibikin untuk masalah yang kami temui sehari-hari saat ngoding.",
     "creator_label": "PENGEMBANG UTAMA",
     "creator_name": "Akmal, M.",
     "creator_handle": "@muhakmal",
     "creator_role": "Kreator & Software Engineer di BaskomLabs",
-    "creator_bio": "Mengembangkan penganalisis protokol pembayaran, perkakas dokumentasi offline-first, dan aplikasi utilitas Android yang menjaga privasi. Seluruh kode terbuka dirilis langsung di GitHub.",
+    "creator_bio": "Menulis parser QRIS, buku catatan untuk Confluence, dan beberapa aplikasi Android. Bagian yang open source ada di GitHub.",
     "creator_cta": "Buka Profil GitHub",
     "projects_label": "REPOSITORI UNGGULAN",
     "conote_badge": "Aplikasi Desktop · MIT",
     "conote_title": "CoNote for Confluence",
-    "project_conote_title": "CoNote for Confluence",
-    "conote_desc": "Buku catatan PRD & Markdown lokal untuk Confluence Cloud. Menulis dokumen PRD dan spesifikasi teknis tanpa lag editor secara offline dalam Markdown murni, dilengkapi navigasi pohon hierarki ruang kerja dan sinkronisasi aman ke Confluence.",
-    "project_conote_desc": "Buku catatan PRD & Markdown lokal untuk Confluence Cloud. Menulis dokumen PRD dan spesifikasi teknis tanpa lag editor secara offline dalam Markdown murni, dilengkapi navigasi pohon hierarki ruang kerja dan sinkronisasi aman ke Confluence.",
+    "conote_desc": "Buku catatan PRD dan Markdown local-first untuk Confluence Cloud. PM dan engineer bisa menulis spesifikasi secara offline dalam Markdown biasa, melihat isi space dalam bentuk pohon, lalu mempublikasikannya tanpa menimpa perubahan orang lain.",
     "conote_f1": "Pengeditan lokal & offline dengan file .md murni",
     "conote_f2": "Mode penulisan ganda: WYSIWYG untuk PM, split preview Markdown untuk engineer",
-    "conote_f3": "Navigasi visual pohon hierarki ruang kerja Confluence",
-    "conote_f4": "Sinkronisasi aman dengan pencegahan konflik dan validasi XHTML otomatis",
+    "conote_f3": "Jelajahi space Confluence dalam bentuk pohon",
+    "conote_f4": "Publikasi dengan deteksi konflik dan validasi XHTML otomatis",
     "qris_badge": "Library Python & CLI · MIT",
     "qris_title": "QRIS Parser & Validator",
-    "project_qris_title": "QRIS Parser & Validator",
     "qris_desc": "Library Python dan CLI untuk membaca, memvalidasi, dan membuat QRIS, mengikuti spesifikasi BI/ASPI v1.0 dan EMVCo yang dipublikasikan.",
-    "project_qris_desc": "Library Python kelas produksi, auditor kepatuhan regulasi, generator dinamis, dan CLI tool untuk QRIS yang dibangun patuh terhadap standar Bank Indonesia, ASPI v1.0, dan EMVCo.",
     "qris_f1": "Dekode rekursif TLV (MPM) dan Base64 BER-TLV (CPM CPV01) secara utuh",
-    "qris_f2": "Engine checksum ISO/IEC 13239 CRC-16 dengan saran perbaikan otomatis",
+    "qris_f2": "Engine checksum ISO/IEC 13239 CRC-16 dengan saran perbaikan",
     "qris_f3": "Auditor kepatuhan aturan bisnis ASPI (aturan Static vs. Dynamic, tag wajib)",
-    "qris_f4": "Konverter Static ke Dynamic dengan injeksi nominal & database 100+ bank/e-wallet",
+    "qris_f4": "Konverter statis ke dinamis yang menambahkan nominal, plus daftar NNS 100+ bank dan e-wallet",
     "kue_badge": "Android SDK · Apache 2.0",
     "kue_title": "KUE Reader (Card Reader SDK)",
-    "kue_desc": "SDK Android Kotlin dan transceiver IsoDep APDU mandiri untuk membaca saldo dan riwayat transaksi kartu uang elektronik Indonesia (Mandiri e-money, BCA Flazz, BNI TapCash, BRI Brizzi, JakCard, dan FeliCa). Bersifat strictly read-only dan offline.",
+    "kue_desc": "SDK Android (Kotlin) dengan transceiver IsoDep APDU untuk membaca saldo dan riwayat transaksi kartu uang elektronik Indonesia (Mandiri e-money, BCA Flazz, BNI TapCash, BRI Brizzi, JakCard, dan FeliCa). Hanya membaca (read-only) dan bekerja offline.",
     "kue_f1": "Transceiver IsoDep APDU dengan chaining perintah mentah & parser protokol",
     "kue_f2": "Mendukung multi-penerbit: Mandiri e-money, BCA Flazz, BNI TapCash, BRI Brizzi, JakCard",
-    "kue_f3": "Engine FeliCa (NFC-F) untuk kartu Kartu Multi Trip (KMT) Commuter Line",
-    "kue_f4": "Sepenuhnya lokal & read-only di perangkat: tanpa simpan kunci, tanpa koneksi internet",
+    "kue_f3": "Engine FeliCa (NFC-F) untuk saldo dan riwayat Kartu Multi Trip (KMT) Commuter Line",
+    "kue_f4": "Berjalan di perangkat dan hanya membaca: tidak menyimpan kunci, tanpa koneksi internet",
     "contribute_label": "KOMUNITAS & KONTRIBUSI",
     "contribute_title": "Punya ide atau menemukan edge case?",
-    "contribute_desc": "Setiap pull request, laporan issue, dan diskusi arsitektur sangat disambut. Silakan telusuri kode sumbernya di GitHub, lihat cara kerjanya, dan ikut berkontribusi.",
+    "contribute_desc": "Pull request, laporan bug, dan masukan soal arsitektur kami tunggu. Kode sumbernya ada di GitHub kalau kamu mau lihat cara kerjanya atau ikut berkontribusi.",
     "view_repo": "Buka Repositori",
     "view_github": "Buka Profil GitHub"
   },
@@ -186,7 +230,7 @@
   },
   "footer": {
     "signature": "do code for fun, no.. serious things.",
-    "copyright": "© 2026 BaskomLabs — Bengkel Aplikasi Kompeni.",
+    "copyright": "© 2026 BaskomLabs · Bengkel Aplikasi Kompeni.",
     "privacy": "Privasi",
     "tos": "S&K",
     "legal": "Kebijakan aplikasi",
@@ -220,7 +264,7 @@
     "pembacakue": {
       "eyebrow": "Pembaca kartu uang elektronik NFC",
       "h1": "Cek saldo e-Money, e-Toll & Flazz cukup tempel ke HP",
-      "lead": "PembacaKUE membaca saldo kartu uang elektronik lewat NFC di HP Android Anda. Tempelkan kartu ke bagian belakang HP, saldo langsung muncul. Tanpa login dan tanpa akun bank.",
+      "lead": "PembacaKUE membaca saldo kartu uang elektronik lewat NFC di HP Androidmu. Tempelkan kartu ke bagian belakang HP, saldo langsung muncul. Tanpa login dan tanpa akun bank.",
       "cards_title": "Kartu yang didukung",
       "cards": [
         "Mandiri e-Money & e-Toll",
@@ -244,10 +288,10 @@
         },
         {
           "title": "Kalkulator tarif tol",
-          "desc": "Perkirakan tarif tol sesuai golongan kendaraan Anda sebelum berangkat."
+          "desc": "Perkirakan tarif tol sesuai golongan kendaraanmu sebelum berangkat."
         },
         {
-          "title": "Hanya membaca, data di HP Anda",
+          "title": "Hanya membaca, data tetap di HPmu",
           "desc": "Saldo dan riwayat dibaca dari cip kartu dan disimpan di perangkat. Aplikasi tidak pernah menulis ke kartu atau mengubah saldo."
         },
         {
@@ -256,14 +300,14 @@
         }
       ],
       "howto": [
-        "Pastikan HP Android Anda punya NFC dan NFC sudah dinyalakan di pengaturan HP.",
+        "Pastikan HP Androidmu punya NFC dan NFC sudah dinyalakan di pengaturan HP.",
         "Buka PembacaKUE.",
         "Tempelkan kartu e-Money, e-Toll, Flazz, TapCash, Brizzi atau JakCard ke bagian belakang HP (area NFC) dan tahan sebentar sampai saldo muncul."
       ],
       "faq": [
         {
           "q": "Bisa cek saldo e-Toll pakai HP?",
-          "a": "Bisa, selama HP Anda punya NFC. Kartu Mandiri e-Money/e-Toll didukung, begitu juga BCA Flazz, BNI TapCash, BRI Brizzi dan JakCard."
+          "a": "Bisa, selama HPmu punya NFC. Kartu Mandiri e-Money/e-Toll didukung, begitu juga BCA Flazz, BNI TapCash, BRI Brizzi dan JakCard."
         },
         {
           "q": "HP seperti apa yang bisa dipakai?",

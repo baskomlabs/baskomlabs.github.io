@@ -14,7 +14,7 @@ function ComponentsPage() {
         <div className="document-content">
           <p className="meta">{t('learning.comp_meta')}</p>
           
-          <h3>{t('learning.comp_h3_1')}</h3>
+          <h2>{t('learning.comp_h3_1')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.comp_p1_1') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.comp_p1_2') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.comp_p1_3') }} />
@@ -25,8 +25,8 @@ function ComponentsPage() {
           </ul>
 
           <div className="glass-card" style={{ padding: '2rem', textAlign: 'center', margin: '2rem 0' }}>
-            <div className="pulse-icon" style={{ fontSize: '3rem', marginBottom: '1rem' }}>🤖</div>
-            <h4 style={{ color: 'var(--text-primary)', margin: 0 }}>{t('learning.comp_code_title')}</h4>
+            <div aria-hidden="true" className="pulse-icon" style={{ fontSize: '3rem', marginBottom: '1rem' }}>🤖</div>
+            <h3 style={{ color: 'var(--text-primary)', margin: 0 }}>{t('learning.comp_code_title')}</h3>
             <div style={{ background: 'var(--surface-sunken)', padding: '15px', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85rem', marginTop: '15px', textAlign: 'left' }}>
                 <span style={{ color: 'var(--accent-purple)' }}>{t('learning.comp_code_val')}</span> nfcAdapter = NfcAdapter.getDefaultAdapter(context)<br/>
                 <span style={{ color: 'var(--accent-purple)' }}>{t('learning.comp_code_val')}</span> isoDep = IsoDep.get(tag)<br/>
@@ -36,18 +36,18 @@ function ComponentsPage() {
             </div>
           </div>
 
-          <h3>{t('learning.comp_h3_2')}</h3>
+          <h2>{t('learning.comp_h3_2')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.comp_p2_1') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.comp_p2_2') }} />
 
           <div className="glass-card" style={{ padding: '2rem', textAlign: 'center', margin: '2rem 0' }}>
-            <div className="wave-expand-icon" style={{ fontSize: '3rem', marginBottom: '1rem' }}>💳</div>
-            <h4 style={{ color: 'var(--text-primary)', margin: 0 }}>{t('learning.comp_smartcard')}</h4>
+            <div aria-hidden="true" className="wave-expand-icon" style={{ fontSize: '3rem', marginBottom: '1rem' }}>💳</div>
+            <h3 style={{ color: 'var(--text-primary)', margin: 0 }}>{t('learning.comp_smartcard')}</h3>
             <p style={{ fontSize: '0.9rem', marginTop: '10px' }}>{t('learning.comp_smartcard_desc')}</p>
           </div>
 
           <div className="glass-card" style={{ marginTop: '3rem', textAlign: 'center', borderColor: 'var(--accent-blue)', padding: '2.5rem' }}>
-            <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>{t('learning.comp_congrats')}</h3>
+            <h2 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>{t('learning.comp_congrats')}</h2>
             <p style={{ fontSize: '1.05rem' }} dangerouslySetInnerHTML={{ __html: t('learning.comp_congrats_desc') }} />
           </div>
 

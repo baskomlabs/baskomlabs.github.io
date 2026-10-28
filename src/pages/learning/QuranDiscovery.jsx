@@ -16,25 +16,25 @@ function QuranDiscovery() {
         <div className="document-content">
           <p className="meta">{t('learning.qd_meta')}</p>
 
-          <h3>{t('learning.qd_h3_1')}</h3>
+          <h2>{t('learning.qd_h3_1')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.qd_p1_1') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.qd_p1_2') }} />
 
-          <h3>{t('learning.qd_h3_2')}</h3>
+          <h2>{t('learning.qd_h3_2')}</h2>
           <ol>
             {STEPS.map((k) => (
               <li key={k} dangerouslySetInnerHTML={{ __html: t(`learning.${k}`) }} />
             ))}
           </ol>
 
-          <h3>{t('learning.qd_h3_3')}</h3>
+          <h2>{t('learning.qd_h3_3')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.qd_p3_1') }} />
           <p dangerouslySetInnerHTML={{ __html: t('learning.qd_p3_2') }} />
 
-          <h3>{t('learning.qd_h3_4')}</h3>
+          <h2>{t('learning.qd_h3_4')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.qd_p4_1') }} />
 
-          <h3>{t('learning.qd_h3_5')}</h3>
+          <h2>{t('learning.qd_h3_5')}</h2>
           <p dangerouslySetInnerHTML={{ __html: t('learning.qd_p5_1') }} />
 
           <div style={{ marginTop: '3rem', textAlign: 'right' }}>

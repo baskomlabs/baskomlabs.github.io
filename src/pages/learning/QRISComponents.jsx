@@ -15,7 +15,7 @@ function QRISComponents() {
           <div style={{ marginTop: '2rem' }}>
             <p className="meta">{t('learning.qris_comp_meta')}</p>
             
-            <h3>{t('learning.qris_comp_h3_1')}</h3>
+            <h2>{t('learning.qris_comp_h3_1')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_comp_p1_1') }} />
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_comp_p1_2') }} />
             
@@ -24,11 +24,11 @@ function QRISComponents() {
                 <span style={{ color: 'var(--accent-purple)' }}>val</span> rawData = barcode.rawValue
             </div>
 
-            <h3>{t('learning.qris_comp_h3_2')}</h3>
+            <h2>{t('learning.qris_comp_h3_2')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_comp_p2_1') }} />
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_comp_p2_2') }} />
             
-            <h3>{t('learning.qris_comp_h3_3')}</h3>
+            <h2>{t('learning.qris_comp_h3_3')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_comp_p3_1') }} />
             <p dangerouslySetInnerHTML={{ __html: t('learning.qris_comp_p3_2') }} />
 
@@ -39,7 +39,7 @@ function QRISComponents() {
           </div>
 
           <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-            <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>{t('learning.term_congrats')}</h3>
+            <h2 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>{t('learning.term_congrats')}</h2>
             <p style={{ fontSize: '1.05rem', marginBottom: '2rem' }} dangerouslySetInnerHTML={{ __html: t('learning.term_congrats_desc') }} />
             <Link to="/learning" className="btn btn-primary">
               {t('learning.qris_comp_next_btn')}

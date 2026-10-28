@@ -31,6 +31,7 @@
     --accent-strong: #3f8f35;
     --accent-soft: rgba(78, 158, 63, 0.10);
     --rim: #1a3c88;
+    --rim-hover: #21479e;
     --rim-soft: rgba(26, 60, 136, 0.08);
 
     --shadow-sm: 0 1px 2px rgba(15, 27, 45, 0.05), 0 1px 1px rgba(15, 27, 45, 0.03);
@@ -42,7 +43,7 @@
     --qrstu-ink: #0e7490;
     --pembacakue-ink: #6d28d9;
     --yasintahlil-ink: #047857;
-    --qurandiscovery-ink: #8a6d2f;
+    --qurandiscovery-ink: #7a5f26;
     --hadithdiscovery-ink: #1f4b52;
     --sanak-ink: #263562;
     --salingbantu-ink: #1d6a4a;
@@ -244,6 +245,13 @@ main { flex: 1; }
 }
 .logo-text:hover .logo-mark { transform: translateY(-2px) rotate(-4deg); }
 
+.skip-link {
+    position: absolute; left: 1rem; top: -100px; z-index: 200;
+    padding: 0.6rem 1rem; border-radius: 8px;
+    background: var(--text-primary); color: var(--bg); font-weight: 600;
+}
+.skip-link:focus { top: 0.75rem; }
+#viewport:focus { outline: none; }
 .nav-links { display: flex; gap: 0.25rem; align-items: center; }
 .nav-item {
     font-size: 0.95rem; font-weight: 500;
@@ -392,7 +400,7 @@ main { flex: 1; }
     background: var(--rim-navy);
     box-shadow: 0 8px 20px -8px rgba(26, 60, 136, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
-.btn-solid:hover { background: #21479e; transform: translateY(-1px); }
+.btn-solid:hover { background: var(--rim-hover); transform: translateY(-1px); }
 .btn-ghost {
     color: var(--text-primary);
     background: var(--surface);
@@ -542,7 +550,6 @@ main { flex: 1; }
 .lp-app .product-tags { justify-content: flex-start; }
 .lp-app .playstore-button-container { justify-content: flex-start; gap: 0.9rem; flex-wrap: wrap; margin-top: auto; padding: 1.25rem 0 0; }
 .lp-app .playstore-button { height: 46px; }
-.lp-app .pwa-button { height: 40px; font-size: 0.85rem; }
 
 .lp-apps-more {
     display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem;
@@ -859,7 +866,7 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
     border: 0; cursor: pointer;
     transition: transform 0.2s, background 0.2s;
 }
-.btn-primary:hover { background: #21479e; transform: translateY(-1px); }
+.btn-primary:hover { background: var(--rim-hover); transform: translateY(-1px); }
 .mt-2 { margin-top: 1rem; }
 
 .document-card { max-width: 820px; margin: 0 auto 4rem; }
@@ -873,7 +880,8 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
 }
 .btn-secondary:hover { border-color: var(--border-strong); }
 
-.document-content h3 { font-family: var(--font-heading); color: var(--text-primary); margin: 2rem 0 1rem; }
+.document-content h2, .document-content h3 { font-family: var(--font-heading); color: var(--text-primary); margin: 2rem 0 1rem; }
+.document-content h2 { font-size: 1.35rem; }
 .document-content h4 { color: var(--text-primary); margin: 1.5rem 0 0.5rem; }
 .document-content p, .document-content li { color: var(--text-secondary); margin-bottom: 0.8rem; line-height: 1.75; }
 .document-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
@@ -932,6 +940,9 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
     .lp-app .playstore-button-container { padding-top: 1rem; }
     .footer-grid { grid-template-columns: 1fr; }
 }
+@media (min-width: 601px) and (max-width: 960px) {
+    .lp-apps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 
 @media (max-width: 768px) {
     .container { padding: 0 16px; }
@@ -945,6 +956,12 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
         position: static;
     }
     html { scroll-padding-top: 16px; }
+    /* 44px touch targets on phones */
+    .nav-item, .lang-switcher, .nav-github-link { min-height: 44px; display: inline-flex; align-items: center; }
+    .lang-switcher { min-width: 44px; justify-content: center; }
+    .theme-toggle button { width: 38px; height: 38px; }
+    .lp-link { min-height: 44px; display: inline-flex; align-items: center; }
+    .footer-app-links a, .footer-brand-links a { display: inline-block; padding: 0.6rem 0.2rem; }
     .site-nav { height: auto; padding: 0.75rem 0; flex-wrap: wrap; row-gap: 0.5rem; }
     .nav-links { order: 3; width: 100%; justify-content: flex-start; margin-left: -0.6rem; }
     .nav-item { padding: 0.35rem 0.6rem; font-size: 0.9rem; }
@@ -963,7 +980,7 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
     .lp-suite { padding: 1.4rem; gap: 1.25rem; }
     .ri-bar { flex-direction: column; align-items: stretch; gap: 0.4rem; }
     .ri-open { align-self: flex-end; padding: 0 0.25rem; }
-    .ri-frame { height: 520px; }
+    .ri-frame { height: min(420px, 60vh); }
     .lp-app, .lp-tech-card { padding: 1.4rem; }
     .lp-origin { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; justify-items: center; text-align: center; }
     .lp-origin-mark { width: 132px; height: 132px; }
@@ -997,7 +1014,7 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
 }
 
 @media (max-width: 380px) {
-    .theme-toggle button { width: 26px; height: 26px; }
+    .theme-toggle button { width: 34px; height: 34px; /* still above the 24px WCAG 2.2 minimum, fits one row */ }
     .logo-word { font-size: 1.1rem; }
 }
 
@@ -1580,7 +1597,7 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
     border-radius: var(--radius-sm);
     transition: transform 0.2s ease, background 0.2s ease;
 }
-.talk-zip:hover { background: #21479e; transform: translateY(-1px); }
+.talk-zip:hover { background: var(--rim-hover); transform: translateY(-1px); }
 .talk-zip svg { width: 26px; height: 26px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .talk-zip span { display: grid; gap: 0.15rem; }
 .talk-zip small { opacity: 0.8; font-size: 0.85rem; }
@@ -1660,7 +1677,7 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
 .app-howto { padding-left: 1.25rem; line-height: 1.8; color: var(--text-secondary); }
 .app-faq details { border-bottom: 1px solid var(--border-subtle); padding: 0.9rem 0; }
 .app-faq summary { cursor: pointer; list-style-position: outside; }
-.app-faq summary h3 { display: inline; font-size: 1.02rem; }
+.app-faq summary { font-family: var(--font-heading); font-weight: 700; font-size: 1.02rem; }
 .app-faq details p { margin: 0.6rem 0 0; color: var(--text-secondary); line-height: 1.7; }
 .app-learn { list-style: none; padding: 0; display: grid; gap: 0.6rem; }
 .app-final { text-align: center; }

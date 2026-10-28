@@ -7,7 +7,7 @@ const PROJECTS = [
     descKey: 'opensource.conote_desc',
     badgeKey: 'opensource.conote_badge',
     repoUrl: 'https://github.com/muhakmal/conote-for-confluence',
-    glyph: '📝',
+    glyph: '#md',
     features: [
       'opensource.conote_f1',
       'opensource.conote_f2',
@@ -72,6 +72,8 @@ function OpenSource() {
           <div className="oss-avatar-wrap">
             <img
               src="/akmal.png"
+              width="72"
+              height="72"
               alt="Akmal, M."
               className="oss-avatar"
               onError={(e) => {

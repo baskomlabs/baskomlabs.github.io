@@ -31,7 +31,7 @@ function QRISTerminology() {
             </div>
 
             <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-                <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>{t('learning.term_congrats')}</h3>
+                <h2 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>{t('learning.term_congrats')}</h2>
                 <p style={{ fontSize: '1.05rem', marginBottom: '2rem' }} dangerouslySetInnerHTML={{ __html: t('learning.term_congrats_desc') }} />
                 <Link to="/learning" className="btn btn-primary">
                 {t('learning.qris_term_next_btn')}
