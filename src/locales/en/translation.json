@@ -357,6 +357,14 @@
           "desc": "Decode static and dynamic QRIS MPM and CPM payloads. Validate against EMVCo/QRIS rules, fix a broken CRC, and turn a static QR into a dynamic one."
         },
         {
+          "title": "QRIS collection: save now, pay later",
+          "desc": "Save the QRIS of your regular stalls, shops or mosque, then open it straight in your payment app with the Pay button whenever you like."
+        },
+        {
+          "title": "QRIS cards",
+          "desc": "Make a QRIS card with a set amount that is ready to print, save to your gallery or share."
+        },
+        {
           "title": "Searchable history",
           "desc": "Every scan is saved with date, merchant, city and amount. Search, filter by MPM, CPM, NFC Tap or compliance, and export to CSV or JSON."
         },
@@ -392,12 +400,16 @@
           "a": "No. QRSTU only reads and explains QRIS codes. It does not make payments or move money."
         },
         {
+          "q": "Is the Top Scanners board fair?",
+          "a": "Yes. Rapid back-to-back scans don't add to the score, and the Supporter badge is verified so it can't be faked."
+        },
+        {
           "q": "Do I have to sign in?",
           "a": "No. As a guest your history stays on the device. Signing in is for backing your history up to the cloud."
         },
         {
           "q": "Is it free?",
-          "a": "Every feature is free with ads. Premium removes all ads and adds a badge next to your name on the leaderboard."
+          "a": "Every feature works with ads. Premium removes all ads and adds a Supporter badge on the Top Scanners."
         }
       ],
       "learn": [
