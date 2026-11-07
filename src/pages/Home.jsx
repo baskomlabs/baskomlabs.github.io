@@ -55,8 +55,10 @@ const APPS = [
     name: 'Sanak',
     theme: 'sanak',
     descKey: 'home.sanak_desc',
+    url: playInstallUrl('fun.baskom.sanak', 'home'),
+    webUrl: 'https://sanak-byp.pages.dev/?utm_source=baskom.fun&utm_medium=website&utm_campaign=home',
     icon: '/apps/sanak.png',
-    soon: true,
+    isNew: true,
   },
   {
     name: 'SalingBantu',
@@ -176,7 +178,7 @@ function Home({ scrollToContact }) {
                   <span key={tag} className={`tag tag-${app.theme}`}>{tag}</span>
                 ))}
               </div>
-              <PlayStoreButton url={app.url} appName={app.name} pending={PENDING.has(app.name)} soon={app.soon} />
+              <PlayStoreButton url={app.url} webUrl={app.webUrl} isNew={app.isNew} appName={app.name} pending={PENDING.has(app.name)} soon={app.soon} />
               {app.slug && (
                 <Link to={appPagePath(app.slug, i18n.language === 'en' ? 'en' : 'id')} className="lp-link">
                   {t('home.app_details')}

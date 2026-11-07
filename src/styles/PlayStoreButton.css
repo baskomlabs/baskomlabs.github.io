@@ -82,3 +82,11 @@
   fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round;
 }
 .playstore-pending-note { flex-basis: 100%; }
+
+/* A live PWA link: same shape as the soon pill, but solid and clickable. */
+.web-pill {
+  border-style: solid;
+  color: var(--text-primary, inherit);
+  text-decoration: none;
+}
+.web-pill:hover { border-color: currentColor; }
