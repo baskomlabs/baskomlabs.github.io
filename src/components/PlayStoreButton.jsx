@@ -6,7 +6,8 @@ import '../styles/PlayStoreButton.css';
 // link to yet. The badge shows greyed out and inert, with a note under it.
 // `soon`: not submitted anywhere yet. Plain outline pills instead of the official
 // badge, which Google's badge rules reserve for links to a real listing.
-const PlayStoreButton = ({ url, appName, pending = false, soon = false }) => {
+// `webUrl`: the app also runs as a PWA; shown as a second link next to the badge.
+const PlayStoreButton = ({ url, webUrl, appName, pending = false, soon = false, isNew = false }) => {
   const { t } = useTranslation();
 
   if (soon) {
@@ -52,6 +53,13 @@ const PlayStoreButton = ({ url, appName, pending = false, soon = false }) => {
           alt={`Get ${appName} on Google Play`}
         />
       </a>
+      {webUrl && (
+        <a href={webUrl} className="soon-pill web-pill" target="_blank" rel="noopener noreferrer" aria-label={`${appName}: ${t('home.pwa_button')}`}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg>
+          {t('home.pwa_button')}
+        </a>
+      )}
+      {isNew && <span className="playstore-pending-note">{t('home.new_release')}</span>}
     </div>
   );
 };

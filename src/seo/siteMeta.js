@@ -93,6 +93,14 @@ export const APPS = [
     category: 'ReferenceApplication',
     desc: 'Paste a hadith to see which book and number it comes from, with grading quoted from named scholars.',
   },
+  {
+    name: 'Sanak',
+    short: 'Sanak',
+    playId: 'fun.baskom.sanak',
+    icon: '/apps/sanak.png',
+    category: 'LifestyleApplication',
+    desc: 'Build your family tree up to seven generations, with kinship terms worked out for you. On Android and as a web app.',
+  },
 ];
 
 /** The bare listing URL. Used in structured data, where it identifies the app. */
