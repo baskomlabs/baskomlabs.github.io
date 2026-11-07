@@ -47,14 +47,14 @@ export const APPS = [
     playId: 'com.baskom.qrisparser',
     slug: 'qrstu',
     icon: '/apps/qrstu.png',
-    // Exported from the app repo's fastlane phoneScreenshots (540x960 WebP).
+    // Exported from the app repo's fastlane phoneScreenshots (540x960 WebP, demo data only).
     screenshots: {
-      id: [1, 2, 3, 4, 5, 6].map((n) => `/apps/qrstu/screen-id-${n}.webp`),
-      en: [1, 2, 3, 4, 5, 6].map((n) => `/apps/qrstu/screen-en-${n}.webp`),
+      id: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `/apps/qrstu/screen-id-${n}.webp`),
+      en: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `/apps/qrstu/screen-en-${n}.webp`),
     },
     privacy: '/privacy-policy',
     category: 'FinanceApplication',
-    desc: 'Scan a QRIS code, unpack what is inside it (merchant, city, category, TLV fields) and learn how it works.',
+    desc: 'Scan a QRIS code and check the merchant, city and amount before you pay, save codes to pay later and make printable QRIS cards.',
   },
   {
     name: 'PembacaKUE',
@@ -246,9 +246,9 @@ export const ROUTES = [
     title_id: `QRSTU: Scan & Cek QRIS, Baca QRIS Tap NFC${L}`,
     title_en: `QRSTU: QRIS Scanner & Reader, QRIS Tap over NFC${L}`,
     desc_id:
-      'Scan QRIS dari kamera atau galeri, lihat nama merchant, kota, nominal dan setiap tag EMVCo sebelum bayar. Baca QRIS MPM, CPM dan QRIS Tap (NFC). Gratis di Google Play.',
+      'Scan QRIS dari kamera atau galeri dan cek nama merchant, kota, serta nominal sebelum bayar. Simpan QRIS untuk bayar nanti, buat kartu QRIS, dan baca QRIS Tap (NFC).',
     desc_en:
-      'Scan a QRIS from the camera or gallery and see the merchant, city, amount and every EMVCo tag before you pay. Reads QRIS MPM, CPM and QRIS Tap over NFC. Free on Google Play.',
+      'Scan a QRIS from the camera or gallery and check the merchant, city and amount before you pay. Save codes to pay later, make QRIS cards and read QRIS Tap over NFC.',
     ogImageAlt: 'QRSTU — scan dan cek isi kode QRIS',
   }),
 

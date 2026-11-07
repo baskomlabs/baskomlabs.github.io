@@ -357,6 +357,14 @@
           "desc": "Bedah QRIS MPM statis dan dinamis serta CPM. Validasi sesuai aturan EMVCo/QRIS, perbaiki CRC yang rusak, dan ubah QR statis menjadi dinamis."
         },
         {
+          "title": "Koleksi QRIS: simpan, bayar nanti",
+          "desc": "Simpan QRIS warung, toko, atau masjid langganan, lalu buka langsung di aplikasi pembayaranmu lewat tombol Pay kapan saja."
+        },
+        {
+          "title": "Kartu QRIS",
+          "desc": "Buat kartu QRIS dengan nominal tertentu yang siap dicetak, disimpan ke galeri, atau dibagikan."
+        },
+        {
           "title": "Riwayat yang bisa dicari",
           "desc": "Setiap scan tersimpan dengan tanggal, merchant, kota dan nominal. Cari, filter MPM, CPM, NFC Tap atau kepatuhan, lalu ekspor ke CSV atau JSON."
         },
@@ -392,12 +400,16 @@
           "a": "Tidak. QRSTU hanya membaca dan menjelaskan kode QRIS, tidak melakukan pembayaran atau memindahkan dana."
         },
         {
+          "q": "Apakah Top Scanner adil?",
+          "a": "Ya. Scan beruntun yang terlalu cepat tidak menambah skor, dan lencana Supporter diverifikasi sehingga tidak bisa diakali."
+        },
+        {
           "q": "Harus login?",
           "a": "Tidak. Sebagai tamu, riwayat tersimpan di perangkat. Login dipakai untuk backup riwayat ke cloud."
         },
         {
           "q": "Apakah gratis?",
-          "a": "Semua fitur gratis dengan iklan. Premium menghapus semua iklan dan menambahkan lencana di samping namamu pada leaderboard."
+          "a": "Semua fitur bisa dipakai dengan iklan. Premium menghapus semua iklan dan menambahkan lencana Supporter di Top Scanner."
         }
       ],
       "learn": [
