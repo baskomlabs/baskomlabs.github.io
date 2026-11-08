@@ -127,7 +127,11 @@
         "Stok Dapur",
         "Offline"
       ]
-    }
+    },
+    "more_label": "DI LUAR APLIKASI",
+    "more_title": "Ngoprek, ngajar, dan buka kode.",
+    "new_badge": "Baru!",
+    "soon_badge": "Segera"
   },
   "opensource": {
     "hero_badge": "Kode Terbuka · Local-First",

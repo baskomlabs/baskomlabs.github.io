@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en" data-resolution="square">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #5ce1e6;
+        --ink: #0b0b0f;
+        --grid: rgba(11, 11, 15, 0.13);
+        --bowl: #7ccb52;
+        --rim: #1a3c88;
+        --prompt: #0e2a5e;
+        --pink: #ff9ecf;
+        --lilac: #b8a4ff;
+        --yellow: #ffd23f;
+        --mono: "JetBrains Mono", monospace;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--ground);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-family: var(--mono);
+      }
+      #stage {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background-color: var(--ground);
+        /* hard 2px grid lines every 72px (flat, no soft gradient) */
+        background-image:
+          linear-gradient(to right, var(--grid) 0 2px, transparent 2px 72px),
+          linear-gradient(to bottom, var(--grid) 0 2px, transparent 2px 72px);
+        background-size: 72px 72px;
+        background-position: 3px 3px;
+      }
+      #bowl-shadow {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 470px;
+        height: 48px;
+        z-index: 1;
+      }
+      #bowl-wrap {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 670px;
+        height: 400px;
+        z-index: 3;
+        transform-origin: 50% 98%;
+      }
+      #bowl-wrap svg {
+        display: block;
+        width: 670px;
+        height: 400px;
+        overflow: visible;
+      }
+      .steam {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 4;
+        padding: 10px 22px;
+        background: #ffffff;
+        border: 3px solid var(--ink);
+        box-shadow: 5px 5px 0 var(--ink);
+        font-family: var(--mono);
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 1;
+        color: var(--ink);
+        white-space: nowrap;
+        opacity: 0;
+      }
+      .sticker {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 22px 14px 18px;
+        border: 3px solid var(--ink);
+        box-shadow: 5px 5px 0 var(--ink);
+        font-family: var(--mono);
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 1;
+        color: var(--ink);
+        white-space: nowrap;
+        opacity: 0;
+      }
+      .sticker svg {
+        width: 34px;
+        height: 34px;
+        flex: none;
+      }
+      #st-qrstu { background: var(--pink); }
+      #st-pembaca { background: var(--lilac); }
+      #st-sanak { background: var(--yellow); }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="6"
+      data-width="1080"
+      data-height="1080"
+    >
+      <div id="stage" class="clip" data-start="0" data-duration="6" data-track-index="0" data-layout-allow-overflow>
+        <svg id="bowl-shadow" viewBox="0 0 140 14" aria-hidden="true">
+          <ellipse cx="70" cy="7" rx="70" ry="7" fill="#0b0b0f" opacity=".25" />
+        </svg>
+
+        <div id="steam-0" class="steam">{ }</div>
+        <div id="steam-1" class="steam">;</div>
+        <div id="steam-2" class="steam">&lt;/&gt;</div>
+        <div id="steam-3" class="steam">( )</div>
+        <div id="steam-4" class="steam">&gt;_</div>
+
+        <div id="bowl-wrap">
+          <svg viewBox="0 0 200 119.4" aria-hidden="true">
+            <path d="M14 38h172l-22 72a12 12 0 0 1-11 8H47a12 12 0 0 1-11-8z" fill="#7ccb52" stroke="#0b0b0f" stroke-width="5" stroke-linejoin="round" />
+            <path d="M52 50c6 18-2 34 4 58M92 46c-4 22 6 40 0 66M134 50c4 16-4 30 2 54M162 48c-2 10 2 18-2 30" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" />
+            <ellipse cx="100" cy="36" rx="90" ry="20" fill="#fff" stroke="#0b0b0f" stroke-width="5" />
+            <ellipse cx="100" cy="36" rx="90" ry="20" fill="none" stroke="#1a3c88" stroke-width="9" />
+            <ellipse cx="100" cy="36" rx="95" ry="24" fill="none" stroke="#0b0b0f" stroke-width="3" />
+            <text x="100" y="45" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="24" fill="#0e2a5e">&gt;<tspan id="cursor">_</tspan></text>
+          </svg>
+        </div>
+
+        <div id="st-qrstu" class="sticker">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" fill="none" stroke="#0b0b0f" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" /></svg>
+          <span>QRSTU</span>
+        </div>
+        <div id="st-pembaca" class="sticker">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" fill="none" stroke="#0b0b0f" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" /></svg>
+          <span>PembacaKUE</span>
+        </div>
+        <div id="st-sanak" class="sticker">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" fill="none" stroke="#0b0b0f" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" /></svg>
+          <span>Sanak</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Seamless 6 s loop: every value below is a periodic function of t (period 6 s),
+      // so the frame at t = 6 is identical to the frame at t = 0.
+      const LOOP = 6;
+      const TAU = Math.PI * 2;
+      const W = 1080;
+
+      // Bowl geometry (670 px wide SVG, centred, bottom near y = 960).
+      const BOWL_W = 670, BOWL_H = 400;
+      const BOWL_X = (W - BOWL_W) / 2;
+      const BOWL_Y = 520;
+      const RIM_Y = BOWL_Y + 36 * (BOWL_W / 200); // rim centre line in frame px
+
+      const backOut = gsap.parseEase("back.out(2.2)");
+      const pow3in = gsap.parseEase("power3.in");
+      const sineInOut = gsap.parseEase("sine.inOut");
+      const wrap = (v) => ((v % LOOP) + LOOP) % LOOP;
+
+      // Steam chips: each rises for LIFE seconds, staggered evenly so the cycle wraps.
+      const LIFE = 3.6;
+      const steam = [
+        { id: "#steam-0", drift: -150, rot: -14, wob: 18, w: 0 },
+        { id: "#steam-1", drift: 120, rot: 12, wob: 14, w: 0 },
+        { id: "#steam-2", drift: -60, rot: 9, wob: 22, w: 0 },
+        { id: "#steam-3", drift: 170, rot: -10, wob: 16, w: 0 },
+        { id: "#steam-4", drift: 40, rot: -6, wob: 20, w: 0 },
+      ].map((c, i) => ({ ...c, offset: (i * LOOP) / 5, el: document.querySelector(c.id) }));
+      steam.forEach((c) => {
+        c.w = c.el.offsetWidth;
+        c.h = c.el.offsetHeight;
+      });
+
+      // App stickers: pop in with a springy back-out, hold with a small wiggle, pop out.
+      // Windows are on a 6 s ring (Sanak wraps across the loop seam).
+      const SHOW = 3.6, IN = 0.45, OUT = 0.22;
+      const stickers = [
+        { id: "#st-qrstu", cx: 270, cy: 230, rot: -6, start: 0.3 },
+        { id: "#st-pembaca", cx: 790, cy: 360, rot: 3, start: 2.3 },
+        { id: "#st-sanak", cx: 230, cy: 470, rot: 5, start: 4.3 },
+      ].map((s) => ({ ...s, el: document.querySelector(s.id) }));
+      stickers.forEach((s) => {
+        s.w = s.el.offsetWidth;
+        s.h = s.el.offsetHeight;
+      });
+
+      const bowl = document.querySelector("#bowl-wrap");
+      const shadow = document.querySelector("#bowl-shadow");
+      const cursor = document.querySelector("#cursor");
+
+      function render(t) {
+        t = wrap(t);
+        const ph = t / LOOP; // 0..1 loop phase
+
+        // Bowl: rock ±3° (2 full periods), bob 8 px (3 full periods).
+        const rock = 3 * Math.sin(TAU * 2 * ph);
+        const bob = -8 * (0.5 - 0.5 * Math.cos(TAU * 3 * ph));
+        gsap.set(bowl, { x: BOWL_X, y: BOWL_Y + bob, rotation: rock });
+        const sh = 1 + bob / 160; // shadow shrinks as bowl lifts
+        gsap.set(shadow, { x: (W - 470) / 2, y: 902, scaleX: sh, scaleY: sh });
+        // Prompt cursor blinks every 0.5 s (6 full periods).
+        cursor.setAttribute("opacity", Math.floor(t * 2) % 2 === 0 ? 1 : 0);
+
+        // Steam chips.
+        for (const c of steam) {
+          const age = wrap(t - c.offset);
+          if (age >= LIFE) {
+            gsap.set(c.el, { opacity: 0 });
+            continue;
+          }
+          const p = age / LIFE;
+          const rise = gsap.parseEase("power1.out")(p);
+          const y = RIM_Y + 10 - rise * 560 + bob;
+          const x = W / 2 + c.drift * p + c.wob * Math.sin(TAU * p * 1.5);
+          const scale = p < 0.16 ? backOut(p / 0.16) : 1;
+          const op = p < 0.004 ? 0 : p > 0.82 ? 1 - (p - 0.82) / 0.18 : 1;
+          gsap.set(c.el, {
+            x: x - c.w / 2,
+            y: y - c.h / 2,
+            rotation: c.rot * p,
+            scale,
+            opacity: op,
+          });
+        }
+
+        // Stickers.
+        for (const s of stickers) {
+          const age = wrap(t - s.start);
+          let scale = 0;
+          if (age < IN) scale = backOut(age / IN);
+          else if (age < SHOW - OUT) scale = 1;
+          else if (age < SHOW) scale = 1 - pow3in((age - (SHOW - OUT)) / OUT);
+          const wiggle = 1.5 * Math.sin(TAU * 3 * ph + s.cx);
+          gsap.set(s.el, {
+            x: s.cx - s.w / 2,
+            y: s.cy - s.h / 2,
+            rotation: s.rot + wiggle,
+            scale,
+            opacity: scale > 0.001 ? 1 : 0,
+          });
+        }
+      }
+
+      const clock = { t: 0 };
+      const tl = gsap.timeline({ paused: true });
+      tl.to(clock, {
+        t: LOOP,
+        duration: LOOP,
+        ease: "none",
+        onUpdate: () => render(clock.t),
+      }, 0);
+      render(0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
