@@ -127,7 +127,11 @@
         "Pantry",
         "Offline"
       ]
-    }
+    },
+    "more_label": "BEYOND THE APPS",
+    "more_title": "Tinkering, teaching, and open code.",
+    "new_badge": "New!",
+    "soon_badge": "Soon"
   },
   "opensource": {
     "hero_badge": "Public Code · Local-First",
