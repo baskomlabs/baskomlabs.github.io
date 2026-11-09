@@ -1,5 +1,12 @@
 # Baskom — Brand Kit
 
+> **2026-11 refresh (soft brutalism).** The mark is now drawn flat to match baskom.fun:
+> green `#b4d07a` body, white interior, navy `#27427a` rim, `#26231e` outline, on teal `#9fd3cd`.
+> Current sources: `baskom-mark-flat.svg` (Play developer icon, full bleed, Play masks it to a circle),
+> `favicon.svg` (same mark on a rounded tile), `baskom-dev-header.html` (Play header, render in
+> headless Chrome at 2048x1152, device scale 2, to `baskom-dev-header-4096x2304.jpg`).
+> The textured glossy SVGs below are the previous generation and kept for reference.
+
 Visual identity for the Google Play developer page and baskomlabs.github.io.
 Everything here is generated from the SVG sources in this folder; the PNG/JPG files are build output.
 
