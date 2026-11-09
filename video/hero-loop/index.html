@@ -6,15 +6,15 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
     <style>
       :root {
-        --ground: #5ce1e6;
-        --ink: #0b0b0f;
-        --grid: rgba(11, 11, 15, 0.13);
-        --bowl: #7ccb52;
-        --rim: #1a3c88;
+        --ground: #9fd3cd;
+        --ink: #26231e;
+        --grid: rgba(38, 35, 30, 0.08);
+        --bowl: #b4d07a;
+        --rim: #27427a;
         --prompt: #0e2a5e;
-        --pink: #ff9ecf;
-        --lilac: #b8a4ff;
-        --yellow: #ffd23f;
+        --pink: #eebbc6;
+        --lilac: #c7bbea;
+        --yellow: #f1d27a;
         --mono: "JetBrains Mono", monospace;
       }
       * {
@@ -79,7 +79,8 @@
         padding: 10px 22px;
         background: #ffffff;
         border: 3px solid var(--ink);
-        box-shadow: 5px 5px 0 var(--ink);
+        box-shadow: 0 5px 0 var(--ink);
+        border-radius: 16px;
         font-family: var(--mono);
         font-weight: 700;
         font-size: 44px;
@@ -98,7 +99,8 @@
         gap: 12px;
         padding: 14px 22px 14px 18px;
         border: 3px solid var(--ink);
-        box-shadow: 5px 5px 0 var(--ink);
+        box-shadow: 0 5px 0 var(--ink);
+        border-radius: 999px;
         font-family: var(--mono);
         font-weight: 700;
         font-size: 38px;
@@ -128,7 +130,7 @@
     >
       <div id="stage" class="clip" data-start="0" data-duration="6" data-track-index="0" data-layout-allow-overflow>
         <svg id="bowl-shadow" viewBox="0 0 140 14" aria-hidden="true">
-          <ellipse cx="70" cy="7" rx="70" ry="7" fill="#0b0b0f" opacity=".25" />
+          <ellipse cx="70" cy="7" rx="70" ry="7" fill="#26231e" opacity=".25" />
         </svg>
 
         <div id="steam-0" class="steam">{ }</div>
@@ -139,25 +141,25 @@
 
         <div id="bowl-wrap">
           <svg viewBox="0 0 200 119.4" aria-hidden="true">
-            <path d="M14 38h172l-22 72a12 12 0 0 1-11 8H47a12 12 0 0 1-11-8z" fill="#7ccb52" stroke="#0b0b0f" stroke-width="5" stroke-linejoin="round" />
+            <path d="M14 38h172l-22 72a12 12 0 0 1-11 8H47a12 12 0 0 1-11-8z" fill="#b4d07a" stroke="#26231e" stroke-width="5" stroke-linejoin="round" />
             <path d="M52 50c6 18-2 34 4 58M92 46c-4 22 6 40 0 66M134 50c4 16-4 30 2 54M162 48c-2 10 2 18-2 30" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" />
-            <ellipse cx="100" cy="36" rx="90" ry="20" fill="#fff" stroke="#0b0b0f" stroke-width="5" />
-            <ellipse cx="100" cy="36" rx="90" ry="20" fill="none" stroke="#1a3c88" stroke-width="9" />
-            <ellipse cx="100" cy="36" rx="95" ry="24" fill="none" stroke="#0b0b0f" stroke-width="3" />
+            <ellipse cx="100" cy="36" rx="90" ry="20" fill="#fff" stroke="#26231e" stroke-width="5" />
+            <ellipse cx="100" cy="36" rx="90" ry="20" fill="none" stroke="#27427a" stroke-width="9" />
+            <ellipse cx="100" cy="36" rx="95" ry="24" fill="none" stroke="#26231e" stroke-width="3" />
             <text x="100" y="45" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="24" fill="#0e2a5e">&gt;<tspan id="cursor">_</tspan></text>
           </svg>
         </div>
 
         <div id="st-qrstu" class="sticker">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" fill="none" stroke="#0b0b0f" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" /></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" fill="none" stroke="#26231e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /></svg>
           <span>QRSTU</span>
         </div>
         <div id="st-pembaca" class="sticker">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" fill="none" stroke="#0b0b0f" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" /></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" fill="none" stroke="#26231e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /></svg>
           <span>PembacaKUE</span>
         </div>
         <div id="st-sanak" class="sticker">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" fill="none" stroke="#0b0b0f" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" /></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" fill="none" stroke="#26231e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /></svg>
           <span>Sanak</span>
         </div>
       </div>

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const STORAGE_KEY = 'baskom-theme';
-const THEME_COLORS = { light: '#fff4e0', dark: '#121216' };
+const THEME_COLORS = { light: '#f7f1e4', dark: '#1b1a17' };
 
 function readSaved() {
   try {
