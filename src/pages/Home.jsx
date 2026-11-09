@@ -313,6 +313,7 @@ function Home({ scrollToContact }) {
         <div className="lp-contact reveal-on-scroll">
           <h2>{t('home.contact_title')}</h2>
           <div>
+            <p className="lp-contact-lead">{t('home.contact_custom')}</p>
             <p>{t('home.contact_desc')}</p>
             <a href="mailto:baskomdevs@gmail.com" className="btn-solid">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" /><path d="m3 7 9 6 9-6" /></svg>

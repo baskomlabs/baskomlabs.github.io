@@ -617,6 +617,8 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
     line-height: 0.95; letter-spacing: -0.025em;
 }
 .lp-contact p { font-size: 1.08rem; line-height: 1.65; margin-bottom: 1.4rem; }
+.lp-contact p.lp-contact-lead { font-size: 1.15rem; font-weight: 500; margin-bottom: 1rem; }
+.lp-contact p.lp-contact-lead + p { font-size: 0.98rem; }
 .lp-contact .btn-solid { border-color: var(--ink); box-shadow: 0 3px 0 var(--ink); }
 .lp-contact :focus-visible { outline-color: var(--ink); }
 
