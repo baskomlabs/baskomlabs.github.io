@@ -124,7 +124,6 @@ function OpenSource() {
       {/* ---------- FEATURED REPOSITORIES GRID ---------- */}
       <section className="oss-projects-section">
         <div className="lp-eyebrow reveal-on-scroll">
-          <span>01</span>
           {t('opensource.projects_label')}
         </div>
 
@@ -184,7 +183,6 @@ function OpenSource() {
         <div className="oss-contribute-card">
           <div className="oss-contribute-copy">
             <div className="lp-eyebrow">
-              <span>02</span>
               {t('opensource.contribute_label')}
             </div>
             <h2>{t('opensource.contribute_title')}</h2>

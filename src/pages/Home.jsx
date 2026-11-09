@@ -86,10 +86,10 @@ const TECH = [
 
 const ARROW = <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 
-function SectionHead({ index, label, title }) {
+function SectionHead({ label, title }) {
   return (
     <div className="lp-section-head reveal-on-scroll">
-      <div className="lp-eyebrow"><span>{index}</span>{label}</div>
+      <div className="lp-eyebrow">{label}</div>
       {title && <h2 className="lp-section-title">{title}</h2>}
     </div>
   );
@@ -139,8 +139,6 @@ function Home({ scrollToContact }) {
     }
   }, [scrollToContact]);
 
-  const marquee = APPS.map((a) => a.name);
-
   return (
     <div className="lp">
       {/* ---------- HERO ---------- */}
@@ -173,15 +171,10 @@ function Home({ scrollToContact }) {
         <HeroLoop />
       </section>
 
-      <div className="nb-marquee" aria-hidden="true">
-        <div className="nb-marquee-track">
-          {[...marquee, ...marquee].map((name, i) => <span key={i}>{name}</span>)}
-        </div>
-      </div>
 
       {/* ---------- APPS ---------- */}
       <section id="apps" className="lp-section">
-        <SectionHead index="01" label={t('home.featured_projects')} title={t('home.apps_title')} />
+        <SectionHead label={t('home.featured_projects')} title={t('home.apps_title')} />
 
         <div className="lp-apps reveal-on-scroll">
           {APPS.map((app) => (
@@ -222,7 +215,7 @@ function Home({ scrollToContact }) {
 
       {/* ---------- RUANG ILMU ---------- */}
       <section id="ruang-ilmu" className="lp-section">
-        <SectionHead index="02" label={t('home.ruang_label')} title={t('home.ruang_title')} />
+        <SectionHead label={t('home.ruang_label')} title={t('home.ruang_title')} />
         <p className="lp-section-lead reveal-on-scroll">{t('home.ruang_desc')}</p>
         <div className="reveal-on-scroll">
           <RuangIlmu />
@@ -231,7 +224,7 @@ function Home({ scrollToContact }) {
 
       {/* ---------- BEYOND THE APPS: talks, name, tech, tools, open source ---------- */}
       <section className="lp-section">
-        <SectionHead index="03" label={t('home.more_label')} title={t('home.more_title')} />
+        <SectionHead label={t('home.more_label')} title={t('home.more_title')} />
 
         <div className="nb-bento">
           <article id="talks" className="nb-tile nb-span-4 lp-talk reveal-on-scroll">

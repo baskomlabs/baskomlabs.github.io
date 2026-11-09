@@ -1,6 +1,7 @@
 /* =========================================================================
-   BaskomLabs — design tokens (neo-brutalism, 2026-11)
-   Flat pop colours, hard black outlines, offset shadows with no blur.
+   BaskomLabs — design tokens (soft brutalism, 2026-11)
+   Warm paper, 2px ink outlines, rounded corners, a short hard shadow that
+   only drops downward. Colours are muted enamel/sticker tones, not neon.
    The pops come off the baskom mark (brand/BRAND.md): enamel green, navy rim,
    white interior; yellow/coral/pink/cyan/lilac are the sticker colours.
 
@@ -14,25 +15,25 @@
     color-scheme: light;
 
     /* the outline/shadow colour; flips to cream in dark mode */
-    --line: #0b0b0f;
-    --bw: 3px;
-    --sh-sm: 3px 3px 0 var(--line);
-    --sh: 6px 6px 0 var(--line);
-    --sh-lg: 9px 9px 0 var(--line);
+    --line: #26231e;
+    --bw: 2px;
+    --sh-sm: 0 2px 0 var(--line);
+    --sh: 0 4px 0 var(--line);
+    --sh-lg: 0 5px 0 var(--line);
 
-    --bg: #fff4e0;
-    --dot: rgba(11, 11, 15, 0.13);
+    --bg: #f7f1e4;
+    --dot: rgba(38, 35, 30, 0.09);
     --surface: #ffffff;
-    --surface-muted: #fffaf0;
-    --surface-sunken: #ffecc7;
-    --code-bg: #ffecc7;
+    --surface-muted: #fcf8ef;
+    --surface-sunken: #efe6d2;
+    --code-bg: #efe6d2;
     --border-subtle: var(--line);
     --border-strong: var(--line);
     --nav-bg: var(--bg);
 
-    --text-primary: #0b0b0f;
-    --text-secondary: #2f2f37;
-    --text-muted: #4a4a53;
+    --text-primary: #26231e;
+    --text-secondary: #3d3a33;
+    --text-muted: #5c584f;
 
     /* brand accents used as text, tuned per theme for contrast */
     --accent: #2a5d24;
@@ -65,19 +66,19 @@
     --steam-green: var(--accent);
 
     /* fixed colours — identical in both themes; text on them is always --ink */
-    --ink: #0b0b0f;
-    --pop-green: #7ccb52;
-    --pop-yellow: #ffd23f;
-    --pop-coral: #ff6b5b;
-    --pop-pink: #ff9ecf;
-    --pop-cyan: #5ce1e6;
-    --pop-lilac: #b8a4ff;
+    --ink: #26231e;
+    --pop-green: #b4d07a;
+    --pop-yellow: #f1d27a;
+    --pop-coral: #e8957a;
+    --pop-pink: #eebbc6;
+    --pop-cyan: #9fd3cd;
+    --pop-lilac: #c7bbea;
     --enamel-light: #7ccb52;
     --enamel-green: #4e9e3f;
     --enamel-deep: #2c6224;
     --enamel-white: #f4f8f0;
     --rim-blue: #4478ea;
-    --rim-navy: #1a3c88;
+    --rim-navy: #27427a;
     --rim-navy-deep: #0b1c46;
     --prompt-ink: #0e2a5e;
 
@@ -85,29 +86,32 @@
     --pembacakue-color: #f59e0b;
     --nfc-color: #10b981;
 
-    --font-heading: 'Archivo', system-ui, sans-serif;
-    --font-body: 'Space Grotesk', system-ui, sans-serif;
+    /* Plus Jakarta Sans was drawn in Jakarta (Tokotype); Caveat is for
+       handwritten margin notes only */
+    --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-hand: 'Caveat', 'Bradley Hand', cursive;
     --font-mono: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, monospace;
 
-    --radius: 0px;
-    --radius-sm: 0px;
+    --radius: 16px;
+    --radius-sm: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
         color-scheme: dark;
-        --line: #f6efe0;
-        --bg: #121216;
+        --line: #e6dfcf;
+        --bg: #1b1a17;
         --dot: rgba(246, 239, 224, 0.10);
-        --surface: #1c1c22;
-        --surface-muted: #19191e;
-        --surface-sunken: #24242c;
-        --code-bg: #24242c;
-        --text-primary: #f6efe0;
+        --surface: #24221e;
+        --surface-muted: #211f1b;
+        --surface-sunken: #2d2b26;
+        --code-bg: #2d2b26;
+        --text-primary: #efe8d8;
         --text-secondary: #d6cfc1;
         --text-muted: #aea798;
-        --accent: #7ccb52;
-        --accent-strong: #7ccb52;
+        --accent: #b4d07a;
+        --accent-strong: #b4d07a;
         --accent-soft: #23331e;
         --rim: #8fb0ff;
         --rim-hover: #a9c2ff;
@@ -127,18 +131,18 @@
 /* Same block as above, for an explicit dark choice. Keep the two in sync. */
 :root[data-theme="dark"] {
     color-scheme: dark;
-    --line: #f6efe0;
-    --bg: #121216;
+    --line: #e6dfcf;
+    --bg: #1b1a17;
     --dot: rgba(246, 239, 224, 0.10);
-    --surface: #1c1c22;
-    --surface-muted: #19191e;
-    --surface-sunken: #24242c;
-    --code-bg: #24242c;
-    --text-primary: #f6efe0;
+    --surface: #24221e;
+    --surface-muted: #211f1b;
+    --surface-sunken: #2d2b26;
+    --code-bg: #2d2b26;
+    --text-primary: #efe8d8;
     --text-secondary: #d6cfc1;
     --text-muted: #aea798;
-    --accent: #7ccb52;
-    --accent-strong: #7ccb52;
+    --accent: #b4d07a;
+    --accent-strong: #b4d07a;
     --accent-soft: #23331e;
     --rim: #8fb0ff;
     --rim-hover: #a9c2ff;
@@ -202,8 +206,8 @@ main { flex: 1; }
 }
 .logo-text {
     font-family: var(--font-heading);
-    font-weight: 900; font-size: 1.45rem;
-    letter-spacing: -0.03em; text-transform: uppercase;
+    font-weight: 800; font-size: 1.45rem;
+    letter-spacing: -0.025em;
     display: flex; align-items: center; gap: 0.6rem;
 }
 .logo-word span { color: var(--accent); }
@@ -241,7 +245,7 @@ main { flex: 1; }
     cursor: pointer;
     transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
-.lang-switcher:hover, .nav-github-link:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--line); }
+.lang-switcher:hover, .nav-github-link:hover { transform: translateY(-1px); box-shadow: 0 2px 0 var(--line); }
 .lang-switcher:active, .nav-github-link:active { transform: translate(3px, 3px); box-shadow: none; }
 .nav-github-link svg { flex-shrink: 0; }
 
@@ -268,34 +272,34 @@ main { flex: 1; }
 }
 
 /* --- SHARED TYPE BITS --- */
-/* The highlighted word in a headline: a tilted green slab, not a gradient. */
+/* The highlighted word in a headline: a rounded green block, not a gradient. */
 .gradient-text {
     display: inline-block;
     padding: 0 0.18em;
     color: var(--ink);
     background: var(--pop-green);
     border: var(--bw) solid var(--ink);
-    box-shadow: 5px 5px 0 var(--line);
-    transform: rotate(-1.5deg);
+    box-shadow: 0 3px 0 var(--line);
 }
 
 /* the original tagline, kept as a terminal line and always the quietest text */
+/* written in the margin by hand, so it gets the handwriting face */
 .hero-signature {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    margin-top: 2rem;
-    font-family: var(--font-mono);
-    font-size: 0.82rem;
+    display: inline-block;
+    margin-top: 1.6rem;
+    font-family: var(--font-hand);
+    font-size: 1.45rem; font-weight: 500; line-height: 1.2;
     color: var(--text-muted);
+    transform: rotate(-1.5deg);
 }
-.hero-signature::before { content: '//'; color: var(--accent); font-weight: 700; }
 
 /* Sticker label (was a soft pill; other pages still use .lp-chip) */
 .lp-chip, .nb-sticker {
     display: inline-flex; align-items: center; gap: 0.5rem;
     padding: 0.3rem 0.7rem;
     margin-bottom: 1.4rem;
-    font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700;
-    letter-spacing: 0.04em; text-transform: uppercase;
+    font-size: 0.82rem; font-weight: 700;
+    letter-spacing: 0;
     color: var(--ink);
     background: var(--pop-yellow);
     border: 2px solid var(--ink);
@@ -307,25 +311,24 @@ main { flex: 1; }
     display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
     min-height: 52px; padding: 0 1.4rem;
     font-family: var(--font-heading); font-weight: 800; font-size: 0.98rem;
-    letter-spacing: 0.01em; text-transform: uppercase;
     color: var(--ink);
     border: var(--bw) solid var(--line);
-    box-shadow: 5px 5px 0 var(--line);
+    box-shadow: 0 3px 0 var(--line);
     cursor: pointer;
     transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 .btn-solid svg, .btn-ghost svg, .btn-enamel svg, .lp-link svg {
     width: 18px; height: 18px;
-    fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: square; stroke-linejoin: miter;
+    fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round;
 }
 .btn-solid, .btn-primary { background: var(--pop-yellow); }
 .btn-ghost { background: var(--surface); color: var(--text-primary); }
 .btn-enamel { background: var(--pop-green); }
 .btn-solid:hover, .btn-ghost:hover, .btn-enamel:hover, .btn-primary:hover {
-    transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--line);
+    transform: translateY(-2px); box-shadow: 0 4px 0 var(--line);
 }
 .btn-solid:active, .btn-ghost:active, .btn-enamel:active, .btn-primary:active {
-    transform: translate(5px, 5px); box-shadow: 0 0 0 var(--line);
+    transform: translateY(2px); box-shadow: 0 1px 0 var(--line);
 }
 
 .lp-link {
@@ -353,10 +356,9 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
 }
 .nb-hero-title {
     font-size: clamp(3rem, 7.6vw, 6.4rem);
-    font-weight: 900;
-    line-height: 0.92;
-    letter-spacing: -0.045em;
-    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
     margin-bottom: 1.6rem;
 }
 .nb-hero-title .gradient-text { margin-top: 0.12em; box-shadow: var(--sh); }
@@ -368,7 +370,6 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
     background: var(--rim-navy);
     border: var(--bw) solid var(--ink);
     padding: 0.2rem 0.8rem;
-    transform: rotate(1deg);
 }
 .nb-hero-sub {
     margin: 1.5rem 0 2rem;
@@ -404,45 +405,24 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
     font-family: var(--font-mono); font-size: 0.74rem; font-weight: 700; text-transform: uppercase;
     color: var(--ink); background: var(--pop-coral);
     border: 2px solid var(--ink);
-    transform: rotate(5deg);
 }
-
-/* Marquee of app names */
-.nb-marquee {
-    margin: 0 -40px;
-    overflow: hidden;
-    color: #fff;
-    background: var(--rim-navy);
-    border-block: var(--bw) solid var(--ink);
-    transform: rotate(-1.2deg);
-}
-.nb-marquee-track {
-    display: flex; gap: 2rem; width: max-content;
-    padding: 0.95rem 0;
-    font-family: var(--font-heading); font-weight: 900; font-size: 1.7rem;
-    text-transform: uppercase; white-space: nowrap;
-    animation: nb-scroll 32s linear infinite;
-}
-.nb-marquee-track span::after { content: '✦'; margin-left: 2rem; color: var(--pop-yellow); }
-@keyframes nb-scroll { to { transform: translateX(-50%); } }
 
 /* Sections */
 .lp-section { padding: 5.5rem 0 1rem; }
 .lp-section-head { margin-bottom: 2.5rem; }
 .lp-eyebrow {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    padding: 0.35rem 0.65rem;
-    font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700;
-    letter-spacing: 0.06em; text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.3rem 0.8rem 0.3rem 0.65rem;
+    font-size: 0.82rem; font-weight: 700;
     color: var(--bg);
     background: var(--text-primary);
+    border-radius: 999px;
 }
-.lp-eyebrow span { color: var(--ink); background: var(--pop-yellow); padding: 0 0.3em; }
-.lp-eyebrow span::after { content: ' /'; color: var(--ink); }
+.lp-eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--pop-green); }
 .lp-section-title {
     margin-top: 1rem;
     font-size: clamp(2.1rem, 4.6vw, 3.6rem);
-    font-weight: 900; letter-spacing: -0.035em; line-height: 1;
+    font-weight: 800; letter-spacing: -0.025em; line-height: 1;
     max-width: 20ch;
 }
 .lp-section-lead {
@@ -461,7 +441,7 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
     box-shadow: var(--sh);
     transition: transform 0.14s ease, box-shadow 0.14s ease;
 }
-.lp-app:hover { transform: translate(-3px, -3px); box-shadow: var(--sh-lg); }
+.lp-app:hover { transform: translateY(-2px); box-shadow: var(--sh-lg); }
 .lp-app--qrstu { --pop: var(--pop-yellow); }
 .lp-app--pembacakue { --pop: var(--pop-cyan); }
 .lp-app--yasintahlil { --pop: var(--pop-green); }
@@ -481,15 +461,14 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
 .lp-app.is-soon .lp-app-top {
     background: repeating-linear-gradient(-45deg, var(--pop), var(--pop) 14px, #fff 14px, #fff 28px);
 }
-.lp-app h3 { font-size: 1.3rem; font-weight: 900; line-height: 1.1; }
+.lp-app h3 { font-size: 1.3rem; font-weight: 800; line-height: 1.1; }
 .lp-app.is-soon h3 { background: #fff; padding: 0 0.25rem; }
 .lp-app-flag {
     position: absolute; top: -14px; right: 12px;
     padding: 0.2rem 0.55rem;
-    font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    font-size: 0.78rem; font-weight: 800;
     color: var(--ink); background: #fff;
     border: 2px solid var(--ink);
-    transform: rotate(4deg);
 }
 .lp-app-flag.is-soon { background: var(--pop-yellow); }
 .lp-app-body { display: flex; flex-direction: column; flex: 1; padding: 1.2rem; }
@@ -504,7 +483,7 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
     width: 58px; height: 58px; flex-shrink: 0;
     background: #fff;
     border: var(--bw) solid var(--ink);
-    box-shadow: 3px 3px 0 var(--ink);
+    box-shadow: 0 2px 0 var(--ink);
 }
 
 .lp-apps-more {
@@ -538,10 +517,10 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
     color: var(--ink);
     background: #fff;
     border: 2px solid var(--ink);
-    box-shadow: 3px 3px 0 var(--ink);
+    box-shadow: 0 2px 0 var(--ink);
     cursor: pointer;
 }
-.ri-tabs button:hover { transform: translate(-1px, -1px); }
+.ri-tabs button:hover { transform: translateY(-1px); }
 .ri-tabs button.is-active { color: var(--pop-yellow); background: var(--ink); }
 .ri-open {
     flex-shrink: 0;
@@ -566,7 +545,7 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
     box-shadow: var(--sh);
     scroll-margin-top: 100px;
 }
-.nb-tile h3 { font-size: 1.7rem; font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; }
+.nb-tile h3 { font-size: 1.7rem; font-weight: 800; line-height: 1.05; letter-spacing: -0.025em; }
 .nb-tile p { font-size: 0.98rem; line-height: 1.65; }
 .nb-tile .lp-chip { margin-bottom: 1rem; }
 .nb-span-2 { grid-column: span 2; }
@@ -592,7 +571,7 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
 .lp-origin :focus-visible { outline-color: var(--pop-yellow); }
 
 .lp-tech-card { display: flex; flex-direction: column; transition: transform 0.14s ease, box-shadow 0.14s ease; }
-.lp-tech-card:hover { transform: translate(-3px, -3px); box-shadow: var(--sh-lg); }
+.lp-tech-card:hover { transform: translateY(-2px); box-shadow: var(--sh-lg); }
 .lp-tech-glyph {
     align-self: flex-start;
     display: grid; place-items: center;
@@ -622,7 +601,7 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
     border: 2px solid var(--ink);
 }
 .lp-suite-features span { font-weight: 700; }
-.lp-oss .btn-ghost { align-self: flex-start; margin-top: 0.4rem; background: #fff; color: var(--ink); border-color: var(--ink); box-shadow: 5px 5px 0 var(--ink); }
+.lp-oss .btn-ghost { align-self: flex-start; margin-top: 0.4rem; background: #fff; color: var(--ink); border-color: var(--ink); box-shadow: 0 3px 0 var(--ink); }
 
 /* Contact: big coral slab */
 .lp-contact {
@@ -634,11 +613,11 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
     box-shadow: var(--sh-lg);
 }
 .lp-contact h2 {
-    font-size: clamp(2.6rem, 6.5vw, 5.2rem); font-weight: 900;
-    line-height: 0.95; letter-spacing: -0.045em; text-transform: uppercase;
+    font-size: clamp(2.6rem, 6.5vw, 5.2rem); font-weight: 800;
+    line-height: 0.95; letter-spacing: -0.025em;
 }
 .lp-contact p { font-size: 1.08rem; line-height: 1.65; margin-bottom: 1.4rem; }
-.lp-contact .btn-solid { border-color: var(--ink); box-shadow: 5px 5px 0 var(--ink); }
+.lp-contact .btn-solid { border-color: var(--ink); box-shadow: 0 3px 0 var(--ink); }
 .lp-contact :focus-visible { outline-color: var(--ink); }
 
 /* =========================================================================
@@ -665,7 +644,7 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
     font-family: var(--font-heading);
     font-size: 3.6rem; font-weight: 800;
     line-height: 1.08; margin-bottom: 1.5rem;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
 }
 .hero-subtitle {
     font-size: 1.15rem; color: var(--text-secondary);
@@ -793,7 +772,7 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
 .footer-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 2.5rem; margin-bottom: 2.5rem; max-width: 1152px; margin-inline: auto; }
 .footer-mark {
     display: inline-flex; align-items: center; gap: 0.55rem;
-    font-family: var(--font-heading); font-weight: 900; font-size: 1.3rem; text-transform: uppercase; letter-spacing: -0.02em;
+    font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em;
     margin-bottom: 0.9rem;
 }
 .footer-mark span span { color: var(--accent); }
@@ -881,7 +860,7 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
     .nb-hero-actions > a { flex: 1 1 100%; }
     .nb-player-tag { right: -4px; }
     .nb-marquee-track { font-size: 1.25rem; padding: 0.75rem 0; }
-    .hero-signature { font-size: 0.74rem; margin-top: 1.5rem; }
+    .hero-signature { font-size: 1.25rem; margin-top: 1.25rem; }
 
     .lp-section { padding: 4rem 0 0.5rem; }
     .lp-apps { gap: 1.5rem; }
@@ -1015,7 +994,7 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
     font-size: clamp(2.2rem, 5.2vw, 3.6rem);
     font-weight: 800;
     line-height: 1.08;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
     margin-bottom: 1rem;
     color: var(--text-primary);
 }
@@ -1532,38 +1511,38 @@ a > .glass-card:hover, .product-card.glass-card:hover { box-shadow: var(--shadow
 .glass-card, .oss-creator-card, .oss-card, .oss-contribute-card, .talk-stat, .talk-missions li,
 .talk-files li, .talk-card, .talk-player, .app-feature, .oss-upcoming-card, .hub-lesson, .hub-steps li {
     border: var(--bw) solid var(--line);
-    border-radius: 0;
+    border-radius: var(--radius-sm);
     box-shadow: var(--sh);
 }
 .hub-lesson, .hub-steps li, .talk-files li, .talk-stat { border-width: 2px; box-shadow: var(--sh-sm); }
 .glass-card .glass-card { box-shadow: var(--sh-sm); border-width: 2px; }
 .oss-upcoming-card, .talk-card { border-style: dashed; box-shadow: none; }
 a > .glass-card:hover, .product-card.glass-card:hover, .oss-card:hover, .hub-lesson:hover, .hub-lesson:focus-visible {
-    transform: translate(-3px, -3px);
+    transform: translateY(-2px);
     box-shadow: var(--sh-lg);
     border-color: var(--line);
 }
-.hub-lesson:hover, .hub-lesson:focus-visible { box-shadow: 5px 5px 0 var(--line); }
+.hub-lesson:hover, .hub-lesson:focus-visible { box-shadow: 0 3px 0 var(--line); }
 
-.hero-title, .oss-title, .hub-title { font-weight: 900; letter-spacing: -0.04em; line-height: 1; }
+.hero-title, .oss-title, .hub-title { font-weight: 800; letter-spacing: -0.025em; line-height: 1; }
 .hero-badge {
     color: var(--ink); background: var(--pop-yellow);
-    border: 2px solid var(--ink); border-radius: 0;
+    border: 2px solid var(--ink); border-radius: var(--radius-sm);
 }
 .hero-tagline { display: inline-block; color: #fff; background: var(--rim-navy); border: var(--bw) solid var(--ink); padding: 0.1rem 0.7rem; }
 .divider-text::before, .divider-text::after { height: 3px; background: var(--line); }
 .divider-text { color: var(--text-primary); }
 
 .product-icon-wrapper, .learn-cta-icon, .app-hero-icon, .lp-app-icon {
-    border-radius: 0;
+    border-radius: var(--radius-sm);
     border: var(--bw) solid var(--ink);
     box-shadow: var(--sh-sm);
 }
 .app-hero-icon { box-shadow: var(--sh); }
-.app-shots img { border-radius: 0; border: var(--bw) solid var(--line); box-shadow: var(--sh-sm); }
+.app-shots img { border-radius: var(--radius-sm); border: var(--bw) solid var(--line); box-shadow: var(--sh-sm); }
 .app-cards li, .hub-chip, .oss-tag, .talk-file-type, .lp-badge, .oss-badge-pulse {
     border: 2px solid var(--line);
-    border-radius: 0;
+    border-radius: var(--radius-sm);
     color: var(--text-primary);
     background: var(--surface);
 }
@@ -1571,31 +1550,31 @@ a > .glass-card:hover, .product-card.glass-card:hover, .oss-card:hover, .hub-les
 .hub-chip:hover, .hub-chip:focus-visible { background: var(--pop-yellow); color: var(--ink); border-color: var(--ink); }
 .oss-badge-pulse { background: var(--pop-green); color: var(--ink); border-color: var(--ink); }
 .hub-glyph, .oss-glyph {
-    border-radius: 0;
+    border-radius: var(--radius-sm);
     border: var(--bw) solid var(--ink);
     color: var(--ink);
     background: var(--pop-cyan);
     box-shadow: var(--sh-sm);
 }
 .hub-steps li span, .hub-lessons.is-ordered .hub-lesson::before, .talk-mission-num {
-    border: 2px solid var(--ink); color: var(--ink); background: var(--pop-yellow); border-radius: 0;
+    border: 2px solid var(--ink); color: var(--ink); background: var(--pop-yellow); border-radius: var(--radius-sm);
 }
 .oss-creator-card::before { height: 6px; background: var(--pop-green); }
 .oss-avatar, .oss-avatar-fallback { border: var(--bw) solid var(--line); box-shadow: var(--sh-sm); }
 .btn-secondary {
-    border: 2px solid var(--line); border-radius: 0;
+    border: 2px solid var(--line); border-radius: var(--radius-sm);
     background: var(--surface); font-weight: 700;
     box-shadow: var(--sh-sm);
 }
-.btn-secondary:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--line); }
-.alert-box { border: var(--bw) solid var(--ink); border-radius: 0; background: #ffe3df; color: var(--ink); box-shadow: var(--sh-sm); }
+.btn-secondary:hover { transform: translateY(-1px); box-shadow: 0 2px 0 var(--line); }
+.alert-box { border: var(--bw) solid var(--ink); border-radius: var(--radius-sm); background: #ffe3df; color: var(--ink); box-shadow: var(--sh-sm); }
 .document-content a { color: var(--text-primary); font-weight: 600; text-decoration-thickness: 2px; text-decoration-color: var(--pop-green); }
-.document-content code { border-radius: 0; border: 1px solid var(--line); }
+.document-content code { border-radius: var(--radius-sm); border: 1px solid var(--line); }
 .card-header { border-bottom: var(--bw) solid var(--line); }
 .app-faq details { border-bottom: 2px solid var(--line); }
 .talk-block, .talk-footer, .hub-track { border-top: var(--bw) solid var(--line); }
-.talk-zip { color: var(--ink); background: var(--pop-yellow); border: var(--bw) solid var(--line); border-radius: 0; box-shadow: var(--sh); }
-.talk-zip:hover { background: var(--pop-yellow); transform: translate(-2px, -2px); box-shadow: var(--sh-lg); }
+.talk-zip { color: var(--ink); background: var(--pop-yellow); border: var(--bw) solid var(--line); border-radius: var(--radius-sm); box-shadow: var(--sh); }
+.talk-zip:hover { background: var(--pop-yellow); transform: translateY(-2px); box-shadow: var(--sh-lg); }
 .talk-poster img { filter: none; }
 .talk-poster:hover img { filter: none; }
 .talk-poster-cta { color: var(--ink); }
@@ -1604,3 +1583,34 @@ a > .glass-card:hover, .product-card.glass-card:hover, .oss-card:hover, .hub-les
 
 /* the soft "glow" animations on the learning pages read as out of place now */
 .pulse-icon, .wave-expand-icon { filter: none !important; }
+
+/* =========================================================================
+   SOFT PASS: rounded corners on everything that carries an outline. Kept as
+   one block so the radius scale is easy to retune: cards --radius (16px),
+   controls --radius-sm (10px), labels fully round.
+   ========================================================================= */
+.nb-player, .lp-app, .nb-tile, .ri, .lp-contact, .lp-apps-more,
+.glass-card, .oss-creator-card, .oss-card, .oss-contribute-card, .oss-upcoming-card,
+.talk-card, .talk-player, .talk-missions li, .app-feature, .alert-box, .talk-zip {
+    border-radius: var(--radius);
+}
+.nb-player, .lp-talk, .ri, .oss-creator-card { overflow: hidden; }
+.lp-app-top { border-radius: calc(var(--radius) - var(--bw)) calc(var(--radius) - var(--bw)) 0 0; }
+
+.btn-solid, .btn-ghost, .btn-enamel, .btn-primary, .btn-secondary,
+.nav-item, .lang-switcher, .nav-github-link, .theme-toggle,
+.gradient-text, .nb-tagline, .lp-app-icon, .lp-tech-glyph, .hub-glyph, .oss-glyph,
+.product-icon-wrapper, .app-hero-icon, .learn-cta-icon, .app-shots img,
+.hub-lesson, .hub-steps li, .talk-files li, .talk-stat, .playstore-button, .ri-open {
+    border-radius: var(--radius-sm);
+}
+.theme-toggle { overflow: hidden; }
+
+.lp-chip, .nb-sticker, .lp-app-flag, .nb-player-tag, .ri-tabs button, .soon-pill,
+.hub-chip, .oss-tag, .oss-badge-pulse, .lp-badge, .footer-heading, .footer-tagline {
+    border-radius: 999px;
+}
+.tag, .talk-file-type, .app-cards li { border-radius: 6px; }
+
+/* the paper dots read as texture inside a few panels too, like a notebook page */
+.lp-origin, .lp-suite { background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1.3px); background-size: 16px 16px; }
