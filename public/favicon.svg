@@ -1,50 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <title>BaskomLabs</title>
-  <!-- Simplified build of the baskom mark: no noise filters, fatter strokes,
-       so it survives 16px. Keep in sync with brand/baskom-icon.svg. -->
-  <defs>
-    <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#16283f"/>
-      <stop offset="100%" stop-color="#070c15"/>
-    </linearGradient>
-    <linearGradient id="fout" x1="0.1" y1="0" x2="0.35" y2="1">
-      <stop offset="0" stop-color="#7ccb52"/>
-      <stop offset="55%" stop-color="#4b9c38"/>
-      <stop offset="100%" stop-color="#2c6224"/>
-    </linearGradient>
-    <linearGradient id="frim" x1="0.1" y1="0" x2="0.9" y2="1">
-      <stop offset="0" stop-color="#4478ea"/>
-      <stop offset="45%" stop-color="#1a3c88"/>
-      <stop offset="100%" stop-color="#0b1c46"/>
-    </linearGradient>
-    <path id="fbody" d="M 9,25 A 23,9.2 0 0 1 55,25 C 54.2,38 47.4,49.6 40,52.4 Q 32,54.6 24,52.4 C 16.6,49.6 9.8,38 9,25 Z"/>
-    <clipPath id="fclip"><use href="#fbody"/></clipPath>
-    <ellipse id="fcav" cx="32" cy="25" rx="19.4" ry="6.6"/>
-    <clipPath id="fclipcav"><use href="#fcav"/></clipPath>
-  </defs>
-
-  <rect width="64" height="64" rx="14" fill="url(#fbg)"/>
-
-  <!-- outer wall -->
-  <g clip-path="url(#fclip)">
-    <use href="#fbody" fill="url(#fout)"/>
-    <!-- no marbling here on purpose: any discrete white shape reads as teeth
-         once this is downscaled to tab size. The texture lives in the 512 icon. -->
-    <ellipse cx="20" cy="30" rx="9" ry="16" fill="#ffffff" opacity="0.10" transform="rotate(-12 20 30)"/>
-  </g>
-
-  <!-- interior: white ground, green splash held to the wall -->
-  <use href="#fcav" fill="#ffffff"/>
-  <g clip-path="url(#fclipcav)">
-    <ellipse cx="32" cy="25" rx="16.6" ry="4.4" fill="none" stroke="#4e9e3f" stroke-width="5" opacity="0.85"/>
-  </g>
-
-  <!-- rolled rim -->
-  <ellipse cx="32" cy="25" rx="21.2" ry="8" fill="none" stroke="url(#frim)" stroke-width="3.6"/>
-
-  <!-- prompt -->
-  <g stroke="#0e2a5e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M 24,20.6 L 29,25 L 24,29.4"/>
-    <path d="M 35.4,29.4 H 41"/>
+  <!-- Flat baskom mark (soft brutalism). Source of truth: brand/baskom-mark-flat.svg -->
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14" fill="#9fd3cd" stroke="#26231e" stroke-width="3"/>
+  <g transform="translate(32 34) scale(1.1) translate(-32 -34)">
+    <ellipse cx="32" cy="53.5" rx="15" ry="2.6" fill="#26231e" opacity=".22"/>
+    <path d="M8.5 26 H55.5 L49.6 46.5 Q48.3 51 43.8 51 H20.2 Q15.7 51 14.4 46.5 Z" fill="#b4d07a" stroke="#26231e" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M21 33 q1.5 6 -0.5 12 M43.5 33 q-1 5 0.5 10" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <ellipse cx="32" cy="26" rx="24" ry="7.5" fill="#fff" stroke="#26231e" stroke-width="3"/>
+    <ellipse cx="32" cy="26" rx="20.4" ry="5" fill="none" stroke="#27427a" stroke-width="2.6"/>
+    <g stroke="#0e2a5e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M26 23.4 L29.4 25.9 L26 28.4"/><path d="M32.6 28.4 H38"/>
+    </g>
   </g>
 </svg>
