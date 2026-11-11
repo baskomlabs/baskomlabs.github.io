@@ -136,7 +136,6 @@
     "stores_label": "Toko online",
     "stores_title": "Toko pre-order untuk penjual rumahan.",
     "stores_desc": "Selain aplikasi, kami juga membuat toko online untuk usaha rumahan yang jualan dengan sistem pre-order. Pembeli pilih menu, bayar pakai QRIS dinamis, lalu pantau pesanannya dari HP. Pemilik toko dapat aplikasi admin lengkap dengan notifikasi pesanan. Semua toko jalan di satu engine buatan kami sendiri, dan tiap toko punya tampilannya sendiri.",
-    "store_soon_badge": "Sedang dibuat",
     "stores": {
       "amc": {
         "desc": "Katering halal di Jakarta sejak 2004. Pembeli pesan nasi box, snack box dan tumpeng, memilih tanggal acara paling cepat H-3, lalu bayar pakai QRIS. Paket prasmanan dan wedding diarahkan ke konsultasi lewat WhatsApp.",
@@ -155,7 +154,7 @@
         ]
       },
       "mintuo": {
-        "desc": "Pre-order masakan Padang rumahan dan beberapa masakan lain, dari resep warisan mintuo. Toko dan pembayaran QRIS sudah siap, menu dan harganya sedang dimatangkan.",
+        "desc": "Pre-order masakan Padang rumahan dan beberapa masakan lain, dari resep warisan mintuo. Pemesanan dibuka sesuai jadwal PO, dengan kuota untuk tiap menu.",
         "tags": [
           "Masakan Padang",
           "Pre-order",

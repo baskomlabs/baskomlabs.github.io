@@ -88,7 +88,7 @@ const TECH = [
 const STORES = [
   { key: 'amc', name: 'Aminih Musda Catering', logo: '/stores/dapur-amc.png' },
   { key: 'eall', name: 'Toko E.all', logo: '/stores/eall.png' },
-  { key: 'mintuo', name: 'Resep Mintuo', logo: '/stores/resep-mintuo.png', soon: true },
+  { key: 'mintuo', name: 'Resep Mintuo', logo: '/stores/resep-mintuo.png' },
 ];
 
 const ARROW = <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
@@ -227,9 +227,8 @@ function Home({ scrollToContact }) {
 
         <div className="lp-apps lp-stores reveal-on-scroll">
           {STORES.map((store) => (
-            <article key={store.key} className={`lp-app lp-app--store-${store.key}${store.soon ? ' is-soon' : ''}`}>
+            <article key={store.key} className={`lp-app lp-app--store-${store.key}`}>
               <div className="lp-app-top">
-                {store.soon && <span className="lp-app-flag is-soon">{t('home.store_soon_badge')}</span>}
                 <img className="lp-app-icon" src={store.logo} alt={`${store.name} logo`} width="58" height="58" loading="lazy" />
                 <h3>{store.name}</h3>
               </div>
