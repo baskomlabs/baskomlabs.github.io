@@ -132,7 +132,37 @@
     "more_label": "Besides apps",
     "more_title": "When we're not making apps.",
     "new_badge": "New!",
-    "soon_badge": "Soon"
+    "soon_badge": "Soon",
+    "stores_label": "Online stores",
+    "stores_title": "Pre-order shops for small sellers.",
+    "stores_desc": "Besides apps, we build online stores for home businesses that sell by pre-order. Customers pick from the menu, pay with a dynamic QRIS code and follow their order from their phone. The owner gets an admin app with order notifications. All the stores run on one engine we wrote ourselves, and each one gets its own look.",
+    "store_soon_badge": "In progress",
+    "stores": {
+      "amc": {
+        "desc": "Halal catering in Jakarta since 2004. Customers order rice boxes, snack boxes and tumpeng, pick the event date at least three days ahead, and pay by QRIS. Buffet and wedding packages go to a WhatsApp consultation.",
+        "tags": [
+          "Catering",
+          "Event date",
+          "QRIS"
+        ]
+      },
+      "eall": {
+        "desc": "Traditional Indonesian snacks such as Kentang Mustofa, cassava chips and anchovy peanuts. Each snack has one card where the buyer picks flavour and size, and payment goes through a dynamic QRIS code.",
+        "tags": [
+          "Snacks",
+          "Variants",
+          "QRIS"
+        ]
+      },
+      "mintuo": {
+        "desc": "Pre-orders for home-cooked Padang food and a few other dishes, following a mother-in-law's recipes. The store and QRIS payment are set up; the menu and prices are being finalised.",
+        "tags": [
+          "Padang food",
+          "Pre-order",
+          "QRIS"
+        ]
+      }
+    }
   },
   "opensource": {
     "hero_badge": "Public Code · Local-First",

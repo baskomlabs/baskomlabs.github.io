@@ -84,6 +84,13 @@ const TECH = [
 ];
 
 
+// Pre-order storefronts built on one shared engine (private repo, no public links on purpose).
+const STORES = [
+  { key: 'amc', name: 'Aminih Musda Catering', logo: '/stores/dapur-amc.png' },
+  { key: 'eall', name: 'Toko E.all', logo: '/stores/eall.png' },
+  { key: 'mintuo', name: 'Resep Mintuo', logo: '/stores/resep-mintuo.png', soon: true },
+];
+
 const ARROW = <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 
 function SectionHead({ label, title }) {
@@ -210,6 +217,32 @@ function Home({ scrollToContact }) {
             {t('home.dev_profile_label')}
             {ARROW}
           </a>
+        </div>
+      </section>
+
+      {/* ---------- STORES ---------- */}
+      <section id="stores" className="lp-section">
+        <SectionHead label={t('home.stores_label')} title={t('home.stores_title')} />
+        <p className="lp-section-lead reveal-on-scroll">{t('home.stores_desc')}</p>
+
+        <div className="lp-apps lp-stores reveal-on-scroll">
+          {STORES.map((store) => (
+            <article key={store.key} className={`lp-app lp-app--store-${store.key}${store.soon ? ' is-soon' : ''}`}>
+              <div className="lp-app-top">
+                {store.soon && <span className="lp-app-flag is-soon">{t('home.store_soon_badge')}</span>}
+                <img className="lp-app-icon" src={store.logo} alt={`${store.name} logo`} width="58" height="58" loading="lazy" />
+                <h3>{store.name}</h3>
+              </div>
+              <div className="lp-app-body">
+                <p>{t(`home.stores.${store.key}.desc`)}</p>
+                <div className="product-tags">
+                  {t(`home.stores.${store.key}.tags`, { returnObjects: true }).map((tag) => (
+                    <span key={tag} className="tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
