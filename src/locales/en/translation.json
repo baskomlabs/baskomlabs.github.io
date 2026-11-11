@@ -136,7 +136,6 @@
     "stores_label": "Online stores",
     "stores_title": "Pre-order shops for small sellers.",
     "stores_desc": "Besides apps, we build online stores for home businesses that sell by pre-order. Customers pick from the menu, pay with a dynamic QRIS code and follow their order from their phone. The owner gets an admin app with order notifications. All the stores run on one engine we wrote ourselves, and each one gets its own look.",
-    "store_soon_badge": "In progress",
     "stores": {
       "amc": {
         "desc": "Halal catering in Jakarta since 2004. Customers order rice boxes, snack boxes and tumpeng, pick the event date at least three days ahead, and pay by QRIS. Buffet and wedding packages go to a WhatsApp consultation.",
@@ -155,7 +154,7 @@
         ]
       },
       "mintuo": {
-        "desc": "Pre-orders for home-cooked Padang food and a few other dishes, following a mother-in-law's recipes. The store and QRIS payment are set up; the menu and prices are being finalised.",
+        "desc": "Pre-orders for home-cooked Padang food and a few other dishes, following a mother-in-law's recipes. Orders open on a set PO schedule, with a quota for each dish.",
         "tags": [
           "Padang food",
           "Pre-order",

@@ -454,7 +454,6 @@ a.lp-link:hover svg, .lp-tech-card:hover .lp-link svg { transform: translateX(4p
 .lp-app--store-eall { --pop: var(--pop-coral); }
 .lp-app--store-mintuo { --pop: var(--pop-pink); }
 .lp-stores { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.lp-stores .lp-app-icon { object-fit: contain; }
 .lp-app-top {
     position: relative;
     display: flex; align-items: center; gap: 0.9rem;
