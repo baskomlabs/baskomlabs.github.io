@@ -161,7 +161,26 @@
           "QRIS"
         ]
       }
-    }
+    },
+    "portfolio_label": "Portfolio",
+    "portfolio_title": "The social media studio we run ourselves.",
+    "alfalea": {
+      "chip": "Open source soon",
+      "title": "Alfalea Studio",
+      "desc": "Alfalea Studio runs our social media from one Mac at home. Family footage goes in and comes out as YouTube videos, Shorts, Reels and TikToks with subtitles and music, then goes live on schedule. The dashboard works from a phone.",
+      "channels": "It runs Kanal Alfalea on YouTube and the @baskomlabs Instagram, and is getting Little Story Street ready, an English animation channel for kids.",
+      "done": [
+        "Tidied up 450+ old Kanal Alfalea videos in batches: titles, descriptions, chapters and playlists, with per-video rollback",
+        "Renders from raw footage: subtitles, license-free music, intro and outro, in 16:9 and 9:16",
+        "Checks every render before it goes out: loudness, black or frozen frames, metadata, and strips location data",
+        "One calendar for every platform, and nothing goes live until the owner approves it",
+        "Works with whichever AI agent you have: Claude Code, Codex or Gemini CLI"
+      ],
+      "note": "For now only we use it. We'll open the code on GitHub soon so anyone can run it.",
+      "cta_youtube": "Watch Kanal Alfalea",
+      "cta_instagram": "Instagram @baskomlabs"
+    },
+    "contact_instagram": "Follow on Instagram"
   },
   "opensource": {
     "hero_badge": "Public Code · Local-First",
@@ -269,7 +288,8 @@
     "privacy": "Privacy",
     "tos": "ToS",
     "legal": "App policies",
-    "github_author": "GitHub @muhakmal"
+    "github_author": "GitHub @muhakmal",
+    "instagram": "Instagram @baskomlabs"
   },
   "theme": {
     "label": "Theme",

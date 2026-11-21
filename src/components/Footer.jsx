@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import BaskomMark from './BaskomMark';
-import { appPagePath } from '../seo/siteMeta';
+import { SITE, appPagePath } from '../seo/siteMeta';
 
 // Each app's legal pages, grouped so the footer reads as a list, not a wall of links.
 const POLICIES = [
@@ -37,6 +37,10 @@ function Footer() {
               className="footer-github"
             >
               {t('footer.github_author')}
+            </a>
+            <span className="footer-sep" aria-hidden="true">·</span>
+            <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="footer-github">
+              {t('footer.instagram')}
             </a>
             <span className="footer-sep" aria-hidden="true">·</span>
             <Link to="/open-source" className="footer-link">
