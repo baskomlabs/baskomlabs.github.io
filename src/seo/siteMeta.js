@@ -26,6 +26,7 @@ export const SITE = {
   tagline_en: 'Bengkel Aplikasi Kompeni',
   email: 'baskomdevs@gmail.com',
   githubUrl: 'https://github.com/muhakmal',
+  instagramUrl: 'https://www.instagram.com/baskomlabs',
   ogImage: '/og-baskom.png',
   ogImageAlt: 'BaskomLabs, Bengkel Aplikasi Kompeni: Android apps and websites from Indonesia, custom apps to order',
   defaultLang: 'en',
@@ -613,6 +614,7 @@ export function jsonLdFor(pathname, lang = SITE.defaultLang) {
       SITE.playDeveloperUrl,
       'https://github.com/muhakmal',
       'https://github.com/baskomlabs',
+      SITE.instagramUrl,
     ],
   };
   const graph = [org];

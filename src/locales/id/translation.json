@@ -161,7 +161,26 @@
           "QRIS"
         ]
       }
-    }
+    },
+    "portfolio_label": "Portofolio",
+    "portfolio_title": "Studio sosial media yang kami pakai sendiri.",
+    "alfalea": {
+      "chip": "Segera open source",
+      "title": "Alfalea Studio",
+      "desc": "Alfalea Studio mengurus sosial media kami dari satu Mac di rumah. Footage keluarga masuk, keluar jadi video YouTube, Shorts, Reels, dan TikTok lengkap dengan subtitle dan musik, lalu tayang sesuai jadwal. Dashboard-nya bisa dibuka dari HP.",
+      "channels": "Sekarang dipakai untuk Kanal Alfalea di YouTube dan Instagram @baskomlabs, sambil menyiapkan Little Story Street, channel animasi bahasa Inggris untuk anak.",
+      "done": [
+        "Merapikan 450+ video lama Kanal Alfalea per batch: judul, deskripsi, chapter, dan playlist, bisa di-rollback per video",
+        "Render dari footage mentah: subtitle, musik bebas lisensi, intro & outro, versi 16:9 dan 9:16",
+        "Cek tiap render sebelum tayang: loudness, layar hitam atau beku, metadata, dan data lokasi dihapus",
+        "Satu kalender untuk semua platform, dan tidak ada yang tayang sebelum disetujui pemilik",
+        "Agen AI-nya bebas: Claude Code, Codex, atau Gemini CLI"
+      ],
+      "note": "Sekarang baru kami pakai sendiri. Kodenya akan kami buka di GitHub dalam waktu dekat supaya bisa dipakai siapa saja.",
+      "cta_youtube": "Tonton Kanal Alfalea",
+      "cta_instagram": "Instagram @baskomlabs"
+    },
+    "contact_instagram": "Ikuti di Instagram"
   },
   "opensource": {
     "hero_badge": "Kode Terbuka · Local-First",
@@ -269,7 +288,8 @@
     "privacy": "Privasi",
     "tos": "S&K",
     "legal": "Kebijakan aplikasi",
-    "github_author": "GitHub @muhakmal"
+    "github_author": "GitHub @muhakmal",
+    "instagram": "Instagram @baskomlabs"
   },
   "theme": {
     "label": "Tema tampilan",

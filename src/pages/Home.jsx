@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import PlayStoreButton from '../components/PlayStoreButton';
 import RuangIlmu from '../components/RuangIlmu';
-import { APPS as APP_META, TALK_KAPTEN as TALK, appPagePath, playInstallUrl } from '../seo/siteMeta';
+import { APPS as APP_META, SITE, TALK_KAPTEN as TALK, appPagePath, playInstallUrl } from '../seo/siteMeta';
 
 // Release state lives in siteMeta.js (also feeds the structured data).
 const PENDING = new Set(APP_META.filter((a) => a.pending).map((a) => a.short));
@@ -90,6 +90,8 @@ const STORES = [
   { key: 'eall', name: 'Toko E.all', logo: '/stores/eall.png' },
   { key: 'mintuo', name: 'Resep Mintuo', logo: '/stores/resep-mintuo.png' },
 ];
+
+const KANAL_ALFALEA_URL = 'https://www.youtube.com/@kanal_alfalea';
 
 const ARROW = <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 
@@ -245,6 +247,36 @@ function Home({ scrollToContact }) {
         </div>
       </section>
 
+      {/* ---------- PORTFOLIO ---------- */}
+      <section id="portfolio" className="lp-section">
+        <SectionHead label={t('home.portfolio_label')} title={t('home.portfolio_title')} />
+
+        <article className="nb-tile lp-alfalea reveal-on-scroll">
+          <div className="lp-alfalea-body">
+            <div className="lp-chip">{t('home.alfalea.chip')}</div>
+            <h3>{t('home.alfalea.title')}</h3>
+            <p>{t('home.alfalea.desc')}</p>
+            <p>{t('home.alfalea.channels')}</p>
+            <p className="lp-suite-note">{t('home.alfalea.note')}</p>
+            <div className="lp-alfalea-links">
+              <a href={KANAL_ALFALEA_URL} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+                {t('home.alfalea.cta_youtube')}
+                {ARROW}
+              </a>
+              <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+                {t('home.alfalea.cta_instagram')}
+                {ARROW}
+              </a>
+            </div>
+          </div>
+          <ul className="lp-suite-features">
+            {t('home.alfalea.done', { returnObjects: true }).map((item) => (
+              <li key={item}><span aria-hidden="true">&gt;_</span>{item}</li>
+            ))}
+          </ul>
+        </article>
+      </section>
+
       {/* ---------- RUANG ILMU ---------- */}
       <section id="ruang-ilmu" className="lp-section">
         <SectionHead label={t('home.ruang_label')} title={t('home.ruang_title')} />
@@ -350,6 +382,10 @@ function Home({ scrollToContact }) {
             <a href="mailto:baskomdevs@gmail.com" className="btn-solid">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" /><path d="m3 7 9 6 9-6" /></svg>
               {t('home.email_us')}
+            </a>
+            <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost lp-contact-ig">
+              {t('home.contact_instagram')}
+              {ARROW}
             </a>
           </div>
         </div>
