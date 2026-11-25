@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Yasin, Tahlil &amp; Maulid NU</title>
+  <meta name="description" content="Surat Yasin, Tahlil, Shalawat, dan Maulid lengkap dengan teks Arab, latin, dan terjemah. Bisa dibuka tanpa internet.">
+  <meta name="theme-color" content="#1B6B44">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Yasin Tahlil">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="app.css">
+  <script src="vendor/qrcode.js" defer></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="bar">
+    <button class="back" id="back" aria-label="Kembali" hidden>‹</button>
+    <div class="bar-title"><strong id="title">Yasin, Tahlil &amp; Maulid</strong><small id="subtitle"></small></div>
+    <button class="icon" id="settings-btn" aria-label="Pengaturan bacaan" hidden>Aa</button>
+  </header>
+  <dialog id="settings">
+    <form method="dialog">
+      <h2>Pengaturan bacaan</h2>
+      <label class="row">Ukuran huruf
+        <span><button type="button" data-font="-1" aria-label="Perkecil">A−</button><button type="button" data-font="1" aria-label="Perbesar">A+</button></span>
+      </label>
+      <label class="row">Latin <input type="checkbox" id="opt-latin"></label>
+      <label class="row">Terjemah <input type="checkbox" id="opt-trans"></label>
+      <button class="primary">Selesai</button>
+    </form>
+  </dialog>
+  <main id="app" tabindex="-1"></main>
+</body>
+</html>
