@@ -1,0 +1,16 @@
+{
+  "name": "Yasin, Tahlil & Maulid NU",
+  "short_name": "Yasin Tahlil",
+  "description": "Surat Yasin, Tahlil, Shalawat, dan Maulid lengkap, bisa dibuka tanpa internet.",
+  "lang": "id",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FBF8F1",
+  "theme_color": "#1B6B44",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
