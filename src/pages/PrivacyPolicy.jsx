@@ -1,6 +1,113 @@
 import { Link } from 'react-router-dom';
 
 function PrivacyPolicy({ app }) {
+  if (app === 'Jaganak') {
+    return (
+      <section className="active-view">
+        <div className="glass-card document-card">
+          <div className="card-header">
+            <h2>Privacy Policy - Jaganak</h2>
+            <Link to="/" className="close-btn btn-secondary">Back to Home</Link>
+          </div>
+          <div className="document-content">
+            <p className="meta">Effective Date: November 28, 2026 (version 2026-11) · App ID id.baskomlabs.jaganak · <a href="#id">Bahasa Indonesia ↓</a></p>
+            <p><strong>Jaganak</strong> ("the app", "we", "our") is a parental companion app operated by BaskomLabs. Parents install it on their own phone, and with the family's agreement on the child's phone, to set screen-time limits, block harmful sites and apps, and know that the child arrived safely. The app is used by parents; the child's phone runs a companion mode that parents set up.</p>
+            <p><strong>In short:</strong> we collect only what the features need, we never sell or share data with advertisers, there are no ads or analytics, and parents can download or delete all family data at any time.</p>
+
+            <h3>1. Data from parents</h3>
+            <ul>
+              <li><strong>Sign-in</strong>: your name and email from Google or Apple sign-in, or your phone number if you sign in with a WhatsApp code.</li>
+              <li><strong>Family settings</strong>: rules, schedules, the Family Agreement, safe spots (such as home and school) and your family blocklist.</li>
+            </ul>
+
+            <h3>2. Data from the child's phone</h3>
+            <ul>
+              <li><strong>Profile</strong>: the child's nickname and age, entered by a parent. No account is created for the child.</li>
+              <li><strong>App usage</strong> (Android): the names of apps used today and for how long, used to enforce limits and show a daily summary. The list of installed apps is sent to parents so they can choose apps to block. Kept for 90 days.</li>
+              <li><strong>Location</strong>: collected only in the mode chosen in the Family Agreement (only during "Pamit" trips, during scheduled hours, or always), when the child presses Emergency, or when a parent asks. Location may be collected in the background in those modes. It is shown only to parents in the same family and is deleted automatically after 1, 3 or 7 days, as chosen by the parent.</li>
+              <li><strong>Battery level</strong> sent with a location, and a <strong>notification token</strong> (Firebase Cloud Messaging) so the app can deliver alerts.</li>
+            </ul>
+
+            <h3>3. Site filter</h3>
+            <p>On Android the app uses a local VPN on the device as a DNS filter that blocks gambling, illegal lending, adult and family-blocked sites. Traffic is not routed to our servers or to third parties. Only domain names are checked against a list stored on the device; page contents and browsing history are not read, stored or uploaded.</p>
+
+            <h3>4. What we never collect</h3>
+            <p>Message contents, photos, contacts, call logs, voice recordings and full browsing history.</p>
+
+            <h3>5. Where data is stored and who processes it</h3>
+            <ul>
+              <li><strong>Cloudflare</strong> (Workers and D1) hosts the app's server and database.</li>
+              <li><strong>Google Firebase Cloud Messaging</strong> and Apple Push Notification service deliver notifications.</li>
+              <li><strong>Google</strong> and <strong>Apple</strong> handle sign-in; a WhatsApp message delivers sign-in codes for phone sign-in.</li>
+            </ul>
+            <p>We do not sell personal data and do not share it for advertising. All connections use HTTPS.</p>
+
+            <h3>6. Children and consent</h3>
+            <p>Child data is processed with the consent of the parent who creates the child's profile, in line with Indonesia's Personal Data Protection Law (UU PDP). The child's phone always shows a "Jaganak aktif" notification while protection is on, and the app icon is never hidden.</p>
+
+            <h3>7. Retention, download and deletion</h3>
+            <div className="alert-box">
+              <strong>How to download or delete your data:</strong><br/>
+              Open the app &gt; <strong>Akun</strong> &gt; <strong>Data keluarga</strong>. Choose <strong>Unduh semua data</strong> to get a copy, or <strong>Hapus akun dan semua data</strong> to permanently delete the child profiles, rules, agreement, location history and usage. If a second parent remains, the family data stays available to them. You can also email us to request deletion.
+            </div>
+            <p>Location: 1, 3 or 7 days. App usage: 90 days. Profile and settings: until the account is deleted.</p>
+
+            <h3>8. Changes and contact</h3>
+            <p>If this policy changes, we update this page and its effective date before the change takes effect. Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+
+            <hr id="id" style={{ margin: '3rem 0', opacity: 0.2 }} />
+
+            <h3>Kebijakan Privasi Jaganak (Bahasa Indonesia)</h3>
+            <p className="meta">Berlaku sejak 28 November 2026 (versi 2026-11)</p>
+            <p><strong>Jaganak</strong> adalah aplikasi pendamping orang tua yang dikelola BaskomLabs. Orang tua memasangnya di HP sendiri, dan dengan kesepakatan keluarga di HP anak, untuk mengatur batas waktu layar, menutup situs dan aplikasi berbahaya, dan tahu anak sudah sampai dengan selamat. Aplikasi dipakai oleh orang tua; HP anak menjalankan mode pendamping yang diatur orang tua.</p>
+            <p><strong>Singkatnya:</strong> kami hanya mengambil data yang dibutuhkan fitur, tidak pernah menjual atau membagikannya ke pengiklan, tanpa iklan dan analitik, dan orang tua bisa mengunduh atau menghapus semua data keluarga kapan saja.</p>
+
+            <h3>1. Data dari orang tua</h3>
+            <ul>
+              <li><strong>Masuk</strong>: nama dan email dari Google atau Apple, atau nomor HP bila masuk dengan kode WhatsApp.</li>
+              <li><strong>Pengaturan keluarga</strong>: aturan, jadwal, Kesepakatan Keluarga, titik aman (misalnya rumah dan sekolah), dan daftar blokir keluarga.</li>
+            </ul>
+
+            <h3>2. Data dari HP anak</h3>
+            <ul>
+              <li><strong>Profil</strong>: nama panggilan dan usia anak, diisi orang tua. Anak tidak dibuatkan akun.</li>
+              <li><strong>Pemakaian aplikasi</strong> (Android): nama aplikasi yang dipakai hari ini dan lamanya, untuk menegakkan batas waktu dan rekap harian. Daftar aplikasi terpasang dikirim ke orang tua agar bisa memilih aplikasi yang diblokir. Disimpan 90 hari.</li>
+              <li><strong>Lokasi</strong>: hanya diambil sesuai mode di Kesepakatan Keluarga (hanya saat Pamit, pada jam yang disepakati, atau selalu), saat anak menekan Darurat, atau saat orang tua meminta. Pada mode tersebut lokasi bisa diambil di latar belakang. Lokasi hanya terlihat oleh orang tua di keluarga yang sama dan terhapus otomatis setelah 1, 3, atau 7 hari sesuai pilihan orang tua.</li>
+              <li><strong>Level baterai</strong> yang dikirim bersama lokasi, dan <strong>token notifikasi</strong> (Firebase Cloud Messaging) agar kabar bisa terkirim.</li>
+            </ul>
+
+            <h3>3. Filter situs</h3>
+            <p>Di Android aplikasi memakai VPN lokal di perangkat sebagai filter DNS untuk menutup situs judi, pinjaman ilegal, dewasa, dan daftar blokir keluarga. Lalu lintas tidak dialihkan ke server kami atau pihak ketiga. Hanya nama domain yang dicocokkan dengan daftar di perangkat; isi halaman dan riwayat penelusuran tidak dibaca, disimpan, atau diunggah.</p>
+
+            <h3>4. Yang tidak pernah kami ambil</h3>
+            <p>Isi pesan, foto, kontak, riwayat panggilan, rekaman suara, dan riwayat penelusuran lengkap.</p>
+
+            <h3>5. Tempat penyimpanan dan pemroses data</h3>
+            <ul>
+              <li><strong>Cloudflare</strong> (Workers dan D1) menjadi tempat server dan basis data aplikasi.</li>
+              <li><strong>Google Firebase Cloud Messaging</strong> dan Apple Push Notification service mengirim notifikasi.</li>
+              <li><strong>Google</strong> dan <strong>Apple</strong> menangani proses masuk; pesan WhatsApp mengirim kode masuk untuk login dengan nomor HP.</li>
+            </ul>
+            <p>Kami tidak menjual data pribadi dan tidak membagikannya untuk iklan. Semua koneksi memakai HTTPS.</p>
+
+            <h3>6. Anak dan persetujuan</h3>
+            <p>Data anak diproses atas persetujuan orang tua yang membuat profil anak, sesuai UU Pelindungan Data Pribadi. HP anak selalu menampilkan notifikasi "Jaganak aktif" selama perlindungan menyala, dan ikon aplikasi tidak pernah disembunyikan.</p>
+
+            <h3>7. Masa simpan, unduh, dan hapus</h3>
+            <div className="alert-box">
+              <strong>Cara mengunduh atau menghapus data:</strong><br/>
+              Buka aplikasi &gt; <strong>Akun</strong> &gt; <strong>Data keluarga</strong>. Pilih <strong>Unduh semua data</strong> untuk mendapat salinan, atau <strong>Hapus akun dan semua data</strong> untuk menghapus permanen profil anak, aturan, Kesepakatan, riwayat lokasi, dan pemakaian. Bila ada orang tua kedua, data keluarga tetap ada untuknya. Anda juga bisa meminta penghapusan lewat email.
+            </div>
+            <p>Lokasi: 1, 3, atau 7 hari. Pemakaian aplikasi: 90 hari. Profil dan pengaturan: selama akun ada.</p>
+
+            <h3>8. Perubahan dan kontak</h3>
+            <p>Jika kebijakan ini berubah, kami memperbarui halaman ini beserta tanggal berlakunya sebelum perubahan diterapkan. Email: <a href="mailto:baskomdevs@gmail.com">baskomdevs@gmail.com</a></p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   if (app === 'QRSTU') {
     return (
       <section className="active-view">
