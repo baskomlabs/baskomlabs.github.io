@@ -512,6 +512,14 @@ export const ROUTES = [
     desc_en: 'Privacy policy for Hadith Discovery: no internet permission, text and speech processed on the device; no account, ads or analytics.',
   },
   {
+    path: '/privacy-policy-jaganak',
+    priority: 0.4,
+    title_id: `Kebijakan Privasi Jaganak${L}`,
+    title_en: `Jaganak Privacy Policy${L}`,
+    desc_id: 'Kebijakan privasi Jaganak, aplikasi pendamping orang tua: data apa yang diambil, berapa lama disimpan, dan cara menghapusnya.',
+    desc_en: 'Privacy policy for Jaganak, the parental companion app: what data it collects, how long it is kept, and how to delete it.',
+  },
+  {
     path: '/privacy-policy-bensy',
     hidden: true, // Bensy hidden for now: out of the sitemap, page still served
     priority: 0.4,
